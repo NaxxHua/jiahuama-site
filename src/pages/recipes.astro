@@ -2,7 +2,11 @@
 import NavBar from "../components/NavBar.jsx";
 import LanguageToggle from "../components/LanguageToggle.jsx";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
+import { recipes } from "../data/recipes";
 import "../styles/global.css";
+
+const dishes = recipes.filter((recipe) => recipe.category === "dish");
+const cocktails = recipes.filter((recipe) => recipe.category === "cocktail");
 ---
 
 <html lang="en">
@@ -49,18 +53,59 @@ import "../styles/global.css";
           Cocktails
         </h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Under Construction -->
-          <div
-            class="bg-white/80 backdrop-blur rounded-xl shadow-lg p-8 text-center border-2 border-dashed border-gray-300"
-          >
-            <p
-              class="text-gray-500 text-lg"
-              data-en="Under Construction..."
-              data-zh="正在施工……"
-            >
-              Under Construction...
-            </p>
-          </div>
+          {
+            cocktails.length === 0 ? (
+              <div class="bg-white/80 backdrop-blur rounded-xl shadow-lg p-8 text-center border-2 border-dashed border-gray-300">
+                <p
+                  class="text-gray-500 text-lg"
+                  data-en="Under Construction..."
+                  data-zh="正在施工……"
+                >
+                  Under Construction...
+                </p>
+              </div>
+            ) : (
+              cocktails.map((recipe) => (
+                <a
+                  href={`/recipes/${recipe.id}`}
+                  class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-2"
+                >
+                  <div class="h-48 overflow-hidden bg-gray-200">
+                    <img
+                      src={recipe.image}
+                      alt={recipe.title.en}
+                      class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                  <div class="p-6">
+                    <div class="flex items-center justify-between mb-2">
+                      <h3
+                        class="text-2xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors"
+                        data-en={recipe.title.en}
+                        data-zh={recipe.title.zh}
+                      >
+                        {recipe.title.en}
+                      </h3>
+                    </div>
+                    <p
+                      class="text-gray-600 text-sm mb-3"
+                      data-en={recipe.subtitle.en}
+                      data-zh={recipe.subtitle.zh}
+                    >
+                      {recipe.subtitle.en}
+                    </p>
+                    <p
+                      class="text-gray-500 text-sm"
+                      data-en={recipe.description.en}
+                      data-zh={recipe.description.zh}
+                    >
+                      {recipe.description.en}
+                    </p>
+                  </div>
+                </a>
+              ))
+            )
+          }
         </div>
       </section>
 
@@ -74,45 +119,47 @@ import "../styles/global.css";
           Dishes
         </h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Dapanji (Big Plate Chicken) -->
-          <a
-            href="/recipes/dapanji"
-            class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-2"
-          >
-            <div class="h-48 overflow-hidden bg-gray-200">
-              <img
-                src="/big_plate_chicken.jpg"
-                alt="Dapanji (Big Plate Chicken)"
-                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-              />
-            </div>
-            <div class="p-6">
-              <div class="flex items-center justify-between mb-2">
-                <h3
-                  class="text-2xl font-bold text-gray-800 group-hover:text-orange-600 transition-colors"
-                  data-en="Dapanji"
-                  data-zh="大盘鸡"
-                >
-                  Dapanji
-                </h3>
-              </div>
-              <p
-                class="text-gray-600 text-sm mb-3"
-                data-en="Big Plate Chicken"
-                data-zh="新疆大盘鸡"
+          {
+            dishes.map((recipe) => (
+              <a
+                href={`/recipes/${recipe.id}`}
+                class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-2"
               >
-                Big Plate Chicken
-              </p>
-              <p
-                class="text-gray-500 text-sm"
-                data-en="A classic Xinjiang dish with tender chicken, potatoes, and bold spices"
-                data-zh="新疆经典菜肴，鲜嫩鸡肉配土豆和浓郁香料"
-              >
-                A classic Xinjiang dish with tender chicken, potatoes, and bold
-                spices
-              </p>
-            </div>
-          </a>
+                <div class="h-48 overflow-hidden bg-gray-200">
+                  <img
+                    src={recipe.image}
+                    alt={recipe.title.en}
+                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center justify-between mb-2">
+                    <h3
+                      class="text-2xl font-bold text-gray-800 group-hover:text-orange-600 transition-colors"
+                      data-en={recipe.title.en}
+                      data-zh={recipe.title.zh}
+                    >
+                      {recipe.title.en}
+                    </h3>
+                  </div>
+                  <p
+                    class="text-gray-600 text-sm mb-3"
+                    data-en={recipe.subtitle.en}
+                    data-zh={recipe.subtitle.zh}
+                  >
+                    {recipe.subtitle.en}
+                  </p>
+                  <p
+                    class="text-gray-500 text-sm"
+                    data-en={recipe.description.en}
+                    data-zh={recipe.description.zh}
+                  >
+                    {recipe.description.en}
+                  </p>
+                </div>
+              </a>
+            ))
+          }
         </div>
       </section>
     </main>

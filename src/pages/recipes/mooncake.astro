@@ -1,0 +1,598 @@
+---
+import NavBar from "../../components/NavBar.jsx";
+import LanguageToggle from "../../components/LanguageToggle.jsx";
+import GoogleAnalytics from "../../components/GoogleAnalytics.astro";
+import "../../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Egg Yolk Lotus Mooncake - Traditional Mid-Autumn Festival treat with salted egg yolk and lotus seed paste."
+    />
+    <title>Egg Yolk Lotus Mooncake Recipe - Jiahua Ma</title>
+    <GoogleAnalytics />
+  </head>
+  <body
+    class="bg-gradient-to-br from-[#99AFD7] via-[#B8C5E0] to-[#D4DDEB] min-h-screen"
+  >
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <NavBar />
+    <LanguageToggle client:load />
+
+    <main id="main-content" class="container mx-auto px-4 py-12">
+      <div class="max-w-4xl mx-auto">
+        <!-- Back Button -->
+        <a
+          href="/recipes"
+          class="inline-flex items-center text-gray-700 hover:text-gray-900 mb-6 transition-colors"
+        >
+          <svg
+            class="w-5 h-5 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"></path>
+          </svg>
+          <span data-en="Back to Recipes" data-zh="返回食谱"
+            >Back to Recipes</span
+          >
+        </a>
+
+        <!-- Recipe Header -->
+        <div class="bg-white rounded-xl shadow-xl overflow-hidden mb-8">
+          <div
+            class="bg-gradient-to-r from-yellow-500 to-amber-600 p-8 text-white"
+          >
+            <h1
+              class="text-4xl md:text-5xl font-bold mb-3"
+              data-en="Egg Yolk Lotus Mooncake"
+              data-zh="蛋黄莲蓉月饼"
+            >
+              Egg Yolk Lotus Mooncake
+            </h1>
+            <p
+              class="text-xl text-yellow-100"
+              data-en="Traditional Mid-Autumn Festival treat"
+              data-zh="传统中秋佳品"
+            >
+              Traditional Mid-Autumn Festival treat
+            </p>
+          </div>
+
+          <!-- Recipe Image -->
+          <div class="w-full h-96 bg-gray-200">
+            <img
+              src="/mooncake.jpg"
+              alt="Egg Yolk Lotus Mooncake"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- Recipe Content -->
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Ingredients -->
+          <div class="md:col-span-1">
+            <div class="bg-white rounded-xl shadow-lg p-6 sticky top-6">
+              <h2
+                class="text-2xl font-bold text-gray-800 mb-4 flex items-center"
+              >
+                <span class="text-amber-600 mr-2">🥮</span>
+                <span data-en="Ingredients" data-zh="原材料">Ingredients</span>
+              </h2>
+
+              <div class="mb-4">
+                <h3
+                  class="font-bold text-gray-800 mb-2"
+                  data-en="Makes 12 mooncakes"
+                  data-zh="制作12个月饼"
+                >
+                  Makes 12 mooncakes
+                </h3>
+              </div>
+
+              <div class="mb-4">
+                <h3
+                  class="font-semibold text-gray-700 mb-2"
+                  data-en="Dough:"
+                  data-zh="饼皮："
+                >
+                  Dough:
+                </h3>
+                <ul class="space-y-1.5 text-gray-700 text-sm">
+                  <li
+                    data-en="• 150g cake flour (low gluten)"
+                    data-zh="• 低筋面粉 150克"
+                  >
+                    • 150g cake flour (low gluten)
+                  </li>
+                  <li
+                    data-en="• 50g bread flour (high gluten)"
+                    data-zh="• 高筋面粉 50克"
+                  >
+                    • 50g bread flour (high gluten)
+                  </li>
+                  <li data-en="• 130g invert syrup" data-zh="• 转换糖浆 130克">
+                    • 130g invert syrup
+                  </li>
+                  <li data-en="• 50g peanut oil" data-zh="• 花生油 50克">
+                    • 50g peanut oil
+                  </li>
+                  <li
+                    data-en="• 4g lye water (1g edible alkali + 3g water)"
+                    data-zh="• 枧水 4克（1克食用碱与3克水混合）"
+                  >
+                    • 4g lye water (1g edible alkali + 3g water)
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mb-4">
+                <h3
+                  class="font-semibold text-gray-700 mb-2"
+                  data-en="Filling:"
+                  data-zh="馅料："
+                >
+                  Filling:
+                </h3>
+                <ul class="space-y-1.5 text-gray-700 text-sm">
+                  <li data-en="• 12 salted egg yolks" data-zh="• 咸蛋黄 12个">
+                    • 12 salted egg yolks
+                  </li>
+                  <li
+                    data-en="• At least 700g lotus seed paste"
+                    data-zh="• 莲蓉馅料 至少700克"
+                  >
+                    • At least 700g lotus seed paste
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mb-4">
+                <h3
+                  class="font-semibold text-gray-700 mb-2"
+                  data-en="Egg Wash:"
+                  data-zh="光亮液："
+                >
+                  Egg Wash:
+                </h3>
+                <ul class="space-y-1.5 text-gray-700 text-sm">
+                  <li data-en="• 1 egg yolk" data-zh="• 蛋黄 1个">
+                    • 1 egg yolk
+                  </li>
+                  <li data-en="• 1 drop syrup" data-zh="• 糖浆 1滴">
+                    • 1 drop syrup
+                  </li>
+                  <li data-en="• 3 drops water" data-zh="• 水 3滴">
+                    • 3 drops water
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3
+                  class="font-semibold text-gray-700 mb-2"
+                  data-en="Equipment:"
+                  data-zh="工具："
+                >
+                  Equipment:
+                </h3>
+                <ul class="space-y-1 text-gray-700 text-sm">
+                  <li data-en="• Mooncake mold" data-zh="• 月饼模具">
+                    • Mooncake mold
+                  </li>
+                  <li data-en="• Hand mixer" data-zh="• 手持打蛋器">
+                    • Hand mixer
+                  </li>
+                  <li data-en="• Silicone spatula" data-zh="• 硅胶刮刀">
+                    • Silicone spatula
+                  </li>
+                  <li data-en="• Food scale" data-zh="• 食品电子秤">
+                    • Food scale
+                  </li>
+                  <li data-en="• Plastic wrap" data-zh="• 食品保鲜膜">
+                    • Plastic wrap
+                  </li>
+                  <li data-en="• Baking sheet" data-zh="• 烤盘">
+                    • Baking sheet
+                  </li>
+                  <li data-en="• Parchment paper" data-zh="• 油纸">
+                    • Parchment paper
+                  </li>
+                  <li data-en="• Spray bottle" data-zh="• 小喷壶">
+                    • Spray bottle
+                  </li>
+                  <li data-en="• Pastry brush" data-zh="• 羊毛刷">
+                    • Pastry brush
+                  </li>
+                  <li data-en="• Fine sieve" data-zh="• 细筛">• Fine sieve</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Instructions -->
+          <div class="md:col-span-2">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+              <h2
+                class="text-2xl font-bold text-gray-800 mb-6 flex items-center"
+              >
+                <span class="text-amber-600 mr-2">👨‍🍳</span>
+                <span data-en="Instructions" data-zh="做法">Instructions</span>
+              </h2>
+
+              <!-- Cooking Steps -->
+              <div class="space-y-6">
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-10 h-10 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    1
+                  </div>
+                  <div>
+                    <h3
+                      class="font-bold text-gray-800 mb-2"
+                      data-en="Prepare the Dough"
+                      data-zh="准备面团"
+                    >
+                      Prepare the Dough
+                    </h3>
+                    <p
+                      class="text-gray-700"
+                      data-en="In a bowl, combine invert syrup and peanut oil. Mix well with a hand mixer. Add lye water and mix until fully incorporated."
+                      data-zh="将转换糖浆和花生油倒入碗中，使用手持打蛋器搅拌均匀；均匀后加入枧水搅拌均匀。"
+                    >
+                      In a bowl, combine invert syrup and peanut oil. Mix well
+                      with a hand mixer. Add lye water and mix until fully
+                      incorporated.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-10 h-10 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    2
+                  </div>
+                  <div>
+                    <h3
+                      class="font-bold text-gray-800 mb-2"
+                      data-en="Mix Flours"
+                      data-zh="混合面粉"
+                    >
+                      Mix Flours
+                    </h3>
+                    <p
+                      class="text-gray-700"
+                      data-en="In a large container, combine cake flour and bread flour. Mix well with a hand mixer."
+                      data-zh="将低筋面粉和高筋面粉加入大容器中，使用手持打蛋器搅拌均匀。"
+                    >
+                      In a large container, combine cake flour and bread flour.
+                      Mix well with a hand mixer.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-10 h-10 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    3
+                  </div>
+                  <div>
+                    <h3
+                      class="font-bold text-gray-800 mb-2"
+                      data-en="Combine and Rest"
+                      data-zh="混合并醒面"
+                    >
+                      Combine and Rest
+                    </h3>
+                    <p
+                      class="text-gray-700 mb-2"
+                      data-en="Pour the wet mixture into the flour container. Use a silicone spatula to mix until no dry flour remains."
+                      data-zh="将完成步骤1后的混合物均匀搅拌后加入步骤2的容器内，使用硅胶刮刀搅拌均匀直至没有干粉。"
+                    >
+                      Pour the wet mixture into the flour container. Use a
+                      silicone spatula to mix until no dry flour remains.
+                    </p>
+                    <p
+                      class="text-gray-700"
+                      data-en="Wrap the dough in plastic wrap and let rest at room temperature for at least 3 hours."
+                      data-zh="将食品保鲜膜包裹面团，室温醒≥3小时。"
+                    >
+                      Wrap the dough in plastic wrap and let rest at room
+                      temperature for at least 3 hours.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-10 h-10 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    4
+                  </div>
+                  <div>
+                    <h3
+                      class="font-bold text-gray-800 mb-2"
+                      data-en="Portion the Components"
+                      data-zh="分割材料"
+                    >
+                      Portion the Components
+                    </h3>
+                    <p
+                      class="text-gray-700"
+                      data-en="Weigh lotus seed paste and salted egg yolk together to 70g per portion. Weigh dough to 30g per portion. Repeat 12 times for 12 mooncakes."
+                      data-zh="将莲蓉馅料与咸蛋黄同时称重至70克；面团（饼皮）称重30克。（重复12次）"
+                    >
+                      Weigh lotus seed paste and salted egg yolk together to 70g
+                      per portion. Weigh dough to 30g per portion. Repeat 12
+                      times for 12 mooncakes.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-10 h-10 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    5
+                  </div>
+                  <div>
+                    <h3
+                      class="font-bold text-gray-800 mb-2"
+                      data-en="Wrap the Filling"
+                      data-zh="包馅"
+                    >
+                      Wrap the Filling
+                    </h3>
+                    <p
+                      class="text-gray-700"
+                      data-en="Wrap each salted egg yolk tightly with lotus seed paste, ensuring no air pockets."
+                      data-zh="将咸蛋黄严密包裹入莲蓉馅料中，不得进入空气。"
+                    >
+                      Wrap each salted egg yolk tightly with lotus seed paste,
+                      ensuring no air pockets.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-10 h-10 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    6
+                  </div>
+                  <div>
+                    <h3
+                      class="font-bold text-gray-800 mb-2"
+                      data-en="Shape with Mold"
+                      data-zh="压模"
+                    >
+                      Shape with Mold
+                    </h3>
+                    <p
+                      class="text-gray-700"
+                      data-en="Wrap the filled lotus paste in the dough wrapper (requires some technique). Roll in flour to prevent sticking, press with mold, and place on a lined baking sheet."
+                      data-zh="将包好的蛋黄莲蓉馅料裹入饼皮内（需要一定手法），在面粉里滚一圈防粘，压模并放在垫有锡纸的烤盘上。"
+                    >
+                      Wrap the filled lotus paste in the dough wrapper (requires
+                      some technique). Roll in flour to prevent sticking, press
+                      with mold, and place on a lined baking sheet.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-10 h-10 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    7
+                  </div>
+                  <div>
+                    <h3
+                      class="font-bold text-gray-800 mb-2"
+                      data-en="Prepare Egg Wash"
+                      data-zh="准备光亮液"
+                    >
+                      Prepare Egg Wash
+                    </h3>
+                    <p
+                      class="text-gray-700"
+                      data-en="Strain egg yolk through a fine sieve. Add 1 drop of syrup and 3 drops of water. Mix well."
+                      data-zh="将蛋黄过细筛，加入一滴糖浆，三滴水，搅拌均匀。"
+                    >
+                      Strain egg yolk through a fine sieve. Add 1 drop of syrup
+                      and 3 drops of water. Mix well.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-10 h-10 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    8
+                  </div>
+                  <div>
+                    <h3
+                      class="font-bold text-gray-800 mb-2"
+                      data-en="First Bake"
+                      data-zh="第一次烘烤"
+                    >
+                      First Bake
+                    </h3>
+                    <p
+                      class="text-gray-700"
+                      data-en="Preheat oven to 430°F (220°C). Spray mooncakes lightly with water. Place in oven and reduce to 390°F (200°C). Bake for 5 minutes, then remove."
+                      data-zh="烤箱预热430℉，小喷壶在月饼表面喷水雾，烤盘进烤箱后下调至390℉，烤5分钟，取出。"
+                    >
+                      Preheat oven to 430°F (220°C). Spray mooncakes lightly
+                      with water. Place in oven and reduce to 390°F (200°C).
+                      Bake for 5 minutes, then remove.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-10 h-10 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    9
+                  </div>
+                  <div>
+                    <h3
+                      class="font-bold text-gray-800 mb-2"
+                      data-en="Apply Egg Wash and Second Bake"
+                      data-zh="刷蛋液并二次烘烤"
+                    >
+                      Apply Egg Wash and Second Bake
+                    </h3>
+                    <p
+                      class="text-gray-700"
+                      data-en="Reduce oven to 360°F (180°C). When mooncakes are cool enough to handle, brush egg wash evenly on the surface. Return to oven and bake for 10 minutes. Remove and let cool."
+                      data-zh="将烤箱温度下调至360℉，等待，等到月饼不烫手时，用羊毛刷将光亮液均匀刷在月饼表面，再次进入烤箱，10分钟后取出，放凉。"
+                    >
+                      Reduce oven to 360°F (180°C). When mooncakes are cool
+                      enough to handle, brush egg wash evenly on the surface.
+                      Return to oven and bake for 10 minutes. Remove and let
+                      cool.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-10 h-10 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    10
+                  </div>
+                  <div>
+                    <h3
+                      class="font-bold text-gray-800 mb-2"
+                      data-en="Oil Return Period"
+                      data-zh="回油"
+                    >
+                      Oil Return Period
+                    </h3>
+                    <p
+                      class="text-gray-700"
+                      data-en="Wearing gloves, place mooncakes in a sealed container lined with parchment paper. Seal and wait 3 days. After 3 days, the mooncakes will have softened and are ready to eat."
+                      data-zh="穿戴塑料/橡胶手套将月饼放在垫有油纸的密封容器内，密封并等待3天，3天后取出即可食用。"
+                    >
+                      Wearing gloves, place mooncakes in a sealed container
+                      lined with parchment paper. Seal and wait 3 days. After 3
+                      days, the mooncakes will have softened and are ready to
+                      eat.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tips -->
+              <div
+                class="mt-8 bg-yellow-50 rounded-lg p-6 border-l-4 border-yellow-500"
+              >
+                <h3 class="font-bold text-gray-800 mb-3 flex items-center">
+                  <span class="text-yellow-600 mr-2">💡</span>
+                  <span data-en="Pro Tips" data-zh="小贴士">Pro Tips</span>
+                </h3>
+                <ul class="space-y-2 text-gray-700">
+                  <li
+                    data-en="• The 3-day resting period is crucial for texture development (called 'oil return')"
+                    data-zh="• 3天回油期对口感发展至关重要"
+                  >
+                    • The 3-day resting period is crucial for texture
+                    development (called "oil return")
+                  </li>
+                  <li
+                    data-en="• Don't over-handle the dough, it becomes more difficult to work with"
+                    data-zh="• 不要过度处理面团，会变得难以操作"
+                  >
+                    • Don't over-handle the dough, it becomes more difficult to
+                    work with
+                  </li>
+                  <li
+                    data-en="• The ratio should be 3:7 (30g skin : 70g filling) for best results"
+                    data-zh="• 皮馅比例3:7效果最佳"
+                  >
+                    • The ratio should be 3:7 (30g skin : 70g filling) for best
+                    results
+                  </li>
+                  <li
+                    data-en="• Store in an airtight container at room temperature for up to 1 week"
+                    data-zh="• 密封保存，常温可保存1周"
+                  >
+                    • Store in an airtight container at room temperature for up
+                    to 1 week
+                  </li>
+                  <li
+                    data-en="• Best enjoyed during Mid-Autumn Festival with family and tea!"
+                    data-zh="• 最好在中秋节与家人一起品尝，配茶更佳！"
+                  >
+                    • Best enjoyed during Mid-Autumn Festival with family and
+                    tea!
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Cultural Note -->
+              <div
+                class="mt-6 bg-amber-50 rounded-lg p-6 border-l-4 border-amber-500"
+              >
+                <h3 class="font-bold text-gray-800 mb-3 flex items-center">
+                  <span class="text-amber-600 mr-2">🏮</span>
+                  <span data-en="Cultural Significance" data-zh="文化意义"
+                    >Cultural Significance</span
+                  >
+                </h3>
+                <p
+                  class="text-gray-700"
+                  data-en="Mooncakes were originally offerings to worship the moon goddess. The saying goes: 'The moon is perfectly round on August 15th, Mid-Autumn mooncakes are fragrant and sweet.' Eating mooncakes during the Mid-Autumn Festival brings happiness and celebrates family reunion."
+                  data-zh="最初是用来拜祭月神的供品，'八月十五月正圆，中秋月饼香又甜'。如果你在中秋节前后进食，你将会变得非常快乐。"
+                >
+                  Mooncakes were originally offerings to worship the moon
+                  goddess. The saying goes: "The moon is perfectly round on
+                  August 15th, Mid-Autumn mooncakes are fragrant and sweet."
+                  Eating mooncakes during the Mid-Autumn Festival brings
+                  happiness and celebrates family reunion.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      function updateLanguage(lang: string) {
+        document.querySelectorAll("[data-en]").forEach((element) => {
+          if (lang === "zh" && element.getAttribute("data-zh")) {
+            element.textContent = element.getAttribute("data-zh");
+          } else if (element.getAttribute("data-en")) {
+            element.textContent = element.getAttribute("data-en");
+          }
+        });
+      }
+
+      // Initialize language on page load
+      const savedLang = localStorage.getItem("language") || "en";
+      updateLanguage(savedLang);
+
+      // Listen for language changes
+      window.addEventListener("languageChange", (e: Event) => {
+        updateLanguage((e as CustomEvent).detail);
+      });
+    </script>
+  </body>
+</html>
