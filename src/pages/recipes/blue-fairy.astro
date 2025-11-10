@@ -1,0 +1,215 @@
+---
+import NavBar from "../../components/NavBar.jsx";
+import LanguageToggle from "../../components/LanguageToggle.jsx";
+import GoogleAnalytics from "../../components/GoogleAnalytics.astro";
+import "../../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Blue Fairy - A cyberpunk cocktail inspired by VA-11 HALL-A. Sweet and girly highball."
+    />
+    <title>Blue Fairy Recipe - Jiahua Ma</title>
+    <GoogleAnalytics />
+  </head>
+  <body
+    class="bg-gradient-to-br from-[#99AFD7] via-[#B8C5E0] to-[#D4DDEB] min-h-screen"
+  >
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <NavBar />
+    <LanguageToggle client:load />
+
+    <main id="main-content" class="container mx-auto px-4 py-12">
+      <div class="max-w-4xl mx-auto">
+        <a
+          href="/recipes"
+          class="inline-flex items-center text-gray-700 hover:text-gray-900 mb-6 transition-colors"
+        >
+          <svg
+            class="w-5 h-5 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"></path>
+          </svg>
+          <span data-en="Back to Recipes" data-zh="返回食谱"
+            >Back to Recipes</span
+          >
+        </a>
+
+        <div class="bg-white rounded-xl shadow-xl overflow-hidden mb-8">
+          <div
+            class="bg-gradient-to-r from-cyan-400 to-blue-500 p-8 text-white"
+          >
+            <h1
+              class="text-4xl md:text-5xl font-bold mb-3"
+              data-en="Blue Fairy"
+              data-zh="蓝精灵"
+            >
+              Blue Fairy
+            </h1>
+            <p
+              class="text-xl text-cyan-100 mb-2"
+              data-en="Sweet • Girly • Soft"
+              data-zh="甜味 • 女性化 • 温和"
+            >
+              Sweet • Girly • Soft
+            </p>
+            <p
+              class="text-cyan-100 italic"
+              data-en="Inspired by VA-11 HALL-A"
+              data-zh="灵感来自 VA-11 HALL-A"
+            >
+              Inspired by VA-11 HALL-A
+            </p>
+          </div>
+
+          <div class="w-full h-64 md:h-96 bg-gray-200">
+            <img
+              src="/blue_fairy.jpg"
+              alt="Blue Fairy"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="md:col-span-1">
+            <div class="bg-white rounded-xl shadow-lg p-6 sticky top-6">
+              <h2
+                class="text-2xl font-bold text-gray-800 mb-4"
+                data-en="Ingredients"
+                data-zh="原料"
+              >
+                Ingredients
+              </h2>
+              <ul class="space-y-2 text-gray-700">
+                <li>• Lychee Liqueur 45ml</li>
+                <li>• Blue Curacao 10ml</li>
+                <li>• Grapefruit Juice 45ml</li>
+                <li>• Tonic Water (fill up)</li>
+                <li>• Absinthe (spray)</li>
+              </ul>
+              <div class="mt-4 pt-4 border-t border-gray-200">
+                <p
+                  class="text-sm text-gray-600"
+                  data-en="Glass: Highball"
+                  data-zh="杯具：高球杯"
+                >
+                  Glass: Highball
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:col-span-2">
+            <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+              <h2
+                class="text-2xl font-bold text-gray-800 mb-6"
+                data-en="Instructions"
+                data-zh="制作步骤"
+              >
+                Instructions
+              </h2>
+
+              <div class="space-y-6">
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-8 h-8 bg-cyan-500 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    1
+                  </div>
+                  <div>
+                    <p
+                      class="text-gray-700"
+                      data-en="Add lychee liqueur, Blue Curacao, and grapefruit juice to a highball glass with ice."
+                      data-zh="在高球杯中加入荔枝利口酒、蓝柑橘酒和西柚汁，加冰块。"
+                    >
+                      Add lychee liqueur, Blue Curacao, and grapefruit juice to
+                      a highball glass with ice.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-8 h-8 bg-cyan-500 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    2
+                  </div>
+                  <div>
+                    <p
+                      class="text-gray-700"
+                      data-en="Fill up with tonic water and stir gently."
+                      data-zh="加入汤力水至满杯，轻轻搅拌。"
+                    >
+                      Fill up with tonic water and stir gently.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-8 h-8 bg-cyan-500 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    3
+                  </div>
+                  <div>
+                    <p
+                      class="text-gray-700"
+                      data-en="Spray a small amount of absinthe on top for aroma."
+                      data-zh="在顶部喷洒少量苦艾酒增添香气。"
+                    >
+                      Spray a small amount of absinthe on top for aroma.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="mt-8 p-6 bg-cyan-50 rounded-lg border-l-4 border-cyan-500"
+              >
+                <p
+                  class="text-gray-700 italic"
+                  data-en="One of these will make all your teeth turn blue. Hope you brushed them well."
+                  data-zh="只喝一口就能让你的牙齿变蓝。希望你喝完之后能好好刷牙。"
+                >
+                  "One of these will make all your teeth turn blue. Hope you
+                  brushed them well."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      function updateLanguage(lang: string) {
+        document.querySelectorAll("[data-en]").forEach((element) => {
+          if (lang === "zh" && element.getAttribute("data-zh")) {
+            element.textContent = element.getAttribute("data-zh");
+          } else if (element.getAttribute("data-en")) {
+            element.textContent = element.getAttribute("data-en");
+          }
+        });
+      }
+
+      const savedLang = localStorage.getItem("language") || "en";
+      updateLanguage(savedLang);
+
+      window.addEventListener("languageChange", (e: Event) => {
+        updateLanguage((e as CustomEvent).detail);
+      });
+    </script>
+  </body>
+</html>

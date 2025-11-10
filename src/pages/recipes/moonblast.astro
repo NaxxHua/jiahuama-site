@@ -1,0 +1,214 @@
+---
+import NavBar from "../../components/NavBar.jsx";
+import LanguageToggle from "../../components/LanguageToggle.jsx";
+import GoogleAnalytics from "../../components/GoogleAnalytics.astro";
+import "../../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Moonblast - A cyberpunk cocktail inspired by VA-11 HALL-A. Sweet and girly Sea Breeze variation."
+    />
+    <title>Moonblast Recipe - Jiahua Ma</title>
+    <GoogleAnalytics />
+  </head>
+  <body
+    class="bg-gradient-to-br from-[#99AFD7] via-[#B8C5E0] to-[#D4DDEB] min-h-screen"
+  >
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <NavBar />
+    <LanguageToggle client:load />
+
+    <main id="main-content" class="container mx-auto px-4 py-12">
+      <div class="max-w-4xl mx-auto">
+        <a
+          href="/recipes"
+          class="inline-flex items-center text-gray-700 hover:text-gray-900 mb-6 transition-colors"
+        >
+          <svg
+            class="w-5 h-5 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"></path>
+          </svg>
+          <span data-en="Back to Recipes" data-zh="返回食谱"
+            >Back to Recipes</span
+          >
+        </a>
+
+        <div class="bg-white rounded-xl shadow-xl overflow-hidden mb-8">
+          <div
+            class="bg-gradient-to-r from-purple-400 to-pink-500 p-8 text-white"
+          >
+            <h1
+              class="text-4xl md:text-5xl font-bold mb-3"
+              data-en="Moonblast"
+              data-zh="月球爆破"
+            >
+              Moonblast
+            </h1>
+            <p
+              class="text-xl text-purple-100 mb-2"
+              data-en="Sweet • Girly • Happy"
+              data-zh="甜蜜 • 女性化 • 惬意"
+            >
+              Sweet • Girly • Happy
+            </p>
+            <p
+              class="text-purple-100 italic"
+              data-en="Inspired by VA-11 HALL-A"
+              data-zh="灵感来自 VA-11 HALL-A"
+            >
+              Inspired by VA-11 HALL-A
+            </p>
+          </div>
+
+          <div class="w-full h-64 md:h-96 bg-gray-200">
+            <img
+              src="/moon_blast.jpg"
+              alt="Moonblast"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="md:col-span-1">
+            <div class="bg-white rounded-xl shadow-lg p-6 sticky top-6">
+              <h2
+                class="text-2xl font-bold text-gray-800 mb-4"
+                data-en="Ingredients"
+                data-zh="原料"
+              >
+                Ingredients
+              </h2>
+              <ul class="space-y-2 text-gray-700">
+                <li>• Smirnoff (Vodka) 30ml</li>
+                <li>• Passoa 15ml</li>
+                <li>• Grapefruit Juice 45ml</li>
+                <li>• Cranberry Juice (fill up)</li>
+              </ul>
+              <div class="mt-4 pt-4 border-t border-gray-200">
+                <p
+                  class="text-sm text-gray-600"
+                  data-en="≈ Sea Breeze"
+                  data-zh="≈ 海风"
+                >
+                  ≈ Sea Breeze
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:col-span-2">
+            <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+              <h2
+                class="text-2xl font-bold text-gray-800 mb-6"
+                data-en="Instructions"
+                data-zh="制作步骤"
+              >
+                Instructions
+              </h2>
+
+              <div class="space-y-6">
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    1
+                  </div>
+                  <div>
+                    <p
+                      class="text-gray-700"
+                      data-en="Add vodka, Passoa, and grapefruit juice to a highball glass filled with ice."
+                      data-zh="在装满冰块的高球杯中加入伏特加、百香果利口酒和西柚汁。"
+                    >
+                      Add vodka, Passoa, and grapefruit juice to a highball
+                      glass filled with ice.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    2
+                  </div>
+                  <div>
+                    <p
+                      class="text-gray-700"
+                      data-en="Fill up with cranberry juice."
+                      data-zh="加入蔓越莓汁至满杯。"
+                    >
+                      Fill up with cranberry juice.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    3
+                  </div>
+                  <div>
+                    <p
+                      class="text-gray-700"
+                      data-en="Stir gently to combine."
+                      data-zh="轻轻搅拌混合。"
+                    >
+                      Stir gently to combine.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="mt-8 p-6 bg-purple-50 rounded-lg border-l-4 border-purple-500"
+              >
+                <p
+                  class="text-gray-700 italic"
+                  data-en="No relation to the Hadron cannon you can see on the moon for one week every month."
+                  data-zh="与每月一周能在月球上看到的强子炮无关。"
+                >
+                  "No relation to the Hadron cannon you can see on the moon for
+                  one week every month."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      function updateLanguage(lang: string) {
+        document.querySelectorAll("[data-en]").forEach((element) => {
+          if (lang === "zh" && element.getAttribute("data-zh")) {
+            element.textContent = element.getAttribute("data-zh");
+          } else if (element.getAttribute("data-en")) {
+            element.textContent = element.getAttribute("data-en");
+          }
+        });
+      }
+
+      const savedLang = localStorage.getItem("language") || "en";
+      updateLanguage(savedLang);
+
+      window.addEventListener("languageChange", (e: Event) => {
+        updateLanguage((e as CustomEvent).detail);
+      });
+    </script>
+  </body>
+</html>

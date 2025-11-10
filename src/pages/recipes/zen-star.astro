@@ -1,0 +1,245 @@
+---
+import NavBar from "../../components/NavBar.jsx";
+import LanguageToggle from "../../components/LanguageToggle.jsx";
+import GoogleAnalytics from "../../components/GoogleAnalytics.astro";
+import "../../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Zen Star - A cyberpunk cocktail inspired by VA-11 HALL-A. Perfectly balanced yet surprisingly bland."
+    />
+    <title>Zen Star Recipe - Jiahua Ma</title>
+    <GoogleAnalytics />
+  </head>
+  <body
+    class="bg-gradient-to-br from-[#99AFD7] via-[#B8C5E0] to-[#D4DDEB] min-h-screen"
+  >
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <NavBar />
+    <LanguageToggle client:load />
+
+    <main id="main-content" class="container mx-auto px-4 py-12">
+      <div class="max-w-4xl mx-auto">
+        <a
+          href="/recipes"
+          class="inline-flex items-center text-gray-700 hover:text-gray-900 mb-6 transition-colors"
+        >
+          <svg
+            class="w-5 h-5 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"></path>
+          </svg>
+          <span data-en="Back to Recipes" data-zh="返回食谱"
+            >Back to Recipes</span
+          >
+        </a>
+
+        <div class="bg-white rounded-xl shadow-xl overflow-hidden mb-8">
+          <div
+            class="bg-gradient-to-r from-teal-400 to-cyan-600 p-8 text-white"
+          >
+            <h1
+              class="text-4xl md:text-5xl font-bold mb-3"
+              data-en="Zen Star"
+              data-zh="禅星"
+            >
+              Zen Star
+            </h1>
+            <p
+              class="text-xl text-teal-100 mb-2"
+              data-en="Sour • Promo • Bland"
+              data-zh="酸味 • 宣传 • 清淡"
+            >
+              Sour • Promo • Bland
+            </p>
+            <p
+              class="text-teal-100 italic"
+              data-en="Inspired by VA-11 HALL-A"
+              data-zh="灵感来自 VA-11 HALL-A"
+            >
+              Inspired by VA-11 HALL-A
+            </p>
+          </div>
+
+          <div class="w-full h-64 md:h-96 bg-gray-200">
+            <img
+              src="/zen_star.jpg"
+              alt="Zen Star"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="md:col-span-1">
+            <div class="bg-white rounded-xl shadow-lg p-6 sticky top-6">
+              <h2
+                class="text-2xl font-bold text-gray-800 mb-4"
+                data-en="Ingredients"
+                data-zh="原料"
+              >
+                Ingredients
+              </h2>
+              <ul class="space-y-2 text-gray-700">
+                <li>• Gin 20ml</li>
+                <li>• Dubonnet Red 20ml</li>
+                <li>• Fino Sherry 20ml</li>
+                <li>• Bianco Vermouth 20ml</li>
+                <li>• Blue Curacao 20ml</li>
+              </ul>
+              <div class="mt-4 pt-4 border-t border-gray-200">
+                <p
+                  class="text-sm text-gray-600"
+                  data-en="Glass: Stemless Wine Glass"
+                  data-zh="杯具：无脚葡萄酒杯"
+                >
+                  Glass: Stemless Wine Glass
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:col-span-2">
+            <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+              <h2
+                class="text-2xl font-bold text-gray-800 mb-6"
+                data-en="Instructions"
+                data-zh="制作步骤"
+              >
+                Instructions
+              </h2>
+
+              <div class="space-y-6">
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-8 h-8 bg-teal-500 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    1
+                  </div>
+                  <div>
+                    <p
+                      class="text-gray-700"
+                      data-en="Add gin, Dubonnet Red, Fino Sherry, Bianco Vermouth, and Blue Curacao to a mixing glass with ice."
+                      data-zh="在调酒杯中加入金酒、杜本内红、菲诺雪莉酒、白苦艾酒和蓝柑橘酒，加冰块。"
+                    >
+                      Add gin, Dubonnet Red, Fino Sherry, Bianco Vermouth, and
+                      Blue Curacao to a mixing glass with ice.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-8 h-8 bg-teal-500 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    2
+                  </div>
+                  <div>
+                    <p
+                      class="text-gray-700"
+                      data-en="Stir gently until well chilled."
+                      data-zh="轻轻搅拌至充分冰凉。"
+                    >
+                      Stir gently until well chilled.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-8 h-8 bg-teal-500 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    3
+                  </div>
+                  <div>
+                    <p
+                      class="text-gray-700"
+                      data-en="Strain into a stemless wine glass."
+                      data-zh="滤入无脚葡萄酒杯中。"
+                    >
+                      Strain into a stemless wine glass.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="mt-8 p-6 bg-teal-50 rounded-lg border-l-4 border-teal-500"
+              >
+                <p
+                  class="text-gray-700 italic"
+                  data-en="You'd think something so balanced would actually taste nice... you'd be dead wrong."
+                  data-zh="你会觉得如此平衡的东西应该很好喝……但你大错特错。"
+                >
+                  "You'd think something so balanced would actually taste
+                  nice... you'd be dead wrong."
+                </p>
+              </div>
+
+              <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+                <h3
+                  class="font-bold text-gray-800 mb-2"
+                  data-en="Ingredient Notes"
+                  data-zh="原料说明"
+                >
+                  Ingredient Notes
+                </h3>
+                <ul class="space-y-1 text-sm text-gray-700">
+                  <li
+                    data-en="• Dubonnet Red: French aperitif wine with herbs and spices"
+                    data-zh="• 杜本内红：法国开胃草药香料加强葡萄酒"
+                  >
+                    • Dubonnet Red: French aperitif wine with herbs and spices
+                  </li>
+                  <li
+                    data-en="• Fino Sherry: Light and dry Spanish fortified white wine"
+                    data-zh="• 菲诺雪莉：西班牙清淡干爽加强白葡萄酒"
+                  >
+                    • Fino Sherry: Light and dry Spanish fortified white wine
+                  </li>
+                  <li
+                    data-en="• Bianco Vermouth: Italian/French vermouth, fortified wine"
+                    data-zh="• 白苦艾酒：意大利/法国苦艾酒，加强葡萄酒"
+                  >
+                    • Bianco Vermouth: Italian/French vermouth, fortified wine
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      function updateLanguage(lang: string) {
+        document.querySelectorAll("[data-en]").forEach((element) => {
+          if (lang === "zh" && element.getAttribute("data-zh")) {
+            element.textContent = element.getAttribute("data-zh");
+          } else if (element.getAttribute("data-en")) {
+            element.textContent = element.getAttribute("data-en");
+          }
+        });
+      }
+
+      const savedLang = localStorage.getItem("language") || "en";
+      updateLanguage(savedLang);
+
+      window.addEventListener("languageChange", (e: Event) => {
+        updateLanguage((e as CustomEvent).detail);
+      });
+    </script>
+  </body>
+</html>

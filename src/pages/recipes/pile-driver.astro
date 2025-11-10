@@ -1,0 +1,255 @@
+---
+import NavBar from "../../components/NavBar.jsx";
+import LanguageToggle from "../../components/LanguageToggle.jsx";
+import GoogleAnalytics from "../../components/GoogleAnalytics.astro";
+import "../../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Pile Driver - A cyberpunk cocktail inspired by VA-11 HALL-A. Bitter, burning, and manly Godfather variation."
+    />
+    <title>Pile Driver Recipe - Jiahua Ma</title>
+    <GoogleAnalytics />
+  </head>
+  <body
+    class="bg-gradient-to-br from-[#99AFD7] via-[#B8C5E0] to-[#D4DDEB] min-h-screen"
+  >
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <NavBar />
+    <LanguageToggle client:load />
+
+    <main id="main-content" class="container mx-auto px-4 py-12">
+      <div class="max-w-4xl mx-auto">
+        <a
+          href="/recipes"
+          class="inline-flex items-center text-gray-700 hover:text-gray-900 mb-6 transition-colors"
+        >
+          <svg
+            class="w-5 h-5 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"></path>
+          </svg>
+          <span data-en="Back to Recipes" data-zh="返回食谱"
+            >Back to Recipes</span
+          >
+        </a>
+
+        <div class="bg-white rounded-xl shadow-xl overflow-hidden mb-8">
+          <div
+            class="bg-gradient-to-r from-amber-600 to-orange-700 p-8 text-white"
+          >
+            <h1
+              class="text-4xl md:text-5xl font-bold mb-3"
+              data-en="Pile Driver"
+              data-zh="打桩机"
+            >
+              Pile Driver
+            </h1>
+            <p
+              class="text-xl text-amber-100 mb-2"
+              data-en="Bitter • Burning • Manly"
+              data-zh="苦味 • 火辣 • 男性化"
+            >
+              Bitter • Burning • Manly
+            </p>
+            <p
+              class="text-amber-100 italic"
+              data-en="Inspired by VA-11 HALL-A"
+              data-zh="灵感来自 VA-11 HALL-A"
+            >
+              Inspired by VA-11 HALL-A
+            </p>
+          </div>
+
+          <div class="w-full h-64 md:h-96 bg-gray-200">
+            <img
+              src="/pile_driver.jpg"
+              alt="Pile Driver"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="md:col-span-1">
+            <div class="bg-white rounded-xl shadow-lg p-6 sticky top-6">
+              <h2
+                class="text-2xl font-bold text-gray-800 mb-4"
+                data-en="Ingredients"
+                data-zh="原料"
+              >
+                Ingredients
+              </h2>
+              <ul class="space-y-2 text-gray-700">
+                <li>• Blended Whiskey 50ml</li>
+                <li>• Amaretto 10ml</li>
+                <li>• Angostura Bitters 3 dashes</li>
+              </ul>
+              <div class="mt-4 pt-4 border-t border-gray-200">
+                <p
+                  class="text-sm text-gray-600"
+                  data-en="≈ Godfather"
+                  data-zh="≈ 教父"
+                >
+                  ≈ Godfather
+                </p>
+                <p
+                  class="text-sm text-gray-600 mt-2"
+                  data-en="Glass: Lowball + Ice"
+                  data-zh="杯具：低球杯 + 冰块"
+                >
+                  Glass: Lowball + Ice
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:col-span-2">
+            <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+              <h2
+                class="text-2xl font-bold text-gray-800 mb-6"
+                data-en="Instructions"
+                data-zh="制作步骤"
+              >
+                Instructions
+              </h2>
+
+              <div class="space-y-6">
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-8 h-8 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    1
+                  </div>
+                  <div>
+                    <p
+                      class="text-gray-700"
+                      data-en="Fill a lowball glass with ice."
+                      data-zh="在低球杯中装满冰块。"
+                    >
+                      Fill a lowball glass with ice.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-8 h-8 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    2
+                  </div>
+                  <div>
+                    <p
+                      class="text-gray-700"
+                      data-en="Pour blended whiskey and amaretto over ice."
+                      data-zh="倒入混合威士忌和杏仁利口酒。"
+                    >
+                      Pour blended whiskey and amaretto over ice.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-8 h-8 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    3
+                  </div>
+                  <div>
+                    <p
+                      class="text-gray-700"
+                      data-en="Add 3 dashes of Angostura bitters."
+                      data-zh="加入3滴安格斯图拉苦精。"
+                    >
+                      Add 3 dashes of Angostura bitters.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-8 h-8 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    4
+                  </div>
+                  <div>
+                    <p
+                      class="text-gray-700"
+                      data-en="Stir gently to combine."
+                      data-zh="轻轻搅拌混合。"
+                    >
+                      Stir gently to combine.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="mt-8 p-6 bg-amber-50 rounded-lg border-l-4 border-amber-600"
+              >
+                <p
+                  class="text-gray-700 italic"
+                  data-en="It doesn't burn as hard on the tongue but you better not have a sore throat when drinking it..."
+                  data-zh="不会灼伤舌头那么厉害，但喝的时候最好别有喉咙痛..."
+                >
+                  "It doesn't burn as hard on the tongue but you better not have
+                  a sore throat when drinking it..."
+                </p>
+              </div>
+
+              <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+                <h3
+                  class="font-bold text-gray-800 mb-2"
+                  data-en="Tips"
+                  data-zh="小贴士"
+                >
+                  Tips
+                </h3>
+                <p
+                  class="text-sm text-gray-700"
+                  data-en="This is a strong, spirit-forward cocktail. The amaretto adds a subtle sweetness that balances the whiskey's intensity, while the bitters add depth and complexity."
+                  data-zh="这是一款烈性、以烈酒为主的鸡尾酒。杏仁利口酒增添了微妙的甜味，平衡了威士忌的强烈，而苦精则增加了深度和复杂性。"
+                >
+                  This is a strong, spirit-forward cocktail. The amaretto adds a
+                  subtle sweetness that balances the whiskey's intensity, while
+                  the bitters add depth and complexity.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      function updateLanguage(lang: string) {
+        document.querySelectorAll("[data-en]").forEach((element) => {
+          if (lang === "zh" && element.getAttribute("data-zh")) {
+            element.textContent = element.getAttribute("data-zh");
+          } else if (element.getAttribute("data-en")) {
+            element.textContent = element.getAttribute("data-en");
+          }
+        });
+      }
+
+      const savedLang = localStorage.getItem("language") || "en";
+      updateLanguage(savedLang);
+
+      window.addEventListener("languageChange", (e: Event) => {
+        updateLanguage((e as CustomEvent).detail);
+      });
+    </script>
+  </body>
+</html>

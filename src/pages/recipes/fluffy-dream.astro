@@ -1,0 +1,277 @@
+---
+import NavBar from "../../components/NavBar.jsx";
+import LanguageToggle from "../../components/LanguageToggle.jsx";
+import GoogleAnalytics from "../../components/GoogleAnalytics.astro";
+import "../../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Fluffy Dream - A cyberpunk cocktail inspired by VA-11 HALL-A. Sweet and soft June Bug variation."
+    />
+    <title>Fluffy Dream Recipe - Jiahua Ma</title>
+    <GoogleAnalytics />
+  </head>
+  <body
+    class="bg-gradient-to-br from-[#99AFD7] via-[#B8C5E0] to-[#D4DDEB] min-h-screen"
+  >
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <NavBar />
+    <LanguageToggle client:load />
+
+    <main id="main-content" class="container mx-auto px-4 py-12">
+      <div class="max-w-4xl mx-auto">
+        <a
+          href="/recipes"
+          class="inline-flex items-center text-gray-700 hover:text-gray-900 mb-6 transition-colors"
+        >
+          <svg
+            class="w-5 h-5 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"></path>
+          </svg>
+          <span data-en="Back to Recipes" data-zh="返回食谱"
+            >Back to Recipes</span
+          >
+        </a>
+
+        <div class="bg-white rounded-xl shadow-xl overflow-hidden mb-8">
+          <div
+            class="bg-gradient-to-r from-green-400 to-emerald-500 p-8 text-white"
+          >
+            <h1
+              class="text-4xl md:text-5xl font-bold mb-3"
+              data-en="Fluffy Dream"
+              data-zh="蓬松梦"
+            >
+              Fluffy Dream
+            </h1>
+            <p
+              class="text-xl text-green-100 mb-2"
+              data-en="Sweet • Girly • Soft"
+              data-zh="甜蜜 • 女性化 • 温和"
+            >
+              Sweet • Girly • Soft
+            </p>
+            <p
+              class="text-green-100 italic"
+              data-en="Inspired by VA-11 HALL-A"
+              data-zh="灵感来自 VA-11 HALL-A"
+            >
+              Inspired by VA-11 HALL-A
+            </p>
+          </div>
+
+          <div class="w-full h-64 md:h-96 bg-gray-200">
+            <img
+              src="/fluffy_dream.jpg"
+              alt="Fluffy Dream"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="md:col-span-1">
+            <div class="bg-white rounded-xl shadow-lg p-6 sticky top-6">
+              <h2
+                class="text-2xl font-bold text-gray-800 mb-4"
+                data-en="Ingredients"
+                data-zh="原料"
+              >
+                Ingredients
+              </h2>
+              <ul class="space-y-2 text-gray-700">
+                <li>• Lime (3 pieces, muddled)</li>
+                <li>• Melon Liqueur 30ml</li>
+                <li>• Banana Liqueur 15ml</li>
+                <li>• Coconut Liqueur 15ml</li>
+                <li>• Sweet & Sour Mix 15ml</li>
+                <li>• Pineapple Juice 75ml</li>
+              </ul>
+              <div class="mt-4 pt-4 border-t border-gray-200">
+                <p
+                  class="text-sm text-gray-600"
+                  data-en="≈ June Bug"
+                  data-zh="≈ 六月虫"
+                >
+                  ≈ June Bug
+                </p>
+                <p
+                  class="text-sm text-gray-600 mt-2"
+                  data-en="Glass: Highball + Long Ice Cube + Straw"
+                  data-zh="杯具：高球杯 + 长冰块 + 吸管"
+                >
+                  Glass: Highball + Long Ice Cube + Straw
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:col-span-2">
+            <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+              <h2
+                class="text-2xl font-bold text-gray-800 mb-6"
+                data-en="Instructions"
+                data-zh="制作步骤"
+              >
+                Instructions
+              </h2>
+
+              <div class="space-y-6">
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    1
+                  </div>
+                  <div>
+                    <p
+                      class="text-gray-700"
+                      data-en="Muddle 3 pieces of lime in a shaker."
+                      data-zh="在摇酒器中捣碎3片青柠。"
+                    >
+                      Muddle 3 pieces of lime in a shaker.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    2
+                  </div>
+                  <div>
+                    <p
+                      class="text-gray-700"
+                      data-en="Add melon liqueur, banana liqueur, coconut liqueur, sweet & sour mix, and pineapple juice."
+                      data-zh="加入蜜瓜利口酒、香蕉利口酒、椰子利口酒、酸甜混合液和菠萝汁。"
+                    >
+                      Add melon liqueur, banana liqueur, coconut liqueur, sweet
+                      & sour mix, and pineapple juice.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    3
+                  </div>
+                  <div>
+                    <p
+                      class="text-gray-700"
+                      data-en="Add ice and shake vigorously until well chilled."
+                      data-zh="加冰块，用力摇匀至充分冰凉。"
+                    >
+                      Add ice and shake vigorously until well chilled.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    4
+                  </div>
+                  <div>
+                    <p
+                      class="text-gray-700"
+                      data-en="Strain into a highball glass with a long ice cube."
+                      data-zh="滤入装有长冰块的高球杯中。"
+                    >
+                      Strain into a highball glass with a long ice cube.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    5
+                  </div>
+                  <div>
+                    <p
+                      class="text-gray-700"
+                      data-en="Serve with a straw."
+                      data-zh="插入吸管即可享用。"
+                    >
+                      Serve with a straw.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="mt-8 p-6 bg-green-50 rounded-lg border-l-4 border-green-500"
+              >
+                <p
+                  class="text-gray-700 italic"
+                  data-en="A couple of these will make your tongue feel velvet-y. More of them and you'll be sleeping soundly."
+                  data-zh="喝几杯会让你的舌头感觉像天鹅绒一样。再多喝几杯，你就会睡得很香。"
+                >
+                  "A couple of these will make your tongue feel velvet-y. More
+                  of them and you'll be sleeping soundly."
+                </p>
+              </div>
+
+              <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+                <h3
+                  class="font-bold text-gray-800 mb-2"
+                  data-en="Tips"
+                  data-zh="小贴士"
+                >
+                  Tips
+                </h3>
+                <p
+                  class="text-sm text-gray-700"
+                  data-en="This is a tropical, fruit-forward cocktail with a smooth, creamy texture from the combination of melon, banana, and coconut liqueurs. The muddled lime adds a bright, citrusy note that cuts through the sweetness."
+                  data-zh="这是一款热带风味的水果鸡尾酒，蜜瓜、香蕉和椰子利口酒的组合带来柔滑、奶油般的质地。捣碎的青柠增添了明亮的柑橘味，中和了甜味。"
+                >
+                  This is a tropical, fruit-forward cocktail with a smooth,
+                  creamy texture from the combination of melon, banana, and
+                  coconut liqueurs. The muddled lime adds a bright, citrusy note
+                  that cuts through the sweetness.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      function updateLanguage(lang: string) {
+        document.querySelectorAll("[data-en]").forEach((element) => {
+          if (lang === "zh" && element.getAttribute("data-zh")) {
+            element.textContent = element.getAttribute("data-zh");
+          } else if (element.getAttribute("data-en")) {
+            element.textContent = element.getAttribute("data-en");
+          }
+        });
+      }
+
+      const savedLang = localStorage.getItem("language") || "en";
+      updateLanguage(savedLang);
+
+      window.addEventListener("languageChange", (e: Event) => {
+        updateLanguage((e as CustomEvent).detail);
+      });
+    </script>
+  </body>
+</html>
