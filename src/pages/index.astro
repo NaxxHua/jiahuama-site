@@ -1,5 +1,6 @@
 ---
 import NavBar from "../components/NavBar.jsx";
+import LanguageToggle from "../components/LanguageToggle.jsx";
 import "../styles/global.css";
 ---
 
@@ -7,13 +8,295 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jiahua Ma (test)</title>
+    <meta
+      name="description"
+      content="Jiahua Ma - Design Engineer at Visa, table tennis athlete, and game developer. Building accessible design systems and creating engaging experiences."
+    />
+    <title>Jiahua Ma - Design Engineer, Athlete, Game Developer</title>
   </head>
-  <body class="bg-gray-100">
+  <body
+    class="bg-gradient-to-br from-[#99AFD7] via-[#B8C5E0] to-[#D4DDEB] min-h-screen"
+  >
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <NavBar />
-    <div class="container mx-auto text-center py-8">
-      <h1 class="text-4xl font-bold mt-8">Welcome to My Personal Site</h1>
-      <hr class="my-4" />
-    </div>
+    <LanguageToggle client:load />
+
+    <!-- Hero Section -->
+    <main id="main-content" class="container mx-auto px-4 py-16">
+      <div class="text-center max-w-4xl mx-auto">
+        <h1 class="text-6xl md:text-7xl font-bold mb-6 text-gray-900">
+          Jiahua Ma
+        </h1>
+        <p
+          class="text-xl md:text-2xl text-gray-600 mb-4 font-normal"
+          data-en="Design Engineer • Athlete • Game Developer"
+          data-zh="设计工程师 • 运动员 • 游戏开发者"
+        >
+          Design Engineer • Athlete • Game Developer
+        </p>
+        <p
+          class="text-base text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed"
+          data-en="Building intuitive experiences at Visa, competing in table tennis, and creating games."
+          data-zh="在Visa构建直观体验，征战乒乓球赛场，开发游戏作品。"
+        >
+          Building intuitive experiences at Visa, competing in table tennis, and
+          creating games.
+        </p>
+
+        <!-- Quick Links -->
+        <nav
+          class="grid md:grid-cols-3 gap-6 mb-16"
+          aria-label="Main navigation"
+        >
+          <a
+            href="/portfolio"
+            class="group bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all transform hover:-translate-y-2 focus:shadow-2xl"
+            aria-label="Portfolio - Explore my tech stack and professional projects"
+          >
+            <div class="space-y-4">
+              <h2
+                class="text-2xl font-bold text-gray-800"
+                data-en="Portfolio"
+                data-zh="作品集"
+              >
+                Portfolio
+              </h2>
+              <p
+                class="text-gray-700"
+                data-en="Explore my tech stack and professional projects"
+                data-zh="探索我的技术栈和专业项目"
+              >
+                Explore my tech stack and professional projects
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="/recipes"
+            class="group bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all transform hover:-translate-y-2 focus:shadow-2xl"
+            aria-label="Recipes - Discover my favorite cocktails and dishes"
+          >
+            <div class="space-y-4">
+              <h2
+                class="text-2xl font-bold text-gray-800"
+                data-en="Recipes"
+                data-zh="食谱"
+              >
+                Recipes
+              </h2>
+              <p
+                class="text-gray-700"
+                data-en="Discover my favorite cocktails and dishes"
+                data-zh="发现我最喜欢的鸡尾酒和菜肴"
+              >
+                Discover my favorite cocktails and dishes
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="/about"
+            class="group bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all transform hover:-translate-y-2 focus:shadow-2xl"
+            aria-label="About Me - Learn more about my journey and interests"
+          >
+            <div class="space-y-4">
+              <h2
+                class="text-2xl font-bold text-gray-800"
+                data-en="About Me"
+                data-zh="关于我"
+              >
+                About Me
+              </h2>
+              <p
+                class="text-gray-700"
+                data-en="Learn more about my journey and interests"
+                data-zh="了解更多关于我的旅程和兴趣"
+              >
+                Learn more about my journey and interests
+              </p>
+            </div>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Highlights Section -->
+      <section
+        class="max-w-6xl mx-auto mt-16"
+        aria-labelledby="highlights-heading"
+      >
+        <h2
+          id="highlights-heading"
+          class="text-3xl font-bold text-center mb-12 text-gray-800"
+          data-en="Highlights"
+          data-zh="亮点"
+        >
+          Highlights
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Visa Design System -->
+          <a
+            href="https://design.visa.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all border-t-4 focus:shadow-xl"
+            style="border-top-color: #1434CB;"
+            aria-label="Visa Inc. - Design Engineer - View design system (opens in new tab)"
+          >
+            <div class="flex items-center gap-4">
+              <div class="w-16 h-16 flex-shrink-0">
+                <img
+                  src="/src/assets/Visa_Brandmark_Blue_RGB_2021.png"
+                  alt="Visa logo"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <div class="flex-1">
+                <h3
+                  class="font-bold text-lg mb-1 text-gray-800"
+                  data-en="Visa Inc."
+                  data-zh="Visa公司"
+                >
+                  Visa Inc.
+                </h3>
+                <p
+                  class="text-gray-700 text-sm"
+                  data-en="Design Engineer"
+                  data-zh="设计工程师"
+                >
+                  Design Engineer
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <!-- PsySpace -->
+          <a
+            href="/portfolio"
+            class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all border-t-4 focus:shadow-xl"
+            style="border-top-color: #d3c8e7;"
+            aria-label="PsySpace - Co-founder - View project details"
+          >
+            <div class="flex items-center gap-4">
+              <div class="w-16 h-16 flex-shrink-0">
+                <img
+                  src="/src/assets/Psy Space.png"
+                  alt="PsySpace logo"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <div class="flex-1">
+                <h3 class="font-bold text-lg mb-1 text-gray-800">PsySpace</h3>
+                <p
+                  class="text-gray-700 text-sm"
+                  data-en="Co-founder"
+                  data-zh="联合创始人"
+                >
+                  Co-founder
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <!-- CSCW 2020 -->
+          <a
+            href="https://dl.acm.org/doi/abs/10.1145/3449202"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all border-t-4 focus:shadow-xl"
+            style="border-top-color: #bd0012;"
+            aria-label="CSCW 2020 - Co-authored research paper - Read paper (opens in new tab)"
+          >
+            <div class="flex items-center gap-4">
+              <div class="w-16 h-16 flex-shrink-0">
+                <img
+                  src="/src/assets/cscw.png"
+                  alt="CSCW Conference logo"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <div class="flex-1">
+                <h3 class="font-bold text-lg mb-1 text-gray-800">CSCW 2020</h3>
+                <p
+                  class="text-gray-700 text-sm"
+                  data-en="Co-authored research paper"
+                  data-zh="合著研究论文"
+                >
+                  Co-authored research paper
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <!-- Table Tennis -->
+          <a
+            href="https://usatt.simplycompete.com/userAccount/up/177118"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all border-t-4 focus:shadow-xl"
+            style="border-top-color: #00609f;"
+            aria-label="Table Tennis - USATT Competitive Player - View player profile (opens in new tab)"
+          >
+            <div class="flex items-center gap-4">
+              <div class="w-16 h-16 flex-shrink-0">
+                <img
+                  src="/src/assets/USA_Table_Tennis_logo.png"
+                  alt="USA Table Tennis logo"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <div class="flex-1">
+                <h3
+                  class="font-bold text-lg mb-1 text-gray-800"
+                  data-en="Table Tennis"
+                  data-zh="乒乓球"
+                >
+                  Table Tennis
+                </h3>
+                <p
+                  class="text-gray-700 text-sm"
+                  data-en="USATT Competitive Player"
+                  data-zh="USATT竞技选手"
+                >
+                  USATT Competitive Player
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <div class="text-center mt-16">
+        <a
+          href="/contact"
+          class="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transform hover:scale-105 transition-all focus:shadow-xl focus:scale-105"
+          aria-label="Get in touch - Contact Jiahua Ma"
+        >
+          <span data-en="Get In Touch →" data-zh="联系我 →">Get In Touch →</span
+          >
+        </a>
+      </div>
+    </main>
+
+    <script>
+      function updateLanguage(lang: string) {
+        document.querySelectorAll("[data-en]").forEach((element) => {
+          if (lang === "zh" && element.getAttribute("data-zh")) {
+            element.textContent = element.getAttribute("data-zh");
+          } else if (element.getAttribute("data-en")) {
+            element.textContent = element.getAttribute("data-en");
+          }
+        });
+      }
+
+      // Initialize language on page load
+      const savedLang = localStorage.getItem("language") || "en";
+      updateLanguage(savedLang);
+
+      // Listen for language changes
+      window.addEventListener("languageChange", (e: Event) => {
+        updateLanguage((e as CustomEvent).detail);
+      });
+    </script>
   </body>
 </html>

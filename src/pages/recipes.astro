@@ -1,0 +1,154 @@
+---
+import NavBar from "../components/NavBar.jsx";
+import LanguageToggle from "../components/LanguageToggle.jsx";
+import "../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Jiahua Ma's recipes collection - Sharing my favorite cocktails and dishes from around the world."
+    />
+    <title>Recipes Collection - Jiahua Ma</title>
+  </head>
+  <body
+    class="bg-gradient-to-br from-[#99AFD7] via-[#B8C5E0] to-[#D4DDEB] min-h-screen"
+  >
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <NavBar />
+    <LanguageToggle client:load />
+
+    <main id="main-content" class="container mx-auto px-4 py-12">
+      <h1
+        class="text-5xl font-bold text-center mb-4 text-gray-800"
+        data-en="My Recipes Collection"
+        data-zh="我的食谱集"
+      >
+        My Recipes Collection
+      </h1>
+      <p
+        class="text-center text-gray-700 mb-12 text-lg"
+        data-en="Sharing my favorite cocktails and dishes"
+        data-zh="分享我最喜欢的鸡尾酒和菜肴"
+      >
+        Sharing my favorite cocktails and dishes
+      </p>
+
+      <!-- Cocktails Section -->
+      <section class="mb-16">
+        <h2
+          class="text-3xl font-bold text-gray-800 mb-8"
+          data-en="Cocktails"
+          data-zh="鸡尾酒"
+        >
+          Cocktails
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Add your cocktail recipes here -->
+          <div
+            class="bg-white/80 backdrop-blur rounded-xl shadow-lg p-8 text-center border-2 border-dashed border-gray-300"
+          >
+            <p
+              class="text-gray-500"
+              data-en="Add your cocktail recipes..."
+              data-zh="在此添加您的鸡尾酒配方..."
+            >
+              Add your cocktail recipes...
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dishes Section -->
+      <section class="mb-16">
+        <h2
+          class="text-3xl font-bold text-gray-800 mb-8"
+          data-en="Dishes"
+          data-zh="菜肴"
+        >
+          Dishes
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Add your dish recipes here -->
+          <div
+            class="bg-white/80 backdrop-blur rounded-xl shadow-lg p-8 text-center border-2 border-dashed border-gray-300"
+          >
+            <p
+              class="text-gray-500"
+              data-en="Add your dish recipes..."
+              data-zh="在此添加您的菜肴配方..."
+            >
+              Add your dish recipes...
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recipe Template Guide -->
+      <section
+        class="bg-white/80 backdrop-blur rounded-xl shadow-lg p-8 max-w-2xl mx-auto"
+      >
+        <h2
+          class="text-2xl font-bold text-gray-800 mb-4"
+          data-en="Recipe Template"
+          data-zh="配方模板"
+        >
+          Recipe Template
+        </h2>
+        <p
+          class="text-gray-600 mb-4"
+          data-en="Use this structure to add your recipes:"
+          data-zh="使用此结构添加您的配方："
+        >
+          Use this structure to add your recipes:
+        </p>
+
+        <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+          <h3 class="text-xl font-bold text-gray-800 mb-3">Recipe Name</h3>
+
+          <div class="mb-4">
+            <h4 class="font-semibold text-gray-700 mb-2">Ingredients</h4>
+            <ul class="space-y-1 text-gray-600 text-sm">
+              <li>• Ingredient 1 with amount</li>
+              <li>• Ingredient 2 with amount</li>
+              <li>• Ingredient 3 with amount</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-gray-700 mb-2">Instructions</h4>
+            <ol class="space-y-2 text-gray-600 text-sm">
+              <li><strong>1.</strong> First step description</li>
+              <li><strong>2.</strong> Second step description</li>
+              <li><strong>3.</strong> Third step description</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      function updateLanguage(lang: string) {
+        document.querySelectorAll("[data-en]").forEach((element) => {
+          if (lang === "zh" && element.getAttribute("data-zh")) {
+            element.textContent = element.getAttribute("data-zh");
+          } else if (element.getAttribute("data-en")) {
+            element.textContent = element.getAttribute("data-en");
+          }
+        });
+      }
+
+      // Initialize language on page load
+      const savedLang = localStorage.getItem("language") || "en";
+      updateLanguage(savedLang);
+
+      // Listen for language changes
+      window.addEventListener("languageChange", (e: Event) => {
+        updateLanguage((e as CustomEvent).detail);
+      });
+    </script>
+  </body>
+</html>

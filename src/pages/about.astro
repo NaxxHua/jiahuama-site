@@ -1,29 +1,244 @@
 ---
-import NavBar from '../components/NavBar.jsx';
-import '../styles/global.css';
+import NavBar from "../components/NavBar.jsx";
+import LanguageToggle from "../components/LanguageToggle.jsx";
+import "../styles/global.css";
 ---
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Me - Jiahua Ma</title>
+    <meta
+      name="description"
+      content="About Jiahua Ma - Design Engineer at Visa, Co-founder of PsySpace, game developer, and competitive table tennis player. Learn about my journey and projects."
+    />
+    <title>About - Jiahua Ma</title>
   </head>
-  <body class="bg-gray-100">
+  <body
+    class="bg-gradient-to-br from-[#99AFD7] via-[#B8C5E0] to-[#D4DDEB] min-h-screen"
+  >
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <NavBar />
-    <div class="container mx-auto py-8">
-      <h1 class="text-4xl font-bold mt-8">About Me</h1>
-      <div class="mt-4 space-y-4">
-        <p>
-          Born and raised in Xinjiang, China, I started my journey in the US in 2014. Initially interested in comparative literature, I redirected my pursuits towards programming. With degrees in Informatics (Master's with a focus on Human-Computer Interaction) and Applied Data Sciences (Bachelor's) from Penn State University, I have been contributing to Visa Inc. since February 2022.
-        </p>
-        <p>
-          As a Co-founder and Front-end Lead at PsySpace, I have led projects using technology for mental health support. My academic research at Penn State has led to notable contributions, including co-authoring a paper for CSCW 2020.
-        </p>
-        <p>
-          Outside of work, I run a game studio and have held various roles in the Chinese Theater and Movie Society at Penn State.
-        </p>
-      </div>
-    </div>
+    <LanguageToggle client:load />
+
+    <main id="main-content" class="container mx-auto px-4 py-12 max-w-4xl">
+      <h1
+        class="text-5xl font-bold mt-8 mb-8 text-gray-900"
+        data-en="About Me"
+        data-zh="关于我"
+      >
+        About Me
+      </h1>
+
+      <article class="bg-white rounded-xl shadow-lg p-8 space-y-6">
+        <!-- Journey Section -->
+        <section>
+          <h2
+            class="text-2xl font-bold text-gray-800 mb-4"
+            data-en="My Journey"
+            data-zh="我的旅程"
+          >
+            My Journey
+          </h2>
+          <p
+            class="text-gray-700 leading-relaxed"
+            data-en="Born and raised in Xinjiang, China, I started my journey in the US in 2014. Initially interested in comparative literature, I redirected my pursuits towards programming. With degrees in Informatics (Master's with a focus on Human-Computer Interaction) and Applied Data Sciences (Bachelor's) from Penn State University, I transitioned into the tech industry."
+            data-zh="我出生并成长于中国新疆，2014年开始了我在美国的旅程。最初对比较文学感兴趣，后来将兴趣转向了编程。我在宾夕法尼亚州立大学获得了信息学硕士学位（专注于人机交互）和应用数据科学学士学位，随后进入了科技行业。"
+          >
+            Born and raised in Xinjiang, China, I started my journey in the US
+            in 2014. Initially interested in comparative literature, I
+            redirected my pursuits towards programming. With degrees in
+            Informatics (Master's with a focus on Human-Computer Interaction)
+            and Applied Data Sciences (Bachelor's) from Penn State University, I
+            transitioned into the tech industry.
+          </p>
+        </section>
+
+        <!-- Visa Life Section -->
+        <section>
+          <h2
+            class="text-2xl font-bold text-gray-800 mb-4"
+            data-en="Life at Visa"
+            data-zh="在Visa的生活"
+          >
+            Life at Visa
+          </h2>
+          <p
+            class="text-gray-700 leading-relaxed mb-4"
+            data-en="I've been with Visa Inc. in Austin, Texas since February 2022, where I've spent nearly 4 years as a Design Engineer. My main focus has been building and maintaining design systems that bridge the gap between design and engineering."
+            data-zh="自2022年2月起，我在德克萨斯州奥斯汀的Visa担任设计工程师，至今已近4年时间。我的主要工作是构建和维护连接设计与工程的设计系统。"
+          >
+            I've been with Visa Inc. in Austin, Texas since February 2022, where
+            I've spent nearly 4 years as a Design Engineer. My main focus has
+            been building and maintaining design systems that bridge the gap
+            between design and engineering.
+          </p>
+          <p
+            class="text-gray-700 leading-relaxed mb-4"
+            data-en="One of my proudest achievements is building the Flutter design system library. This comprehensive component library now serves thousands of users across many projects within Visa. Working on design systems has taught me the importance of scalability, documentation, and developer experience."
+            data-zh="我最自豪的成就之一是构建了Flutter设计系统库。这个全面的组件库现在为Visa内部的数千名用户和众多项目提供服务。设计系统的工作让我深刻理解了可扩展性、文档和开发者体验的重要性。"
+          >
+            One of my proudest achievements is building the Flutter design
+            system library. This comprehensive component library now serves
+            thousands of users across many projects within Visa. Working on
+            design systems has taught me the importance of scalability,
+            documentation, and developer experience.
+          </p>
+          <p
+            class="text-gray-700 leading-relaxed"
+            data-en="Austin has been an incredible place to grow both professionally and personally. The city's vibrant tech scene, combined with Visa's innovative culture, has provided endless opportunities for learning and collaboration. I'm grateful to work alongside talented engineers and designers who push me to become better every day."
+            data-zh="奥斯汀是一个让我在职业和个人方面都能成长的绝佳城市。这座城市充满活力的科技氛围，加上Visa创新的企业文化，为我提供了无限的学习和协作机会。我很感激能与才华横溢的工程师和设计师共事，他们每天都在激励我变得更好。"
+          >
+            Austin has been an incredible place to grow both professionally and
+            personally. The city's vibrant tech scene, combined with Visa's
+            innovative culture, has provided endless opportunities for learning
+            and collaboration. I'm grateful to work alongside talented engineers
+            and designers who push me to become better every day.
+          </p>
+        </section>
+
+        <!-- Other Projects Section -->
+        <section>
+          <h2
+            class="text-2xl font-bold text-gray-800 mb-4"
+            data-en="Other Projects & Passions"
+            data-zh="其他项目与热情"
+          >
+            Other Projects & Passions
+          </h2>
+          <div class="space-y-4">
+            <div>
+              <h3
+                class="font-semibold text-lg text-gray-800 mb-2"
+                data-en="Game Development"
+                data-zh="游戏开发"
+              >
+                Game Development
+              </h3>
+              <p
+                class="text-gray-700 leading-relaxed"
+                data-en="I'm currently part of a game studio working on an auto chess game. This project combines strategic gameplay with competitive elements. We're planning to launch on Steam in the first half of 2026."
+                data-zh="我目前加入了一个游戏工作室，正在开发一款自走棋游戏。这个项目将策略玩法与竞技元素相结合。我们计划在2026年上半年登录Steam。"
+              >
+                I'm currently part of a game studio working on an auto chess
+                game. This project combines strategic gameplay with competitive
+                elements. We're planning to launch on Steam in the first half of
+                2026.
+              </p>
+            </div>
+
+            <div>
+              <h3
+                class="font-semibold text-lg text-gray-800 mb-2"
+                data-en="PsySpace"
+                data-zh="PsySpace"
+              >
+                PsySpace
+              </h3>
+              <p
+                class="text-gray-700 leading-relaxed"
+                data-en="As Co-founder and Front-end Lead at PsySpace, I led the development of a mental health support platform. This was the beginning of my Flutter journey. The experience taught me the importance of empathetic design and building technology that truly helps people."
+                data-zh="作为PsySpace的联合创始人和前端负责人，我领导了心理健康支持平台的开发。这是我Flutter旅程的开始。这段经历让我深刻体会到同理心设计的重要性，以及构建真正帮助人们的技术的意义。"
+              >
+                As Co-founder and Front-end Lead at PsySpace, I led the
+                development of a mental health support platform. This was the
+                beginning of my Flutter journey. The experience taught me the
+                importance of empathetic design and building technology that
+                truly helps people.
+              </p>
+            </div>
+
+            <div>
+              <h3
+                class="font-semibold text-lg text-gray-800 mb-2"
+                data-en="Academic Research"
+                data-zh="学术研究"
+              >
+                Academic Research
+              </h3>
+              <p
+                class="text-gray-700 leading-relaxed"
+                data-en="During my time at Penn State, I worked under my academic mentor Benjamin V. Hanrahan in the User Agency Lab. I co-authored a paper for CSCW 2020, contributing to research in Human-Computer Interaction. Although the lab has since disbanded, this academic foundation continues to influence how I approach user experience and interface design."
+                data-zh="在宾州州立大学期间，我在导师Benjamin V. Hanrahan的User Agency Lab工作。我合著了一篇CSCW 2020的论文，为人机交互研究做出了贡献。虽然实验室已经解散，但这一学术基础持续影响着我处理用户体验和界面设计的方式。"
+              >
+                During my time at Penn State, I worked under my academic mentor
+                <a
+                  href="https://scholar.google.com/citations?user=Tp5CvKgAAAAJ&hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-blue-600 hover:underline">Benjamin V. Hanrahan</a
+                >
+                in the User Agency Lab. I co-authored a paper for CSCW 2020, contributing
+                to research in Human-Computer Interaction. Although the lab has since
+                disbanded, this academic foundation continues to influence how I
+                approach user experience and interface design.
+              </p>
+            </div>
+
+            <div>
+              <h3
+                class="font-semibold text-lg text-gray-800 mb-2"
+                data-en="Table Tennis"
+                data-zh="乒乓球"
+              >
+                Table Tennis
+              </h3>
+              <p
+                class="text-gray-700 leading-relaxed"
+                data-en="I'm a competitive table tennis player, and the sport has taught me valuable lessons about focus, strategy, and continuous improvement that I apply to my work in technology every day."
+                data-zh="我是一名竞技乒乓球运动员，这项运动教会了我关于专注、策略和持续改进的宝贵经验，我每天都将这些应用到我的技术工作中。"
+              >
+                I'm a competitive table tennis player, and the sport has taught
+                me valuable lessons about focus, strategy, and continuous
+                improvement that I apply to my work in technology every day.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Interests Section -->
+        <section>
+          <h2
+            class="text-2xl font-bold text-gray-800 mb-4"
+            data-en="Beyond Tech"
+            data-zh="技术之外"
+          >
+            Beyond Tech
+          </h2>
+          <p
+            class="text-gray-700 leading-relaxed"
+            data-en="When I'm not coding, you can find me experimenting with cocktail recipes, cooking dishes from around the world, or exploring Austin's food scene. I believe that creativity in the kitchen and creativity in code come from the same place: a desire to craft experiences that bring joy to others."
+            data-zh="当我不在写代码的时候，你可以发现我在尝试调制鸡尾酒、烹饪来自世界各地的菜肴，或者探索奥斯汀的美食。我相信厨房里的创造力和代码中的创造力源自同一个地方：为他人创造带来快乐的体验。"
+          >
+            When I'm not coding, you can find me experimenting with cocktail
+            recipes, cooking dishes from around the world, or exploring Austin's
+            food scene. I believe that creativity in the kitchen and creativity
+            in code come from the same place: a desire to craft experiences that
+            bring joy to others.
+          </p>
+        </section>
+      </article>
+    </main>
+
+    <script>
+      function updateLanguage(lang: string) {
+        document.querySelectorAll("[data-en]").forEach((element) => {
+          if (lang === "zh" && element.getAttribute("data-zh")) {
+            element.textContent = element.getAttribute("data-zh");
+          } else if (element.getAttribute("data-en")) {
+            element.textContent = element.getAttribute("data-en");
+          }
+        });
+      }
+
+      // Initialize language on page load
+      const savedLang = localStorage.getItem("language") || "en";
+      updateLanguage(savedLang);
+
+      // Listen for language changes
+      window.addEventListener("languageChange", (e: Event) => {
+        updateLanguage((e as CustomEvent).detail);
+      });
+    </script>
   </body>
 </html>
