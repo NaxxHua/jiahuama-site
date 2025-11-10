@@ -1,0 +1,335 @@
+---
+import NavBar from "../../components/NavBar.jsx";
+import LanguageToggle from "../../components/LanguageToggle.jsx";
+import "../../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Dapanji (Big Plate Chicken) - A classic Xinjiang dish with tender chicken, potatoes, and bold spices."
+    />
+    <title>Dapanji Recipe - Jiahua Ma</title>
+  </head>
+  <body
+    class="bg-gradient-to-br from-[#99AFD7] via-[#B8C5E0] to-[#D4DDEB] min-h-screen"
+  >
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <NavBar />
+    <LanguageToggle client:load />
+
+    <main id="main-content" class="container mx-auto px-4 py-12">
+      <div class="max-w-4xl mx-auto">
+        <!-- Back Button -->
+        <a
+          href="/recipes"
+          class="inline-flex items-center text-gray-700 hover:text-gray-900 mb-6 transition-colors"
+        >
+          <svg
+            class="w-5 h-5 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"></path>
+          </svg>
+          <span data-en="Back to Recipes" data-zh="返回食谱">Back to Recipes</span>
+        </a>
+
+        <!-- Recipe Header -->
+        <div class="bg-white rounded-xl shadow-xl overflow-hidden mb-8">
+          <div class="bg-gradient-to-r from-orange-500 to-red-500 p-8 text-white">
+            <h1
+              class="text-4xl md:text-5xl font-bold mb-3"
+              data-en="Dapanji (Big Plate Chicken)"
+              data-zh="大盘鸡"
+            >
+              Dapanji (Big Plate Chicken)
+            </h1>
+            <p
+              class="text-xl text-orange-100"
+              data-en="A classic Xinjiang dish"
+              data-zh="新疆经典菜肴"
+            >
+              A classic Xinjiang dish
+            </p>
+          </div>
+
+          <!-- Recipe Image -->
+          <div class="w-full h-96 bg-gray-200">
+            <img
+              src="/dapanji.png"
+              alt="Dapanji (Big Plate Chicken)"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- Recipe Content -->
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Ingredients -->
+          <div class="md:col-span-1">
+            <div class="bg-white rounded-xl shadow-lg p-6 sticky top-6">
+              <h2
+                class="text-2xl font-bold text-gray-800 mb-4 flex items-center"
+              >
+                <span class="text-orange-500 mr-2">🥘</span>
+                <span data-en="Ingredients" data-zh="原材料">Ingredients</span>
+              </h2>
+              <ul class="space-y-2 text-gray-700">
+                <li data-en="• Whole chicken or several chicken thighs, cut into pieces" data-zh="• 鸡肉（整只或若干鸡大腿），切块">
+                  • Whole chicken or several chicken thighs, cut into pieces
+                </li>
+                <li data-en="• 1 onion, cut into chunks" data-zh="• 洋葱1个，切块">
+                  • 1 onion, cut into chunks
+                </li>
+                <li data-en="• Scallions, ginger, garlic" data-zh="• 葱，姜，蒜">
+                  • Scallions, ginger, garlic
+                </li>
+                <li data-en="• Dried chili peppers" data-zh="• 干辣椒">
+                  • Dried chili peppers
+                </li>
+                <li data-en="• Bay leaves, star anise, Sichuan peppercorns" data-zh="• 香叶，八角，花椒">
+                  • Bay leaves, star anise, Sichuan peppercorns
+                </li>
+                <li data-en="• 1 green pepper, cut into chunks" data-zh="• 青椒1个，切块">
+                  • 1 green pepper, cut into chunks
+                </li>
+                <li data-en="• 2-3 potatoes, peeled and cut into large chunks" data-zh="• 土豆2-3个，削皮切大块">
+                  • 2-3 potatoes, peeled and cut into large chunks
+                </li>
+                <li data-en="• 1 tbsp yellow soybean paste" data-zh="• 黄豆酱1勺">
+                  • 1 tbsp yellow soybean paste
+                </li>
+                <li data-en="• 1 tbsp doubanjiang (broad bean paste)" data-zh="• 豆瓣酱1勺">
+                  • 1 tbsp doubanjiang (broad bean paste)
+                </li>
+                <li data-en="• 2 tbsp light soy sauce" data-zh="• 生抽2勺">
+                  • 2 tbsp light soy sauce
+                </li>
+                <li data-en="• 1/2 tbsp dark soy sauce" data-zh="• 老抽半勺">
+                  • 1/2 tbsp dark soy sauce
+                </li>
+                <li data-en="• 1/2 tbsp vinegar" data-zh="• 醋半勺">
+                  • 1/2 tbsp vinegar
+                </li>
+                <li data-en="• Rock sugar" data-zh="• 冰糖">• Rock sugar</li>
+                <li data-en="• 1 bottle beer" data-zh="• 啤酒1瓶">
+                  • 1 bottle beer
+                </li>
+                <li data-en="• Belt noodles (optional)" data-zh="• 皮带面（可选）">
+                  • Belt noodles (optional)
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Instructions -->
+          <div class="md:col-span-2">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+              <h2
+                class="text-2xl font-bold text-gray-800 mb-6 flex items-center"
+              >
+                <span class="text-orange-500 mr-2">👨‍🍳</span>
+                <span data-en="Instructions" data-zh="做法">Instructions</span>
+              </h2>
+
+              <!-- Sauce Preparation -->
+              <div class="bg-orange-50 rounded-lg p-6 mb-8 border-l-4 border-orange-500">
+                <h3
+                  class="font-bold text-gray-800 mb-3 flex items-center"
+                >
+                  <span class="text-orange-500 mr-2">🔪</span>
+                  <span data-en="Sauce Mix Preparation" data-zh="酱料准备">Sauce Mix Preparation</span>
+                </h3>
+                <p class="text-gray-700" data-en="Combine in a bowl: 1 tbsp yellow soybean paste + 1 tbsp doubanjiang + 2 tbsp light soy sauce + 1/2 tbsp dark soy sauce + 1/2 tbsp vinegar. Mix well and set aside." data-zh="在碗中混合：1勺黄豆酱 + 1勺豆瓣酱 + 2勺生抽 + 半勺老抽 + 半勺醋。搅拌均匀备用。">
+                  Combine in a bowl: 1 tbsp yellow soybean paste + 1 tbsp
+                  doubanjiang + 2 tbsp light soy sauce + 1/2 tbsp dark soy sauce
+                  + 1/2 tbsp vinegar. Mix well and set aside.
+                </p>
+              </div>
+
+              <!-- Cooking Steps -->
+              <div class="space-y-6">
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    1
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-gray-800 mb-2" data-en="Caramelize the Sugar" data-zh="炒糖色">
+                      Caramelize the Sugar
+                    </h3>
+                    <p class="text-gray-700" data-en="Add rock sugar to cold oil in a wok. Cook over medium-low heat, stirring constantly, until the sugar turns dark brown and starts to bubble. This creates the signature caramel color and flavor." data-zh="冷油加入冰糖，中小火不停搅拌，直到冰糖变成深棕色并开始起大泡。这会创造出标志性的焦糖色和风味。">
+                      Add rock sugar to cold oil in a wok. Cook over medium-low
+                      heat, stirring constantly, until the sugar turns dark brown
+                      and starts to bubble. This creates the signature caramel
+                      color and flavor.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    2
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-gray-800 mb-2" data-en="Sear the Chicken" data-zh="煎鸡肉">
+                      Sear the Chicken
+                    </h3>
+                    <p class="text-gray-700" data-en="Immediately add the chicken pieces to the caramelized sugar. Turn heat to high and stir-fry vigorously until all the water evaporates from the chicken. Be patient, as some chicken releases a lot of moisture. Continue until the skin turns a beautiful caramel brown color." data-zh="立即倒入鸡肉块到焦糖中。转大火大力翻炒，直到鸡肉的水分完全蒸发。要有耐心，因为有些鸡肉会释放很多水分。继续炒到表皮变成漂亮的焦糖棕色。">
+                      Immediately add the chicken pieces to the caramelized
+                      sugar. Turn heat to high and stir-fry vigorously until all
+                      the water evaporates from the chicken. Be patient, as some
+                      chicken releases a lot of moisture. Continue until the skin
+                      turns a beautiful caramel brown color.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    3
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-gray-800 mb-2" data-en="Add Aromatics" data-zh="加入香料">
+                      Add Aromatics
+                    </h3>
+                    <p class="text-gray-700" data-en="Add scallions, ginger, garlic, dried chili peppers, bay leaves, star anise, and Sichuan peppercorns. Stir-fry until fragrant and the spices release their aroma, about 1-2 minutes." data-zh="加入葱、姜、蒜、干辣椒、香叶、八角和花椒。翻炒至香料释放香味，约1-2分钟。">
+                      Add scallions, ginger, garlic, dried chili peppers, bay
+                      leaves, star anise, and Sichuan peppercorns. Stir-fry until
+                      fragrant and the spices release their aroma, about 1-2
+                      minutes.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    4
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-gray-800 mb-2" data-en="Add Sauce and Onions" data-zh="加入酱料和洋葱">
+                      Add Sauce and Onions
+                    </h3>
+                    <p class="text-gray-700" data-en="Pour in the prepared sauce mixture and stir-fry until the sauce coats the chicken and becomes aromatic. Add the onion chunks and stir to combine everything evenly." data-zh="倒入准备好的酱料混合物，翻炒至酱料包裹鸡肉并变得香气四溢。加入洋葱块，翻炒均匀。">
+                      Pour in the prepared sauce mixture and stir-fry until the
+                      sauce coats the chicken and becomes aromatic. Add the onion
+                      chunks and stir to combine everything evenly.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    5
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-gray-800 mb-2" data-en="Braise with Beer" data-zh="啤酒焖煮">
+                      Braise with Beer
+                    </h3>
+                    <p class="text-gray-700" data-en="Add the entire bottle of beer and the potato chunks. Bring to a boil, then reduce heat to low. Cover and simmer for 12 minutes. The beer adds depth of flavor and helps tenderize the chicken." data-zh="加入整瓶啤酒和土豆块。煮沸后转小火。盖上盖子焖12分钟。啤酒增添风味深度并帮助鸡肉变嫩。">
+                      Add the entire bottle of beer and the potato chunks. Bring
+                      to a boil, then reduce heat to low. Cover and simmer for 12
+                      minutes. The beer adds depth of flavor and helps tenderize
+                      the chicken.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="flex-shrink-0 w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold"
+                  >
+                    6
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-gray-800 mb-2" data-en="Finish and Serve" data-zh="完成并上桌">
+                      Finish and Serve
+                    </h3>
+                    <p class="text-gray-700 mb-3" data-en="Add the green pepper chunks. If serving with belt noodles, start cooking them now in a separate pot. Increase heat and reduce the sauce to your desired consistency, stirring occasionally." data-zh="加入青椒块。如果要配皮带面，现在可以在另一个锅中开始煮面。加大火力收汁至满意的浓稠度，偶尔搅拌。">
+                      Add the green pepper chunks. If serving with belt noodles,
+                      start cooking them now in a separate pot. Increase heat and
+                      reduce the sauce to your desired consistency, stirring
+                      occasionally.
+                    </p>
+                    <p class="text-gray-700" data-en="If using noodles: Once cooked, rinse the noodles under cold water to stop the cooking process. Place the noodles on a large plate or in a bowl, then pour the chicken mixture over the top. Toss everything together and serve immediately." data-zh="如果配面：面煮好后，用冷水冲洗以停止烹饪过程。将面条放在大盘子或碗中，然后将鸡肉混合物倒在上面。拌匀后立即上桌。">
+                      If using noodles: Once cooked, rinse the noodles under cold
+                      water to stop the cooking process. Place the noodles on a
+                      large plate or in a bowl, then pour the chicken mixture
+                      over the top. Toss everything together and serve
+                      immediately.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tips -->
+              <div class="mt-8 bg-yellow-50 rounded-lg p-6 border-l-4 border-yellow-500">
+                <h3 class="font-bold text-gray-800 mb-3 flex items-center">
+                  <span class="text-yellow-600 mr-2">💡</span>
+                  <span data-en="Pro Tips" data-zh="小贴士">Pro Tips</span>
+                </h3>
+                <ul class="space-y-2 text-gray-700">
+                  <li data-en="• Don't rush the sugar caramelization, it's key to the dish's color and flavor" data-zh="• 不要急于炒糖色，这是菜肴颜色和风味的关键">
+                    • Don't rush the sugar caramelization, it's key to the
+                    dish's color and flavor
+                  </li>
+                  <li data-en="• Make sure to completely dry out the chicken before adding spices" data-zh="• 确保在加入香料前完全炒干鸡肉">
+                    • Make sure to completely dry out the chicken before adding
+                    spices
+                  </li>
+                  <li data-en="• Cut potatoes into large chunks so they don't fall apart during braising" data-zh="• 土豆切大块，这样焖煮时不会散开">
+                    • Cut potatoes into large chunks so they don't fall apart
+                    during braising
+                  </li>
+                  <li data-en="• Belt noodles (pidaimian) are traditional, but any thick, chewy noodles work well" data-zh="• 传统用皮带面，但任何厚实有嚼劲的面条都可以">
+                    • Belt noodles (pidaimian) are traditional, but any thick,
+                    chewy noodles work well
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      function updateLanguage(lang: string) {
+        document.querySelectorAll("[data-en]").forEach((element) => {
+          if (lang === "zh" && element.getAttribute("data-zh")) {
+            element.textContent = element.getAttribute("data-zh");
+          } else if (element.getAttribute("data-en")) {
+            element.textContent = element.getAttribute("data-en");
+          }
+        });
+      }
+
+      // Initialize language on page load
+      const savedLang = localStorage.getItem("language") || "en";
+      updateLanguage(savedLang);
+
+      // Listen for language changes
+      window.addEventListener("languageChange", (e: Event) => {
+        updateLanguage((e as CustomEvent).detail);
+      });
+    </script>
+  </body>
+</html>
