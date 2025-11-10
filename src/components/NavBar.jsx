@@ -25,7 +25,7 @@ export default function NavBar() {
             <li className="hidden md:block">
               <a
                 href="/"
-                className="px-4 py-2 text-gray-200 hover:text-white hover:bg-white/10 focus:bg-white/10 focus:text-white rounded-lg transition-all duration-200 font-medium"
+                className="px-4 py-2 text-gray-200 hover:text-white hover:bg-white/10 focus:bg-white/10 focus:text-white rounded-lg transition-all duration-200 font-medium text-sm md:text-base"
               >
                 Home
               </a>
