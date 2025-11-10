@@ -26,12 +26,12 @@ import "../styles/global.css";
     <main id="main-content" class="container mx-auto px-4 py-16">
       <div class="max-w-4xl mx-auto">
         <!-- Header -->
-        <div class="text-center mb-16">
-          <h1 class="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
-            <span data-en="Let's Connect" data-zh="联系我">Let's Connect</span>
+        <div class="mb-12">
+          <h1 class="text-3xl md:text-4xl font-semibold mb-4 text-gray-900">
+            <span data-en="Get In Touch" data-zh="联系我">Get In Touch</span>
           </h1>
           <p
-            class="text-xl text-gray-700"
+            class="text-base text-gray-600"
             data-en="Feel free to reach out for collaborations, opportunities, or just a friendly chat!"
             data-zh="欢迎联系我讨论合作、机会或者只是聊聊天！"
           >
@@ -43,16 +43,53 @@ import "../styles/global.css";
         <!-- Contact Cards -->
         <div class="grid md:grid-cols-2 gap-4 md:gap-6 mb-12">
           <!-- Email Card -->
-          <a
-            href="mailto:naxxhua@gmail.com"
-            class="group bg-white rounded-xl shadow-md p-4 md:p-6 hover:shadow-lg transition-all border-l-4 border-blue-500"
+          <button
+            id="emailCard"
+            class="group bg-white rounded-xl shadow-md p-4 md:p-6 hover:shadow-lg transition-all border-l-4 border-blue-500 text-left w-full cursor-pointer"
           >
-            <div class="flex items-start">
+            <div class="flex items-start justify-between">
+              <div class="flex items-start flex-1">
+                <div
+                  class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mr-4 flex-shrink-0"
+                >
+                  <svg
+                    class="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3
+                    class="text-lg font-semibold text-gray-800"
+                    data-en="Email"
+                    data-zh="邮箱"
+                  >
+                    Email
+                  </h3>
+                  <p class="text-gray-600 text-sm mb-1">naxxhua@gmail.com</p>
+                  <p
+                    class="text-blue-500 text-xs font-medium"
+                    data-en="Click to copy"
+                    data-zh="点击复制"
+                  >
+                    Click to copy
+                  </p>
+                </div>
+              </div>
               <div
-                class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mr-4 flex-shrink-0"
+                id="copyIcon"
+                class="text-gray-400 group-hover:text-blue-500 transition-colors ml-2"
               >
                 <svg
-                  class="w-6 h-6 text-white"
+                  class="w-5 h-5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -61,28 +98,12 @@ import "../styles/global.css";
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
                   ></path>
                 </svg>
               </div>
-              <div>
-                <h3
-                  class="text-lg font-semibold text-gray-800"
-                  data-en="Email"
-                  data-zh="邮箱"
-                >
-                  Email
-                </h3>
-                <p
-                  class="text-gray-600 text-sm"
-                  data-en="Drop me a line"
-                  data-zh="给我发邮件"
-                >
-                  Drop me a line
-                </p>
-              </div>
             </div>
-          </a>
+          </button>
 
           <!-- LinkedIn Card -->
           <a
@@ -201,21 +222,13 @@ import "../styles/global.css";
             Ready to Collaborate?
           </h2>
           <p
-            class="text-gray-600 mb-6"
+            class="text-gray-600"
             data-en="Whether it's a design project, development opportunity, or just a chat about tech and table tennis, I'd love to hear from you!"
             data-zh="无论是设计项目、开发机会，还是只是聊聊技术和乒乓球，我都很乐意听到你的声音！"
           >
             Whether it's a design project, development opportunity, or just a
             chat about tech and table tennis, I'd love to hear from you!
           </p>
-          <a
-            href="mailto:naxxhua@gmail.com"
-            class="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all"
-          >
-            <span data-en="Send Me an Email →" data-zh="发送邮件 →"
-              >Send Me an Email →</span
-            >
-          </a>
         </div>
       </div>
     </main>
@@ -239,6 +252,67 @@ import "../styles/global.css";
       window.addEventListener("languageChange", (e: Event) => {
         updateLanguage((e as CustomEvent).detail);
       });
+
+      // Email copy functionality
+      const emailCard = document.getElementById("emailCard");
+      const copyIcon = document.getElementById("copyIcon");
+      const email = "naxxhua@gmail.com";
+
+      if (emailCard && copyIcon) {
+        emailCard.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(email);
+
+            // Show success feedback
+            const currentLang = localStorage.getItem("language") || "en";
+            const successMessage = currentLang === "zh" ? "已复制!" : "Copied!";
+
+            // Change icon to checkmark
+            copyIcon.innerHTML = `
+              <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+            `;
+
+            // Show toast notification
+            const toast = document.createElement("div");
+            toast.className =
+              "fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-fade-in";
+            toast.textContent = successMessage;
+            document.body.appendChild(toast);
+
+            // Reset after 2 seconds
+            setTimeout(() => {
+              copyIcon.innerHTML = `
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+              `;
+              toast.remove();
+            }, 2000);
+          } catch (err) {
+            console.error("Failed to copy email:", err);
+            // Fallback: try to select the text
+            alert(email);
+          }
+        });
+      }
     </script>
+
+    <style>
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in {
+        animation: fade-in 0.3s ease-out;
+      }
+    </style>
   </body>
 </html>
