@@ -1,5 +1,6 @@
 ---
 import NavBar from "../components/NavBar.jsx";
+import LanguageToggle from "../components/LanguageToggle.jsx";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 import "../styles/global.css";
 ---
@@ -18,72 +19,149 @@ import "../styles/global.css";
   <body class="bg-gradient-to-br from-[#99AFD7] via-[#B8C5E0] to-[#D4DDEB]">
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <NavBar />
+    <LanguageToggle client:load />
     <main id="main-content" class="container mx-auto px-4 py-12">
-      <h1 class="text-5xl font-bold text-center mb-4 text-gray-900">
+      <h1
+        class="text-5xl font-bold text-center mb-4 text-gray-900"
+        data-en="Portfolio & Projects"
+        data-zh="作品集与项目"
+      >
         Portfolio & Projects
       </h1>
-      <p class="text-center text-gray-700 mb-12 text-lg">
+      <p
+        class="text-center text-gray-700 mb-12 text-lg"
+        data-en="A showcase of my technical work and professional contributions"
+        data-zh="展示我的技术工作和专业贡献"
+      >
         A showcase of my technical work and professional contributions
       </p>
 
       <!-- Tech Stack Section -->
       <section class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 text-gray-800">Tech Stack</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <h2
+          class="text-3xl font-bold mb-8 text-gray-800"
+          data-en="Tech Stack"
+          data-zh="技术栈"
+        >
+          Tech Stack
+        </h2>
+        <div
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"
+        >
           <div
-            class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow border-t-4 border-cyan-500"
+            class="bg-white p-4 md:p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow border-t-4 border-cyan-500"
           >
-            <h3 class="font-bold text-lg mb-2">Flutter</h3>
-            <p class="text-gray-600 text-sm">Mobile Development</p>
+            <h3 class="font-bold text-base md:text-lg mb-1 md:mb-2">Flutter</h3>
+            <p
+              class="text-gray-600 text-xs md:text-sm"
+              data-en="Mobile Development"
+              data-zh="移动开发"
+            >
+              Mobile Development
+            </p>
           </div>
           <div
-            class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow border-t-4 border-orange-500"
+            class="bg-white p-4 md:p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow border-t-4 border-orange-500"
           >
-            <h3 class="font-bold text-lg mb-2">Swift</h3>
-            <p class="text-gray-600 text-sm">iOS Development</p>
+            <h3 class="font-bold text-base md:text-lg mb-1 md:mb-2">Swift</h3>
+            <p
+              class="text-gray-600 text-xs md:text-sm"
+              data-en="iOS Development"
+              data-zh="iOS开发"
+            >
+              iOS Development
+            </p>
           </div>
           <div
-            class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow border-t-4 border-blue-500"
+            class="bg-white p-4 md:p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow border-t-4 border-blue-500"
           >
-            <h3 class="font-bold text-lg mb-2">React</h3>
-            <p class="text-gray-600 text-sm">Frontend Library</p>
+            <h3 class="font-bold text-base md:text-lg mb-1 md:mb-2">React</h3>
+            <p
+              class="text-gray-600 text-xs md:text-sm"
+              data-en="Frontend Library"
+              data-zh="前端框架"
+            >
+              Frontend Library
+            </p>
           </div>
           <div
-            class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow border-t-4 border-pink-500"
+            class="bg-white p-4 md:p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow border-t-4 border-pink-500"
           >
-            <h3 class="font-bold text-lg mb-2">Figma</h3>
-            <p class="text-gray-600 text-sm">Design Tool</p>
+            <h3 class="font-bold text-base md:text-lg mb-1 md:mb-2">Figma</h3>
+            <p
+              class="text-gray-600 text-xs md:text-sm"
+              data-en="Design Tool"
+              data-zh="设计工具"
+            >
+              Design Tool
+            </p>
           </div>
           <div
-            class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow border-t-4 border-purple-500"
+            class="bg-white p-4 md:p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow border-t-4 border-purple-500"
           >
-            <h3 class="font-bold text-lg mb-2">UI/UX Design</h3>
-            <p class="text-gray-600 text-sm">Human-Computer Interaction</p>
+            <h3
+              class="font-bold text-base md:text-lg mb-1 md:mb-2"
+              data-en="UI/UX Design"
+              data-zh="UI/UX设计"
+            >
+              UI/UX Design
+            </h3>
+            <p
+              class="text-gray-600 text-xs md:text-sm"
+              data-en="Human-Computer Interaction"
+              data-zh="人机交互"
+            >
+              Human-Computer Interaction
+            </p>
           </div>
           <div
-            class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow border-t-4 border-blue-400"
+            class="bg-white p-4 md:p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow border-t-4 border-blue-400"
           >
-            <h3 class="font-bold text-lg mb-2">Python</h3>
-            <p class="text-gray-600 text-sm">Data Science & ML</p>
+            <h3 class="font-bold text-base md:text-lg mb-1 md:mb-2">Python</h3>
+            <p
+              class="text-gray-600 text-xs md:text-sm"
+              data-en="Data Science & ML"
+              data-zh="数据科学与机器学习"
+            >
+              Data Science & ML
+            </p>
           </div>
           <div
-            class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow border-t-4 border-red-500"
+            class="bg-white p-4 md:p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow border-t-4 border-red-500"
           >
-            <h3 class="font-bold text-lg mb-2">Databases</h3>
-            <p class="text-gray-600 text-sm">SQL & NoSQL</p>
+            <h3
+              class="font-bold text-base md:text-lg mb-1 md:mb-2"
+              data-en="Databases"
+              data-zh="数据库"
+            >
+              Databases
+            </h3>
+            <p class="text-gray-600 text-xs md:text-sm">SQL & NoSQL</p>
           </div>
           <div
-            class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow border-t-4 border-indigo-500"
+            class="bg-white p-4 md:p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow border-t-4 border-indigo-500"
           >
-            <h3 class="font-bold text-lg mb-2">R</h3>
-            <p class="text-gray-600 text-sm">Statistical Computing</p>
+            <h3 class="font-bold text-base md:text-lg mb-1 md:mb-2">R</h3>
+            <p
+              class="text-gray-600 text-xs md:text-sm"
+              data-en="Statistical Computing"
+              data-zh="统计计算"
+            >
+              Statistical Computing
+            </p>
           </div>
         </div>
       </section>
 
       <!-- Professional Work Section -->
       <section class="mb-16">
-        <h2 class="text-3xl font-bold mb-8 text-gray-800">Professional Work</h2>
+        <h2
+          class="text-3xl font-bold mb-8 text-gray-800"
+          data-en="Professional Work"
+          data-zh="专业工作"
+        >
+          Professional Work
+        </h2>
         <div class="grid md:grid-cols-2 gap-8">
           <!-- Visa Inc -->
           <div
@@ -97,7 +175,13 @@ import "../styles/global.css";
               <div class="flex items-center justify-between mb-4">
                 <div>
                   <h3 class="text-2xl font-bold mb-2 text-white">Visa Inc.</h3>
-                  <p class="text-blue-200">Software Engineer</p>
+                  <p
+                    class="text-blue-200"
+                    data-en="Software Engineer"
+                    data-zh="软件工程师"
+                  >
+                    Software Engineer
+                  </p>
                 </div>
                 <img
                   src="/Visa_Brandmark_Blue_RGB_2021.png"
@@ -107,7 +191,11 @@ import "../styles/global.css";
               </div>
             </div>
             <div class="p-6">
-              <p class="text-gray-700 mb-4">
+              <p
+                class="text-gray-700 mb-4"
+                data-en="Contributing to financial technology solutions since February 2022 in Austin, Texas as a Design Engineer. Built and maintained the official Flutter design system library, enabling consistent UI/UX across mobile applications."
+                data-zh="自2022年2月起在德克萨斯州奥斯汀担任设计工程师，为金融科技解决方案做出贡献。构建和维护官方Flutter设计系统库，确保移动应用程序的一致UI/UX。"
+              >
                 Contributing to financial technology solutions since February
                 2022 in Austin, Texas as a Design Engineer. Built and maintained
                 the official Flutter design system library, enabling consistent
@@ -116,25 +204,37 @@ import "../styles/global.css";
               <ul class="space-y-2 mb-6">
                 <li class="flex items-start">
                   <span class="text-green-500 mr-2" aria-hidden="true">✓</span>
-                  <span class="text-gray-600"
+                  <span
+                    class="text-gray-600"
+                    data-en="Flutter design system architecture"
+                    data-zh="Flutter设计系统架构"
                     >Flutter design system architecture</span
                   >
                 </li>
                 <li class="flex items-start">
                   <span class="text-green-500 mr-2" aria-hidden="true">✓</span>
-                  <span class="text-gray-600"
+                  <span
+                    class="text-gray-600"
+                    data-en="VGAR-compliant component library"
+                    data-zh="符合VGAR标准的组件库"
                     >VGAR-compliant component library</span
                   >
                 </li>
                 <li class="flex items-start">
                   <span class="text-green-500 mr-2" aria-hidden="true">✓</span>
-                  <span class="text-gray-600"
+                  <span
+                    class="text-gray-600"
+                    data-en="Accessible design tokens and theming"
+                    data-zh="无障碍设计令牌和主题"
                     >Accessible design tokens and theming</span
                   >
                 </li>
                 <li class="flex items-start">
                   <span class="text-green-500 mr-2" aria-hidden="true">✓</span>
-                  <span class="text-gray-600"
+                  <span
+                    class="text-gray-600"
+                    data-en="Cross-platform mobile development"
+                    data-zh="跨平台移动开发"
                     >Cross-platform mobile development</span
                   >
                 </li>
@@ -173,45 +273,84 @@ import "../styles/global.css";
             </div>
             <div class="p-6">
               <p class="text-gray-700 mb-4">
-                <strong>Challenge:</strong> Mental health resource shortage at U.S.
+                <strong
+                  data-en="Challenge:"
+                  data-zh="挑战："
+                  >Challenge:</strong
+                >
+                <span
+                  data-en="Mental health resource shortage at U.S. universities. 71% of Penn State students need accessible talk therapy, but face long wait times and impersonal service."
+                  data-zh="美国大学心理健康资源短缺。71%的宾州州立大学学生需要可及的心理咨询，但面临漫长等待时间和缺乏个性化的服务。"
+                  >Mental health resource shortage at U.S.
                 universities. 71% of Penn State students need accessible talk therapy,
-                but face long wait times and impersonal service.
+                but face long wait times and impersonal service.</span
+                >
               </p>
               <p class="text-gray-700 mb-4">
-                <strong>Solution:</strong> AI-powered online therapy platform that
+                <strong
+                  data-en="Solution:"
+                  data-zh="解决方案："
+                  >Solution:</strong
+                >
+                <span
+                  data-en="AI-powered online therapy platform that automates mental health screening, matches students with trained volunteers, and generates session reports—providing immediate support for short-term distress while identifying cases needing professional referral."
+                  data-zh="基于AI的在线心理治疗平台，自动化心理健康筛查，将学生与训练有素的志愿者匹配，生成会话报告——为短期困扰提供即时支持，同时识别需要专业转介的案例。"
+                  >AI-powered online therapy platform that
                 automates mental health screening, matches students with trained
                 volunteers, and generates session reports—providing immediate support
                 for short-term distress while identifying cases needing professional
-                referral.
+                referral.</span
+                >
               </p>
               <p class="text-gray-700 mb-6">
-                <strong>My Role:</strong> Led Flutter mobile app development, designing
+                <strong
+                  data-en="My Role:"
+                  data-zh="我的角色："
+                  >My Role:</strong
+                >
+                <span
+                  data-en="Led Flutter mobile app development, designing privacy-focused architecture with classification algorithms for issue identification, NLP-based sentiment analysis for automated reporting, and a recommendation system connecting users with appropriate volunteers."
+                  data-zh="领导Flutter移动应用开发，设计以隐私为中心的架构，包括问题识别的分类算法、基于NLP的情感分析用于自动化报告，以及将用户与合适志愿者连接的推荐系统。"
+                  >Led Flutter mobile app development, designing
                 privacy-focused architecture with classification algorithms for issue
                 identification, NLP-based sentiment analysis for automated reporting,
-                and a recommendation system connecting users with appropriate volunteers.
+                and a recommendation system connecting users with appropriate volunteers.</span
+                >
               </p>
               <ul class="space-y-2 mb-6">
                 <li class="flex items-start">
                   <span class="text-green-500 mr-2">✓</span>
-                  <span class="text-gray-600"
+                  <span
+                    class="text-gray-600"
+                    data-en="Flutter mobile app development"
+                    data-zh="Flutter移动应用开发"
                     >Flutter mobile app development</span
                   >
                 </li>
                 <li class="flex items-start">
                   <span class="text-green-500 mr-2">✓</span>
-                  <span class="text-gray-600"
+                  <span
+                    class="text-gray-600"
+                    data-en="AI-driven user matching system"
+                    data-zh="AI驱动的用户匹配系统"
                     >AI-driven user matching system</span
                   >
                 </li>
                 <li class="flex items-start">
                   <span class="text-green-500 mr-2">✓</span>
-                  <span class="text-gray-600"
+                  <span
+                    class="text-gray-600"
+                    data-en="Privacy-first design & architecture"
+                    data-zh="隐私优先的设计与架构"
                     >Privacy-first design & architecture</span
                   >
                 </li>
                 <li class="flex items-start">
                   <span class="text-green-500 mr-2">✓</span>
-                  <span class="text-gray-600"
+                  <span
+                    class="text-gray-600"
+                    data-en="Automated session report generation"
+                    data-zh="自动化会话报告生成"
                     >Automated session report generation</span
                   >
                 </li>
@@ -230,7 +369,11 @@ import "../styles/global.css";
             >
               <div class="flex items-center justify-between mb-4">
                 <div>
-                  <h3 class="text-2xl font-bold mb-2 text-white">
+                  <h3
+                    class="text-2xl font-bold mb-2 text-white"
+                    data-en="Academic Research"
+                    data-zh="学术研究"
+                  >
                     Academic Research
                   </h3>
                   <p class="text-red-100">Penn State University</p>
@@ -238,12 +381,16 @@ import "../styles/global.css";
                 <img
                   src="/cscw.png"
                   alt="CSCW"
-                  class="h-12 brightness-0 invert"
+                  class="h-12"
                 />
               </div>
             </div>
             <div class="p-6">
-              <p class="text-gray-700 mb-4">
+              <p
+                class="text-gray-700 mb-4"
+                data-en="Published research in Human-Computer Interaction and collaborated on projects exploring technology's impact on society."
+                data-zh="发表人机交互领域研究，合作探索技术对社会的影响。"
+              >
                 Published research in Human-Computer Interaction and
                 collaborated on projects exploring technology's impact on
                 society.
@@ -251,19 +398,39 @@ import "../styles/global.css";
               <ul class="space-y-2 mb-6">
                 <li class="flex items-start">
                   <span class="text-green-500 mr-2">✓</span>
-                  <span class="text-gray-600">Co-authored CSCW 2020 paper</span>
+                  <span
+                    class="text-gray-600"
+                    data-en="Co-authored CSCW 2020 paper"
+                    data-zh="合著CSCW 2020论文"
+                    >Co-authored CSCW 2020 paper</span
+                  >
                 </li>
                 <li class="flex items-start">
                   <span class="text-green-500 mr-2">✓</span>
-                  <span class="text-gray-600">HCI research focus</span>
+                  <span
+                    class="text-gray-600"
+                    data-en="HCI research focus"
+                    data-zh="人机交互研究重点"
+                    >HCI research focus</span
+                  >
                 </li>
                 <li class="flex items-start">
                   <span class="text-green-500 mr-2">✓</span>
-                  <span class="text-gray-600">Data science applications</span>
+                  <span
+                    class="text-gray-600"
+                    data-en="Data science applications"
+                    data-zh="数据科学应用"
+                    >Data science applications</span
+                  >
                 </li>
                 <li class="flex items-start">
                   <span class="text-green-500 mr-2">✓</span>
-                  <span class="text-gray-600">User experience studies</span>
+                  <span
+                    class="text-gray-600"
+                    data-en="User experience studies"
+                    data-zh="用户体验研究"
+                    >User experience studies</span
+                  >
                 </li>
               </ul>
               <a
@@ -284,31 +451,61 @@ import "../styles/global.css";
 
       <!-- Education -->
       <section>
-        <h2 class="text-3xl font-bold mb-8 text-gray-800">Education</h2>
+        <h2
+          class="text-3xl font-bold mb-8 text-gray-800"
+          data-en="Education"
+          data-zh="教育背景"
+        >
+          Education
+        </h2>
         <div class="bg-white rounded-xl shadow-lg p-8">
           <div class="grid md:grid-cols-2 gap-8">
             <div>
-              <h3 class="text-xl font-bold text-gray-800 mb-2">
+              <h3
+                class="text-xl font-bold text-gray-800 mb-2"
+                data-en="Master of Science in Informatics"
+                data-zh="信息学理学硕士"
+              >
                 Master of Science in Informatics
               </h3>
               <p class="text-gray-600 mb-2">Penn State University</p>
-              <p class="text-gray-500 text-sm mb-4">
+              <p
+                class="text-gray-500 text-sm mb-4"
+                data-en="Focus: Human-Computer Interaction"
+                data-zh="专注：人机交互"
+              >
                 Focus: Human-Computer Interaction
               </p>
-              <p class="text-gray-700">
+              <p
+                class="text-gray-700"
+                data-en="Specialized in designing and evaluating interactive systems, user experience research, and technology's social impact."
+                data-zh="专攻交互系统设计与评估、用户体验研究以及技术的社会影响。"
+              >
                 Specialized in designing and evaluating interactive systems,
                 user experience research, and technology's social impact.
               </p>
             </div>
             <div>
-              <h3 class="text-xl font-bold text-gray-800 mb-2">
+              <h3
+                class="text-xl font-bold text-gray-800 mb-2"
+                data-en="Bachelor of Science in Applied Data Sciences"
+                data-zh="应用数据科学理学学士"
+              >
                 Bachelor of Science in Applied Data Sciences
               </h3>
               <p class="text-gray-600 mb-2">Penn State University</p>
-              <p class="text-gray-500 text-sm mb-4">
+              <p
+                class="text-gray-500 text-sm mb-4"
+                data-en="Data Analysis & Machine Learning"
+                data-zh="数据分析与机器学习"
+              >
                 Data Analysis & Machine Learning
               </p>
-              <p class="text-gray-700">
+              <p
+                class="text-gray-700"
+                data-en="Developed strong foundation in statistical analysis, data visualization, and machine learning applications."
+                data-zh="在统计分析、数据可视化和机器学习应用方面打下坚实基础。"
+              >
                 Developed strong foundation in statistical analysis, data
                 visualization, and machine learning applications.
               </p>
@@ -317,5 +514,26 @@ import "../styles/global.css";
         </div>
       </section>
     </main>
+
+    <script>
+      function updateLanguage(lang: string) {
+        document.querySelectorAll("[data-en]").forEach((element) => {
+          if (lang === "zh" && element.getAttribute("data-zh")) {
+            element.textContent = element.getAttribute("data-zh");
+          } else if (element.getAttribute("data-en")) {
+            element.textContent = element.getAttribute("data-en");
+          }
+        });
+      }
+
+      // Initialize language on page load
+      const savedLang = localStorage.getItem("language") || "en";
+      updateLanguage(savedLang);
+
+      // Listen for language changes
+      window.addEventListener("languageChange", (e: Event) => {
+        updateLanguage((e as CustomEvent).detail);
+      });
+    </script>
   </body>
 </html>

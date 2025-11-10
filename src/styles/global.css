@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* Prevent horizontal scroll on mobile */
+body {
+  overflow-x: hidden;
+}
+
 /* WCAG 2.1 AA Accessibility Enhancements */
 
 /* Skip to main content link */

@@ -52,7 +52,7 @@ const cocktails = recipes.filter((recipe) => recipe.category === "cocktail");
         >
           Cocktails
         </h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {
             cocktails.length === 0 ? (
               <div class="bg-white/80 backdrop-blur rounded-xl shadow-lg p-8 text-center border-2 border-dashed border-gray-300">
@@ -118,7 +118,7 @@ const cocktails = recipes.filter((recipe) => recipe.category === "cocktail");
         >
           Dishes
         </h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {
             dishes.map((recipe) => (
               <a
