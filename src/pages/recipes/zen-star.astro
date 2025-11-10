@@ -48,7 +48,8 @@ import "../../styles/global.css";
 
         <div class="bg-white rounded-xl shadow-xl overflow-hidden mb-8">
           <div
-            class="bg-gradient-to-r from-teal-400 to-cyan-600 p-8 text-white"
+            class="p-8 text-white"
+            style="background: linear-gradient(135deg, #4d4ca1 0%, #393880 100%);"
           >
             <h1
               class="text-4xl md:text-5xl font-bold mb-3"
@@ -58,14 +59,14 @@ import "../../styles/global.css";
               Zen Star
             </h1>
             <p
-              class="text-xl text-teal-100 mb-2"
+              class="text-xl text-indigo-50 mb-2"
               data-en="Sour • Promo • Bland"
               data-zh="酸味 • 宣传 • 清淡"
             >
               Sour • Promo • Bland
             </p>
             <p
-              class="text-teal-100 italic"
+              class="text-indigo-50 italic"
               data-en="Inspired by VA-11 HALL-A"
               data-zh="灵感来自 VA-11 HALL-A"
             >
@@ -77,7 +78,8 @@ import "../../styles/global.css";
             <img
               src="/zen_star.jpg"
               alt="Zen Star"
-              class="w-full h-full object-cover"
+              class="w-full h-full object-cover object-center"
+              style="object-position: center 80%;"
             />
           </div>
         </div>
@@ -93,11 +95,19 @@ import "../../styles/global.css";
                 Ingredients
               </h2>
               <ul class="space-y-2 text-gray-700">
-                <li>• Gin 20ml</li>
-                <li>• Dubonnet Red 20ml</li>
-                <li>• Fino Sherry 20ml</li>
-                <li>• Bianco Vermouth 20ml</li>
-                <li>• Blue Curacao 20ml</li>
+                <li data-en="• Gin 20ml" data-zh="• 金酒 20ml">• Gin 20ml</li>
+                <li data-en="• Dubonnet Red 20ml" data-zh="• 杜本内红酒 20ml">
+                  • Dubonnet Red 20ml
+                </li>
+                <li data-en="• Fino Sherry 20ml" data-zh="• 菲诺雪莉酒 20ml">
+                  • Fino Sherry 20ml
+                </li>
+                <li data-en="• Bianco Vermouth 20ml" data-zh="• 白味美思 20ml">
+                  • Bianco Vermouth 20ml
+                </li>
+                <li data-en="• Blue Curacao 20ml" data-zh="• 蓝橙酒 20ml">
+                  • Blue Curacao 20ml
+                </li>
               </ul>
               <div class="mt-4 pt-4 border-t border-gray-200">
                 <p
@@ -181,7 +191,7 @@ import "../../styles/global.css";
                 <p
                   class="text-gray-700 italic"
                   data-en="You'd think something so balanced would actually taste nice... you'd be dead wrong."
-                  data-zh="你会觉得如此平衡的东西应该很好喝……但你大错特错。"
+                  data-zh="你可能会认为如此均衡的配方能够令这杯酒变得美味......那你就大错特错了。"
                 >
                   "You'd think something so balanced would actually taste
                   nice... you'd be dead wrong."

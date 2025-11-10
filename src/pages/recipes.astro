@@ -52,13 +52,43 @@ const cocktails = recipes.filter((recipe) => recipe.category === "cocktail");
         >
           Cocktails
         </h2>
-        <p
-          class="text-gray-600 mb-8 italic"
-          data-en="Inspired by the cyberpunk bartending game VA-11 HALL-A"
-          data-zh="灵感来自赛博朋克调酒游戏 VA-11 HALL-A"
-        >
-          Inspired by the cyberpunk bartending game VA-11 HALL-A
-        </p>
+
+        <!-- VA-11 HALL-A Tribute -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+          <div class="flex flex-col md:flex-row">
+            <div class="w-full md:w-auto flex-shrink-0">
+              <img
+                src="https://static.wikia.nocookie.net/va11halla/images/6/61/Steam_Cover.jpg"
+                alt="VA-11 HALL-A"
+                class="w-full md:w-auto md:h-full object-contain"
+              />
+            </div>
+            <div class="flex-1 min-w-0 p-6 flex flex-col justify-center">
+              <h3
+                class="text-2xl font-bold text-gray-800 mb-3"
+                data-en="Inspired by VA-11 HALL-A"
+                data-zh="灵感来自 VA-11 HALL-A"
+              >
+                Inspired by VA-11 HALL-A
+              </h3>
+              <p
+                class="text-lg font-semibold mb-2"
+                style="color: #000079;"
+                data-en="Time to mix drinks and change lives"
+                data-zh="调制饮料，改变人生"
+              >
+                Time to mix drinks and change lives
+              </p>
+              <p
+                class="text-gray-600 italic"
+                data-en="A cyberpunk bartending game where every drink tells a story"
+                data-zh="一款赛博朋克调酒游戏，每一杯饮料都诉说着一个故事"
+              >
+                A cyberpunk bartending game where every drink tells a story
+              </p>
+            </div>
+          </div>
+        </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {
             cocktails.length === 0 ? (

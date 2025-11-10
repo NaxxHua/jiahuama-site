@@ -50,7 +50,8 @@ import "../../styles/global.css";
         <!-- Recipe Header -->
         <div class="bg-white rounded-xl shadow-xl overflow-hidden mb-8">
           <div
-            class="bg-gradient-to-r from-blue-600 to-indigo-700 p-8 text-white"
+            class="p-8 text-gray-900"
+            style="background: linear-gradient(135deg, #84efe3 0%, #5dd9ce 100%);"
           >
             <h1
               class="text-4xl md:text-5xl font-bold mb-3"
@@ -60,14 +61,14 @@ import "../../styles/global.css";
               Cobalt Velvet
             </h1>
             <p
-              class="text-xl text-blue-100 mb-2"
+              class="text-xl text-gray-800 mb-2"
               data-en="Bubbly • Classy • Burning"
               data-zh="发泡 • 时尚 • 火辣"
             >
               Bubbly • Classy • Burning
             </p>
             <p
-              class="text-blue-100 italic"
+              class="text-gray-800 italic"
               data-en="Inspired by VA-11 HALL-A"
               data-zh="灵感来自 VA-11 HALL-A"
             >
@@ -80,7 +81,8 @@ import "../../styles/global.css";
             <img
               src="/cobalt_velvet.jpg"
               alt="Cobalt Velvet"
-              class="w-full h-full object-cover"
+              class="w-full h-full object-cover object-center"
+              style="object-position: center 60%;"
             />
           </div>
         </div>
@@ -98,12 +100,36 @@ import "../../styles/global.css";
                 Ingredients
               </h2>
               <ul class="space-y-2 text-gray-700">
-                <li>• Spirytus Rektyfikowany (Vodka) 10ml</li>
-                <li>• Brugal Blanco (White Rum) 15ml</li>
-                <li>• Beefeater London (Gin) 20ml</li>
-                <li>• Blue Curacao 10ml</li>
-                <li>• Sweet & Sour Mix 30ml</li>
-                <li>• Sprite (to top)</li>
+                <li
+                  data-en="• Spirytus Rektyfikowany (Vodka) 10ml"
+                  data-zh="• 生命之水伏特加 10ml"
+                >
+                  • Spirytus Rektyfikowany (Vodka) 10ml
+                </li>
+                <li
+                  data-en="• Brugal Blanco (White Rum) 15ml"
+                  data-zh="• 布鲁格白朗姆 15ml"
+                >
+                  • Brugal Blanco (White Rum) 15ml
+                </li>
+                <li
+                  data-en="• Beefeater London (Gin) 20ml"
+                  data-zh="• 必富达伦敦金酒 20ml"
+                >
+                  • Beefeater London (Gin) 20ml
+                </li>
+                <li data-en="• Blue Curacao 10ml" data-zh="• 蓝橙酒 10ml">
+                  • Blue Curacao 10ml
+                </li>
+                <li
+                  data-en="• Sweet & Sour Mix 30ml"
+                  data-zh="• 酸甜混合液 30ml"
+                >
+                  • Sweet & Sour Mix 30ml
+                </li>
+                <li data-en="• Sprite (to top)" data-zh="• 雪碧（注满）">
+                  • Sprite (to top)
+                </li>
               </ul>
               <div class="mt-4 pt-4 border-t border-gray-200">
                 <p
@@ -206,7 +232,7 @@ import "../../styles/global.css";
                 <p
                   class="text-gray-700 italic"
                   data-en="It's like champagne served in a cup that had a bit of cola left"
-                  data-zh="像是在装过可乐的杯子里倒入的香槟"
+                  data-zh="就如同把香槟倒在还剩一点可乐的杯子里。"
                 >
                   "It's like champagne served in a cup that had a bit of cola
                   left"

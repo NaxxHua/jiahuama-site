@@ -48,7 +48,8 @@ import "../../styles/global.css";
 
         <div class="bg-white rounded-xl shadow-xl overflow-hidden mb-8">
           <div
-            class="bg-gradient-to-r from-amber-600 to-orange-700 p-8 text-white"
+            class="p-8 text-gray-900"
+            style="background: linear-gradient(135deg, #fbb335 0%, #e89a1f 100%);"
           >
             <h1
               class="text-4xl md:text-5xl font-bold mb-3"
@@ -58,14 +59,14 @@ import "../../styles/global.css";
               Pile Driver
             </h1>
             <p
-              class="text-xl text-amber-100 mb-2"
+              class="text-xl text-gray-800 mb-2"
               data-en="Bitter • Burning • Manly"
               data-zh="苦味 • 火辣 • 男性化"
             >
               Bitter • Burning • Manly
             </p>
             <p
-              class="text-amber-100 italic"
+              class="text-gray-800 italic"
               data-en="Inspired by VA-11 HALL-A"
               data-zh="灵感来自 VA-11 HALL-A"
             >
@@ -77,7 +78,8 @@ import "../../styles/global.css";
             <img
               src="/pile_driver.jpg"
               alt="Pile Driver"
-              class="w-full h-full object-cover"
+              class="w-full h-full object-cover object-center"
+              style="object-position: center 75%;"
             />
           </div>
         </div>
@@ -93,9 +95,21 @@ import "../../styles/global.css";
                 Ingredients
               </h2>
               <ul class="space-y-2 text-gray-700">
-                <li>• Blended Whiskey 50ml</li>
-                <li>• Amaretto 10ml</li>
-                <li>• Angostura Bitters 3 dashes</li>
+                <li
+                  data-en="• Blended Whiskey 50ml"
+                  data-zh="• 调和威士忌 50ml"
+                >
+                  • Blended Whiskey 50ml
+                </li>
+                <li data-en="• Amaretto 10ml" data-zh="• 杏仁利口酒 10ml">
+                  • Amaretto 10ml
+                </li>
+                <li
+                  data-en="• Angostura Bitters 3 dashes"
+                  data-zh="• 安格斯特拉苦精 3滴"
+                >
+                  • Angostura Bitters 3 dashes
+                </li>
               </ul>
               <div class="mt-4 pt-4 border-t border-gray-200">
                 <p
@@ -202,7 +216,7 @@ import "../../styles/global.css";
                 <p
                   class="text-gray-700 italic"
                   data-en="It doesn't burn as hard on the tongue but you better not have a sore throat when drinking it..."
-                  data-zh="不会灼伤舌头那么厉害，但喝的时候最好别有喉咙痛..."
+                  data-zh="你的舌头可能察觉不到它的火辣程度，但喝的时候请小心不要烧到嗓子。"
                 >
                   "It doesn't burn as hard on the tongue but you better not have
                   a sore throat when drinking it..."

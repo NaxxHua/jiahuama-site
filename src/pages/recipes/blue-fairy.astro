@@ -48,7 +48,8 @@ import "../../styles/global.css";
 
         <div class="bg-white rounded-xl shadow-xl overflow-hidden mb-8">
           <div
-            class="bg-gradient-to-r from-cyan-400 to-blue-500 p-8 text-white"
+            class="p-8 text-white"
+            style="background: linear-gradient(135deg, #188eff 0%, #0066cc 100%);"
           >
             <h1
               class="text-4xl md:text-5xl font-bold mb-3"
@@ -58,14 +59,14 @@ import "../../styles/global.css";
               Blue Fairy
             </h1>
             <p
-              class="text-xl text-cyan-100 mb-2"
+              class="text-xl text-cyan-50 mb-2"
               data-en="Sweet • Girly • Soft"
               data-zh="甜味 • 女性化 • 温和"
             >
               Sweet • Girly • Soft
             </p>
             <p
-              class="text-cyan-100 italic"
+              class="text-cyan-50 italic"
               data-en="Inspired by VA-11 HALL-A"
               data-zh="灵感来自 VA-11 HALL-A"
             >
@@ -77,7 +78,8 @@ import "../../styles/global.css";
             <img
               src="/blue_fairy.jpg"
               alt="Blue Fairy"
-              class="w-full h-full object-cover"
+              class="w-full h-full object-cover object-center"
+              style="object-position: center 50%;"
             />
           </div>
         </div>
@@ -93,11 +95,24 @@ import "../../styles/global.css";
                 Ingredients
               </h2>
               <ul class="space-y-2 text-gray-700">
-                <li>• Lychee Liqueur 45ml</li>
-                <li>• Blue Curacao 10ml</li>
-                <li>• Grapefruit Juice 45ml</li>
-                <li>• Tonic Water (fill up)</li>
-                <li>• Absinthe (spray)</li>
+                <li data-en="• Lychee Liqueur 45ml" data-zh="• 荔枝利口酒 45ml">
+                  • Lychee Liqueur 45ml
+                </li>
+                <li data-en="• Blue Curacao 10ml" data-zh="• 蓝橙酒 10ml">
+                  • Blue Curacao 10ml
+                </li>
+                <li data-en="• Grapefruit Juice 45ml" data-zh="• 西柚汁 45ml">
+                  • Grapefruit Juice 45ml
+                </li>
+                <li
+                  data-en="• Tonic Water (fill up)"
+                  data-zh="• 汤力水（注满）"
+                >
+                  • Tonic Water (fill up)
+                </li>
+                <li data-en="• Absinthe (spray)" data-zh="• 苦艾酒（喷雾）">
+                  • Absinthe (spray)
+                </li>
               </ul>
               <div class="mt-4 pt-4 border-t border-gray-200">
                 <p
