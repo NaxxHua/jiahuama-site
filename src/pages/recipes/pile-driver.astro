@@ -1,6 +1,5 @@
 ---
 import NavBar from "../../components/NavBar.jsx";
-import LanguageToggle from "../../components/LanguageToggle.jsx";
 import GoogleAnalytics from "../../components/GoogleAnalytics.astro";
 import "../../styles/global.css";
 ---
@@ -20,8 +19,7 @@ import "../../styles/global.css";
     class="bg-gradient-to-br from-[#99AFD7] via-[#B8C5E0] to-[#D4DDEB] min-h-screen"
   >
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <NavBar />
-    <LanguageToggle client:load />
+    <NavBar client:load />
 
     <main id="main-content" class="container mx-auto px-4 py-12">
       <div class="max-w-4xl mx-auto">
@@ -249,6 +247,10 @@ import "../../styles/global.css";
 
     <script>
       function updateLanguage(lang: string) {
+        // Save language preference
+        localStorage.setItem("language", lang);
+        
+        // Update all elements with data-lang attributes
         document.querySelectorAll("[data-en]").forEach((element) => {
           if (lang === "zh" && element.getAttribute("data-zh")) {
             element.textContent = element.getAttribute("data-zh");
