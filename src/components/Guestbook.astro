@@ -1,0 +1,97 @@
+---
+// Guestbook component using Giscus (GitHub Discussions)
+// You need to:
+// 1. Enable Discussions in your GitHub repo settings
+// 2. Install Giscus app: https://github.com/apps/giscus
+// 3. Visit https://giscus.app/ to generate your configuration
+---
+
+<div class="bg-white rounded-xl shadow-xl p-6 md:p-8">
+  <h2
+    class="text-2xl md:text-3xl font-bold mb-4 text-gray-800"
+    data-en="Guestbook"
+    data-zh="留言板"
+  >
+    Guestbook
+  </h2>
+  <p
+    class="text-gray-600 mb-6"
+    data-en="Leave a message, share your thoughts, or just say hi! All messages are moderated."
+    data-zh="留下你的信息、分享你的想法，或者只是打个招呼！所有留言都会经过审核。"
+  >
+    Leave a message, share your thoughts, or just say hi! All messages are
+    moderated.
+  </p>
+
+  <!-- Giscus will be loaded here -->
+  <div id="giscus-container"></div>
+</div>
+
+<script>
+  // Load Giscus dynamically
+  function loadGiscus() {
+    const container = document.getElementById("giscus-container");
+    if (!container) return;
+
+    // Get current language
+    const savedLang = localStorage.getItem("language") || "en";
+    const giscusLang = savedLang === "zh" ? "zh-CN" : "en";
+
+    // Create script element
+    const script = document.createElement("script");
+    script.src = "https://giscus.app/client.js";
+    script.setAttribute("data-repo", "NaxxHua/jiahuama-site");
+    script.setAttribute("data-repo-id", "R_kgDOKKvUVA");
+    script.setAttribute("data-category", "Guestbook");
+    script.setAttribute("data-category-id", "DIC_kwDOKKvUVM4Cxqip");
+    script.setAttribute("data-mapping", "pathname");
+    script.setAttribute("data-strict", "1");
+    script.setAttribute("data-reactions-enabled", "1");
+    script.setAttribute("data-emit-metadata", "0");
+    script.setAttribute("data-input-position", "bottom");
+    script.setAttribute("data-theme", "preferred_color_scheme");
+    script.setAttribute("data-lang", giscusLang);
+    script.setAttribute("data-loading", "lazy");
+    script.crossOrigin = "anonymous";
+    script.async = true;
+
+    container.appendChild(script);
+  }
+
+  // Load on page load
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", loadGiscus);
+  } else {
+    loadGiscus();
+  }
+
+  // Listen for language changes and reload Giscus
+  window.addEventListener("languageChange", (e: Event) => {
+    const container = document.getElementById("giscus-container");
+    if (container) {
+      // Clear and reload with new language
+      container.innerHTML = "";
+
+      // Wait a bit for localStorage to be updated
+      setTimeout(() => {
+        loadGiscus();
+      }, 100);
+    }
+  });
+</script>
+
+<style>
+  /* Custom Giscus styling */
+  #giscus-container {
+    min-height: 300px;
+  }
+
+  :global(.giscus) {
+    width: 100%;
+  }
+
+  :global(.giscus-frame) {
+    border: none;
+    width: 100%;
+  }
+</style>
