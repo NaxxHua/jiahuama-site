@@ -1,0 +1,169 @@
+---
+// Waline Comment Component
+// Supports anonymous comments, image uploads, and bilingual interface
+// Backend needs to be deployed on Vercel (free)
+---
+
+<div class="bg-white rounded-xl shadow-xl p-6 md:p-8">
+  <h2
+    class="text-2xl md:text-3xl font-bold mb-4 text-gray-800"
+    data-en="Comments & Feedback"
+    data-zh="评论与反馈"
+  >
+    Comments & Feedback
+  </h2>
+  <p
+    class="text-gray-600 mb-6"
+    data-en="Share your thoughts, upload photos of your creations, or just say hi! ✨"
+    data-zh="分享你的想法、上传你的作品照片，或者只是打个招呼！✨"
+  >
+    Share your thoughts, upload photos of your creations, or just say hi! ✨
+  </p>
+
+  <!-- Waline Comment Container -->
+  <div id="waline-container"></div>
+</div>
+
+<script>
+  import { init } from "@waline/client";
+  import "@waline/client/style";
+
+  // Function to initialize Waline
+  function initWaline() {
+    const container = document.getElementById("waline-container");
+    if (!container) return;
+
+    // Get current language
+    const savedLang = localStorage.getItem("language") || "en";
+    const walineLang = savedLang === "zh" ? "zh-CN" : "en";
+
+    // Initialize Waline
+    const walineInstance = init({
+      el: "#waline-container",
+      serverURL: "https://waline-backend-new.vercel.app",
+      lang: walineLang,
+      locale: {
+        placeholder:
+          savedLang === "zh"
+            ? "写下你的评论... (支持 Markdown 和图片上传 📸)"
+            : "Write your comment... (Supports Markdown & image upload 📸)",
+        admin: savedLang === "zh" ? "博主" : "Admin",
+        nick: savedLang === "zh" ? "昵称" : "Nickname",
+        nickError: savedLang === "zh" ? "请填写昵称" : "Nickname is required",
+        mail: savedLang === "zh" ? "邮箱" : "Email",
+        mailError:
+          savedLang === "zh"
+            ? "请填写正确的邮箱"
+            : "Please enter a valid email",
+        link: savedLang === "zh" ? "网址" : "Website",
+        optional: savedLang === "zh" ? "可选" : "Optional",
+        sofa:
+          savedLang === "zh"
+            ? "快来做第一个评论的人吧！🎉"
+            : "Be the first to comment! 🎉",
+        submit: savedLang === "zh" ? "提交" : "Submit",
+        like: savedLang === "zh" ? "喜欢" : "Like",
+        reply: savedLang === "zh" ? "回复" : "Reply",
+        cancelReply: savedLang === "zh" ? "取消回复" : "Cancel Reply",
+        comment: savedLang === "zh" ? "评论" : "Comment",
+        refresh: savedLang === "zh" ? "刷新" : "Refresh",
+        more: savedLang === "zh" ? "加载更多..." : "Load More...",
+        preview: savedLang === "zh" ? "预览" : "Preview",
+        emoji: savedLang === "zh" ? "表情" : "Emoji",
+        uploadImage: savedLang === "zh" ? "上传图片" : "Upload Image",
+        seconds: savedLang === "zh" ? "秒前" : "seconds ago",
+        minutes: savedLang === "zh" ? "分钟前" : "minutes ago",
+        hours: savedLang === "zh" ? "小时前" : "hours ago",
+        days: savedLang === "zh" ? "天前" : "days ago",
+        now: savedLang === "zh" ? "刚刚" : "just now",
+      },
+      emoji: [
+        "//unpkg.com/@waline/emojis@1.2.0/weibo",
+        "//unpkg.com/@waline/emojis@1.2.0/alus",
+        "//unpkg.com/@waline/emojis@1.2.0/bilibili",
+        "//unpkg.com/@waline/emojis@1.2.0/qq",
+        "//unpkg.com/@waline/emojis@1.2.0/tieba",
+      ],
+      search: true, // Enable GIF search (requires GIPHY_API_KEY in Vercel)
+      pageview: false,
+      comment: true,
+      dark: "auto",
+      meta: ["nick", "mail", "link"],
+      requiredMeta: ["nick"],
+      imageUploader: true, // Enable image/GIF upload
+      login: "disable", // Allow anonymous comments
+    });
+
+    return walineInstance;
+  }
+
+  // Initialize on page load
+  let walineInstance: any = null;
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => {
+      walineInstance = initWaline();
+    });
+  } else {
+    walineInstance = initWaline();
+  }
+
+  // Listen for language changes and reinitialize Waline
+  window.addEventListener("languageChange", () => {
+    const container = document.getElementById("waline-container");
+    if (container && walineInstance) {
+      // Destroy old instance
+      if (walineInstance.destroy) {
+        walineInstance.destroy();
+      }
+
+      // Clear container
+      container.innerHTML = "";
+
+      // Reinitialize with new language
+      setTimeout(() => {
+        walineInstance = initWaline();
+      }, 100);
+    }
+  });
+</script>
+
+<style>
+  /* Custom Waline styling */
+  #waline-container {
+    min-height: 300px;
+  }
+
+  /* Match website theme */
+  :global(.wl-panel) {
+    background-color: #f9fafb !important;
+    border-radius: 0.5rem !important;
+  }
+
+  :global(.wl-editor) {
+    border-radius: 0.5rem !important;
+  }
+
+  :global(.wl-btn) {
+    border-radius: 0.375rem !important;
+  }
+
+  :global(.wl-avatar) {
+    border-radius: 0.5rem !important;
+  }
+
+  /* Image upload preview */
+  :global(.wl-content img) {
+    border-radius: 0.5rem;
+    max-width: 100%;
+    height: auto;
+    margin: 1rem 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    :global(.wl-panel) {
+      padding: 0.75rem !important;
+    }
+  }
+</style>
