@@ -1,56 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Waline Test</title>
-</head>
-<body>
-  <h1>Waline Connection Test</h1>
-  <div id="result"></div>
-  
-  <script>
-    const serverURL = 'https://waline-backend-new.vercel.app';
-    const resultDiv = document.getElementById('result');
-    
-    // Test 1: Check if server is reachable
-    resultDiv.innerHTML += '<h2>Test 1: Server Reachability</h2>';
-    fetch(serverURL)
-      .then(r => {
-        resultDiv.innerHTML += `✅ Server is reachable (Status: ${r.status})<br>`;
-        return r.text();
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Waline Test</title>
+  </head>
+  <body>
+    <h1>Waline Connection Test</h1>
+    <div id="result"></div>
+
+    <script>
+      const serverURL = "https://waline-backend-new.vercel.app";
+      const resultDiv = document.getElementById("result");
+
+      // Test 1: Check if server is reachable
+      resultDiv.innerHTML += "<h2>Test 1: Server Reachability</h2>";
+      fetch(serverURL)
+        .then((r) => {
+          resultDiv.innerHTML += `✅ Server is reachable (Status: ${r.status})<br>`;
+          return r.text();
+        })
+        .then((text) => {
+          resultDiv.innerHTML += `Response: ${text.substring(
+            0,
+            200
+          )}...<br><br>`;
+        })
+        .catch((e) => {
+          resultDiv.innerHTML += `❌ Server not reachable: ${e.message}<br><br>`;
+        });
+
+      // Test 2: Check CORS
+      resultDiv.innerHTML += "<h2>Test 2: CORS Check</h2>";
+      fetch(`${serverURL}/api/comment?path=/test`, {
+        method: "GET",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
       })
-      .then(text => {
-        resultDiv.innerHTML += `Response: ${text.substring(0, 200)}...<br><br>`;
-      })
-      .catch(e => {
-        resultDiv.innerHTML += `❌ Server not reachable: ${e.message}<br><br>`;
-      });
-    
-    // Test 2: Check CORS
-    resultDiv.innerHTML += '<h2>Test 2: CORS Check</h2>';
-    fetch(`${serverURL}/api/comment?path=/test`, {
-      method: 'GET',
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(r => {
-      resultDiv.innerHTML += `✅ CORS OK (Status: ${r.status})<br>`;
-      return r.json();
-    })
-    .then(data => {
-      resultDiv.innerHTML += `Data: ${JSON.stringify(data, null, 2)}<br><br>`;
-    })
-    .catch(e => {
-      resultDiv.innerHTML += `❌ CORS Error: ${e.message}<br><br>`;
-    });
-    
-    // Test 3: Check environment
-    resultDiv.innerHTML += '<h2>Test 3: Environment Info</h2>';
-    resultDiv.innerHTML += `Origin: ${window.location.origin}<br>`;
-    resultDiv.innerHTML += `Protocol: ${window.location.protocol}<br>`;
-  </script>
-</body>
+        .then((r) => {
+          resultDiv.innerHTML += `✅ CORS OK (Status: ${r.status})<br>`;
+          return r.json();
+        })
+        .then((data) => {
+          resultDiv.innerHTML += `Data: ${JSON.stringify(
+            data,
+            null,
+            2
+          )}<br><br>`;
+        })
+        .catch((e) => {
+          resultDiv.innerHTML += `❌ CORS Error: ${e.message}<br><br>`;
+        });
+
+      // Test 3: Check environment
+      resultDiv.innerHTML += "<h2>Test 3: Environment Info</h2>";
+      resultDiv.innerHTML += `Origin: ${window.location.origin}<br>`;
+      resultDiv.innerHTML += `Protocol: ${window.location.protocol}<br>`;
+    </script>
+  </body>
 </html>

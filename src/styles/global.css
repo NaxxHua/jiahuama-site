@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme {
+  /* Enable dark mode with class strategy */
+  --color-mode: class;
+}
+
 /* Prevent horizontal scroll on mobile */
 body {
   overflow-x: hidden;
@@ -70,4 +75,91 @@ button,
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Dark Mode Styles */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-gradient-from: #99afd7;
+  --bg-gradient-via: #b8c5e0;
+  --bg-gradient-to: #d4ddeb;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-tertiary: #6b7280;
+  --border-color: #e5e7eb;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+  --bg-primary: #1f2937;
+  --bg-secondary: #111827;
+  --bg-gradient-from: #1e3a5f;
+  --bg-gradient-via: #2d4a6f;
+  --bg-gradient-to: #3d5a7f;
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --text-tertiary: #9ca3af;
+  --border-color: #374151;
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* Apply dark mode to body and common elements */
+.dark body {
+  background: linear-gradient(
+    135deg,
+    var(--bg-gradient-from),
+    var(--bg-gradient-via),
+    var(--bg-gradient-to)
+  );
+}
+
+.dark .bg-white {
+  background-color: var(--bg-primary) !important;
+}
+
+.dark .bg-gray-50,
+.dark .bg-gray-100 {
+  background-color: var(--bg-secondary) !important;
+}
+
+.dark .text-gray-800,
+.dark .text-gray-900 {
+  color: var(--text-primary) !important;
+}
+
+.dark .text-gray-600,
+.dark .text-gray-700 {
+  color: var(--text-secondary) !important;
+}
+
+.dark .text-gray-500 {
+  color: var(--text-tertiary) !important;
+}
+
+.dark .border-gray-200,
+.dark .border-gray-300 {
+  border-color: var(--border-color) !important;
+}
+
+.dark .shadow-md,
+.dark .shadow-lg,
+.dark .shadow-xl {
+  box-shadow: 0 10px 15px -3px var(--shadow), 0 4px 6px -2px var(--shadow) !important;
+}
+
+/* Dark mode for cards */
+.dark .rounded-xl,
+.dark .rounded-lg {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Dark mode hover states */
+.dark .hover\:shadow-xl:hover {
+  box-shadow: 0 20px 25px -5px var(--shadow), 0 10px 10px -5px var(--shadow) !important;
+}
+
+.dark .hover\:bg-gray-50:hover {
+  background-color: var(--bg-secondary) !important;
 }

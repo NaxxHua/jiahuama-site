@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import DarkModeToggle from "./DarkModeToggle";
 
 export default function NavBar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -166,6 +167,10 @@ export default function NavBar() {
                   </button>
                 </div>
               )}
+            </li>
+            {/* Dark Mode Toggle */}
+            <li>
+              <DarkModeToggle />
             </li>
           </ul>
         </div>
