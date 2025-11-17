@@ -1,5 +1,6 @@
 ---
 import NavBar from "../../components/NavBar.jsx";
+import ShareButton from "../../components/ShareButton.astro";
 import WalineComment from "../../components/WalineComment.astro";
 import GoogleAnalytics from "../../components/GoogleAnalytics.astro";
 import "../../styles/global.css";
@@ -206,17 +207,20 @@ import "../../styles/global.css";
         </div>
       </div>
 
-        <!-- Comment Section -->
-        <div class="mt-8">
-          <WalineComment />
-        </div>
+      <!-- Share Button -->
+      <ShareButton />
+
+      <!-- Comment Section -->
+      <div class="mt-8">
+        <WalineComment />
+      </div>
     </main>
 
     <script>
       function updateLanguage(lang: string) {
         // Save language preference
         localStorage.setItem("language", lang);
-        
+
         // Update all elements with data-lang attributes
         document.querySelectorAll("[data-en]").forEach((element) => {
           if (lang === "zh" && element.getAttribute("data-zh")) {

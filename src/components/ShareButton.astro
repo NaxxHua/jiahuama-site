@@ -1,0 +1,103 @@
+---
+// Simple share button component - Copy link to clipboard
+---
+
+<div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 my-8">
+  <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+    <p
+      class="text-gray-700 dark:text-gray-300 font-medium"
+      data-en="Like this recipe? Share it with friends!"
+      data-zh="喜欢这个食谱？分享给朋友！"
+    >
+      Like this recipe? Share it with friends!
+    </p>
+
+    <button
+      id="share-button"
+      class="flex items-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
+    >
+      <svg
+        class="w-5 h-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+        ></path>
+      </svg>
+      <span data-en="Copy Link" data-zh="复制链接"> Copy Link </span>
+    </button>
+  </div>
+
+  <!-- Success Toast -->
+  <div
+    id="share-toast"
+    class="hidden fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-fade-in"
+  >
+    <div class="flex items-center gap-2">
+      <svg
+        class="w-5 h-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 13l4 4L19 7"></path>
+      </svg>
+      <span data-en="Link copied to clipboard!" data-zh="链接已复制到剪贴板！">
+        Link copied to clipboard!
+      </span>
+    </div>
+  </div>
+</div>
+
+<script>
+  const shareButton = document.getElementById("share-button");
+  const shareToast = document.getElementById("share-toast");
+
+  if (shareButton && shareToast) {
+    shareButton.addEventListener("click", async () => {
+      const currentUrl = window.location.href;
+
+      try {
+        await navigator.clipboard.writeText(currentUrl);
+
+        // Show toast
+        shareToast.classList.remove("hidden");
+
+        // Hide toast after 3 seconds
+        setTimeout(() => {
+          shareToast.classList.add("hidden");
+        }, 3000);
+      } catch (err) {
+        console.error("Failed to copy:", err);
+        // Fallback: show alert
+        alert(currentUrl);
+      }
+    });
+  }
+</script>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+</style>
