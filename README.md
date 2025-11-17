@@ -135,4 +135,4 @@ For any questions or collaboration opportunities, feel free to reach out through
 
 ---
 
-Built with care by Jiahua Ma | Design Engineer @ Visa
+Built with care by Jiahua Ma
