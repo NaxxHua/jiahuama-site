@@ -74,23 +74,13 @@ export default function NavBar() {
 
           {/* Navigation Links */}
           <ul
-            className="flex items-center space-x-0.5 md:space-x-1"
+            className="flex items-center space-x-0.5 sm:space-x-1"
             role="list"
           >
-            <li className="hidden md:block">
-              <a
-                href="/"
-                className="px-4 py-2 text-gray-200 hover:text-white hover:bg-white/10 focus:bg-white/10 focus:text-white rounded-lg transition-all duration-200 font-medium text-sm md:text-base"
-                data-en="Home"
-                data-zh="首页"
-              >
-                Home
-              </a>
-            </li>
             <li>
               <a
                 href="/about"
-                className="px-2 md:px-4 py-2 text-gray-200 hover:text-white hover:bg-white/10 focus:bg-white/10 focus:text-white rounded-lg transition-all duration-200 font-medium text-sm md:text-base"
+                className="px-1.5 sm:px-3 py-2 text-gray-200 hover:text-white hover:bg-white/10 rounded-lg transition-all font-medium text-xs sm:text-sm"
                 data-en="About"
                 data-zh="关于"
               >
@@ -100,7 +90,7 @@ export default function NavBar() {
             <li>
               <a
                 href="/portfolio"
-                className="px-2 md:px-4 py-2 text-gray-200 hover:text-white hover:bg-white/10 focus:bg-white/10 focus:text-white rounded-lg transition-all duration-200 font-medium text-sm md:text-base"
+                className="px-1.5 sm:px-3 py-2 text-gray-200 hover:text-white hover:bg-white/10 rounded-lg transition-all font-medium text-xs sm:text-sm"
                 data-en="Portfolio"
                 data-zh="作品"
               >
@@ -110,7 +100,7 @@ export default function NavBar() {
             <li>
               <a
                 href="/recipes"
-                className="px-2 md:px-4 py-2 text-gray-200 hover:text-white hover:bg-white/10 focus:bg-white/10 focus:text-white rounded-lg transition-all duration-200 font-medium text-sm md:text-base"
+                className="px-1.5 sm:px-3 py-2 text-gray-200 hover:text-white hover:bg-white/10 rounded-lg transition-all font-medium text-xs sm:text-sm"
                 data-en="Recipes"
                 data-zh="食谱"
               >
@@ -120,7 +110,7 @@ export default function NavBar() {
             <li>
               <a
                 href="/contact"
-                className="px-2 md:px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-lg hover:from-blue-600 hover:to-indigo-700 focus:from-blue-600 focus:to-indigo-700 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-900 transition-all duration-200 font-medium shadow-md hover:shadow-lg text-sm md:text-base"
+                className="px-2 sm:px-3 py-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-lg hover:from-blue-600 hover:to-indigo-700 transition-all font-medium shadow-md text-xs sm:text-sm"
                 data-en="Contact"
                 data-zh="联系"
               >
@@ -131,12 +121,12 @@ export default function NavBar() {
             <li className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="px-2 md:px-3 py-2 text-gray-200 hover:text-white hover:bg-white/10 focus:bg-white/10 focus:text-white rounded-lg transition-all duration-200 flex items-center"
+                className="px-1.5 sm:px-2 py-2 text-gray-200 hover:text-white hover:bg-white/10 rounded-lg transition-all flex items-center"
                 aria-label="Change language"
                 aria-expanded={isDropdownOpen}
               >
                 <svg
-                  className="w-5 h-5"
+                  className="w-4 h-4 sm:w-5 sm:h-5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
