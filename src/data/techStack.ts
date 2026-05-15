@@ -18,6 +18,8 @@ import {
   siGit,
   siGithubactions,
   siFigma,
+  siGodotengine,
+  siUnity,
   siClaude,
 } from "simple-icons";
 
@@ -49,5 +51,7 @@ export const techStack: TechIcon[] = [
   siGit,
   siGithubactions,
   siFigma,
+  siGodotengine,
+  siUnity,
   siClaude,
 ].map((icon) => ({ name: icon.title, svgPath: icon.path }));
