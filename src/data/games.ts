@@ -6,14 +6,14 @@ export interface BiText {
 export interface LolChampion {
   name: BiText;
   /** Featured skin shown on the card. */
-  skin: string;
+  skin: BiText;
   /** Skin splash-art image URL. */
   image: string;
 }
 
 /** World of Warcraft — static profile built around a best WarcraftLogs parse. */
 export const wowProfile = {
-  game: "World of Warcraft",
+  game: { en: "World of Warcraft", zh: "魔兽世界" } as BiText,
   character: "Huasuiyue",
   race: "Mag'har Orc",
   class: "Warrior",
@@ -35,7 +35,7 @@ export const wowProfile = {
 
 /** League of Legends — static peak-rank profile. */
 export const lolProfile = {
-  game: "League of Legends",
+  game: { en: "League of Legends", zh: "英雄联盟" } as BiText,
   tier: { en: "Master", zh: "大师" } as BiText,
   lp: 200,
   /** Master-tier colour. */
@@ -43,19 +43,19 @@ export const lolProfile = {
   champions: [
     {
       name: { en: "Rakan", zh: "洛" },
-      skin: "Star Guardian Rakan",
+      skin: { en: "Star Guardian Rakan", zh: "星之守护者 洛" },
       image:
         "https://wiki.leagueoflegends.com/en-us/images/Rakan_StarGuardianSkin.jpg?3e37b",
     },
     {
       name: { en: "Rell", zh: "芮尔" },
-      skin: "High Noon Rell",
+      skin: { en: "High Noon Rell", zh: "西部魔影 芮尔" },
       image:
         "https://wiki.leagueoflegends.com/en-us/images/Rell_HighNoonSkin.jpg?f5200",
     },
     {
       name: { en: "Viego", zh: "佛耶戈" },
-      skin: "Worlds 2024 Viego",
+      skin: { en: "Worlds 2024 Viego", zh: "2024全球总决赛 佛耶戈" },
       image:
         "https://wiki.leagueoflegends.com/en-us/images/Viego_Worlds2024Skin.jpg?40c88",
     },

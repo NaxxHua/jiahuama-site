@@ -56,6 +56,7 @@ function Chip({ children }: { children: ReactNode }) {
 
 function WowCard() {
   const { t } = useLang();
+  const tx = useTx();
   const g = t.about.gaming;
   const w = wowProfile;
 
@@ -66,7 +67,7 @@ function WowCard() {
           className="font-mono text-[11px] uppercase tracking-[0.16em]"
           style={{ color: w.classColor }}
         >
-          {w.game}
+          {tx(w.game)}
         </span>
         <Swords size={18} style={{ color: w.classColor }} />
       </div>
@@ -122,7 +123,7 @@ function LolCard() {
           className="font-mono text-[11px] uppercase tracking-[0.16em]"
           style={{ color: l.tierColor }}
         >
-          {l.game}
+          {tx(l.game)}
         </span>
         <Crown size={18} style={{ color: l.tierColor }} />
       </div>
@@ -148,7 +149,7 @@ function LolCard() {
         <div className="mt-3 flex h-44 gap-1.5">
           {l.champions.map((c) => (
             <div
-              key={c.skin}
+              key={c.name.en}
               className="group/champ relative basis-0 grow overflow-hidden rounded-md transition-[flex-grow] duration-500 ease-out hover:grow-[5]"
             >
               <img
@@ -163,7 +164,7 @@ function LolCard() {
                   {tx(c.name)}
                 </p>
                 <p className="mt-0.5 truncate font-mono text-[10px] text-white/0 transition-colors duration-300 group-hover/champ:text-white/75">
-                  {c.skin}
+                  {tx(c.skin)}
                 </p>
               </div>
             </div>
