@@ -29,7 +29,10 @@ const en = {
   },
   notFound: {
     title: "Page not found",
-    body: "The page you are looking for does not exist.",
+    lines: [
+      "Looks like this page doesn't exist.",
+      "Or it's just really good at hiding.",
+    ],
     home: "Back home",
   },
   home: {
@@ -354,7 +357,7 @@ const zh: Dict = {
   },
   notFound: {
     title: "页面不存在",
-    body: "你访问的页面不存在。",
+    lines: ["这个页面好像不存在。", "也可能它只是特别擅长躲。"],
     home: "返回首页",
   },
   home: {
