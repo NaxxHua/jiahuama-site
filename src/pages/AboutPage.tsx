@@ -1,5 +1,6 @@
 import { Gamepad2, Martini, Target, type LucideIcon } from "lucide-react";
 import PageHeader from "@/components/layout/PageHeader";
+import GamingSection from "@/components/about/GamingSection";
 import SpotlightCard from "@/components/ui/SpotlightCard";
 import StarButton from "@/components/ui/StarButton";
 import Reveal from "@/components/ui/Reveal";
@@ -67,6 +68,8 @@ export default function AboutPage() {
           </Reveal>
         </div>
       </section>
+
+      <GamingSection />
 
       <section className="border-t border-border">
         <div className="mx-auto max-w-2xl px-5 py-20 text-center">
