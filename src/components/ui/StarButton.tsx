@@ -9,6 +9,9 @@ interface StarButtonProps {
   /** External URL. */
   href?: string;
   onClick?: () => void;
+  /** Button type when rendered as a <button> (no `to`/`href`). */
+  type?: "button" | "submit";
+  disabled?: boolean;
   className?: string;
 }
 
@@ -24,6 +27,8 @@ export default function StarButton({
   to,
   href,
   onClick,
+  type = "button",
+  disabled = false,
   className = "",
 }: StarButtonProps) {
   if (to) {
@@ -59,11 +64,12 @@ export default function StarButton({
   return (
     <StarBorder
       as="button"
-      type="button"
+      type={type}
       onClick={onClick}
+      disabled={disabled}
       color="var(--accent)"
       speed="5s"
-      className={className}
+      className={`${className} ${disabled ? "pointer-events-none opacity-60" : ""}`}
       innerClassName={FACE}
     >
       {children}

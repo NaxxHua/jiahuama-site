@@ -296,6 +296,23 @@ const en = {
     notFound: "Recipe not found",
     backToRecipes: "All recipes",
   },
+  guestbook: {
+    eyebrow: "Guestbook",
+    title: "Leave a mark",
+    intro:
+      "Say hi, drop some feedback, or just let me know you stopped by.",
+    namePlaceholder: "Your name",
+    messagePlaceholder: "Write something nice…",
+    submit: "Sign the guestbook",
+    submitting: "Signing…",
+    entriesTitle: "Messages",
+    empty: "No messages yet — be the first to sign.",
+    loading: "Loading messages…",
+    error: "Couldn't load messages. Please try again later.",
+    demoNote:
+      "Demo mode — messages are saved locally in your browser only.",
+    nameRequired: "Please enter your name and a message.",
+  },
 };
 
 export type Dict = typeof en;
@@ -585,6 +602,21 @@ const zh: Dict = {
     shareCopied: "链接已复制",
     notFound: "未找到该配方",
     backToRecipes: "全部食谱",
+  },
+  guestbook: {
+    eyebrow: "留言板",
+    title: "留下一笔",
+    intro: "打个招呼、留点反馈，或者只是让我知道你来过。",
+    namePlaceholder: "你的名字",
+    messagePlaceholder: "写点友善的话…",
+    submit: "签下留言",
+    submitting: "提交中…",
+    entriesTitle: "留言",
+    empty: "还没有留言——来当第一个吧。",
+    loading: "正在加载留言…",
+    error: "留言加载失败，请稍后再试。",
+    demoNote: "演示模式——留言仅保存在你本地的浏览器里。",
+    nameRequired: "请填写名字和留言内容。",
   },
 };
 
