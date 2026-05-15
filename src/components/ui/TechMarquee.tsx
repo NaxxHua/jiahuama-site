@@ -78,8 +78,9 @@ export default function TechMarquee({
       <div
         className="flex w-max items-center gap-12 py-12 group-hover:[animation-play-state:paused]"
         style={{
-          animation: `marquee-scroll ${speed}s linear infinite`,
-          animationDirection: direction === "right" ? "reverse" : "normal",
+          animation: `marquee-scroll ${speed}s linear infinite ${
+            direction === "right" ? "reverse" : "normal"
+          }`,
         }}
       >
         {[...items, ...items].map((item, i) => (

@@ -1,7 +1,9 @@
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
+import { Loader2 } from "lucide-react";
 import Nav from "./Nav";
 import Footer from "./Footer";
+import Analytics from "./Analytics";
 import { useLenis, scrollToTop } from "@/hooks/useLenis";
 import { useLang } from "@/i18n/LanguageContext";
 
@@ -11,6 +13,14 @@ function ScrollToTop() {
     scrollToTop();
   }, [pathname]);
   return null;
+}
+
+function PageFallback() {
+  return (
+    <div className="grid min-h-[60vh] place-items-center">
+      <Loader2 size={22} className="animate-spin text-fg-3" />
+    </div>
+  );
 }
 
 export default function RootLayout() {
@@ -23,9 +33,12 @@ export default function RootLayout() {
         {t.common.skipToContent}
       </a>
       <ScrollToTop />
+      <Analytics />
       <Nav />
       <main id="main" className="flex-1">
-        <Outlet />
+        <Suspense fallback={<PageFallback />}>
+          <Outlet />
+        </Suspense>
       </main>
       <Footer />
     </div>

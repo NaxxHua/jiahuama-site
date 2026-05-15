@@ -1,138 +1,96 @@
-# Jiahua Ma's Personal Website
+# Jiahua Ma — Personal Website
 
-Welcome to the source code of my personal website. This site showcases my work as a Design Engineer, my creative projects, and my passion for technology, design, and mixology.
+Source for [jiahuama.com](https://jiahuama.com) — the personal site of Jiahua Ma,
+a design engineer at Visa, game developer, and table tennis player.
 
-Previously known as "家骅的锦绣谷 (Jiahua's Vale of Eternal Blossoms)" and hosted on WordPress, this site has been completely rebuilt with modern web technologies for better performance and user experience.
+A bilingual (English / Chinese) portfolio with a cyberpunk-themed recipe
+collection and a guestbook.
 
-## About This Site
+## Tech stack
 
-This is a multilingual (English/Chinese) portfolio and blog site that features:
+- **Vite 6** + **React 18** + **TypeScript** — single-page app
+- **Tailwind CSS 3** — styling, driven by a CSS-variable design-token system
+- **react-router-dom 6** — routing, with route-level code splitting
+- **Lenis** — smooth scrolling
+- **GSAP**, **Motion**, **OGL** — animation (text reveals, scroll effects, the
+  WebGL hero background)
+- **simple-icons** — brand logos for the tech marquee
+- **Supabase** — guestbook backend (falls back to localStorage in dev)
 
-- **Portfolio**: Professional projects including Visa Design System and PsySpace
-- **Recipes**: Curated collection of cocktail recipes and cooking guides
-- **Resume**: Professional experience and skills
-- **Contact**: Get in touch and leave comments
-- **Dark Mode**: Comfortable viewing experience day or night
+UI animation components are adapted from [React Bits](https://reactbits.dev) (MIT).
 
-## Tech Stack
+## Features
 
-### Frontend Framework
-
-- **Astro 5.5.6** - Modern static site generator with partial hydration
-- **React 18** - Interactive components (NavBar, DarkModeToggle)
-- **Tailwind CSS 4** - Utility-first styling with custom dark mode support
-
-### Features & Integrations
-
-- **Waline Comment System** - Anonymous comments with image upload support
-- **Google Analytics** - Visitor tracking and analytics
-- **Responsive Design** - Optimized for desktop and mobile devices
-- **Bilingual Support** - Seamless English/Chinese language switching
-- **Share Functionality** - Easy link sharing for all recipe pages
-
-### Deployment
-
-- **Vercel** - Continuous deployment from GitHub
-- **LeanCloud** - Comment database backend
-- **Domain**: jiahuama.com
-
-## Project Structure
-
-```
-jiahuama-site/
-├── src/
-│   ├── components/      # Reusable UI components
-│   │   ├── NavBar.jsx           # Navigation with language & dark mode
-│   │   ├── DarkModeToggle.jsx   # Theme switcher
-│   │   ├── WalineComment.astro  # Comment system
-│   │   └── ShareButton.astro    # Share functionality
-│   ├── layouts/         # Page layouts
-│   │   └── Layout.astro
-│   ├── pages/          # Route pages
-│   │   ├── index.astro         # Homepage
-│   │   ├── about.astro         # About me
-│   │   ├── portfolio.astro     # Work showcase
-│   │   ├── resume.astro        # Professional resume
-│   │   ├── contact.astro       # Contact & comments
-│   │   └── recipes/            # Recipe collection
-│   └── styles/         # Global styles
-│       └── global.css
-└── public/             # Static assets
-
-```
+- Bilingual UI with persisted language preference
+- Light / dark theme, synced to the system preference
+- Animated WebGL hero, tech-stack marquee, scroll-reveal sections
+- Recipe collection — glassmorphism cards and cinematic detail pages
+- Supabase-backed guestbook
+- Google Analytics 4 with SPA page-view tracking
 
 ## Development
 
-### Prerequisites
-
-- Node.js 18+
-- npm or pnpm
-
-### Getting Started
+Requires Node.js 20+.
 
 ```bash
-# Clone the repository
-git clone https://github.com/NaxxHua/jiahuama-site.git
-
-# Install dependencies
 npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
+npm run dev        # start the dev server
+npm run build      # type-check and build for production
+npm run preview    # preview the production build
 ```
 
-## Key Features Explained
+## Environment variables
 
-### Multilingual Support
+Copy `.env.example` to `.env` and fill in:
 
-The site uses localStorage to remember language preferences and custom events to synchronize language changes across components. All text content includes both English and Chinese versions via data attributes.
+| Variable                  | Purpose                                      |
+| ------------------------- | -------------------------------------------- |
+| `VITE_SUPABASE_URL`       | Supabase project URL (guestbook)             |
+| `VITE_SUPABASE_ANON_KEY`  | Supabase anon key — safe to expose           |
+| `VITE_GA_MEASUREMENT_ID`  | Google Analytics 4 measurement ID            |
 
-### Dark Mode
+Without the Supabase variables the guestbook runs in a localStorage-only
+demo mode.
 
-Implemented with Tailwind CSS dark mode using class strategy. The theme preference is saved to localStorage and automatically applied on page load.
+### Supabase guestbook table
 
-### Comment System
+Run this SQL once in the Supabase SQL editor:
 
-Powered by Waline, allowing anonymous comments with:
+```sql
+create table public.guestbook (
+  id         bigint generated always as identity primary key,
+  created_at timestamptz not null default now(),
+  name       text not null check (char_length(name) between 1 and 40),
+  message    text not null check (char_length(message) between 1 and 500)
+);
 
-- Nickname and email-based authentication
-- Image and GIF upload support
-- Markdown formatting
-- Admin moderation dashboard
-- Bilingual interface
+alter table public.guestbook enable row level security;
 
-### Share Functionality
+create policy "Public read"   on public.guestbook for select using (true);
+create policy "Public insert" on public.guestbook for insert with check (true);
+```
 
-Each recipe page includes a share button that copies the current URL to clipboard with visual feedback confirmation.
+## Project structure
 
-## Performance
+```
+src/
+  pages/        route-level page components
+  components/
+    ui/         design-system atoms & React Bits ports
+    layout/     Nav, Footer, RootLayout, PageHeader, Analytics
+    home/ portfolio/ recipes/ guestbook/   section components
+  hooks/        useTheme, useLang helpers, useLenis, useReducedMotion
+  i18n/         LanguageContext + the bilingual string dictionary
+  data/         recipes, tech-stack data
+  lib/          Supabase client & guestbook data layer
+```
 
-- Static site generation for optimal load times
-- Lazy loading for images and components
-- Minimal JavaScript for core functionality
-- Optimized asset delivery via Vercel Edge Network
+## Deployment
 
-## Browser Support
-
-- Chrome/Edge (latest)
-- Firefox (latest)
-- Safari (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
+Deployed to GitHub Pages via `.github/workflows/deploy.yaml` on every push to
+`main`. Add `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, and
+`VITE_GA_MEASUREMENT_ID` as repository secrets.
 
 ## License
 
-This project is private and proprietary. All rights reserved.
-
-## Contact
-
-For any questions or collaboration opportunities, feel free to reach out through the contact page on the website.
-
----
-
-Built with care by Jiahua Ma
+Private and proprietary. All rights reserved.

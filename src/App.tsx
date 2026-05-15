@@ -1,14 +1,17 @@
+import { lazy } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import RootLayout from "@/components/layout/RootLayout";
-import HomePage from "@/pages/HomePage";
-import AboutPage from "@/pages/AboutPage";
-import PortfolioPage from "@/pages/PortfolioPage";
-import ContactPage from "@/pages/ContactPage";
-import RecipesPage from "@/pages/RecipesPage";
-import RecipeDetailPage from "@/pages/RecipeDetailPage";
-import GuestbookPage from "@/pages/GuestbookPage";
-import NotFoundPage from "@/pages/NotFoundPage";
+
+// Route-level code splitting — each page ships as its own chunk.
+const HomePage = lazy(() => import("@/pages/HomePage"));
+const AboutPage = lazy(() => import("@/pages/AboutPage"));
+const PortfolioPage = lazy(() => import("@/pages/PortfolioPage"));
+const ContactPage = lazy(() => import("@/pages/ContactPage"));
+const RecipesPage = lazy(() => import("@/pages/RecipesPage"));
+const RecipeDetailPage = lazy(() => import("@/pages/RecipeDetailPage"));
+const GuestbookPage = lazy(() => import("@/pages/GuestbookPage"));
+const NotFoundPage = lazy(() => import("@/pages/NotFoundPage"));
 
 export default function App() {
   return (
