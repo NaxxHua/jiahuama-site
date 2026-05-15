@@ -15,16 +15,19 @@ export interface LolChampion {
 export const wowProfile = {
   game: { en: "World of Warcraft", zh: "魔兽世界" } as BiText,
   character: "Huasuiyue",
-  race: "Mag'har Orc",
-  class: "Warrior",
-  spec: "Arms",
-  realm: "Illidan",
-  region: "US",
+  race: { en: "Mag'har Orc", zh: "玛格汉兽人" } as BiText,
+  class: { en: "Warrior", zh: "战士" } as BiText,
+  spec: { en: "Arms", zh: "武器" } as BiText,
+  realm: { en: "Illidan", zh: "伊利丹" } as BiText,
+  region: { en: "US", zh: "美服" } as BiText,
   guild: "Happy Dogs",
-  encounter: "The Defense of Eonar",
-  difficulty: "Heroic",
-  raid: "Antorus, the Burning Throne",
-  expansion: "Legion",
+  encounter: { en: "The Defense of Eonar", zh: "保卫艾欧娜尔" } as BiText,
+  difficulty: { en: "Heroic", zh: "英雄难度" } as BiText,
+  raid: {
+    en: "Antorus, the Burning Throne",
+    zh: "安托鲁斯，燃烧王座",
+  } as BiText,
+  expansion: { en: "Legion", zh: "军团再临" } as BiText,
   peakDps: "1.77M",
   itemLevel: 958,
   /** Faded character render shown on the card — save to public/. */
@@ -37,7 +40,7 @@ export const wowProfile = {
 export const lolProfile = {
   game: { en: "League of Legends", zh: "英雄联盟" } as BiText,
   tier: { en: "Master", zh: "大师" } as BiText,
-  lp: 200,
+  lp: 198,
   /** Master-tier colour. */
   tierColor: "#a35bd6",
   champions: [

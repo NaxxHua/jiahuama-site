@@ -82,19 +82,19 @@ function WowCard() {
           {w.character}
         </p>
         <p className="mt-0.5 text-[13px] text-fg-1">
-          {w.race} {w.class} · {w.spec}
+          {tx(w.race)} {tx(w.class)} · {tx(w.spec)}
         </p>
         <p className="mt-0.5 font-mono text-[12px] text-fg-3">
-          {w.realm} · {w.region} · ⟨{w.guild}⟩
+          {tx(w.realm)} · {tx(w.region)} · ⟨{w.guild}⟩
         </p>
       </div>
 
       <div className="mt-4 inline-block rounded-lg border border-border bg-bg-2 px-3.5 py-2.5">
         <p className="text-[13px] font-medium text-fg">
-          {w.encounter} — {w.difficulty}
+          {tx(w.encounter)} — {tx(w.difficulty)}
         </p>
         <p className="mt-0.5 text-[12px] text-fg-2">
-          {w.raid} · {w.expansion}
+          {tx(w.raid)} · {tx(w.expansion)}
         </p>
       </div>
 
