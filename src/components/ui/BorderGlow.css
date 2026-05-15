@@ -1,0 +1,62 @@
+/* BorderGlow — cursor-angle-aware halo around a card. A conic-gradient
+ * anchored to `--cursor-angle` lights up the slice of the perimeter facing
+ * the cursor. Ported/adapted from React Bits (MIT). */
+
+.border-glow {
+  --cursor-angle: 90deg;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+}
+
+.border-glow::before,
+.border-glow::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: -1;
+}
+
+.border-glow::before {
+  inset: -2px;
+  border-radius: calc(var(--radius) + 2px);
+  background: conic-gradient(
+    from var(--cursor-angle),
+    rgba(74, 163, 255, 0.95) 0%,
+    rgba(74, 163, 255, 0.35) 12%,
+    transparent 26%,
+    transparent 74%,
+    rgba(74, 163, 255, 0.35) 88%,
+    rgba(74, 163, 255, 0.95) 100%
+  );
+}
+
+.border-glow::after {
+  inset: -20px;
+  border-radius: 30px;
+  background: conic-gradient(
+    from var(--cursor-angle),
+    rgba(74, 163, 255, 0.5) 0%,
+    rgba(74, 163, 255, 0.2) 12%,
+    transparent 28%,
+    transparent 72%,
+    rgba(74, 163, 255, 0.2) 88%,
+    rgba(74, 163, 255, 0.5) 100%
+  );
+  filter: blur(18px);
+  transition: opacity 0.45s ease;
+}
+
+.border-glow:hover::before,
+.border-glow:hover::after {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .border-glow::before,
+  .border-glow::after {
+    transition: none;
+  }
+}
