@@ -198,7 +198,7 @@ export default function GamingSection() {
           <p className="mt-2 text-[15px] text-fg-2">{g.sub}</p>
         </Reveal>
         <Reveal delay={0.1}>
-          <div className="mt-10 grid items-start gap-4 sm:grid-cols-2">
+          <div className="mt-10 grid gap-4 sm:grid-cols-2">
             <WowCard />
             <LolCard />
           </div>

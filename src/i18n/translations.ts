@@ -96,29 +96,29 @@ const en = {
   },
   about: {
     eyebrow: "About",
-    title: "Designing, building, and chasing topspin",
+    title: "Design, games, and table tennis",
     intro:
-      "I'm Jiahua Ma — a design engineer at Visa who's happiest where careful design meets real engineering.",
+      "I'm Jiahua Ma, a design engineer at Visa. Most of what I do sits somewhere between design and engineering.",
     journeyTitle: "The story so far",
     journey: [
-      "I grew up in Xinjiang, in northwest China, and moved to the United States in 2014. The leap meant a new language and a new way of seeing things — and it has shaped how I approach problems ever since.",
-      "I studied at Penn State: first a bachelor's in Applied Data Sciences, then a master's in Informatics focused on Human-Computer Interaction. Along the way I worked in the User Agency Lab and co-founded PsySpace, a mental-health app for students.",
-      "In 2022 I joined Visa in Austin, Texas as a design engineer, where I build the design system other teams build on. Austin — equal parts tech and incredible food — has been home ever since.",
+      "I grew up in Xinjiang, in northwest China, and moved to the US in 2014. Learning a new language and starting over somewhere unfamiliar shaped how I deal with hard problems.",
+      "I went to Penn State for a bachelor's in Applied Data Sciences and then a master's in Informatics focused on Human-Computer Interaction. While I was there I did research at the User Agency Lab and co-founded PsySpace, a mental-health app for students.",
+      "In 2022 I joined Visa in Austin, Texas as a design engineer. I work on the design system that other teams build their products with. Austin has been home since then, and the food here is hard to beat.",
     ],
     offTitle: "Off the clock",
-    offSub: "The things that keep me curious outside of work.",
+    offSub: "A few things I do when I'm not working.",
     facets: {
       game: {
         title: "Game development",
-        desc: "I'm building an auto-battler from scratch — design, code, and art direction — with a Steam release as the goal.",
+        desc: "I'm building an auto-battler on my own, doing the design, code, and art. The plan is to release it on Steam.",
       },
       tabletennis: {
         title: "Table tennis",
-        desc: "A competitive, USATT-rated player. The table is where I think about focus, footwork, and reading an opponent.",
+        desc: "I play competitively and have a USATT rating. It keeps me sharp in a way work doesn't.",
       },
       bar: {
         title: "Behind the bar",
-        desc: "I mix cocktails and cook — there's a whole VA-11 HALL-A-themed recipe collection on this site. Kitchen and code aren't so different.",
+        desc: "I make cocktails and cook. There's a whole recipe collection on this site, themed around the game VA-11 HALL-A.",
       },
     },
     ctaLine: "Curious about the professional side?",
@@ -420,29 +420,29 @@ const zh: Dict = {
   },
   about: {
     eyebrow: "关于",
-    title: "做设计、做工程，也追逐上旋",
+    title: "设计、游戏和乒乓球",
     intro:
-      "我是马嘉华——Visa 的一名设计工程师，最享受在缜密设计与扎实工程的交汇处工作。",
+      "我是马家骅，Visa 的一名设计工程师。我做的事大多介于设计和工程之间。",
     journeyTitle: "到目前为止的故事",
     journey: [
-      "我在中国西北的新疆长大，2014 年来到美国。这次跨越意味着新的语言和看待事物的新方式——也从此塑造了我解决问题的方式。",
-      "我在宾州州立大学求学：先是应用数据科学学士，再是聚焦人机交互（HCI）的信息学硕士。其间我在 User Agency Lab 做研究，并联合创办了面向学生的心理健康应用 PsySpace。",
-      "2022 年我加入位于德州奥斯汀的 Visa，成为一名设计工程师，构建其他团队赖以开发的设计系统。奥斯汀——科技与美食各占一半——从此成了我的家。",
+      "我在中国西北的新疆长大，2014 年来到美国。学一门新语言、在陌生的地方重新开始，很大程度上塑造了我面对难题的方式。",
+      "我在宾州州立大学读了应用数据科学学士，之后又读了信息学硕士，方向是人机交互。读书期间我在 User Agency Lab 做研究，还和朋友一起创办了面向学生的心理健康应用 PsySpace。",
+      "2022 年我加入了德州奥斯汀的 Visa，做设计工程师，负责其他团队用来开发产品的设计系统。从那以后奥斯汀就成了我的家，这里的吃的也很难让人不爱。",
     ],
     offTitle: "工作之余",
-    offSub: "工作以外让我保持好奇的那些事。",
+    offSub: "不工作的时候我会做的一些事。",
     facets: {
       game: {
         title: "游戏开发",
-        desc: "我在从零打造一款自走棋游戏——设计、代码与美术方向一手包办，目标是登陆 Steam。",
+        desc: "我在自己做一款自走棋游戏，设计、代码和美术都自己来，打算之后上架 Steam。",
       },
       tabletennis: {
         title: "乒乓球",
-        desc: "一名 USATT 注册的竞技选手。球台是我思考专注、步法与读懂对手的地方。",
+        desc: "我是一名 USATT 注册的竞技选手。打球时要专注、要看懂对手，那种状态和工作很不一样。",
       },
       bar: {
         title: "在吧台后",
-        desc: "我调鸡尾酒、也做菜——这个站上有一整个 VA-11 HALL-A 主题的食谱合集。厨房和代码其实没那么不同。",
+        desc: "我喜欢调鸡尾酒，也喜欢做菜。这个站上有一整个食谱合集，主题来自游戏 VA-11 HALL-A。",
       },
     },
     ctaLine: "想看看职业那一面？",
