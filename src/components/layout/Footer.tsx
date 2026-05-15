@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
-import GhostEasterEgg from "./GhostEasterEgg";
+import FooterEasterEgg from "./FooterEasterEgg";
 
 const SOCIAL = [
   { href: "https://github.com/NaxxHua", label: "GitHub", Icon: Github },
@@ -35,7 +35,7 @@ export default function Footer() {
               Jiahua Ma
             </span>
           </div>
-          <GhostEasterEgg />
+          <FooterEasterEgg />
         </div>
 
         <nav aria-label={t.footer.sections}>
