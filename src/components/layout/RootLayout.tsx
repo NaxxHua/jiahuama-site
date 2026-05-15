@@ -28,7 +28,7 @@ export default function RootLayout() {
   useLenis();
 
   return (
-    <div className="flex min-h-full flex-col">
+    <div className="flex min-h-screen flex-col">
       <a href="#main" className="skip-link">
         {t.common.skipToContent}
       </a>
