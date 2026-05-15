@@ -24,3 +24,6 @@ pnpm-debug.log*
 .idea/
 
 src/assets/__MACOSX
+
+# local-only AI assistant project notes
+CLAUDE.local.md
