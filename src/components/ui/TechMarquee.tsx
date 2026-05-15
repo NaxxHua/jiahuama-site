@@ -10,30 +10,29 @@ interface TechMarqueeProps {
   className?: string;
 }
 
-function Pill({ item }: { item: TechIcon }) {
+function Logo({ item }: { item: TechIcon }) {
   return (
-    <span className="flex shrink-0 items-center gap-2.5 rounded-full border border-border-2 bg-bg-1 px-4 py-2 font-mono text-[13px] text-fg-1">
-      <svg
-        viewBox="0 0 24 24"
-        className="h-4 w-4 shrink-0 text-accent"
-        fill="currentColor"
-        aria-hidden="true"
-      >
-        <path d={item.svgPath} />
-      </svg>
-      {item.name}
-    </span>
+    <svg
+      viewBox="0 0 24 24"
+      role="img"
+      aria-label={item.name}
+      className="h-9 w-9 shrink-0 text-fg-1 transition-colors hover:text-accent"
+      fill="currentColor"
+    >
+      <title>{item.name}</title>
+      <path d={item.svgPath} />
+    </svg>
   );
 }
 
 /**
- * Infinite horizontal marquee of tech-stack logos. Pauses on hover/focus.
- * Under prefers-reduced-motion it renders a static, horizontally
- * scrollable row instead of animating.
+ * Infinite horizontal marquee of tech-stack logos (icons only). Pauses on
+ * hover/focus. Under prefers-reduced-motion it renders a static,
+ * horizontally scrollable row instead of animating.
  */
 export default function TechMarquee({
   items,
-  speed = 36,
+  speed = 44,
   direction = "left",
   className = "",
 }: TechMarqueeProps) {
@@ -42,13 +41,13 @@ export default function TechMarquee({
   if (reducedMotion) {
     return (
       <div
-        className={`flex gap-3 overflow-x-auto py-1 ${className}`}
+        className={`flex gap-10 overflow-x-auto py-2 ${className}`}
         role="list"
         aria-label="Tech stack"
       >
         {items.map((item) => (
           <div role="listitem" key={item.name}>
-            <Pill item={item} />
+            <Logo item={item} />
           </div>
         ))}
       </div>
@@ -67,14 +66,14 @@ export default function TechMarquee({
       aria-label="Tech stack"
     >
       <div
-        className="flex w-max gap-3 group-hover:[animation-play-state:paused]"
+        className="flex w-max items-center gap-12 py-2 group-hover:[animation-play-state:paused]"
         style={{
           animation: `marquee-scroll ${speed}s linear infinite`,
           animationDirection: direction === "right" ? "reverse" : "normal",
         }}
       >
         {[...items, ...items].map((item, i) => (
-          <Pill key={`${item.name}-${i}`} item={item} />
+          <Logo key={`${item.name}-${i}`} item={item} />
         ))}
       </div>
     </div>

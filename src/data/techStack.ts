@@ -3,31 +3,51 @@ import {
   siDart,
   siSwift,
   siReact,
+  siAngular,
   siTypescript,
-  siFigma,
+  siJavascript,
   siPython,
   siR,
+  siHtml5,
+  siCss,
+  siFastapi,
+  siNodedotjs,
+  siPostgresql,
+  siFirebase,
+  siDocker,
   siGit,
-  siTailwindcss,
+  siGithubactions,
+  siFigma,
+  siClaude,
 } from "simple-icons";
 
 export interface TechIcon {
-  /** Display name. */
+  /** Display name — used as the accessible label. */
   name: string;
   /** Single SVG path string (24×24 viewBox) from simple-icons. */
   svgPath: string;
 }
 
-/** Tech-stack logos for the home-page marquee. */
+/** Tech-stack logos for the home-page marquee, drawn from the résumé. */
 export const techStack: TechIcon[] = [
-  { name: siFlutter.title, svgPath: siFlutter.path },
-  { name: siDart.title, svgPath: siDart.path },
-  { name: siSwift.title, svgPath: siSwift.path },
-  { name: siReact.title, svgPath: siReact.path },
-  { name: siTypescript.title, svgPath: siTypescript.path },
-  { name: siFigma.title, svgPath: siFigma.path },
-  { name: siPython.title, svgPath: siPython.path },
-  { name: siR.title, svgPath: siR.path },
-  { name: siGit.title, svgPath: siGit.path },
-  { name: siTailwindcss.title, svgPath: siTailwindcss.path },
-];
+  siFlutter,
+  siDart,
+  siSwift,
+  siReact,
+  siAngular,
+  siTypescript,
+  siJavascript,
+  siPython,
+  siR,
+  siHtml5,
+  siCss,
+  siFastapi,
+  siNodedotjs,
+  siPostgresql,
+  siFirebase,
+  siDocker,
+  siGit,
+  siGithubactions,
+  siFigma,
+  siClaude,
+].map((icon) => ({ name: icon.title, svgPath: icon.path }));
