@@ -1,7 +1,8 @@
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import type { TechIcon } from "@/data/techStack";
 
 interface TechMarqueeProps {
-  items: string[];
+  items: TechIcon[];
   /** Seconds for one full loop. Lower = faster. */
   speed?: number;
   /** Scroll direction. */
@@ -9,8 +10,24 @@ interface TechMarqueeProps {
   className?: string;
 }
 
+function Pill({ item }: { item: TechIcon }) {
+  return (
+    <span className="flex shrink-0 items-center gap-2.5 rounded-full border border-border-2 bg-bg-1 px-4 py-2 font-mono text-[13px] text-fg-1">
+      <svg
+        viewBox="0 0 24 24"
+        className="h-4 w-4 shrink-0 text-accent"
+        fill="currentColor"
+        aria-hidden="true"
+      >
+        <path d={item.svgPath} />
+      </svg>
+      {item.name}
+    </span>
+  );
+}
+
 /**
- * Infinite horizontal marquee of tech-stack pills. Pauses on hover/focus.
+ * Infinite horizontal marquee of tech-stack logos. Pauses on hover/focus.
  * Under prefers-reduced-motion it renders a static, horizontally
  * scrollable row instead of animating.
  */
@@ -22,15 +39,6 @@ export default function TechMarquee({
 }: TechMarqueeProps) {
   const reducedMotion = useReducedMotion();
 
-  const Pill = ({ label }: { label: string }) => (
-    <span
-      className="flex shrink-0 items-center gap-2 rounded-full border border-border-2 bg-bg-1 px-4 py-2 font-mono text-[13px] text-fg-1"
-    >
-      <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden />
-      {label}
-    </span>
-  );
-
   if (reducedMotion) {
     return (
       <div
@@ -38,9 +46,9 @@ export default function TechMarquee({
         role="list"
         aria-label="Tech stack"
       >
-        {items.map((label) => (
-          <div role="listitem" key={label}>
-            <Pill label={label} />
+        {items.map((item) => (
+          <div role="listitem" key={item.name}>
+            <Pill item={item} />
           </div>
         ))}
       </div>
@@ -65,8 +73,8 @@ export default function TechMarquee({
           animationDirection: direction === "right" ? "reverse" : "normal",
         }}
       >
-        {[...items, ...items].map((label, i) => (
-          <Pill key={`${label}-${i}`} label={label} />
+        {[...items, ...items].map((item, i) => (
+          <Pill key={`${item.name}-${i}`} item={item} />
         ))}
       </div>
     </div>

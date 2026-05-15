@@ -4,6 +4,7 @@ import { motion, type Variants } from "motion/react";
 import Threads from "@/components/ui/Threads";
 import SplitText from "@/components/ui/SplitText";
 import GradientText from "@/components/ui/GradientText";
+import StarButton from "@/components/ui/StarButton";
 import { useLang } from "@/i18n/LanguageContext";
 import { useTheme } from "@/hooks/useTheme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
@@ -113,12 +114,7 @@ export default function Hero() {
               className="transition-transform group-hover:translate-x-0.5"
             />
           </Link>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 rounded-lg border border-border-2 bg-bg-1/70 px-5 py-3 text-[14px] font-semibold text-fg-1 backdrop-blur transition-colors hover:border-border-strong hover:text-fg"
-          >
-            {t.home.ctaContact}
-          </Link>
+          <StarButton to="/contact">{t.home.ctaContact}</StarButton>
         </motion.div>
       </div>
 

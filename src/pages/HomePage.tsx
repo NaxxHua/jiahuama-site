@@ -7,19 +7,7 @@ import SpotlightCard from "@/components/ui/SpotlightCard";
 import CountUp from "@/components/ui/CountUp";
 import Reveal from "@/components/ui/Reveal";
 import { useLang } from "@/i18n/LanguageContext";
-
-const TECH = [
-  "Flutter",
-  "Swift",
-  "React",
-  "TypeScript",
-  "Figma",
-  "UI / UX Design",
-  "Python",
-  "Dart",
-  "SQL & NoSQL",
-  "R",
-];
+import { techStack } from "@/data/techStack";
 
 const EXPLORE: { key: "portfolio" | "recipes" | "about"; to: string; Icon: LucideIcon }[] = [
   { key: "portfolio", to: "/portfolio", Icon: FolderGit2 },
@@ -144,7 +132,7 @@ export default function HomePage() {
           <p className="mb-5 text-center font-mono text-[11px] uppercase tracking-[0.16em] text-fg-3">
             {t.home.techLabel}
           </p>
-          <TechMarquee items={TECH} />
+          <TechMarquee items={techStack} />
         </div>
       </section>
 
