@@ -21,6 +21,7 @@ const en = {
     elsewhere: "Elsewhere",
     builtWith: "Built with React, Vite & a lot of coffee.",
     rights: "All rights reserved.",
+    easterEgg: "You found me!",
   },
   common: {
     backToRecipes: "Back to recipes",
@@ -101,9 +102,9 @@ const en = {
       "I'm Jiahua Ma, a design engineer at Visa. Most of what I do sits somewhere between design and engineering.",
     journeyTitle: "The story so far",
     journey: [
-      "I grew up in Xinjiang, in northwest China, and moved to the US in 2014. Learning a new language and starting over somewhere unfamiliar shaped how I deal with hard problems.",
+      "I grew up in Ürümqi, Xinjiang, and moved to the US in 2014. Learning a new language and starting over somewhere unfamiliar shaped how I deal with hard problems.",
       "I went to Penn State for a bachelor's in Applied Data Sciences and then a master's in Informatics focused on Human-Computer Interaction. While I was there I did research at the User Agency Lab and co-founded PsySpace, a mental-health app for students.",
-      "In 2022 I joined Visa in Austin, Texas as a design engineer. I work on the design system that other teams build their products with. Austin has been home since then, and the food here is hard to beat.",
+      "In 2022 I joined Visa in Austin, Texas as a design engineer. I work on the design system that other teams build their products with. Austin has been home since then, and there's no shortage of good food here.",
     ],
     offTitle: "Off the clock",
     offSub: "A few things I do when I'm not working.",
@@ -139,7 +140,7 @@ const en = {
     eyebrow: "Portfolio",
     title: "Work, skills & education",
     intro:
-      "Six years of design engineering — from a global design system to research and a startup.",
+      "Six years of design engineering, from a global design system to academic research and a startup.",
     skillsTitle: "Skills",
     skills: {
       languages: {
@@ -346,6 +347,7 @@ const zh: Dict = {
     elsewhere: "在别处",
     builtWith: "用 React、Vite 和大量咖啡构建。",
     rights: "保留所有权利。",
+    easterEgg: "你发现我了！",
   },
   common: {
     backToRecipes: "返回食谱",
@@ -425,9 +427,9 @@ const zh: Dict = {
       "我是马家骅，Visa 的一名设计工程师。我做的事大多介于设计和工程之间。",
     journeyTitle: "到目前为止的故事",
     journey: [
-      "我在中国西北的新疆长大，2014 年来到美国。学一门新语言、在陌生的地方重新开始，很大程度上塑造了我面对难题的方式。",
+      "我在新疆乌鲁木齐长大，2014 年来到美国。学一门新语言、在陌生的地方重新开始，很大程度上塑造了我面对难题的方式。",
       "我在宾州州立大学读了应用数据科学学士，之后又读了信息学硕士，方向是人机交互。读书期间我在 User Agency Lab 做研究，还和朋友一起创办了面向学生的心理健康应用 PsySpace。",
-      "2022 年我加入了德州奥斯汀的 Visa，做设计工程师，负责其他团队用来开发产品的设计系统。从那以后奥斯汀就成了我的家，这里的吃的也很难让人不爱。",
+      "2022 年我加入了德州奥斯汀的 Visa，做设计工程师，负责其他团队用来开发产品的设计系统。奥斯汀从此成了我的家，这边好吃的也不少。",
     ],
     offTitle: "工作之余",
     offSub: "不工作的时候我会做的一些事。",
@@ -462,7 +464,7 @@ const zh: Dict = {
   portfolio: {
     eyebrow: "作品集",
     title: "项目、技能与教育",
-    intro: "六年的设计工程——从一套全球设计系统，到研究与一家创业公司。",
+    intro: "六年的设计工程，从一套全球设计系统，到学术研究和创业公司。",
     skillsTitle: "技能",
     skills: {
       languages: {
@@ -611,7 +613,7 @@ const zh: Dict = {
     title: "酒吧已开张",
     intro:
       "一个赛博朋克主题的鸡尾酒与菜肴合集——向调酒视觉小说 VA-11 HALL-A 致敬。",
-    tributeTitle: "是时候调酒，改变人生了",
+    tributeTitle: "调制饮品，改变人生",
     tributeBody:
       "VA-11 HALL-A 是一款赛博朋克调酒游戏，你倒出的每一杯酒都会改变那个夜晚。下面每一款鸡尾酒都是它真实可调的致敬版——外加几道来自我自己厨房的菜。",
     cocktailsLabel: "鸡尾酒",
