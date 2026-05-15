@@ -21,7 +21,6 @@ const en = {
     elsewhere: "Elsewhere",
     builtWith: "Built with React, Vite & a lot of coffee.",
     rights: "All rights reserved.",
-    easterEgg: "You found me!",
   },
   common: {
     backToRecipes: "Back to recipes",
@@ -347,7 +346,6 @@ const zh: Dict = {
     elsewhere: "在别处",
     builtWith: "用 React、Vite 和大量咖啡构建。",
     rights: "保留所有权利。",
-    easterEgg: "你找到我了！",
   },
   common: {
     backToRecipes: "返回食谱",
