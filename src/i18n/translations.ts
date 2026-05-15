@@ -153,6 +153,10 @@ const en = {
         label: "Web & Mobile",
         items: ["React", "Angular", "Flutter", "SwiftUI", "HTML / CSS", "Firebase"],
       },
+      gamedev: {
+        label: "Game Development",
+        items: ["Godot", "Unity", "C#", "Game Design"],
+      },
       backend: {
         label: "Backend & Infrastructure",
         items: [
@@ -475,6 +479,10 @@ const zh: Dict = {
       web: {
         label: "Web 与移动端",
         items: ["React", "Angular", "Flutter", "SwiftUI", "HTML / CSS", "Firebase"],
+      },
+      gamedev: {
+        label: "游戏开发",
+        items: ["Godot", "Unity", "C#", "游戏设计"],
       },
       backend: {
         label: "后端与基础设施",

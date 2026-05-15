@@ -11,8 +11,15 @@ import SpotlightCard from "@/components/ui/SpotlightCard";
 import Reveal from "@/components/ui/Reveal";
 import { useLang } from "@/i18n/LanguageContext";
 
-type SkillKey = "languages" | "web" | "backend" | "ai" | "design";
-const SKILL_ORDER: SkillKey[] = ["languages", "web", "backend", "ai", "design"];
+type SkillKey = "languages" | "web" | "gamedev" | "backend" | "ai" | "design";
+const SKILL_ORDER: SkillKey[] = [
+  "languages",
+  "web",
+  "gamedev",
+  "backend",
+  "ai",
+  "design",
+];
 
 type ProjectKey = "designSystem" | "plasma" | "psyspace" | "research";
 const PROJECT_ORDER: { key: ProjectKey; Icon: LucideIcon }[] = [
