@@ -29,9 +29,7 @@ export default function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:grid-cols-3">
         <div className="sm:col-span-1">
           <div className="flex items-center gap-2.5">
-            <span className="grid h-9 w-9 place-items-center rounded-lg bg-accent font-display text-[15px] font-bold text-white">
-              JM
-            </span>
+            <img src="/favicon.svg" alt="" className="h-9 w-9" />
             <span className="font-display text-[15px] font-semibold text-fg">
               Jiahua Ma
             </span>
