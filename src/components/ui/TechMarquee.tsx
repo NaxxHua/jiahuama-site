@@ -12,23 +12,33 @@ interface TechMarqueeProps {
 
 function Logo({ item }: { item: TechIcon }) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      role="img"
-      aria-label={item.name}
-      className="h-9 w-9 shrink-0 text-fg-1 transition-colors hover:text-accent"
-      fill="currentColor"
-    >
-      <title>{item.name}</title>
-      <path d={item.svgPath} />
-    </svg>
+    <div className="group/logo relative flex shrink-0 items-center justify-center">
+      {/* Name label — pops above the icon on hover. */}
+      <span
+        className="pointer-events-none absolute bottom-[calc(100%+8px)] left-1/2 -translate-x-1/2 scale-90 whitespace-nowrap rounded-md border border-accent-border bg-panel px-2.5 py-1 font-mono text-[11px] font-medium text-fg opacity-0 shadow-lg transition-all duration-200 ease-out group-hover/logo:scale-100 group-hover/logo:opacity-100"
+        aria-hidden="true"
+      >
+        {item.name}
+        <span className="absolute left-1/2 top-full h-2 w-2 -translate-x-1/2 -translate-y-1/2 rotate-45 border-b border-r border-accent-border bg-panel" />
+      </span>
+      <svg
+        viewBox="0 0 24 24"
+        role="img"
+        aria-label={item.name}
+        className="h-9 w-9 text-fg-1 transition-all duration-200 ease-out group-hover/logo:scale-[1.18] group-hover/logo:text-accent"
+        fill="currentColor"
+      >
+        <title>{item.name}</title>
+        <path d={item.svgPath} />
+      </svg>
+    </div>
   );
 }
 
 /**
  * Infinite horizontal marquee of tech-stack logos (icons only). Pauses on
- * hover/focus. Under prefers-reduced-motion it renders a static,
- * horizontally scrollable row instead of animating.
+ * hover; hovering an individual icon pops up its name. Under
+ * prefers-reduced-motion it renders a static, scrollable row instead.
  */
 export default function TechMarquee({
   items,
@@ -41,7 +51,7 @@ export default function TechMarquee({
   if (reducedMotion) {
     return (
       <div
-        className={`flex gap-10 overflow-x-auto py-2 ${className}`}
+        className={`flex gap-12 overflow-x-auto px-2 py-12 ${className}`}
         role="list"
         aria-label="Tech stack"
       >
@@ -66,7 +76,7 @@ export default function TechMarquee({
       aria-label="Tech stack"
     >
       <div
-        className="flex w-max items-center gap-12 py-2 group-hover:[animation-play-state:paused]"
+        className="flex w-max items-center gap-12 py-12 group-hover:[animation-play-state:paused]"
         style={{
           animation: `marquee-scroll ${speed}s linear infinite`,
           animationDirection: direction === "right" ? "reverse" : "normal",

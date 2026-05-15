@@ -1,6 +1,5 @@
 /**
  * Bilingual string dictionary. `en` defines the shape; `zh` must match it.
- * Page-specific sections are added as pages are built.
  */
 
 export type Lang = "en" | "zh";
@@ -43,8 +42,7 @@ const en = {
     scroll: "Scroll",
     techLabel: "Tools & technologies I work with",
     highlightsTitle: "A few things I'm proud of",
-    highlightsSub:
-      "Spanning design engineering, games, research, and sport.",
+    highlightsSub: "Spanning design engineering, games, research, and sport.",
     highlights: {
       visa: {
         tag: "2022 — Now",
@@ -95,6 +93,208 @@ const en = {
     ctaTitle: "Let's build something",
     ctaBody:
       "Always up for a conversation about design engineering, games, or a friendly hit of table tennis.",
+  },
+  about: {
+    eyebrow: "About",
+    title: "Designing, building, and chasing topspin",
+    intro:
+      "I'm Jiahua Ma — a design engineer at Visa who's happiest where careful design meets real engineering.",
+    journeyTitle: "The story so far",
+    journey: [
+      "I grew up in Xinjiang, in northwest China, and moved to the United States in 2014. The leap meant a new language and a new way of seeing things — and it has shaped how I approach problems ever since.",
+      "I studied at Penn State: first a bachelor's in Applied Data Sciences, then a master's in Informatics focused on Human-Computer Interaction. Along the way I worked in the User Agency Lab and co-founded PsySpace, a mental-health app for students.",
+      "In 2022 I joined Visa in Austin, Texas as a design engineer, where I build the design system other teams build on. Austin — equal parts tech and incredible food — has been home ever since.",
+    ],
+    offTitle: "Off the clock",
+    offSub: "The things that keep me curious outside of work.",
+    facets: {
+      game: {
+        title: "Game development",
+        desc: "I'm building an auto-battler from scratch — design, code, and art direction — with a Steam release as the goal.",
+      },
+      tabletennis: {
+        title: "Table tennis",
+        desc: "A competitive, USATT-rated player. The table is where I think about focus, footwork, and reading an opponent.",
+      },
+      bar: {
+        title: "Behind the bar",
+        desc: "I mix cocktails and cook — there's a whole VA-11 HALL-A-themed recipe collection on this site. Kitchen and code aren't so different.",
+      },
+    },
+    ctaLine: "Curious about the professional side?",
+    ctaWork: "See my portfolio",
+  },
+  portfolio: {
+    eyebrow: "Portfolio",
+    title: "Work, skills & education",
+    intro:
+      "Six years of design engineering — from a global design system to research and a startup.",
+    skillsTitle: "Skills",
+    skills: {
+      languages: {
+        label: "Languages",
+        items: ["Python", "TypeScript", "JavaScript", "Dart", "SQL", "R"],
+      },
+      web: {
+        label: "Web & Mobile",
+        items: ["React", "Angular", "Flutter", "SwiftUI", "HTML / CSS", "Firebase"],
+      },
+      backend: {
+        label: "Backend & Infrastructure",
+        items: [
+          "FastAPI",
+          "Node.js",
+          "PostgreSQL",
+          "S3 / MinIO",
+          "Docker",
+          "CI/CD",
+          "GitHub Actions",
+          "REST APIs",
+        ],
+      },
+      ai: {
+        label: "AI & Tooling",
+        items: [
+          "LLM Integration",
+          "GenAI Workflows",
+          "Prompt Engineering",
+          "SWC AST Analysis",
+          "Playwright",
+          "axe-core",
+        ],
+      },
+      design: {
+        label: "Design Systems & Accessibility",
+        items: [
+          "Design System Architecture",
+          "Component Libraries",
+          "WCAG 2.1",
+          "VGAR",
+          "Cross-Platform UI/UX",
+          "Figma",
+        ],
+      },
+    },
+    workTitle: "Professional work",
+    projects: {
+      designSystem: {
+        org: "Visa",
+        role: "Lead Front-End Engineer",
+        period: "2022 — Present",
+        title: "Visa Design System — Mobile Library",
+        summary:
+          "Led the Visa Design System Flutter library, a core part of the open-sourced Visa Design System.",
+        bullets: [
+          "Built 30+ components and contributed 70%+ of the mobile library, adopted by 200+ developers across Visa's global mobile ecosystem.",
+          "Established CI/CD with 95%+ unit-test coverage and a 100% pass rate, guaranteeing accessibility compliance and zero regressions.",
+          "Shipped live demo apps to iOS and Android to accelerate contributor onboarding.",
+          "Partnered with Visa UX leadership to drive adoption and governance across 5+ global teams.",
+        ],
+        tags: ["Flutter", "Dart", "Design Systems", "CI/CD", "Accessibility"],
+        link: "https://design.visa.com",
+        linkLabel: "Visa Design System",
+      },
+      plasma: {
+        org: "Visa",
+        role: "Full-Stack Engineer",
+        period: "2025 — Present",
+        title: "Project Plasma",
+        summary:
+          "Architected and built the full-stack platform for an internal enterprise design-system tool.",
+        bullets: [
+          "Owned end-to-end design of the backend (FastAPI, PostgreSQL, S3/MinIO, TypeScript CLI), enabling component sharing across React, Angular, Flutter and HTML/CSS.",
+          "Built automated accessibility governance — browser-based WCAG audits (Playwright + axe-core) auto-mapped to Visa's VGAR framework, replacing manual review.",
+          "Engineered a manifest-driven build pipeline (esbuild + headless browser) for dependency resolution, multi-viewport previews and thumbnails.",
+          "Built an AI-powered developer CLI with framework detection, SWC AST analysis and LLM-generated component docs behind a review workflow.",
+        ],
+        tags: ["FastAPI", "PostgreSQL", "TypeScript", "AI / LLM", "Accessibility"],
+        link: "",
+        linkLabel: "",
+      },
+      psyspace: {
+        org: "PsySpace",
+        role: "Co-founder & Front-End Lead",
+        period: "2020 — 2023",
+        title: "PsySpace — Mental-Health App",
+        summary:
+          "Co-founded and led front-end for a mobile mental-health app supporting emerging adults.",
+        bullets: [
+          "Engineered the app with Flutter and Firebase (MVVM) backed by a real-time NoSQL database.",
+          "Led a 6-member cross-functional team from product definition through release.",
+          "Designed and integrated a content-recommendation library for personalized support.",
+        ],
+        tags: ["Flutter", "Firebase", "MVVM", "Leadership"],
+        link: "",
+        linkLabel: "",
+      },
+      research: {
+        org: "Penn State · User Agency Lab",
+        role: "Research Assistant",
+        period: "2019 — 2021",
+        title: "HCI Research — CSCW 2020",
+        summary:
+          "Research assistant at Penn State's User Agency Lab, College of IST.",
+        bullets: [
+          "Co-authored a paper accepted at the 23rd ACM Conference on Computer-Supported Cooperative Work and Social Computing (CSCW 2020).",
+          "Studied user agency in social-computing systems.",
+        ],
+        tags: ["HCI Research", "CSCW 2020"],
+        link: "",
+        linkLabel: "",
+      },
+    },
+    eduTitle: "Education",
+    education: {
+      masters: {
+        degree: "M.S. in Informatics — Human-Computer Interaction",
+        school: "The Pennsylvania State University",
+        period: "Dec 2021 · GPA 3.75",
+        detail: "College of Information Science and Technology.",
+      },
+      bachelors: {
+        degree: "B.S. in Applied Data Sciences",
+        school: "The Pennsylvania State University",
+        period: "May 2020 · GPA 3.59",
+        detail: "College of Information Science and Technology.",
+      },
+    },
+  },
+  contact: {
+    eyebrow: "Contact",
+    title: "Get in touch",
+    intro:
+      "Whether it's design engineering, a game idea, or a friendly table-tennis match — my inbox is always open.",
+    methods: {
+      email: { label: "Email", value: "naxxhua@gmail.com" },
+      linkedin: { label: "LinkedIn", value: "in/jiahua-ma" },
+      github: { label: "GitHub", value: "NaxxHua" },
+      location: { label: "Based in", value: "Austin, Texas" },
+    },
+    copy: "Copy",
+    copied: "Copied!",
+    closing: "I usually reply within a day or two.",
+  },
+  recipes: {
+    eyebrow: "Recipes",
+    title: "The bar is open",
+    intro:
+      "A cyberpunk-themed collection of cocktails and dishes — a tribute to the bartending visual novel VA-11 HALL-A.",
+    tributeTitle: "Time to mix drinks and change lives",
+    tributeBody:
+      "VA-11 HALL-A is a cyberpunk bartending game where the drinks you pour shape the night. Every cocktail below is a real, mixable tribute to it — plus a couple of dishes from my own kitchen.",
+    cocktailsLabel: "Cocktails",
+    dishesLabel: "Dishes",
+    viewRecipe: "View recipe",
+    ingredients: "Ingredients",
+    glassLabel: "Glass",
+    equivalentLabel: "Mixes into",
+    instructions: "Instructions",
+    storyLabel: "The story",
+    tipsLabel: "Pro tips",
+    share: "Share recipe",
+    shareCopied: "Link copied",
+    notFound: "Recipe not found",
+    backToRecipes: "All recipes",
   },
 };
 
@@ -188,6 +388,203 @@ const zh: Dict = {
     },
     ctaTitle: "一起做点东西吧",
     ctaBody: "随时欢迎聊聊设计工程、游戏，或者来一场友谊乒乓球赛。",
+  },
+  about: {
+    eyebrow: "关于",
+    title: "做设计、做工程，也追逐上旋",
+    intro:
+      "我是马嘉华——Visa 的一名设计工程师，最享受在缜密设计与扎实工程的交汇处工作。",
+    journeyTitle: "到目前为止的故事",
+    journey: [
+      "我在中国西北的新疆长大，2014 年来到美国。这次跨越意味着新的语言和看待事物的新方式——也从此塑造了我解决问题的方式。",
+      "我在宾州州立大学求学：先是应用数据科学学士，再是聚焦人机交互（HCI）的信息学硕士。其间我在 User Agency Lab 做研究，并联合创办了面向学生的心理健康应用 PsySpace。",
+      "2022 年我加入位于德州奥斯汀的 Visa，成为一名设计工程师，构建其他团队赖以开发的设计系统。奥斯汀——科技与美食各占一半——从此成了我的家。",
+    ],
+    offTitle: "工作之余",
+    offSub: "工作以外让我保持好奇的那些事。",
+    facets: {
+      game: {
+        title: "游戏开发",
+        desc: "我在从零打造一款自走棋游戏——设计、代码与美术方向一手包办，目标是登陆 Steam。",
+      },
+      tabletennis: {
+        title: "乒乓球",
+        desc: "一名 USATT 注册的竞技选手。球台是我思考专注、步法与读懂对手的地方。",
+      },
+      bar: {
+        title: "在吧台后",
+        desc: "我调鸡尾酒、也做菜——这个站上有一整个 VA-11 HALL-A 主题的食谱合集。厨房和代码其实没那么不同。",
+      },
+    },
+    ctaLine: "想看看职业那一面？",
+    ctaWork: "查看作品集",
+  },
+  portfolio: {
+    eyebrow: "作品集",
+    title: "项目、技能与教育",
+    intro: "六年的设计工程——从一套全球设计系统，到研究与一家创业公司。",
+    skillsTitle: "技能",
+    skills: {
+      languages: {
+        label: "编程语言",
+        items: ["Python", "TypeScript", "JavaScript", "Dart", "SQL", "R"],
+      },
+      web: {
+        label: "Web 与移动端",
+        items: ["React", "Angular", "Flutter", "SwiftUI", "HTML / CSS", "Firebase"],
+      },
+      backend: {
+        label: "后端与基础设施",
+        items: [
+          "FastAPI",
+          "Node.js",
+          "PostgreSQL",
+          "S3 / MinIO",
+          "Docker",
+          "CI/CD",
+          "GitHub Actions",
+          "REST APIs",
+        ],
+      },
+      ai: {
+        label: "AI 与工具链",
+        items: [
+          "LLM 集成",
+          "GenAI 工作流",
+          "Prompt Engineering",
+          "SWC AST 分析",
+          "Playwright",
+          "axe-core",
+        ],
+      },
+      design: {
+        label: "设计系统与无障碍",
+        items: [
+          "设计系统架构",
+          "组件库",
+          "WCAG 2.1",
+          "VGAR",
+          "跨平台 UI/UX",
+          "Figma",
+        ],
+      },
+    },
+    workTitle: "职业经历",
+    projects: {
+      designSystem: {
+        org: "Visa",
+        role: "前端主管工程师",
+        period: "2022 — 至今",
+        title: "Visa 设计系统 — 移动端组件库",
+        summary: "主导 Visa 设计系统 Flutter 组件库，它是开源 Visa 设计系统的核心部分。",
+        bullets: [
+          "构建 30+ 组件，贡献了移动端组件库 70%+ 的内容，被 Visa 全球移动生态中 200+ 名开发者采用。",
+          "建立 CI/CD，单元测试覆盖率 95%+、通过率 100%，保证无障碍合规与零回归。",
+          "向 iOS 与 Android 发布实时演示应用，加速贡献者上手。",
+          "与 Visa UX 团队协作，推动 5+ 个全球团队的采用与治理。",
+        ],
+        tags: ["Flutter", "Dart", "设计系统", "CI/CD", "无障碍"],
+        link: "https://design.visa.com",
+        linkLabel: "Visa 设计系统",
+      },
+      plasma: {
+        org: "Visa",
+        role: "全栈工程师",
+        period: "2025 — 至今",
+        title: "Project Plasma",
+        summary: "为一个内部企业级设计系统工具，架构并构建了全栈平台。",
+        bullets: [
+          "独立负责后端的端到端设计（FastAPI、PostgreSQL、S3/MinIO、TypeScript CLI），让组件可在 React、Angular、Flutter 与 HTML/CSS 之间共享。",
+          "构建自动化无障碍治理系统——基于浏览器的 WCAG 审计（Playwright + axe-core）自动映射到 Visa 的 VGAR 框架，取代人工评审。",
+          "搭建清单驱动的构建流水线（esbuild + 无头浏览器），完成依赖解析、多视口预览与缩略图生成。",
+          "构建 AI 驱动的开发者 CLI，含框架检测、SWC AST 分析与 LLM 生成的组件文档，配评审流程。",
+        ],
+        tags: ["FastAPI", "PostgreSQL", "TypeScript", "AI / LLM", "无障碍"],
+        link: "",
+        linkLabel: "",
+      },
+      psyspace: {
+        org: "PsySpace",
+        role: "联合创始人 & 前端主管",
+        period: "2020 — 2023",
+        title: "PsySpace — 心理健康应用",
+        summary: "联合创办并主导前端，做一款面向青年的移动端心理健康应用。",
+        bullets: [
+          "用 Flutter 与 Firebase（MVVM 架构）开发应用，背后是实时 NoSQL 数据库。",
+          "带领 6 人跨职能团队，从产品定义到发布全程交付。",
+          "设计并集成内容推荐库，提供个性化支持。",
+        ],
+        tags: ["Flutter", "Firebase", "MVVM", "团队管理"],
+        link: "",
+        linkLabel: "",
+      },
+      research: {
+        org: "宾州州立 · User Agency Lab",
+        role: "研究助理",
+        period: "2019 — 2021",
+        title: "HCI 研究 — CSCW 2020",
+        summary: "在宾州州立大学 IST 学院 User Agency Lab 担任研究助理。",
+        bullets: [
+          "合著一篇论文，被第 23 届 ACM 计算机支持的协同工作与社会计算会议（CSCW 2020）接收。",
+          "研究社会计算系统中的用户能动性。",
+        ],
+        tags: ["HCI 研究", "CSCW 2020"],
+        link: "",
+        linkLabel: "",
+      },
+    },
+    eduTitle: "教育经历",
+    education: {
+      masters: {
+        degree: "信息学硕士 — 人机交互方向",
+        school: "宾夕法尼亚州立大学",
+        period: "2021 年 12 月 · GPA 3.75",
+        detail: "信息科学与技术学院。",
+      },
+      bachelors: {
+        degree: "应用数据科学学士",
+        school: "宾夕法尼亚州立大学",
+        period: "2020 年 5 月 · GPA 3.59",
+        detail: "信息科学与技术学院。",
+      },
+    },
+  },
+  contact: {
+    eyebrow: "联系",
+    title: "联系我",
+    intro:
+      "无论是设计工程、一个游戏点子，还是一场友谊乒乓球赛——我的收件箱随时敞开。",
+    methods: {
+      email: { label: "邮箱", value: "naxxhua@gmail.com" },
+      linkedin: { label: "领英", value: "in/jiahua-ma" },
+      github: { label: "GitHub", value: "NaxxHua" },
+      location: { label: "所在地", value: "美国德州奥斯汀" },
+    },
+    copy: "复制",
+    copied: "已复制！",
+    closing: "我通常会在一两天内回复。",
+  },
+  recipes: {
+    eyebrow: "食谱",
+    title: "酒吧已开张",
+    intro:
+      "一个赛博朋克主题的鸡尾酒与菜肴合集——向调酒视觉小说 VA-11 HALL-A 致敬。",
+    tributeTitle: "是时候调酒，改变人生了",
+    tributeBody:
+      "VA-11 HALL-A 是一款赛博朋克调酒游戏，你倒出的每一杯酒都会改变那个夜晚。下面每一款鸡尾酒都是它真实可调的致敬版——外加几道来自我自己厨房的菜。",
+    cocktailsLabel: "鸡尾酒",
+    dishesLabel: "菜肴",
+    viewRecipe: "查看配方",
+    ingredients: "原料",
+    glassLabel: "酒杯",
+    equivalentLabel: "对应饮品",
+    instructions: "步骤",
+    storyLabel: "背后的故事",
+    tipsLabel: "小贴士",
+    share: "分享配方",
+    shareCopied: "链接已复制",
+    notFound: "未找到该配方",
+    backToRecipes: "全部食谱",
   },
 };
 
