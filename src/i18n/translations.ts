@@ -141,7 +141,7 @@ const en = {
       title: "On stage",
       sub: "Three plays I helped bring to the stage in college.",
       society: "Penn State Chinese Theater & Movie Society",
-      role: "Vice President · 2018–2020",
+      role: "Vice President · 2018–2021",
       directorLabel: "Directed by",
       kouji: {
         zh: "口技杀人案",
@@ -504,7 +504,7 @@ const zh: Dict = {
       title: "舞台上",
       sub: "大学时我参与搬上舞台的三部话剧。",
       society: "宾州州立大学中文话剧社",
-      role: "副主席 · 2018–2020",
+      role: "副主席 · 2018–2021",
       directorLabel: "导演",
       kouji: {
         zh: "口技杀人案",
