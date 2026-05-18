@@ -1,6 +1,7 @@
 import { Gamepad2, Martini, Target, type LucideIcon } from "lucide-react";
 import PageHeader from "@/components/layout/PageHeader";
 import GamingSection from "@/components/about/GamingSection";
+import TheaterSection from "@/components/about/TheaterSection";
 import SpotlightCard from "@/components/ui/SpotlightCard";
 import StarButton from "@/components/ui/StarButton";
 import Reveal from "@/components/ui/Reveal";
@@ -68,6 +69,8 @@ export default function AboutPage() {
           </Reveal>
         </div>
       </section>
+
+      <TheaterSection />
 
       <GamingSection />
 
