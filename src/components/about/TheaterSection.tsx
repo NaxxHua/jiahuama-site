@@ -7,6 +7,7 @@ import { useLang } from "@/i18n/LanguageContext";
 const STAGE = "#e0a43c";
 
 const PRODUCTIONS = [
+  { key: "kouji", poster: "/theater-kouji.jpg" },
   { key: "rhinoceros", poster: "/theater-rhinoceros.jpg" },
   { key: "mumble", poster: "/theater-mumble.jpg" },
 ] as const;
@@ -102,7 +103,7 @@ export default function TheaterSection() {
                         {secondary}
                       </p>
                       <p className="mt-1 text-[12.5px] text-fg-3">
-                        {th.directorLabel}: {p.director}
+                        {th.directorLabel} {p.director} · {p.playwright}
                       </p>
                       <p className="mt-2 text-[13px] italic leading-relaxed text-fg-2">
                         {p.blurb}

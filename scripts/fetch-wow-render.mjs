@@ -6,9 +6,9 @@
  * gear. The DPS parse on the card stays hand-written in src/data/games.ts —
  * it is a frozen historical record, not API data.
  *
- * Credentials (WOW_CLIENT_ID / WOW_CLIENT_SECRET) come from .env and are NOT
- * VITE_-prefixed, so they never reach the client bundle. Create a client at
- * https://develop.battle.net/.
+ * Credentials (BLIZZARD_CLIENT_ID / BLIZZARD_CLIENT_SECRET) come from .env and
+ * are NOT VITE_-prefixed, so they never reach the client bundle. Create a
+ * client at https://develop.battle.net/.
  *
  * If credentials are missing or the API call fails, the existing image is
  * kept and the build continues — this step never breaks a deploy.
@@ -25,9 +25,9 @@ const CHARACTER = "huasuiyue";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = resolve(root, "public/wow-character.png");
 
-const env = loadEnv("production", root, "");
-const CLIENT_ID = env.WOW_CLIENT_ID ?? process.env.WOW_CLIENT_ID;
-const CLIENT_SECRET = env.WOW_CLIENT_SECRET ?? process.env.WOW_CLIENT_SECRET;
+const env = { ...loadEnv("production", root, ""), ...process.env };
+const CLIENT_ID = env.BLIZZARD_CLIENT_ID ?? env.WOW_CLIENT_ID;
+const CLIENT_SECRET = env.BLIZZARD_CLIENT_SECRET ?? env.WOW_CLIENT_SECRET;
 
 const skip = (msg) => {
   console.log(`[wow-render] ${msg} — keeping existing image.`);
