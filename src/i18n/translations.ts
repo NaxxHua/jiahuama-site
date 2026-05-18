@@ -165,7 +165,7 @@ const en = {
       mumble: {
         zh: "乱民全讲",
         en: "Mumble Jumble",
-        director: "Wang Qianfan",
+        director: "Xifan Wang",
         playwright: "Written by Stan Lai",
         credit: "Actor · Director's Assistant",
         blurb: "A satirical revue of voices from everyday life.",
