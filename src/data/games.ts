@@ -30,7 +30,11 @@ export const wowProfile = {
   expansion: { en: "Legion", zh: "军团再临" } as BiText,
   peakDps: "1.77M",
   itemLevel: 958,
-  /** Faded character render shown on the card — save to public/. */
+  /**
+   * Faded character render shown on the card. Refreshed from the Blizzard API
+   * at build time by scripts/fetch-wow-render.mjs — the DPS parse above stays
+   * hand-written as a frozen historical record.
+   */
   image: "/wow-character.png",
   /** Warrior class colour. */
   classColor: "#c69b6d",
