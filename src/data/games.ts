@@ -21,15 +21,15 @@ export const wowProfile = {
   realm: { en: "Illidan", zh: "伊利丹" } as BiText,
   region: { en: "US", zh: "美服" } as BiText,
   guild: "Happy Dogs",
-  encounter: { en: "The Defense of Eonar", zh: "保卫艾欧娜尔" } as BiText,
+  encounter: { en: "Aggramar", zh: "阿格拉玛" } as BiText,
   difficulty: { en: "Heroic", zh: "英雄难度" } as BiText,
   raid: {
     en: "Antorus, the Burning Throne",
     zh: "安托鲁斯，燃烧王座",
   } as BiText,
   expansion: { en: "Legion", zh: "军团再临" } as BiText,
-  peakDps: "1.77M",
-  itemLevel: 958,
+  peakDps: "1.79M",
+  itemLevel: 962,
   /**
    * Faded character render shown on the card. Refreshed from the Blizzard API
    * at build time by scripts/fetch-wow-render.mjs — the DPS parse above stays
