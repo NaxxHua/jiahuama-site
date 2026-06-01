@@ -4,7 +4,9 @@
  * For every row, detects the message's language and translates it into the
  * other site language by calling the `translate` Supabase Edge Function (which
  * runs Claude server-side), then writes `lang` + `message_translated` back.
- * Rows that already have both are skipped, so this is safe to re-run.
+ * Rows that already have both are skipped, so this is safe to re-run. Pass
+ * `--force` (or FORCE=1) to re-translate every row — useful after improving the
+ * prompt or switching the model.
  *
  * The guestbook table's RLS only allows public SELECT/INSERT, not UPDATE, so
  * this needs the service-role key (it bypasses RLS, and also authenticates the
@@ -38,6 +40,9 @@ if (!URL || !KEY) {
 }
 
 const FUNCTION_URL = `${URL.replace(/\/$/, "")}/functions/v1/translate`;
+// Re-translate rows that already have a translation (e.g. after improving the
+// prompt or switching models): FORCE=1 npm run backfill:guestbook
+const FORCE = process.env.FORCE === "1" || process.argv.includes("--force");
 const detectLang = (text) => (/[㐀-鿿]/.test(text) ? "zh" : "en");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -85,7 +90,7 @@ let skipped = 0;
 
 for (const row of rows ?? []) {
   const lang = detectLang(row.message);
-  if (row.lang === lang && row.message_translated) {
+  if (!FORCE && row.lang === lang && row.message_translated) {
     skipped++;
     continue;
   }

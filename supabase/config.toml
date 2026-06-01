@@ -1,0 +1,10 @@
+# Minimal Supabase config — scoped to the translate Edge Function.
+#
+# verify_jwt is disabled because the function is a stateless translation
+# utility called from the browser with the public publishable key
+# (sb_publishable_…), which the JWT-verification gateway rejects. Abuse is
+# bounded by the 2000-char input cap inside the function. See the README.
+project_id = "sgtqtjczguiierhzjuew"
+
+[functions.translate]
+verify_jwt = false

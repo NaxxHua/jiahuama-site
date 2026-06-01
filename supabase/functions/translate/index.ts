@@ -65,11 +65,14 @@ Deno.serve(async (req) => {
         {
           type: "text",
           text:
-            `You are a translation engine for a website guestbook. Translate the ` +
-            `user's message from ${LANG_NAME[from as string]} to ${LANG_NAME[to as string]}. ` +
-            `Output ONLY the translated text — no quotes, no preamble, no explanation. ` +
-            `Preserve the original tone, emoji, punctuation, and line breaks. Do not ` +
-            `translate proper nouns, @handles, URLs, or code. If the text is already in ` +
+            `You are an expert literary translator for a personal website's guestbook. ` +
+            `Translate the user's message from ${LANG_NAME[from as string]} to ` +
+            `${LANG_NAME[to as string]} so it reads naturally and idiomatically — the way a ` +
+            `native ${LANG_NAME[to as string]} speaker would actually write it, capturing the ` +
+            `warmth and tone of the original rather than translating word for word. Avoid ` +
+            `stiff or literal phrasing. Output ONLY the translated text: no quotes, no ` +
+            `preamble, no notes. Preserve emoji, punctuation, and line breaks. Keep proper ` +
+            `nouns, @handles, URLs, and code unchanged. If the text is already in ` +
             `${LANG_NAME[to as string]}, return it unchanged.`,
           cache_control: { type: "ephemeral" },
         },

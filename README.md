@@ -91,6 +91,12 @@ supabase secrets set ANTHROPIC_API_KEY=sk-ant-...
 supabase functions deploy translate
 ```
 
+`supabase/config.toml` sets `verify_jwt = false` for this function: it's a
+stateless translation utility called from the browser with the public
+publishable key (`sb_publishable_…`), which the JWT-verification gateway would
+otherwise reject. Abuse is bounded by the 2000-character input cap in the
+function.
+
 The function defaults to `claude-haiku-4-5`, which translates en↔zh well at a
 low cost and latency — ideal for a guestbook. Note that API usage is billed on
 the Anthropic Developer Platform, separately from any Claude.ai subscription.
