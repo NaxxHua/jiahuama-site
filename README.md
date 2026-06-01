@@ -91,10 +91,11 @@ supabase secrets set ANTHROPIC_API_KEY=sk-ant-...
 supabase functions deploy translate
 ```
 
-The function defaults to the most capable Opus model. For a low-traffic
-guestbook, `claude-haiku-4-5` translates en↔zh just as well at a fraction of
-the cost and latency — set `supabase secrets set ANTHROPIC_MODEL=claude-haiku-4-5`
-if you prefer.
+The function defaults to `claude-haiku-4-5`, which translates en↔zh well at a
+low cost and latency — ideal for a guestbook. Note that API usage is billed on
+the Anthropic Developer Platform, separately from any Claude.ai subscription.
+Override with `supabase secrets set ANTHROPIC_MODEL=claude-opus-4-8` if you
+want maximum quality.
 
 Already have a table from before? Add the two columns instead:
 

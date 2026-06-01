@@ -6,14 +6,15 @@
 //   supabase secrets set ANTHROPIC_API_KEY=sk-ant-...
 //   supabase functions deploy translate
 //
-// Optional secret ANTHROPIC_MODEL overrides the model (default: the most
-// capable Opus). For a low-traffic guestbook, claude-haiku-4-5 translates
-// en<->zh just as well at a fraction of the cost — set it if you prefer.
+// Optional secret ANTHROPIC_MODEL overrides the model (default: Haiku — it
+// translates en<->zh well at a fraction of the cost and latency of larger
+// models, ideal for a guestbook). Set it to e.g. claude-opus-4-8 for maximum
+// quality.
 //
 // Deno runtime; the npm: specifier pulls the official SDK.
 import Anthropic from "npm:@anthropic-ai/sdk";
 
-const MODEL = Deno.env.get("ANTHROPIC_MODEL") ?? "claude-opus-4-8";
+const MODEL = Deno.env.get("ANTHROPIC_MODEL") ?? "claude-haiku-4-5";
 const MAX_INPUT = 2000;
 const LANG_NAME: Record<string, string> = {
   en: "English",
