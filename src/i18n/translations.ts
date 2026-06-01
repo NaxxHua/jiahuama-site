@@ -172,6 +172,13 @@ const en = {
         note: "Played the Bulb and a Japanese Student.",
       },
     },
+    loves: {
+      title: "Things I love",
+      sub: "The stage, the games, and a few lines that undo me.",
+      stage: "On stage",
+      games: "In game",
+      words: "In words",
+    },
   },
   portfolio: {
     eyebrow: "Portfolio",
@@ -535,6 +542,13 @@ const zh: Dict = {
         blurb: "一出描摹市井众生的讽刺群戏。",
         note: "饰演灯泡与日本学生。",
       },
+    },
+    loves: {
+      title: "我热爱的",
+      sub: "舞台、游戏，和几句能击穿我的话。",
+      stage: "舞台",
+      games: "游戏",
+      words: "文字",
     },
   },
   portfolio: {

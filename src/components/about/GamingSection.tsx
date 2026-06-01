@@ -184,9 +184,31 @@ function LolCard() {
   );
 }
 
-export default function GamingSection() {
+/**
+ * Competitive game profiles. Standalone it renders its own section + heading;
+ * pass `asSubsection` to drop the wrapper so it can sit under another heading
+ * (e.g. the "Things I love" section).
+ */
+export default function GamingSection({
+  asSubsection = false,
+}: {
+  asSubsection?: boolean;
+}) {
   const { t } = useLang();
   const g = t.about.gaming;
+
+  const cards = (
+    <Reveal delay={asSubsection ? 0 : 0.1}>
+      <div
+        className={`${asSubsection ? "mt-5" : "mt-10"} grid gap-4 sm:grid-cols-2`}
+      >
+        <WowCard />
+        <LolCard />
+      </div>
+    </Reveal>
+  );
+
+  if (asSubsection) return cards;
 
   return (
     <section className="border-t border-border">
@@ -197,12 +219,7 @@ export default function GamingSection() {
           </h2>
           <p className="mt-2 text-[15px] text-fg-2">{g.sub}</p>
         </Reveal>
-        <Reveal delay={0.1}>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2">
-            <WowCard />
-            <LolCard />
-          </div>
-        </Reveal>
+        {cards}
       </div>
     </section>
   );
