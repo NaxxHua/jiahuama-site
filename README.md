@@ -59,16 +59,42 @@ Run this SQL once in the Supabase SQL editor:
 
 ```sql
 create table public.guestbook (
-  id         bigint generated always as identity primary key,
-  created_at timestamptz not null default now(),
-  name       text not null check (char_length(name) between 1 and 40),
-  message    text not null check (char_length(message) between 1 and 500)
+  id                 bigint generated always as identity primary key,
+  created_at         timestamptz not null default now(),
+  name               text not null check (char_length(name) between 1 and 40),
+  message            text not null check (char_length(message) between 1 and 500),
+  lang               text not null default 'en' check (lang in ('en', 'zh')),
+  message_translated text
 );
 
 alter table public.guestbook enable row level security;
 
 create policy "Public read"   on public.guestbook for select using (true);
 create policy "Public insert" on public.guestbook for insert with check (true);
+```
+
+`lang` is the message's detected source language and `message_translated`
+holds it rendered in the other site language, so entries display in the
+reader's current language with a one-click toggle back to the original. The
+translation is fetched (via the key-less [MyMemory](https://mymemory.translated.net)
+API) when a message is signed.
+
+Already have a table from before? Add the two columns instead:
+
+```sql
+alter table public.guestbook
+  add column if not exists lang text not null default 'en'
+    check (lang in ('en', 'zh')),
+  add column if not exists message_translated text;
+```
+
+Then backfill translations for the existing rows. This writes to the table,
+which RLS only allows for the service role, so it needs the **service_role**
+key (Project Settings → API) in `.env` as `SUPABASE_SERVICE_ROLE_KEY` — keep
+it local and never `VITE_`-prefixed:
+
+```bash
+npm run backfill:guestbook
 ```
 
 ## Project structure

@@ -366,6 +366,8 @@ const en = {
     demoNote:
       "Demo mode — messages are saved locally in your browser only.",
     nameRequired: "Please enter your name and a message.",
+    viewOriginal: "View original",
+    viewTranslation: "View translation",
   },
 };
 
@@ -722,6 +724,8 @@ const zh: Dict = {
     error: "留言加载失败，请稍后再试。",
     demoNote: "演示模式——留言仅保存在你本地的浏览器里。",
     nameRequired: "请填写名字和留言内容。",
+    viewOriginal: "查看原文",
+    viewTranslation: "查看译文",
   },
 };
 

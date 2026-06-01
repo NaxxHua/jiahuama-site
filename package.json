@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "fetch:wow": "node scripts/fetch-wow-render.mjs",
+    "backfill:guestbook": "node scripts/backfill-guestbook-translations.mjs",
     "build": "node scripts/fetch-wow-render.mjs && tsc -b && vite build && cp dist/index.html dist/404.html",
     "preview": "vite preview"
   },
