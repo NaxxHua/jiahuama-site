@@ -76,8 +76,25 @@ create policy "Public insert" on public.guestbook for insert with check (true);
 `lang` is the message's detected source language and `message_translated`
 holds it rendered in the other site language, so entries display in the
 reader's current language with a one-click toggle back to the original. The
-translation is fetched (via the key-less [MyMemory](https://mymemory.translated.net)
-API) when a message is signed.
+translation is produced by Claude when a message is signed (see the Edge
+Function below).
+
+### Translation Edge Function
+
+Translation runs in a Supabase Edge Function (`supabase/functions/translate`)
+so the Anthropic API key stays server-side and never reaches the client
+bundle. Deploy it once and set the secret (requires the
+[Supabase CLI](https://supabase.com/docs/guides/cli), linked to your project):
+
+```bash
+supabase secrets set ANTHROPIC_API_KEY=sk-ant-...
+supabase functions deploy translate
+```
+
+The function defaults to the most capable Opus model. For a low-traffic
+guestbook, `claude-haiku-4-5` translates en↔zh just as well at a fraction of
+the cost and latency — set `supabase secrets set ANTHROPIC_MODEL=claude-haiku-4-5`
+if you prefer.
 
 Already have a table from before? Add the two columns instead:
 
@@ -88,10 +105,11 @@ alter table public.guestbook
   add column if not exists message_translated text;
 ```
 
-Then backfill translations for the existing rows. This writes to the table,
-which RLS only allows for the service role, so it needs the **service_role**
-key (Project Settings → API) in `.env` as `SUPABASE_SERVICE_ROLE_KEY` — keep
-it local and never `VITE_`-prefixed:
+Then backfill translations for the existing rows (deploy the Edge Function
+first — the backfill calls it). This writes to the table, which RLS only allows
+for the service role, so it needs the **service_role** key (Project Settings →
+API) in `.env` as `SUPABASE_SERVICE_ROLE_KEY` — keep it local and never
+`VITE_`-prefixed:
 
 ```bash
 npm run backfill:guestbook

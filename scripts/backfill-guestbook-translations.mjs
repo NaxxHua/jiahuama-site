@@ -1,18 +1,21 @@
 /**
  * One-time backfill of guestbook translations.
  *
- * For every row, detects the message's language and fetches a translation
- * into the other site language (via MyMemory — free, key-less), then writes
- * `lang` + `message_translated` back. Rows that already have both are skipped,
- * so this is safe to re-run.
+ * For every row, detects the message's language and translates it into the
+ * other site language by calling the `translate` Supabase Edge Function (which
+ * runs Claude server-side), then writes `lang` + `message_translated` back.
+ * Rows that already have both are skipped, so this is safe to re-run.
  *
  * The guestbook table's RLS only allows public SELECT/INSERT, not UPDATE, so
- * this needs the service-role key (it bypasses RLS). Add it to .env LOCALLY —
- * it must NEVER be committed or VITE_-prefixed (it would leak into the bundle):
+ * this needs the service-role key (it bypasses RLS, and also authenticates the
+ * Edge Function call). Add it to .env LOCALLY — it must NEVER be committed or
+ * VITE_-prefixed (it would leak into the bundle):
  *
  *   VITE_SUPABASE_URL=...           # already set for the app
  *   SUPABASE_SERVICE_ROLE_KEY=...   # Project Settings → API → service_role
- *   MYMEMORY_EMAIL=you@example.com  # optional — raises the free quota
+ *
+ * Prerequisite: the `translate` function must be deployed and its
+ * ANTHROPIC_API_KEY secret set (see README → Supabase guestbook table).
  *
  * Run with:  npm run backfill:guestbook
  */
@@ -26,7 +29,6 @@ const env = { ...loadEnv("production", root, ""), ...process.env };
 
 const URL = env.VITE_SUPABASE_URL;
 const KEY = env.SUPABASE_SERVICE_ROLE_KEY;
-const EMAIL = env.MYMEMORY_EMAIL;
 
 if (!URL || !KEY) {
   console.error(
@@ -35,32 +37,32 @@ if (!URL || !KEY) {
   process.exit(1);
 }
 
-const MM_CODE = { en: "en", zh: "zh-CN" };
+const FUNCTION_URL = `${URL.replace(/\/$/, "")}/functions/v1/translate`;
 const detectLang = (text) => (/[㐀-鿿]/.test(text) ? "zh" : "en");
-const decode = (s) =>
-  s
-    .replace(/&#39;/g, "'")
-    .replace(/&quot;/g, '"')
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&amp;/g, "&");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function translate(text, from, to) {
   if (from === to || !text.trim()) return null;
-  const url =
-    "https://api.mymemory.translated.net/get?q=" +
-    encodeURIComponent(text) +
-    `&langpair=${MM_CODE[from]}|${MM_CODE[to]}` +
-    (EMAIL ? `&de=${encodeURIComponent(EMAIL)}` : "");
   try {
-    const res = await fetch(url);
-    if (!res.ok) return null;
+    const res = await fetch(FUNCTION_URL, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${KEY}`,
+        apikey: KEY,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ text, from, to }),
+    });
+    if (!res.ok) {
+      console.error(`[backfill] translate function returned ${res.status}`);
+      return null;
+    }
     const data = await res.json();
-    if (Number(data?.responseStatus) !== 200) return null;
-    const out = data?.responseData?.translatedText;
-    return typeof out === "string" && out.trim() ? decode(out) : null;
-  } catch {
+    return typeof data?.translated === "string" && data.translated.trim()
+      ? data.translated
+      : null;
+  } catch (err) {
+    console.error("[backfill] translate request failed:", err.message);
     return null;
   }
 }
@@ -83,9 +85,7 @@ let skipped = 0;
 
 for (const row of rows ?? []) {
   const lang = detectLang(row.message);
-  const langOk = row.lang === lang;
-  const hasTranslation = !!row.message_translated;
-  if (langOk && hasTranslation) {
+  if (row.lang === lang && row.message_translated) {
     skipped++;
     continue;
   }
@@ -106,7 +106,7 @@ for (const row of rows ?? []) {
       }`
     );
   }
-  await sleep(1200); // be gentle with the free translation quota
+  await sleep(400);
 }
 
 console.log(`[backfill] Done. ${updated} updated, ${skipped} already complete.`);
