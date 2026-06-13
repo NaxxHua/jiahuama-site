@@ -7,9 +7,9 @@ import { useLang } from "@/i18n/LanguageContext";
 const STAGE = "#e0a43c";
 
 const PRODUCTIONS = [
-  { key: "kouji", poster: "/theater-kouji.jpg" },
-  { key: "rhinoceros", poster: "/theater-rhinoceros.jpg" },
-  { key: "mumble", poster: "/theater-mumble.jpg" },
+  { key: "kouji", poster: "/theater-kouji.webp" },
+  { key: "rhinoceros", poster: "/theater-rhinoceros.webp" },
+  { key: "mumble", poster: "/theater-mumble.webp" },
 ] as const;
 
 /**
@@ -72,6 +72,8 @@ export default function TheaterSection({
                 src={poster}
                 alt=""
                 aria-hidden="true"
+                loading="lazy"
+                decoding="async"
                 onError={(e) => {
                   e.currentTarget.style.visibility = "hidden";
                 }}

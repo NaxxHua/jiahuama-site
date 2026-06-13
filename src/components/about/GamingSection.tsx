@@ -31,6 +31,8 @@ function GameCard({
           src={image}
           alt=""
           aria-hidden="true"
+          loading="lazy"
+          decoding="async"
           onError={(e) => {
             e.currentTarget.style.visibility = "hidden";
           }}
@@ -156,6 +158,7 @@ function LolCard() {
                 src={c.image}
                 alt={tx(c.name)}
                 loading="lazy"
+                decoding="async"
                 className="absolute inset-0 h-full w-full object-cover object-[center_22%]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent" />

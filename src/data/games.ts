@@ -35,7 +35,7 @@ export const wowProfile = {
    * at build time by scripts/fetch-wow-render.mjs — the DPS parse above stays
    * hand-written as a frozen historical record.
    */
-  image: "/wow-character.png",
+  image: "/wow-character.webp",
   /** Warrior class colour. */
   classColor: "#c69b6d",
 };

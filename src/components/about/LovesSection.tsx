@@ -60,9 +60,11 @@ export default function LovesSection() {
           >
             {/* Disco Elysium mural — "Un jour je serai de retour près de toi" */}
             <img
-              src="/quote-disco.jpg"
+              src="/quote-disco.webp"
               alt=""
               aria-hidden="true"
+              loading="lazy"
+              decoding="async"
               onError={(e) => {
                 e.currentTarget.style.visibility = "hidden";
               }}

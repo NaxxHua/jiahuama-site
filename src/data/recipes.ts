@@ -46,7 +46,7 @@ export const recipes: Recipe[] = [
       en: "A classic Xinjiang dish with tender chicken, potatoes, and bold spices.",
       zh: "新疆经典菜肴，鲜嫩鸡肉配土豆和浓郁香料。",
     },
-    image: "/big_plate_chicken.jpg",
+    image: "/big_plate_chicken.webp",
     accent: "#e0561f",
     ingredients: [
       {
@@ -208,7 +208,7 @@ export const recipes: Recipe[] = [
       en: "Classic mooncake with salted egg yolk and lotus seed paste filling.",
       zh: "经典月饼，咸蛋黄配莲蓉馅料，中秋节必备。",
     },
-    image: "/mooncake.jpg",
+    image: "/mooncake.webp",
     accent: "#d99a2b",
     ingredients: [
       {
@@ -372,7 +372,7 @@ export const recipes: Recipe[] = [
       en: "It's like champagne served in a cup that had a bit of cola left.",
       zh: "就如同把香槟倒在还剩一点可乐的杯子里。",
     },
-    image: "/cobalt_velvet.jpg",
+    image: "/cobalt_velvet.webp",
     accent: "#1f4fc4",
     glass: {
       en: "Highball with ice",
@@ -461,7 +461,7 @@ export const recipes: Recipe[] = [
       en: "One of these will make all your teeth turn blue. Hope you brushed them well.",
       zh: "只喝一口就能让你的牙齿变蓝。希望你喝完之后能好好刷牙。",
     },
-    image: "/blue_fairy.jpg",
+    image: "/blue_fairy.webp",
     accent: "#188eff",
     glass: {
       en: "Highball",
@@ -536,7 +536,7 @@ export const recipes: Recipe[] = [
       en: "It was originally called Pretty Woman, but too many people complained there should be a Piano Woman if there was a Piano Man.",
       zh: "它的本名是Pretty Woman，但有很多人投诉如果有种酒叫Piano Man（男钢琴师），就该有另一种被命名为Piano Woman（女钢琴师）。",
     },
-    image: "/piano_woman.jpg",
+    image: "/piano_woman.webp",
     accent: "#e8649b",
     glass: {
       en: "Wine glass with ice",
@@ -615,7 +615,7 @@ export const recipes: Recipe[] = [
       en: "No relation to the Hadron cannon you can see on the moon for one week every month.",
       zh: "与你每个月都有一周时间能看到的那座月球强子大炮没有任何关系。",
     },
-    image: "/moon_blast.jpg",
+    image: "/moon_blast.webp",
     accent: "#cf3c71",
     glass: {
       en: "Highball with ice",
@@ -686,7 +686,7 @@ export const recipes: Recipe[] = [
       en: "You'd think something so balanced would actually taste nice... you'd be dead wrong.",
       zh: "你可能会认为如此均衡的配方能够令这杯酒变得美味......那你就大错特错了。",
     },
-    image: "/zen_star.jpg",
+    image: "/zen_star.webp",
     accent: "#4d4ca1",
     glass: {
       en: "Stemless wine glass",
@@ -775,7 +775,7 @@ export const recipes: Recipe[] = [
       en: "It doesn't burn as hard on the tongue but you better not have a sore throat when drinking it...",
       zh: "你的舌头可能察觉不到它的火辣程度，但喝的时候请小心不要烧到嗓子。",
     },
-    image: "/pile_driver.jpg",
+    image: "/pile_driver.webp",
     accent: "#e89a1f",
     glass: {
       en: "Lowball with ice",
@@ -849,7 +849,7 @@ export const recipes: Recipe[] = [
       en: "This drink does not represent the opinions of the Bar Pianists Union or its associates.",
       zh: "该饮品不代表酒吧钢琴师协会及其相关组织的意见。",
     },
-    image: "/piano_man.jpg",
+    image: "/piano_man.webp",
     accent: "#1f8e8e",
     glass: {
       en: "Hurricane glass with ice and a straw",
@@ -935,7 +935,7 @@ export const recipes: Recipe[] = [
       en: "A couple of these will make your tongue feel velvet-y. More of them and you'll be sleeping soundly.",
       zh: "一两口就足以取悦你的舌头，再喝多就可能会导致睡过头。",
     },
-    image: "/fluffy_dream.jpg",
+    image: "/fluffy_dream.webp",
     accent: "#6fc478",
     glass: {
       en: "Highball with a long ice cube and a straw",
