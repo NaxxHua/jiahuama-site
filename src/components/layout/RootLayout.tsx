@@ -5,6 +5,7 @@ import Nav from "./Nav";
 import Footer from "./Footer";
 import Analytics from "./Analytics";
 import { useLenis, scrollToTop } from "@/hooks/useLenis";
+import { useSeo } from "@/hooks/useSeo";
 import { useLang } from "@/i18n/LanguageContext";
 
 function ScrollToTop() {
@@ -26,6 +27,7 @@ function PageFallback() {
 export default function RootLayout() {
   const { t } = useLang();
   useLenis();
+  useSeo();
 
   return (
     <div className="flex min-h-screen flex-col">

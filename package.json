@@ -7,8 +7,9 @@
     "dev": "vite",
     "fetch:wow": "node scripts/fetch-wow-render.mjs",
     "optimize:images": "node scripts/optimize-images.mjs",
+    "generate:og": "node scripts/generate-og-default.mjs",
     "backfill:guestbook": "node scripts/backfill-guestbook-translations.mjs",
-    "build": "node scripts/fetch-wow-render.mjs && tsc -b && vite build && cp dist/index.html dist/404.html",
+    "build": "node scripts/fetch-wow-render.mjs && tsc -b && vite build && node scripts/prerender-meta.mjs && cp dist/index.html dist/404.html",
     "preview": "vite preview"
   },
   "dependencies": {
