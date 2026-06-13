@@ -62,7 +62,6 @@ export default function BlogPage() {
                     )}
                     <Link
                       to={`/blog/${post.slug}`}
-                      viewTransition
                       className="absolute inset-0"
                       aria-label={meta.title}
                     />

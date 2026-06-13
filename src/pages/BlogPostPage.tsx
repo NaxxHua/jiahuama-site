@@ -44,7 +44,6 @@ export default function BlogPostPage() {
           <p className="text-[15px] text-fg-2">{t.blog.notFound}</p>
           <Link
             to="/blog"
-            viewTransition
             className="mt-4 inline-flex items-center gap-1.5 text-[14px] font-medium text-accent hover:text-accent-2"
           >
             <ArrowLeft size={15} />
@@ -64,7 +63,6 @@ export default function BlogPostPage() {
     <article className="mx-auto max-w-2xl px-5 pb-24 pt-16">
       <Link
         to="/blog"
-        viewTransition
         className="inline-flex items-center gap-1.5 text-[13px] font-medium text-fg-3 transition-colors hover:text-fg"
       >
         <ArrowLeft size={15} />

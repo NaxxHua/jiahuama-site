@@ -199,6 +199,21 @@
   }
 }
 
+/* Route view transitions — a quick cross-fade between pages. Browsers without
+ * the View Transitions API just navigate normally; reduced-motion opts out. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.26s;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
+
 @keyframes palette-in {
   from {
     opacity: 0;

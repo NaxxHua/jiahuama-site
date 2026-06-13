@@ -46,7 +46,7 @@ export default function CommandPalette() {
   const items = useMemo<Item[]>(() => {
     const go = (to: string) => () => {
       setOpen(false);
-      navigate(to, { viewTransition: true });
+      navigate(to);
     };
 
     const nav: Item[] = [
