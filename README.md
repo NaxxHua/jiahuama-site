@@ -31,7 +31,8 @@ The site icon is *Night vision* by Lorc, from [game-icons.net](https://game-icon
 
 ## Development
 
-Requires Node.js 20+.
+Requires Node.js 24+ (the build imports a `.ts` module directly via Node's
+native TypeScript type-stripping).
 
 ```bash
 npm install

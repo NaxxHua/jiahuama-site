@@ -25,7 +25,9 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          # 24+ for native TypeScript type-stripping — the build imports
+          # src/lib/seo.ts directly in scripts/prerender-meta.mjs.
+          node-version: 24
           cache: npm
 
       - name: Install dependencies
