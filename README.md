@@ -26,6 +26,8 @@ The site icon is *Night vision* by Lorc, from [game-icons.net](https://game-icon
 - Light / dark theme, synced to the system preference
 - Animated WebGL hero, tech-stack marquee, scroll-reveal sections
 - Recipe collection — glassmorphism cards and cinematic detail pages
+- MDX blog with bilingual posts and an RSS feed
+- ⌘K command palette and animated route transitions
 - Supabase-backed guestbook
 - Google Analytics 4 with SPA page-view tracking
 
@@ -40,6 +42,36 @@ npm run dev        # start the dev server
 npm run build      # type-check and build for production
 npm run preview    # preview the production build
 ```
+
+## Writing blog posts
+
+Posts are MDX files in `src/content/blog/`, one per language, named
+`<slug>.<lang>.mdx` (`lang` is `en` or `zh`) with frontmatter:
+
+```mdx
+---
+title: "Post title"
+date: "2026-06-13"
+summary: "One-sentence summary."
+tags: ["personal", "making"]
+lang: "en"
+---
+
+Markdown / MDX body…
+```
+
+Write a post in **one** language, then let Claude translate the other:
+
+```bash
+npm run blog:translate        # generate missing translations (needs ANTHROPIC_API_KEY in .env)
+npm run blog:manifest         # refresh the post index
+```
+
+`blog:translate` writes the sibling file marked `machine: true` with a
+`sourceHash`, so it's only regenerated when the source changes — manual edits
+to a translation are kept. Readers see posts in their language with a
+view-original toggle; `npm run build` rebuilds the manifest, RSS and per-post
+SEO automatically.
 
 ## Environment variables
 
