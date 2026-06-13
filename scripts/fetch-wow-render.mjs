@@ -1,10 +1,11 @@
 /**
  * Build-time fetch of the World of Warcraft character render.
  *
- * Pulls the current Blizzard-generated render for the character below and
- * writes it to public/wow-character.png, so the gaming card shows up-to-date
- * gear. The DPS parse on the card stays hand-written in src/data/games.ts —
- * it is a frozen historical record, not API data.
+ * Pulls the current Blizzard-generated render for the character below, stores
+ * the source PNG in media/ and emits an optimized public/wow-character.webp
+ * (what the gaming card actually loads), so the card shows up-to-date gear.
+ * The DPS parse on the card stays hand-written in src/data/games.ts — it is a
+ * frozen historical record, not API data.
  *
  * Credentials (BLIZZARD_CLIENT_ID / BLIZZARD_CLIENT_SECRET) come from .env and
  * are NOT VITE_-prefixed, so they never reach the client bundle. Create a
@@ -13,17 +14,19 @@
  * If credentials are missing or the API call fails, the existing image is
  * kept and the build continues — this step never breaks a deploy.
  */
-import { writeFile } from "node:fs/promises";
+import { writeFile, mkdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
 import { loadEnv } from "vite";
+import sharp from "sharp";
 
 const REGION = "us";
 const REALM = "illidan";
 const CHARACTER = "huasuiyue";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const OUT = resolve(root, "public/wow-character.png");
+const SRC = resolve(root, "media/wow-character.png");
+const OUT_WEBP = resolve(root, "public/wow-character.webp");
 
 const env = { ...loadEnv("production", root, ""), ...process.env };
 const CLIENT_ID = env.BLIZZARD_CLIENT_ID ?? env.WOW_CLIENT_ID;
@@ -69,9 +72,16 @@ try {
 
   const imgRes = await fetch(renderUrl);
   if (!imgRes.ok) skip(`render download failed (${imgRes.status})`);
-  await writeFile(OUT, Buffer.from(await imgRes.arrayBuffer()));
+  await mkdir(dirname(SRC), { recursive: true });
+  await writeFile(SRC, Buffer.from(await imgRes.arrayBuffer()));
 
-  console.log(`[wow-render] updated public/wow-character.png from ${renderUrl}`);
+  // Emit the optimized WebP the gaming card loads (matches optimize:images).
+  await sharp(SRC)
+    .resize({ width: 1600, height: 1600, fit: "inside", withoutEnlargement: true })
+    .webp({ quality: 78 })
+    .toFile(OUT_WEBP);
+
+  console.log(`[wow-render] updated wow-character.webp from ${renderUrl}`);
 } catch (err) {
   skip(`unexpected error: ${err.message}`);
 }
