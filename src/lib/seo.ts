@@ -9,6 +9,19 @@
 // import it directly (Node strips the TS types).
 
 import { recipes } from "../data/recipes.ts";
+import blogManifest from "../content/blog-manifest.json" with { type: "json" };
+
+interface BlogPostMeta {
+  title: string;
+  summary: string;
+  machine: boolean;
+}
+interface BlogPost {
+  slug: string;
+  date: string;
+  tags: string[];
+  langs: { en?: BlogPostMeta; zh?: BlogPostMeta };
+}
 
 export const SITE = {
   origin: "https://jiahuama.com",
@@ -62,7 +75,15 @@ const WEBSITE: Record<string, unknown> = {
   url: `${SITE.origin}/`,
 };
 
+// Two-level breadcrumb: a section (derived from the path's first segment)
+// followed by the page itself.
+const SECTION_NAMES: Record<string, string> = {
+  recipes: "Recipes",
+  blog: "Blog",
+};
+
 function breadcrumb(name: string, path: string): Record<string, unknown> {
+  const section = path.split("/")[1] ?? "";
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -70,8 +91,8 @@ function breadcrumb(name: string, path: string): Record<string, unknown> {
       {
         "@type": "ListItem",
         position: 1,
-        name: "Recipes",
-        item: `${SITE.origin}/recipes`,
+        name: SECTION_NAMES[section] ?? section,
+        item: `${SITE.origin}/${section}`,
       },
       {
         "@type": "ListItem",
@@ -154,7 +175,53 @@ const STATIC_ROUTES: RouteSeo[] = [
     ogImage: SITE.defaultOgImage,
     jsonLd: [],
   },
+  {
+    path: "/blog",
+    title: "Blog — Jiahua Ma",
+    description:
+      "Notes by Jiahua Ma on design engineering, games, cooking and making things for no reason.",
+    ogImage: SITE.defaultOgImage,
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        name: "Jiahua Ma — Blog",
+        url: `${SITE.origin}/blog`,
+        author: { "@type": "Person", name: SITE.author },
+      },
+    ],
+  },
 ];
+
+const BLOG_ROUTES: RouteSeo[] = (blogManifest as BlogPost[]).map((post) => {
+  const path = `/blog/${post.slug}`;
+  // Prefer English metadata for crawlers; fall back to Chinese.
+  const meta = post.langs.en ?? post.langs.zh;
+  const lang = post.langs.en ? "en" : "zh";
+  const title = meta?.title ?? post.slug;
+  const description = meta?.summary ?? "";
+  return {
+    path,
+    title: `${title} — Jiahua Ma`,
+    description,
+    ogImage: SITE.defaultOgImage,
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: title,
+        description,
+        datePublished: post.date,
+        inLanguage: lang,
+        url: `${SITE.origin}${path}`,
+        image: `${SITE.origin}${SITE.defaultOgImage}`,
+        author: { "@type": "Person", name: SITE.author },
+        keywords: post.tags.join(", "),
+      },
+      breadcrumb(title, path),
+    ],
+  };
+});
 
 const RECIPE_ROUTES: RouteSeo[] = recipes.map((r) => {
   const path = `/recipes/${r.id}`;
@@ -169,7 +236,11 @@ const RECIPE_ROUTES: RouteSeo[] = recipes.map((r) => {
   };
 });
 
-export const ROUTES: RouteSeo[] = [...STATIC_ROUTES, ...RECIPE_ROUTES];
+export const ROUTES: RouteSeo[] = [
+  ...STATIC_ROUTES,
+  ...RECIPE_ROUTES,
+  ...BLOG_ROUTES,
+];
 
 /** Look up SEO for a pathname, falling back to the home/default route. */
 export function getRouteSeo(pathname: string): RouteSeo {

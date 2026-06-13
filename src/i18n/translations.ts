@@ -9,6 +9,7 @@ const en = {
     about: "About",
     portfolio: "Portfolio",
     recipes: "Recipes",
+    blog: "Blog",
     contact: "Contact",
     guestbook: "Guestbook",
     menu: "Menu",
@@ -376,6 +377,19 @@ const en = {
     viewOriginal: "View original",
     viewTranslation: "View translation",
   },
+  blog: {
+    title: "Notes",
+    intro:
+      "Occasional writing on design engineering, games, cooking, and making things for no reason.",
+    empty: "No posts yet — check back soon.",
+    backToBlog: "All posts",
+    machineTag: "machine-translated",
+    machineNote:
+      "This is a machine translation. You can read the original instead.",
+    viewOriginal: "Read the original",
+    viewTranslation: "Read the translation",
+    notFound: "That post doesn't exist.",
+  },
 };
 
 export type Dict = typeof en;
@@ -385,6 +399,7 @@ const zh: Dict = {
     about: "关于",
     portfolio: "作品集",
     recipes: "食谱",
+    blog: "博客",
     contact: "联系",
     guestbook: "留言板",
     menu: "菜单",
@@ -740,6 +755,17 @@ const zh: Dict = {
     nameRequired: "请填写名字和留言内容。",
     viewOriginal: "查看原文",
     viewTranslation: "查看译文",
+  },
+  blog: {
+    title: "笔记",
+    intro: "偶尔写写设计工程、游戏、做菜，以及那些没有理由就做的东西。",
+    empty: "还没有文章——过阵子再来看看。",
+    backToBlog: "全部文章",
+    machineTag: "机器翻译",
+    machineNote: "这是机器翻译。你也可以阅读原文。",
+    viewOriginal: "阅读原文",
+    viewTranslation: "阅读译文",
+    notFound: "这篇文章不存在。",
   },
 };
 

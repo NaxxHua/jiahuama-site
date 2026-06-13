@@ -11,6 +11,8 @@ const ContactPage = lazy(() => import("@/pages/ContactPage"));
 const RecipesPage = lazy(() => import("@/pages/RecipesPage"));
 const RecipeDetailPage = lazy(() => import("@/pages/RecipeDetailPage"));
 const GuestbookPage = lazy(() => import("@/pages/GuestbookPage"));
+const BlogPage = lazy(() => import("@/pages/BlogPage"));
+const BlogPostPage = lazy(() => import("@/pages/BlogPostPage"));
 const NotFoundPage = lazy(() => import("@/pages/NotFoundPage"));
 
 export default function App() {
@@ -26,6 +28,8 @@ export default function App() {
             <Route path="recipes" element={<RecipesPage />} />
             <Route path="recipes/:id" element={<RecipeDetailPage />} />
             <Route path="guestbook" element={<GuestbookPage />} />
+            <Route path="blog" element={<BlogPage />} />
+            <Route path="blog/:slug" element={<BlogPostPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>

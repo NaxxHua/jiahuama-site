@@ -1,0 +1,22 @@
+[
+  {
+    "slug": "making-things-for-no-reason",
+    "date": "2026-06-13",
+    "tags": [
+      "personal",
+      "making"
+    ],
+    "langs": {
+      "en": {
+        "title": "Making things for no reason",
+        "summary": "On building a personal site, inventing cyberpunk cocktails, and why the best projects are the ones nobody asked for.",
+        "machine": false
+      },
+      "zh": {
+        "title": "做一些没有理由的东西",
+        "summary": "关于搭一个个人网站、发明赛博朋克鸡尾酒，以及为什么最好的项目往往是没人要求你做的那些。",
+        "machine": false
+      }
+    }
+  }
+]

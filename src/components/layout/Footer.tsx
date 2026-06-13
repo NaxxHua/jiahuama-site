@@ -20,6 +20,7 @@ export default function Footer() {
     { to: "/about", label: t.nav.about },
     { to: "/portfolio", label: t.nav.portfolio },
     { to: "/recipes", label: t.nav.recipes },
+    { to: "/blog", label: t.nav.blog },
     { to: "/contact", label: t.nav.contact },
     { to: "/guestbook", label: t.nav.guestbook },
   ];
