@@ -390,6 +390,16 @@ const en = {
     viewTranslation: "Read the translation",
     notFound: "That post doesn't exist.",
   },
+  palette: {
+    title: "Command palette",
+    placeholder: "Search pages, recipes, posts…",
+    pages: "Pages",
+    actions: "Actions",
+    empty: "No results.",
+    darkMode: "Switch to dark",
+    lightMode: "Switch to light",
+    open: "Search",
+  },
 };
 
 export type Dict = typeof en;
@@ -766,6 +776,16 @@ const zh: Dict = {
     viewOriginal: "阅读原文",
     viewTranslation: "阅读译文",
     notFound: "这篇文章不存在。",
+  },
+  palette: {
+    title: "命令面板",
+    placeholder: "搜索页面、食谱、文章…",
+    pages: "页面",
+    actions: "操作",
+    empty: "没有结果。",
+    darkMode: "切换到深色",
+    lightMode: "切换到浅色",
+    open: "搜索",
   },
 };
 

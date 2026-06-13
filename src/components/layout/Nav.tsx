@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Languages, Menu, Moon, Sun, X } from "lucide-react";
+import { Languages, Menu, Moon, Search, Sun, X } from "lucide-react";
 import clsx from "clsx";
 import { useLang } from "@/i18n/LanguageContext";
 import { useTheme, toggleTheme } from "@/hooks/useTheme";
+import { OPEN_EVENT } from "@/components/ui/CommandPalette";
 
 export default function Nav() {
   const { t, lang, toggleLang } = useLang();
@@ -54,6 +55,15 @@ export default function Nav() {
         </div>
 
         <div className="flex items-center gap-1">
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new Event(OPEN_EVENT))}
+            className="hidden h-9 items-center gap-2 rounded-md border border-border px-2.5 text-[12px] text-fg-3 transition-colors hover:border-border-strong hover:text-fg-2 sm:flex"
+            aria-label={t.palette.open}
+          >
+            <Search size={14} />
+            <kbd className="font-mono text-[10px] tracking-wider">⌘K</kbd>
+          </button>
           <button
             type="button"
             onClick={toggleLang}

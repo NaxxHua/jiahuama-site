@@ -4,6 +4,7 @@ import { Loader2 } from "lucide-react";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import Analytics from "./Analytics";
+import CommandPalette from "@/components/ui/CommandPalette";
 import { useLenis, scrollToTop } from "@/hooks/useLenis";
 import { useSeo } from "@/hooks/useSeo";
 import { useLang } from "@/i18n/LanguageContext";
@@ -43,6 +44,7 @@ export default function RootLayout() {
         </Suspense>
       </main>
       <Footer />
+      <CommandPalette />
     </div>
   );
 }
