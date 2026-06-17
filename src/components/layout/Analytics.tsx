@@ -26,14 +26,24 @@ export default function Analytics() {
     document.head.appendChild(script);
 
     window.dataLayer = window.dataLayer || [];
-    window.gtag = (...args: unknown[]) => window.dataLayer.push(args);
+    // gtag.js only processes Arguments objects pushed to dataLayer — a plain
+    // array (e.g. from rest params) is silently ignored, so no hits are sent.
+    function gtag() {
+      // eslint-disable-next-line prefer-rest-params
+      window.dataLayer.push(arguments);
+    }
+    window.gtag = gtag as Window["gtag"];
     window.gtag("js", new Date());
     window.gtag("config", GA_ID, { send_page_view: false });
   }, []);
 
   useEffect(() => {
     if (!GA_ID || typeof window.gtag !== "function") return;
-    window.gtag("event", "page_view", { page_path: pathname });
+    window.gtag("event", "page_view", {
+      page_path: pathname,
+      page_location: window.location.href,
+      page_title: document.title,
+    });
   }, [pathname]);
 
   return null;
