@@ -20,6 +20,7 @@ export default function Nav() {
     { to: "/portfolio", label: t.nav.portfolio },
     { to: "/recipes", label: t.nav.recipes },
     { to: "/blog", label: t.nav.blog },
+    { to: "/game", label: t.nav.game },
     { to: "/contact", label: t.nav.contact },
     { to: "/guestbook", label: t.nav.guestbook },
   ];
