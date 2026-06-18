@@ -18,7 +18,8 @@ $$;
 create or replace function biav_battles()
 returns table(chapter int, result text, n bigint)
 language sql security definer set search_path = public as $$
-  select (props->>'chapter')::int, props->>'result', count(*)
+  -- 用 ::numeric::int 兼容历史脏数据里 "1.0" 这种浮点字符串（JSON 队列回灌导致）
+  select (props->>'chapter')::numeric::int, props->>'result', count(*)
   from events where event = 'battle_end' and props ? 'chapter'
   group by 1, 2 order by 1, 2;
 $$;
