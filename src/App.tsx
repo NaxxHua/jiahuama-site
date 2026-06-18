@@ -13,6 +13,7 @@ const RecipesPage = lazy(() => import("@/pages/RecipesPage"));
 const RecipeDetailPage = lazy(() => import("@/pages/RecipeDetailPage"));
 const GuestbookPage = lazy(() => import("@/pages/GuestbookPage"));
 const GamePage = lazy(() => import("@/pages/GamePage"));
+const DashboardPage = lazy(() => import("@/pages/DashboardPage"));
 const BlogPage = lazy(() => import("@/pages/BlogPage"));
 const BlogPostPage = lazy(() => import("@/pages/BlogPostPage"));
 const NotFoundPage = lazy(() => import("@/pages/NotFoundPage"));
@@ -68,6 +69,7 @@ function AnimatedRoutes() {
         <Route path="blog" element={<BlogPage />} />
         <Route path="blog/:slug" element={<BlogPostPage />} />
         <Route path="game" element={<GamePage />} />
+        <Route path="dashboard" element={<DashboardPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
