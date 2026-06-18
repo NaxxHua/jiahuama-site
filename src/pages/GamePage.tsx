@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import PageHeader from "@/components/layout/PageHeader";
+import FeedbackSurvey from "@/components/FeedbackSurvey";
 import { useLang } from "@/i18n/LanguageContext";
 
 // ── 配置（你来改）──────────────────────────────────────────────
@@ -58,6 +59,7 @@ export default function GamePage() {
           />
         </div>
         <p className="mt-3 text-center text-[13px] text-fg-3">{g.hint}</p>
+        <FeedbackSurvey />
       </section>
     );
   }
