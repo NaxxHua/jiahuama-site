@@ -31,6 +31,25 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-17 → 06-19",
     patches: [
       {
+        version: "0.4.18",
+        date: "2026-06-19",
+        title: { en: "Fixes: codex unlocks, Furnace Heart, heat upside", zh: "复查修：图鉴解锁 / 熔炉之心 / 热力正向" },
+        items: [
+          {
+            en: "Fixed: relics you own now actually unlock in the codex (broke after the cognition-odds change). The burn-debuff wording is consistent now.",
+            zh: "修复：拿到的圣物现在会正确解锁进图鉴（认知掉率改版后漏了）；灼烧残片文案统一。",
+          },
+          {
+            en: "Furnace Heart reworked: it used to trigger per-overdrive (now a module, so it did nothing) — now it grants +5 permanent attack each time you overheat, turning the burned HP into lasting damage.",
+            zh: "熔炉之心重做：原「每进无双 +攻击」因无双下放成模块而失效 → 改成「每次过热硬出 +5 永久攻击」，把灼伤的血变成永久输出。",
+          },
+          {
+            en: "Heat now reads as a resource, not pure downside: while in the sweet zone the bar shows a green \"Bonus! +dmg +block\", and start-heat relics explain they get you into that zone faster.",
+            zh: "热力不再像纯负面：在增益区(甜区)时热力条显示绿字「增益! 伤+盾」，「开局热力」圣物也说明它能更快进甜区。",
+          },
+        ],
+      },
+      {
         version: "0.4.17",
         date: "2026-06-19",
         title: { en: "Overdrive is now a module + cleaner heat + draw/discard anim", zh: "无双下放成模块 + 过热区常驻 + 抽弃牌动画" },
