@@ -31,6 +31,21 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-17 → 06-19",
     patches: [
       {
+        version: "0.4.23",
+        date: "2026-06-19",
+        title: { en: "Charge action + 10 new cards", zh: "蓄力动作 + 扩充卡池" },
+        items: [
+          {
+            en: "New Charge action (next to End Turn): if you played fewer than 2 cards this turn, charge instead — vent a lot of heat and gain +8 attack next turn. A patient counterplay to the heat push-your-luck.",
+            zh: "新增「蓄力」动作（结束回合旁边）：本回合出牌 <2 张时可改蓄力——大量散热 + 下回合攻击 +8。按兵不动、攒一波，是热力 push-your-luck 的对策。",
+          },
+          {
+            en: "+10 cards: filled out Morishita (it was thinnest) with two-hit/armor cards, added neutral utility (block, memory cantrip, a heavy hit that pairs with Charge), and a high-rarity draft target per company.",
+            zh: "新增 10 张卡：补森下深度（多段/攻防一体）、加中立通用牌（格挡、回内存 cantrip、配合蓄力的重拳），各公司补一张高稀有 draft 目标。",
+          },
+        ],
+      },
+      {
         version: "0.4.22",
         date: "2026-06-19",
         title: { en: "Card rarity x build scaling (fixes basics scaling forever)", zh: "卡牌改造 × 稀有度合流" },
