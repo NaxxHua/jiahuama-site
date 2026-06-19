@@ -40,6 +40,10 @@ const en = {
       error: "Submit failed. Please try again.",
       another: "Send another",
     },
+    changelog: {
+      title: "What's new",
+      subtitle: "Recent updates to the demo.",
+    },
   },
   footer: {
     tagline: "Design Engineer, game developer, and table tennis player.",
@@ -464,6 +468,10 @@ const zh: Dict = {
       success: "收到啦——太感谢了！",
       error: "提交失败，再试一次。",
       another: "再填一份",
+    },
+    changelog: {
+      title: "更新日志",
+      subtitle: "Demo 的近期更新。",
     },
   },
   footer: {
