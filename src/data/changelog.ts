@@ -31,6 +31,21 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-17 → 06-19",
     patches: [
       {
+        version: "0.4.19",
+        date: "2026-06-19",
+        title: { en: "Sweet-zone target band + longer burn popup", zh: "甜区目标带 + 灼烧 pop 加时" },
+        items: [
+          {
+            en: "The heat bar now draws a gold band over the bonus (\"sweet\") zone, giving you a clear target to aim for instead of only watching the burn line. The zone bonus was bumped (+4 dmg / +3 block) so riding it actually matters.",
+            zh: "热力条现在用金框画出「增益区(甜区)」那一段，给你一个明确的瞄准目标，而不只是盯着灼烧线；甜区增益上调（伤+4/盾+3），贴着跑真的有影响。",
+          },
+          {
+            en: "The \"burn shard implanted\" popup now lingers ~1.7s instead of flashing by.",
+            zh: "「植入：灼烧残片」提示停留时间加长（约 1.7 秒），不再一闪而过。",
+          },
+        ],
+      },
+      {
         version: "0.4.18",
         date: "2026-06-19",
         title: { en: "Fixes: codex unlocks, Furnace Heart, heat upside", zh: "复查修：图鉴解锁 / 熔炉之心 / 热力正向" },
