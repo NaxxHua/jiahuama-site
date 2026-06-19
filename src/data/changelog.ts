@@ -31,6 +31,17 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-17 → 06-19",
     patches: [
       {
+        version: "0.4.20",
+        date: "2026-06-19",
+        title: { en: "Card modification system (Balatro-style)", zh: "卡牌改造系统（塔罗式）" },
+        items: [
+          {
+            en: "New card-modification reward (every 3rd fight): pick any card from your deck, then choose one of three mods to permanently apply — Reinforce (+3 main stat), Multistrike (+1 hit), Coolant (cool when discarded), Lighten (cheaper), Overcharge (+5 dmg, +4 heat). Mods stick to the card for the rest of the run.",
+            zh: "新增「卡牌改造」奖励（每第 3 场）：从牌组里点一张牌，再三选一改造永久生效——强化(主数值+3)、多段改装(+1段)、冷却回路(弃牌散热)、轻量化(更便宜)、过载芯片(伤+5但热+4)。改造跟着这张牌整局生效。",
+          },
+        ],
+      },
+      {
         version: "0.4.19",
         date: "2026-06-19",
         title: { en: "Sweet-zone target band + longer burn popup", zh: "甜区目标带 + 灼烧 pop 加时" },
