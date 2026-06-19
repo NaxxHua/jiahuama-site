@@ -31,6 +31,17 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-17 → 06-19",
     patches: [
       {
+        version: "0.4.21",
+        date: "2026-06-19",
+        title: { en: "Memory now recovered via cards", zh: "内存改“靠卡回复”" },
+        items: [
+          {
+            en: "Memory no longer auto-refills each turn — you recover it by playing memory cards (e.g. Data Recall: spend heat, regain memory + draw). Makes the brain axis a managed resource like heat. You start with 2 Data Recall cards so hacker decks never lock up; trait/relic memory passives still apply.",
+            zh: "内存不再每回合自动回，改成靠「回内存卡」回复（如数据回流：花热力→回内存+抽牌）。让大脑轴像热力一样是要管理的资源。起手送 2 张数据回流，黑客流不会卡死；词条/圣物的内存被动仍生效。",
+          },
+        ],
+      },
+      {
         version: "0.4.20",
         date: "2026-06-19",
         title: { en: "Card modification system (Balatro-style)", zh: "卡牌改造系统（塔罗式）" },
