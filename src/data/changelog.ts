@@ -28,8 +28,27 @@ export const changelog: MinorVersion[] = [
   {
     minor: "0.4",
     title: { en: "Data, feel & balance", zh: "数据收集 · 手感 · 平衡" },
-    span: "2026-06-17 → 06-18",
+    span: "2026-06-17 → 06-19",
     patches: [
+      {
+        version: "0.4.16",
+        date: "2026-06-19",
+        title: { en: "Relic odds, card fixes & out-of-battle viewers", zh: "圣物认知掉率 + 卡牌修 + 局外查看" },
+        items: [
+          {
+            en: "Boss relics are now a pick-1-of-3 (no longer all 3). Relic rarity odds climb the deeper you get — transparent on the map (common/rare/epic/legendary %, color-coded), framed as your machine-mind growing clearer and getting closer to the cool treasures.",
+            zh: "Boss 圣物改成三选一（不再全给 3 个）。圣物稀有度随战斗推进水涨船高——地图上透明显示（普通/稀有/史诗/传说掉率，按稀有度配色），作为机器的你对世界认知越清晰、离酷炫宝藏越近。",
+          },
+          {
+            en: "Out of battle you can now see your current relics (hover for details) and HP in both the hub and the map; the hub got a deck viewer.",
+            zh: "局外（hub 与地图）现在能看到当前圣物（hover 详情）和生命条；hub 加了查看牌组。",
+          },
+          {
+            en: "Card/event fixes from feedback: only a few strong brain cards add heat now (not all); the cooling card costs memory; 黑墙过载 buffed; the burn-clog debuff is one-shot now; removed duplicate event \"leave\" options.",
+            zh: "卡牌/事件反馈修：只有个别强力大脑卡才积热（不再全部）；散热牌改成耗内存；黑墙过载加强；灼烧残片改成一次性；去掉事件里重复的「离开」选项。",
+          },
+        ],
+      },
       {
         version: "0.4.15",
         date: "2026-06-18",
