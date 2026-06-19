@@ -31,6 +31,40 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-17 → 06-19",
     patches: [
       {
+        version: "0.4.25",
+        date: "2026-06-19",
+        title: { en: "Card art + richer playtest data", zh: "卡牌美术 + 更多试玩数据" },
+        items: [
+          {
+            en: "The expanded card pool finally has real illustrations — 18 new card arts are in (the new defense/sustain cards, Morishita's depth cards, the memory cards, and each company's draft targets).",
+            zh: "扩充后的卡池终于补上了真美术——18 张新卡面（各公司防御/续航卡、森下深度牌、内存卡、各公司 draft 目标）。",
+          },
+          {
+            en: "Feedback moved to Discord: the in-page survey is gone — there's a Discord link on the game page instead. Come tell me what's great or terrible.",
+            zh: "反馈改到 Discord：页内问卷下线了，游戏页改成一个 Discord 链接。来和我聊聊哪里爽、哪里烦。",
+          },
+          {
+            en: "More anonymous playtest signals (no personal data) to tune balance — what builds people actually assemble, how fights pace out, and where heat / overheat gets used.",
+            zh: "扩了匿名试玩数据维度（不收隐私）来调平衡——大家真实凑出的流派、战斗节奏、热力/过热用在哪。",
+          },
+        ],
+      },
+      {
+        version: "0.4.24",
+        date: "2026-06-19",
+        title: { en: "Per-company defense & sustain cards", zh: "各公司防御/续航卡" },
+        items: [
+          {
+            en: "Each company got a survival outlet, so you're not funneled into one sustain build: Pioneer attacks that also grant an equal temporary shield; Morishita consumes its shields to heal 50% of their value; Street steals a percentage of the enemy's shield.",
+            zh: "每家都补了生存出口，不再被逼着走同一套续航：先锋攻击同时生成等量临时护盾；森下消耗护盾、回复其值 50% 生命；街头窃取敌人一定比例的护盾。",
+          },
+          {
+            en: "Mixed-build simulation had flagged Pioneer as a glass cannon and Huige sustain as near-mandatory; after these, Pioneer builds climb and Huige is no longer a must-pick.",
+            zh: "混合构筑模拟此前显示先锋是玻璃大炮、辉格续航近乎必带；补完后先锋系通关率上升，辉格不再必带。",
+          },
+        ],
+      },
+      {
         version: "0.4.23",
         date: "2026-06-19",
         title: { en: "Charge action + 10 new cards", zh: "蓄力动作 + 扩充卡池" },
