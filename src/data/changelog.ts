@@ -31,6 +31,25 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-17 → 06-19",
     patches: [
       {
+        version: "0.4.17",
+        date: "2026-06-19",
+        title: { en: "Overdrive is now a module + cleaner heat + draw/discard anim", zh: "无双下放成模块 + 过热区常驻 + 抽弃牌动画" },
+        items: [
+          {
+            en: "Untangled heat: by default the redline (heat cap) just has an Overheat zone above it (always visible, fixed width) — playing past it burns you (push-your-luck), no auto-overdrive. Overdrive is now a Module (a relic for now): equip it and the redline turns into an Overdrive gate instead. So \"overheat (burn)\" and \"overdrive (burst)\" no longer fight in the same bar.",
+            zh: "理顺热力：默认红线(热力上限)以上就是「过热区」(任何上限都看得到、宽度固定)，越线硬出会灼伤你(push-your-luck)、不再自动开无双。无双下放成「模块」(暂为一件圣物)：装上后红线改成「无双之门」。这样「过热(灼伤)」和「无双(爆发)」不再在同一条热力条里打架。",
+          },
+          {
+            en: "Fixed the hand-card tag: cards crossing the redline show red \"Overheat\" (will burn) or orange \"Overdrive\" (will trigger overdrive, if you have the module) — no more mislabel.",
+            zh: "修正手牌角标：会越红线的牌——没模块标红「过热」(会灼伤)、有模块标橙「无双」(会进无双)，不再对不上。",
+          },
+          {
+            en: "Draw/discard animations: drawn cards fade in along their own axis, played/discarded cards fade out along it.",
+            zh: "抽牌/弃牌动画：抽到的牌沿自身中轴淡入，打出/弃掉的牌沿中轴淡出。",
+          },
+        ],
+      },
+      {
         version: "0.4.16",
         date: "2026-06-19",
         title: { en: "Relic odds, card fixes & out-of-battle viewers", zh: "圣物认知掉率 + 卡牌修 + 局外查看" },
