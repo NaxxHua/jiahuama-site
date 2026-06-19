@@ -31,6 +31,17 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-17 → 06-19",
     patches: [
       {
+        version: "0.4.22",
+        date: "2026-06-19",
+        title: { en: "Card rarity x build scaling (fixes basics scaling forever)", zh: "卡牌改造 × 稀有度合流" },
+        items: [
+          {
+            en: "Cards now have a rarity (Basic / Common / Rare / Epic), and your build's attack bonus scales by it: basic cards (Strike/Defend) only take 50% of it, so a basic card no longer hits for dozens late game; rare/epic take full or more. New mod \"Upgrade\" raises a card's rarity — so card modification is how you pick which cards scale with your build. Cards are color-coded by rarity in the deck/modify views.",
+            zh: "卡牌现在有稀有度（基础/普通/稀有/史诗），你 build 的攻击加成按它打折：基础牌（打击/格挡）只吃 50%，后期不会再一张打几十；稀有/史诗吃满或超额。新改造「升格」抬升稀有度——所以卡牌改造就是你来选哪些牌跟着 build 变强。牌库/改造界面按稀有度配色。",
+          },
+        ],
+      },
+      {
         version: "0.4.21",
         date: "2026-06-19",
         title: { en: "Memory now recovered via cards", zh: "内存改“靠卡回复”" },
