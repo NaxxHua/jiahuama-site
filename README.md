@@ -18,7 +18,7 @@ collection and a guestbook.
 - **Supabase** — guestbook backend (falls back to localStorage in dev)
 
 UI animation components are adapted from [React Bits](https://reactbits.dev) (MIT).
-The site icon is *Night vision* by Lorc, from [game-icons.net](https://game-icons.net) (CC BY 3.0).
+The site icon — a cat on a laptop under the stars — was drawn by 馨怡.
 
 ## Features
 

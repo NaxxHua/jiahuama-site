@@ -41,7 +41,7 @@ export default function Nav() {
           className="flex items-center gap-2.5"
           aria-label="Jiahua Ma — home"
         >
-          <img src="/favicon.svg" alt="" className="h-9 w-9" />
+          <img src="/favicon.png" alt="" className="h-9 w-9 rounded-md" />
           <span className="hidden font-display text-[15px] font-semibold tracking-tight text-fg sm:block">
             Jiahua Ma
           </span>
