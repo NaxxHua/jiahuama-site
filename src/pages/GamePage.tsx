@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import PageHeader from "@/components/layout/PageHeader";
-import FeedbackSurvey from "@/components/FeedbackSurvey";
 import Changelog from "@/components/Changelog";
 import { useLang } from "@/i18n/LanguageContext";
 
@@ -60,7 +59,18 @@ export default function GamePage() {
           />
         </div>
         <p className="mt-3 text-center text-[13px] text-fg-3">{g.hint}</p>
-        <FeedbackSurvey />
+        <div className="mt-6 rounded-xl border border-border bg-bg-1 p-6 text-center">
+          <h2 className="font-display text-[16px] font-semibold text-fg">{g.feedback.title}</h2>
+          <p className="mx-auto mt-1 max-w-md text-[13px] text-fg-3">{g.feedback.intro}</p>
+          <a
+            href="https://discord.gg/KbzvgNQM"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-4 inline-block rounded-md bg-fg px-4 py-2.5 text-[14px] font-medium text-bg transition-opacity hover:opacity-90"
+          >
+            {g.feedback.cta}
+          </a>
+        </div>
         <Changelog />
       </section>
     );

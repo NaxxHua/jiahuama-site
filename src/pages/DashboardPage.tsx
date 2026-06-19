@@ -160,12 +160,11 @@ export default function DashboardPage() {
       )}
 
       {o && (
-        <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-5">
+        <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
           {[
             ["玩家", o.players],
             ["会话", o.sessions],
             ["开局", o.runs],
-            ["反馈", o.feedback],
             ["事件", o.events],
           ].map(([label, val]) => (
             <div key={label} className="rounded-lg border border-border bg-bg-1 p-3 text-center">

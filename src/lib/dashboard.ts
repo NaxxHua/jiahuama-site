@@ -11,7 +11,6 @@ export interface Overview {
   players: number;
   sessions: number;
   runs: number;
-  feedback: number;
   events: number;
 }
 export interface Battle {

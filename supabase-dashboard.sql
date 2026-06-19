@@ -1,6 +1,7 @@
 -- 试玩数据看板：聚合 RPC（security definer = 以函数所有者权限跑，绕过 RLS 只回汇总）。
 -- 在 Supabase SQL Editor 跑一次。匿名只能 execute 这些函数、拿到聚合数字；
--- 拿不到原始 events / playtest_feedback 行（反馈内容仍只你在后台能看）。
+-- 拿不到原始 events 行。
+-- 注：网页问卷已下线、playtest_feedback 表已废弃，反馈改走 Discord，本看板只看遥测。
 
 -- 概览
 create or replace function biav_overview()
@@ -9,7 +10,6 @@ returns json language sql security definer set search_path = public as $$
     'players',  (select count(distinct device_id) from events),
     'sessions', (select count(distinct session_id) from events),
     'runs',     (select count(*) from events where event = 'run_start'),
-    'feedback', (select count(*) from playtest_feedback),
     'events',   (select count(*) from events)
   );
 $$;
