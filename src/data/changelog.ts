@@ -31,6 +31,40 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-17 → 06-19",
     patches: [
       {
+        version: "0.4.27",
+        date: "2026-06-19",
+        title: { en: "Crisp text + unified card faces", zh: "清晰文字 + 卡面统一" },
+        items: [
+          {
+            en: "Text is now crisp at any window size / fullscreen — fonts switched to a resolution-independent (MSDF) renderer, so they no longer blur when the game is scaled up.",
+            zh: "文字在任意窗口大小 / 全屏下都清晰了——字体改用与分辨率无关的 MSDF 渲染，放大不再发虚。",
+          },
+          {
+            en: "The card-modification screen now shows the same full card art as the codex and deck viewer (no more bare text tiles), in a scrollable grid.",
+            zh: "卡牌改造页改用和图鉴/查看牌组一样的完整卡面（不再是简陋文字格），滚动网格。",
+          },
+          {
+            en: "Relic, trait and modification text cleaned up to a consistent, objective phrasing; removed redundant overlap between two near-identical Pflege regen traits.",
+            zh: "圣物 / 词条 / 改造文案统一成客观中立的写法；两个几乎重复的辉格回血词条做了区分。",
+          },
+        ],
+      },
+      {
+        version: "0.4.26",
+        date: "2026-06-19",
+        title: { en: "UX polish + help text aligned", zh: "UX 打磨 + 帮助文案校正" },
+        items: [
+          {
+            en: "Hover the heat bar to see a full explanation of the safe / bonus (sweet) / overheat zones. Removed the harsh card-purchase sound. Relic codex entries now show details on hover.",
+            zh: "悬停热力条会弹出安全区 / 增益区(甜区) / 过热区的完整说明。移除了刺耳的购买卡牌音效。圣物图鉴现在悬停可看详情。",
+          },
+          {
+            en: "Tutorial, rules and the Ch.1 intro updated to match the current design (overdrive is now a future equippable module, not always-on); tutorial adds a Charge step and points to the memory bar's real spot.",
+            zh: "新手指引、规则速览、第一章开场对话都对齐了当前设计（「无双」改为未来可装的模块、不再常驻）；新手指引补了「蓄力」一步、并指向内存条的真实位置。",
+          },
+        ],
+      },
+      {
         version: "0.4.25",
         date: "2026-06-19",
         title: { en: "Card art + richer playtest data", zh: "卡牌美术 + 更多试玩数据" },
