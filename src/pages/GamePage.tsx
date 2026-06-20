@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import PageHeader from "@/components/layout/PageHeader";
 import Changelog from "@/components/Changelog";
 import { useLang } from "@/i18n/LanguageContext";
+import { trackEvent } from "@/lib/analytics";
 
 // ── 配置（你来改）──────────────────────────────────────────────
 // 暗号：发给测试的朋友。注意这是“软门”——挡住路人即可，会看源码的人能绕过。
@@ -24,12 +25,20 @@ export default function GamePage() {
     if (sessionStorage.getItem(STORAGE_KEY) === "1") setUnlocked(true);
   }, []);
 
+  // Web-side funnel: someone reached the playable view (fresh unlock or a
+  // remembered session). In-game events are tracked separately by the game.
+  useEffect(() => {
+    if (unlocked) trackEvent("game_launch");
+  }, [unlocked]);
+
   function submit(e: React.FormEvent) {
     e.preventDefault();
     if (code.trim().toLowerCase() === ACCESS_CODE.toLowerCase()) {
+      trackEvent("game_unlock");
       sessionStorage.setItem(STORAGE_KEY, "1");
       setUnlocked(true);
     } else {
+      trackEvent("game_unlock_failed");
       setError(true);
       inputRef.current?.focus();
     }
@@ -44,6 +53,7 @@ export default function GamePage() {
             href={GAME_URL}
             target="_blank"
             rel="noreferrer"
+            onClick={() => trackEvent("game_relaunch")}
             className="rounded-md border border-border px-3 py-1.5 text-[13px] text-fg-2 transition-colors hover:border-border-strong hover:text-fg"
           >
             {g.relaunch}
@@ -66,6 +76,7 @@ export default function GamePage() {
             href="https://discord.gg/KbzvgNQM"
             target="_blank"
             rel="noreferrer"
+            onClick={() => trackEvent("discord_click")}
             className="mt-4 inline-block rounded-md bg-fg px-4 py-2.5 text-[14px] font-medium text-bg transition-opacity hover:opacity-90"
           >
             {g.feedback.cta}
