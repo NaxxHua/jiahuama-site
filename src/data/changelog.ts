@@ -31,6 +31,17 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-19 – 2026-06-20",
     patches: [
       {
+        version: "0.6.8",
+        date: "2026-06-20",
+        title: { en: "Faster card codex", zh: "卡牌图鉴加载提速" },
+        items: [
+          {
+            en: "Opening the card codex and switching its filters no longer stalls for a couple seconds. It used to rebuild every owned card from scratch each time; now the description-fit regex is compiled once, pure-display cards skip the hover-grow and glossary scan, and the codex caches both the card data and the built card cells — so reopening and filtering are basically instant after the first open.",
+            zh: "打开卡牌图鉴、切换筛选不再卡顿两三秒。之前每次都从头重建所有已拥有的卡；现在描述排版的正则只编译一次、纯展示的卡跳过悬停放大与术语扫描、图鉴还缓存了卡数据和建好的卡格——首次打开后，重开和切筛选基本秒开。",
+          },
+        ],
+      },
+      {
         version: "0.6.7",
         date: "2026-06-20",
         title: { en: "One modify per card + long-text fit", zh: "每张牌限改造一次 + 长描述放得下" },
