@@ -445,12 +445,12 @@ const zh: Dict = {
     codeLabel: "暗号",
     placeholder: "输入暗号",
     enter: "开始游玩",
-    wrong: "暗号不对——找马家骅要。",
+    wrong: "暗号不对哦，找马家骅要一个。",
     hint: "建议用电脑 Chrome/Edge。首次加载较大（约 130MB），请耐心等。",
     relaunch: "重新加载游戏",
     feedback: {
       title: "有任何反馈？",
-      intro: "到 Discord 频道和我聊聊——bug、点子、哪里爽哪里烦，都欢迎。",
+      intro: "到 Discord 频道找我聊就行，bug、点子、哪里好玩哪里别扭，都欢迎。",
       cta: "加入 Discord",
     },
     changelog: {
@@ -479,7 +479,7 @@ const zh: Dict = {
     eyebrow: "你好，我是",
     roles: ["设计工程师", "游戏开发者", "乒乓球选手"],
     tagline:
-      "我是 Visa 的一名设计工程师，打造精致、可访问的界面。工作之余我设计游戏，也在球台上追求那记完美的上旋。",
+      "我在 Visa 做设计工程师，平时就是把界面做得顺手又好看，也尽量让每个人都用得上。工作之外我自己做游戏，还在乒乓球台上练那记一直没练利索的上旋。",
     ctaWork: "查看我的作品",
     ctaContact: "联系我",
     scroll: "向下滚动",
@@ -488,9 +488,9 @@ const zh: Dict = {
     highlightsSub: "横跨设计工程、游戏、研究与运动。",
     highlights: {
       visa: {
-        tag: "2022 — 至今",
+        tag: "2022 至今",
         title: "Visa 设计工程师",
-        desc: "构建跨平台 Flutter 设计系统，服务于 Visa 的多个产品——可访问的设计令牌、组件与符合 VGAR 规范的界面。",
+        desc: "给 Visa 做跨平台的 Flutter 设计系统，好几个产品都在用，从设计令牌到组件，再到符合 VGAR 的界面。",
       },
       game: {
         tag: "进行中",
@@ -510,7 +510,7 @@ const zh: Dict = {
       tabletennis: {
         tag: "USATT",
         title: "竞技乒乓球",
-        desc: "USATT 注册选手——专注、步法，以及无穷无尽的上旋。",
+        desc: "USATT 注册球员，一直在练步法，也一直在练那记上旋。",
       },
     },
     exploreTitle: "继续探索",
@@ -525,7 +525,7 @@ const zh: Dict = {
       },
       about: {
         title: "关于",
-        desc: "更完整的故事——我从哪来，在意什么。",
+        desc: "更完整的故事，我从哪来，又在意些什么。",
       },
     },
     stats: {
@@ -534,13 +534,13 @@ const zh: Dict = {
       game: "正在做的游戏",
     },
     ctaTitle: "一起做点东西吧",
-    ctaBody: "随时欢迎聊聊设计工程、游戏，或者来一场友谊乒乓球赛。",
+    ctaBody: "想聊设计、聊游戏，或者约一场球，随时都行。",
   },
   about: {
     eyebrow: "关于",
     title: "设计、游戏和乒乓球",
     intro:
-      "我是马家骅，Visa 的一名设计工程师。我做的事大多介于设计和工程之间。",
+      "我是马家骅，在 Visa 做设计工程师，干的活儿基本都卡在设计和工程中间。",
     journeyTitle: "到目前为止的故事",
     journey: [
       "我在新疆乌鲁木齐长大，2014 年来到美国。学一门新语言、在陌生的地方重新开始，很大程度上塑造了我面对难题的方式。",
@@ -677,11 +677,11 @@ const zh: Dict = {
       designSystem: {
         org: "Visa",
         role: "前端主管工程师",
-        period: "2022 — 至今",
-        title: "Nova Flutter — Visa 设计系统",
-        summary: "主导开发 Nova Flutter——Visa 开源 Nova 设计系统的 Flutter 组件库。",
+        period: "2022 至今",
+        title: "Nova Flutter · Visa 设计系统",
+        summary: "主导开发 Nova Flutter，也就是 Visa 开源 Nova 设计系统的 Flutter 组件库。",
         bullets: [
-          "构建 20+ 组件——占移动端组件库的 70%+——被 Visa 全球移动生态中 200+ 名开发者采用。",
+          "做了 20 多个组件，占移动端组件库的七成多，Visa 全球移动生态里 200 多名开发者在用。",
           "建立 CI/CD，单元测试覆盖率 95%+、通过率 100%，保证无障碍合规与零回归。",
           "向 iOS 与 Android 发布实时演示应用，加速贡献者上手。",
           "与 Visa UX 团队协作，推动 5+ 个全球团队的采用与治理。",
@@ -693,16 +693,16 @@ const zh: Dict = {
       plasma: {
         org: "Visa",
         role: "软件工程师",
-        period: "2025 — 至今",
+        period: "2025 至今",
         title: "Project Plasma",
         summary:
-          "构建 Project Plasma 的核心子系统——一个内部企业级设计系统工具平台的组件预览流水线、构建基础设施与无障碍治理。",
+          "做 Project Plasma 的几个核心子系统，包括组件预览流水线、构建基础设施和无障碍治理。它是一个内部的企业级设计系统工具平台。",
         bullets: [
-          "打造端到端的 Angular 组件预览流水线——用 SWC AST 解析提取 @Component 装饰器、伴随文件检测、Vite + JIT 构建与 tsconfig 路径别名解析。",
+          "做了一条端到端的 Angular 组件预览流水线，用 SWC AST 解析提取 @Component 装饰器，再加上伴随文件检测、Vite + JIT 构建和 tsconfig 路径别名解析。",
           "用 PostgreSQL 轮询 worker 替换 Redis/Celery 任务队列，消除了一项运行时基础设施依赖。",
           "编写 WCAG → Visa VGAR 无障碍映射，并将违规高亮集成进构建期截图。",
-          "设计跨全栈的路径别名解析——CLI 在上传前把别名重写为相对路径，构建 worker 把 tsconfig 通配符转成 esbuild 格式。",
-          "构建 pattern build suite——一个批量 CI 工具，针对测试夹具跑完整构建流水线，在部署前捕获回归。",
+          "做了一套贯穿全栈的路径别名解析，CLI 在上传前把别名改成相对路径，构建 worker 再把 tsconfig 的通配符转成 esbuild 的格式。",
+          "做了 pattern build suite，一个批量 CI 工具，拿测试夹具跑完整构建流水线，赶在部署前抓回归。",
         ],
         tags: ["Angular", "TypeScript", "SWC AST", "PostgreSQL", "无障碍"],
         link: "",
@@ -712,7 +712,7 @@ const zh: Dict = {
         org: "PsySpace",
         role: "联合创始人 & 前端主管",
         period: "2020 — 2023",
-        title: "PsySpace — 心理健康应用",
+        title: "PsySpace · 心理健康应用",
         summary: "联合创办并主导前端，做一款面向青年的移动端心理健康应用。",
         bullets: [
           "用 Flutter 与 Firebase（MVVM 架构）开发应用，背后是实时 NoSQL 数据库。",
@@ -727,7 +727,7 @@ const zh: Dict = {
         org: "宾州州立 · User Agency Lab",
         role: "研究助理",
         period: "2019 — 2021",
-        title: "HCI 研究 — CSCW 2020",
+        title: "HCI 研究 · CSCW 2020",
         summary: "在宾州州立大学 IST 学院 User Agency Lab 担任研究助理。",
         bullets: [
           "合著一篇论文，被第 23 届 ACM 计算机支持的协同工作与社会计算会议（CSCW 2020）接收。",
@@ -741,7 +741,7 @@ const zh: Dict = {
     eduTitle: "教育经历",
     education: {
       masters: {
-        degree: "信息学硕士 — 人机交互方向",
+        degree: "信息学硕士 · 人机交互方向",
         school: "宾夕法尼亚州立大学",
         period: "2021 年 12 月 · GPA 3.75",
         detail: "信息科学与技术学院。",
@@ -758,7 +758,7 @@ const zh: Dict = {
     eyebrow: "联系",
     title: "联系我",
     intro:
-      "无论是设计工程、一个游戏点子，还是一场友谊乒乓球赛——我的收件箱随时敞开。",
+      "设计工程、游戏点子，或者约一场球，都欢迎。邮箱常开。",
     methods: {
       email: { label: "邮箱", value: "naxxhua@gmail.com" },
       linkedin: { label: "领英", value: "in/jiahua-ma" },
@@ -773,10 +773,10 @@ const zh: Dict = {
     eyebrow: "食谱",
     title: "酒吧已开张",
     intro:
-      "一个赛博朋克主题的鸡尾酒与菜肴合集——向调酒视觉小说 VA-11 HALL-A 致敬。",
+      "一堆赛博朋克味儿的鸡尾酒和菜，致敬调酒游戏 VA-11 HALL-A。",
     tributeTitle: "调制饮品，改变人生",
     tributeBody:
-      "VA-11 HALL-A 是一款赛博朋克调酒游戏，你倒出的每一杯酒都会改变那个夜晚。下面每一款鸡尾酒都是它真实可调的致敬版——外加几道来自我自己厨房的菜。",
+      "VA-11 HALL-A 是个赛博朋克调酒游戏，你每倒一杯酒，那个夜晚就会跟着变。下面这些鸡尾酒都是照着它真能调出来的，另外还塞了几道我自己在家做的菜。",
     cocktailsLabel: "鸡尾酒",
     dishesLabel: "菜肴",
     viewRecipe: "查看配方",
@@ -800,10 +800,10 @@ const zh: Dict = {
     submit: "签下留言",
     submitting: "提交中…",
     entriesTitle: "留言",
-    empty: "还没有留言——来当第一个吧。",
+    empty: "还没人留言，你来当第一个？",
     loading: "正在加载留言…",
     error: "留言加载失败，请稍后再试。",
-    demoNote: "演示模式——留言仅保存在你本地的浏览器里。",
+    demoNote: "演示模式，留言只存在你自己浏览器里。",
     nameRequired: "请填写名字和留言内容。",
     viewOriginal: "查看原文",
     viewTranslation: "查看译文",
@@ -811,7 +811,7 @@ const zh: Dict = {
   blog: {
     title: "笔记",
     intro: "偶尔写写设计工程、游戏、做菜，以及那些没有理由就做的东西。",
-    empty: "还没有文章——过阵子再来看看。",
+    empty: "还没写，过阵子再来看看。",
     backToBlog: "全部文章",
     machineTag: "机器翻译",
     machineNote: "这是机器翻译。你也可以阅读原文。",
