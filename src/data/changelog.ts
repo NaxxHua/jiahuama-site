@@ -31,6 +31,17 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-19 – 2026-06-20",
     patches: [
       {
+        version: "0.6.4",
+        date: "2026-06-20",
+        title: { en: "Card rarity at a glance", zh: "卡面稀有度一眼可见" },
+        items: [
+          {
+            en: "The diamond separator in the middle of a card (above the \"type · company\" line) now changes color by rarity: grey (basic), white (common), blue (rare), purple (epic). Rarity used to be only hinted by the frame tint and hard to read mid-fight; the flanking divider lines stay gold.",
+            zh: "卡面中央那个菱形分隔符（「类型 · 公司」上方的 ◆）现在会按稀有度变色：灰（基础）、白（普通）、蓝（稀有）、紫（史诗）。以前稀有度只靠边框配色暗示、打牌时很难看清，现在一眼能认；两侧的分隔线保持金色不变。",
+          },
+        ],
+      },
+      {
         version: "0.6.3",
         date: "2026-06-20",
         title: { en: "Readable lifesteal / cost / burn numbers", zh: "吸血 / 代价 / 过热跳字" },
