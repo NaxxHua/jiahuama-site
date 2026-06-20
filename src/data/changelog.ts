@@ -26,9 +26,9 @@ export interface MinorVersion {
 
 export const changelog: MinorVersion[] = [
   {
-    minor: "0.4",
-    title: { en: "Data, feel & balance", zh: "数据收集 · 手感 · 平衡" },
-    span: "2026-06-17 → 06-19",
+    minor: "0.5",
+    title: { en: "Shields & systems", zh: "护盾与系统" },
+    span: "2026-06-19",
     patches: [
       {
         version: "0.5.0",
@@ -41,6 +41,13 @@ export const changelog: MinorVersion[] = [
           },
         ],
       },
+    ],
+  },
+  {
+    minor: "0.4",
+    title: { en: "Data, feel & balance", zh: "数据收集 · 手感 · 平衡" },
+    span: "2026-06-17 → 06-19",
+    patches: [
       {
         version: "0.4.28",
         date: "2026-06-19",

@@ -260,9 +260,9 @@ export default function DashboardPage() {
 
           <Section title="跳过奖励次数（做减法给钱用得多吗）">
             {data.skips.map((s) => (
-              <Bar key={s.kind} label={s.kind} value={s.n} max={maxSkip} />
+              <Bar key={s.kind} label={s.kind === "card" ? "跳过选卡" : s.kind} value={s.n} max={maxSkip} />
             ))}
-            {data.skips.length === 0 && <p className="text-[13px] text-fg-3">暂无（需跑新版 SQL）。</p>}
+            {data.skips.length === 0 && <p className="text-[13px] text-fg-3">暂无跳过记录（玩家还没跳过选卡）。</p>}
           </Section>
         </>
       )}

@@ -35,7 +35,7 @@ export default function Changelog() {
               {/* 轴上的节点 */}
               <span
                 aria-hidden
-                className={`absolute left-[11px] top-[7px] h-[15px] w-[15px] -translate-x-1/2 rounded-full border-2 transition-colors ${
+                className={`absolute left-[-25px] top-[7px] h-[15px] w-[15px] -translate-x-1/2 rounded-full border-2 transition-colors ${
                   isOpen
                     ? "border-fg bg-fg"
                     : "border-border-strong bg-bg"
