@@ -31,6 +31,32 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-19 – 2026-06-20",
     patches: [
       {
+        version: "0.6.7",
+        date: "2026-06-20",
+        title: { en: "One modify per card + long-text fit", zh: "每张牌限改造一次 + 长描述放得下" },
+        items: [
+          {
+            en: "A card can now be modified at most once. You used to be able to keep modifying the same card (Echo + endless attack-ups + endless heat-cost cuts), stacking an unkillable card — every-turn AoE lifesteal that ignores overheat and loops forever. Already-modified cards now show \"已改造\" in the modify picker and can't be picked again.",
+            zh: "每张牌最多改造一次。之前可以对同一张牌反复改造（回响 + 不断加攻击 + 不断减热力消耗），叠出「每回合 AoE 吸血、无视过热、无限循环」的无敌牌。现在改造选牌界面里已改造的牌会标「已改造」、不能再选。",
+          },
+          {
+            en: "Long card descriptions (like Sweep-Fire with Echo and a build-bonus damage annotation) no longer get clipped when you hover to enlarge them — the auto-fit shrinks one step further and the Echo text was shortened, so even the longest cards show in full.",
+            zh: "长描述卡牌（如清场扫射 + 回响、带 build 加成的伤害注解）放大悬停时不再被裁——描述自适应字号再降一档、回响说明也精简了，最长的卡也能完整显示。",
+          },
+        ],
+      },
+      {
+        version: "0.6.6",
+        date: "2026-06-20",
+        title: { en: "Relic hover no longer overflows", zh: "地图圣物悬停不再溢出" },
+        items: [
+          {
+            en: "On the map, a relic's hover tooltip used to inline a block of glossary term definitions, making it very tall — near the bottom of the screen the bottom got cut off. The tooltip now shows just name + rarity + effect (consistent with the trait-bar hover), so it stays short and fully visible.",
+            zh: "地图上圣物的悬停说明之前会把术语释义内联进去、变得很长，屏幕底部的圣物说明底部会被裁掉。现在只显示名称 + 稀有度 + 效果（和词条栏悬停一致），短了、也看得全了。",
+          },
+        ],
+      },
+      {
         version: "0.6.5",
         date: "2026-06-20",
         title: { en: "Charge readability + modify fixes", zh: "蓄力可读性 + 改造修复" },
