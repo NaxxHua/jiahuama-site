@@ -31,6 +31,25 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-19 – 2026-06-20",
     patches: [
       {
+        version: "0.6.5",
+        date: "2026-06-20",
+        title: { en: "Charge readability + modify fixes", zh: "蓄力可读性 + 改造修复" },
+        items: [
+          {
+            en: "The Charge card's description no longer gets cut off — the text box is taller and the wording was trimmed, so all of its effects (vent %, next-turn attack %, end turn, first-card-only) fit on the card.",
+            zh: "蓄力卡面的描述不再被裁切——描述窗加高、文字精简，它的全部效果（散热% / 下回合攻击% / 结束回合 / 只能首张打出）都放得进卡面了。",
+          },
+          {
+            en: "Charge no longer offers the Echo modify (returning a card to hand is pointless on a card that ends your turn). Reinforce now works on percent-stat cards too, so Charge can be reinforced to \"next-turn attack +15%\". Its modify options are now Reinforce(%) + Coolant.",
+            zh: "蓄力不再出现「回响」改造（会结束回合的牌挂回响没意义）。「强化」改造现在也对百分比牌生效，蓄力可以强化成「下回合攻击力 +15%」。所以它的改造选项现在是「强化（加百分比）+ 冷却回路」。",
+          },
+          {
+            en: "Fixed modify-screen residue: the picked card and the three option cards used to linger on top of the next reward / event screen. They're now cleared when a modify finishes. Also removed the loud sound effect that played when applying a modify.",
+            zh: "修复改造界面残留：之前选中的牌和三张改造选项卡会残留盖在下一个奖励 / 事件界面上，现在改造结束即清理。另外去掉了应用改造时那个很响的音效。",
+          },
+        ],
+      },
+      {
         version: "0.6.4",
         date: "2026-06-20",
         title: { en: "Card rarity at a glance", zh: "卡面稀有度一眼可见" },
