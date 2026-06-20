@@ -28,8 +28,57 @@ export const changelog: MinorVersion[] = [
   {
     minor: "0.6",
     title: { en: "Charge, Echo & battle polish", zh: "蓄力、回响与战斗打磨" },
-    span: "2026-06-19",
+    span: "2026-06-19 – 2026-06-20",
     patches: [
+      {
+        version: "0.6.3",
+        date: "2026-06-20",
+        title: { en: "Readable lifesteal / cost / burn numbers", zh: "吸血 / 代价 / 过热跳字" },
+        items: [
+          {
+            en: "Lifesteal now pops an exact green \"吸 N\" on your character. It used to be inferred from a before/after HP diff, so on a card that both lifesteals and self-damages (like 神经反噬) the two cancelled out and you saw nothing or a wrong number. It now reports the real amount healed.",
+            zh: "吸血现在会在角色身上精确跳出绿色「吸 N」。之前是用出牌前后的生命差推算的，所以一张牌既吸血又自伤（比如神经反噬）时两者会抵消，你要么看不到、要么看到错的数字。现在直接显示真实回血量。",
+          },
+          {
+            en: "Hacker self-damage now pops a red \"代价 -N\". Previously your HP just dropped with no number, so the cost was invisible. Overheat burn keeps its \"过热 -N\" pop — all three land on your character at offset spots so they don't overlap.",
+            zh: "黑客牌的自伤代价现在会跳红色「代价 -N」。以前只是默默掉血、没有数字，玩家不知道为什么掉血。过热灼伤的「过热 -N」也保留——三种反馈都落在角色身上、位置错开、互不遮挡。",
+          },
+        ],
+      },
+      {
+        version: "0.6.2",
+        date: "2026-06-20",
+        title: { en: "Enemy status readability + economy tweak", zh: "敌人状态可读性 + 经济微调" },
+        items: [
+          {
+            en: "The enemy \"about to overheat\" warning moved into the same row as its status icons, right-aligned, so it no longer takes its own line or risks overlapping the intent.",
+            zh: "敌人「即将过热」预警移到了异常状态图标的同一排、靠右对齐，不再单独占一行，也不会和意图重叠。",
+          },
+          {
+            en: "Enemy debuff icons now have hover explanations: poison (loses HP each turn by stacks, ignoring shields), vulnerable (+40% damage taken), weak (-30% damage dealt). The trait bar's long trailing glossary block was removed — it kept only chosen traits and active resonances.",
+            zh: "敌人减益图标加了悬停说明：中毒（每回合按层数减少生命、无视护盾）、易伤（受到伤害 +40%）、虚弱（造成的伤害 -30%）。词条栏悬停去掉了末尾那段很长的「名词」释义，只保留已选词条和已激活共鸣。",
+          },
+          {
+            en: "Forge \"emergency heal\" (restore 50% HP) now costs 30 fragments instead of 6 — the old price was badly underpriced next to full-heal (50 fragments).",
+            zh: "改装台「应急维生」（回 50% 生命）的消耗从 6 碎片提到 30——原价相对「修复纳米」回满血（50 碎片）太便宜了。",
+          },
+        ],
+      },
+      {
+        version: "0.6.1",
+        date: "2026-06-20",
+        title: { en: "Card cost badges + modify-screen fix", zh: "卡面费用角标 + 改造界面修复" },
+        items: [
+          {
+            en: "Card cost badges redone: the heat cost always sits in the top-left brass coin (shell and brain alike), and a brain card's memory cost is a blue badge stacked right below it. Heat-bearing hacker cards (黑墙过载 / 神经反噬) used to hide their heat — now both costs show at a glance.",
+            zh: "卡面费用角标重做：热力消耗统一放在左上角的黄铜币（躯壳、大脑一样），大脑卡的内存消耗改成蓝色底牌、叠在热力币正下方。会积热的黑客牌（黑墙过载 / 神经反噬）以前会把热力藏起来——现在两笔代价一眼看全。",
+          },
+          {
+            en: "Fixed the modify screen: after picking a card reward, the three modify options used to stretch into tall blank cards and the skip button overlapped them. They now use a dedicated fixed-size layout, and the skip button correctly reads \"skip (+15 gold)\" below the options.",
+            zh: "修复改造界面：之前选过卡牌奖励后，三选一改造的选项卡会被撑成大长条、跳过按钮压住卡面。现在用独立的固定布局，跳过按钮也正确显示「跳过（获得 15 金币）」并放在选项下方。",
+          },
+        ],
+      },
       {
         version: "0.6.0",
         date: "2026-06-19",
