@@ -31,6 +31,17 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-20",
     patches: [
       {
+        version: "0.7.1",
+        date: "2026-06-20",
+        title: { en: "New-card art + visible company buff", zh: "新卡美术 + 阵营增伤可见" },
+        items: [
+          {
+            en: "The 10 new cards now have their illustrations, and all card-art keys were unified to English. Company damage-buff cards now show a visible buff badge (in your buff row, colored by company, with a hover explaining \"this turn X cards +N% damage\") — it worked before but had no indicator. The 双重加载 card description was shortened so it no longer clips.",
+            zh: "10 张新卡都接上了插画，所有卡面美术命名统一成英文。阵营增伤卡现在有可见的 buff 图标（在增益栏，按公司上色，hover 写明「本回合 X 卡伤害 +N%」）——之前是生效的、只是没提示。双重加载的描述也精简了，不再被裁。",
+          },
+        ],
+      },
+      {
         version: "0.7.0",
         date: "2026-06-20",
         title: { en: "10 new cards + balance + animation", zh: "10 张新卡 + 平衡 + 动画" },
