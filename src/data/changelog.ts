@@ -31,6 +31,17 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-17 → 06-19",
     patches: [
       {
+        version: "0.5.0",
+        date: "2026-06-19",
+        title: { en: "Shields simplified", zh: "护盾系统简化" },
+        items: [
+          {
+            en: "Dropped the awkward regenerating (blue) shield — it refreshed every turn so stacking it did nothing. All regen-shield cards are removed. The basic turn-clearing shield is now shown as a blue shield everywhere (blocks for one round, gone next turn); the persistent gold shield stays. Two shields total, much clearer.",
+            zh: "删掉了尴尬的「再生（蓝）护盾」——它每回合刷新，多打几张也不叠加。相关卡牌全部移除。基础的「挡一轮就消失」护盾现在统一以蓝色护盾显示（挡住这一轮、下回合清空）；金黄的持久护盾保留。现在只剩两种盾，清楚多了。",
+          },
+        ],
+      },
+      {
         version: "0.4.28",
         date: "2026-06-19",
         title: { en: "Native-Chinese text + lots of readability", zh: "文案母语化 + 大量可读性" },
