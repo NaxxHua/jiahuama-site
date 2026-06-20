@@ -31,6 +31,17 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-20",
     patches: [
       {
+        version: "0.7.3",
+        date: "2026-06-20",
+        title: { en: "Global resource/relic top bar", zh: "全局资源/圣物顶栏" },
+        items: [
+          {
+            en: "Your resources and relics are now shown in one global top bar (gold / HP / heat cap / memory / fragments / uploads + relic icons + a \"view deck\" button) that appears on the screens covering the battle HUD (reward, event, modify). Before, each of those screens had its own patched-in resource line; now it's one unified bar, so you never have to wonder whether a given screen shows your stuff.",
+            zh: "你的资源和圣物现在统一显示在一条全局顶栏里（金币 / 生命 / 热力上限 / 内存 / 碎片 / 上传 + 圣物图标 + 「查看牌组」按钮），在盖住战斗 HUD 的界面（奖励、事件、改造）都会出现。之前是每个界面各自打补丁加资源行；现在一条统一顶栏，不用再一个个界面去确认能不能看到自己的东西。",
+          },
+        ],
+      },
+      {
         version: "0.7.2",
         date: "2026-06-20",
         title: { en: "Deck/relics on the modify screen", zh: "改造界面信息 + 措辞" },
