@@ -26,10 +26,47 @@ export interface MinorVersion {
 
 export const changelog: MinorVersion[] = [
   {
+    minor: "0.7",
+    title: { en: "New cards & variety", zh: "新卡与流派多样化" },
+    span: "2026-06-20",
+    patches: [
+      {
+        version: "0.7.0",
+        date: "2026-06-20",
+        title: { en: "10 new cards + balance + animation", zh: "10 张新卡 + 平衡 + 动画" },
+        items: [
+          {
+            en: "10 new mechanic cards so the deck isn't just damage numbers. Company damage buffs (brain, +30% to that company's cards this turn — one per company), random multi-hit attacks (shell, X hits of Y on random enemies — one per company with different numbers), plus 记忆复写 (copy your whole hand) and 双重加载 (your next shell card resolves twice). Art is placeholder color blocks until the illustrations land.",
+            zh: "加了 10 张有机制的新卡，让牌组不再只是堆伤害数字。阵营增伤（大脑，本回合该公司卡 +30%，四阵营各一张）、随机多段攻击（躯壳，对随机敌人 X 次 Y 伤害，四阵营数值不同），外加记忆复写（复制整手牌）和双重加载（你的下一张躯壳卡释放两次）。美术暂用色块占位，等插画补上。",
+          },
+          {
+            en: "Balance: the 连段引擎 (Momentum) trait that enabled an invincible build now triggers every TWO cards (was every card) and rewards an actual Pioneer deck; the paralyze cards now cost 25% of current HP; in-run shell upgrades were roughly halved; two Pioneer traits with duplicate tiers were trimmed to 3 tiers.",
+            zh: "平衡：之前能叠出无敌 build 的「连段引擎」改为每打出两张牌才触发（原来每张），并奖励真正的先锋牌组；瘫痪牌现在打出要付 25% 当前生命的代价；局内躯壳升级数值大致砍半；两个有重复阶的先锋词条精简到 3 阶。",
+          },
+          {
+            en: "Naming/UI: \"blue shield\" renamed to \"temporary shield\" everywhere (same mechanic). Relic and event screens now show a \"view deck\" button, your relic icons, and a resource line (HP/heat/memory/gold). Characters and enemies now have a subtle breathing idle, and screens fade in on transitions.",
+            zh: "命名/界面：「蓝色护盾」全部改名「临时护盾」（机制不变）。选圣物和事件界面现在有「查看牌组」按钮、当前圣物图标和资源行（生命/热力/内存/金币）。角色和敌人加了轻微的呼吸 idle 动画，界面切换也有淡入。",
+          },
+        ],
+      },
+    ],
+  },
+  {
     minor: "0.6",
     title: { en: "Charge, Echo & battle polish", zh: "蓄力、回响与战斗打磨" },
     span: "2026-06-19 – 2026-06-20",
     patches: [
+      {
+        version: "0.6.9",
+        date: "2026-06-20",
+        title: { en: "Rarity label + auto dice + faster codex", zh: "稀有度标牌 + 幸运骰自动掷 + 图鉴再提速" },
+        items: [
+          {
+            en: "Each card now shows its rarity name (basic/common/rare/epic, colored) at the top-right next to the cost — the small center diamond alone was too subtle. The street \"lucky dice\" now auto-rolls at the start of your turn (the roll animation plays and resolves before you can act). And the card codex builds in chunks so it opens instantly instead of freezing for a couple seconds.",
+            zh: "每张卡现在在右上角费用旁直接写出稀有度（基础/普通/稀有/史诗，按品质上色）——之前只有中间小菱形太不明显。街头「幸运骰」改成回合开局自动掷（动画放完、结果落定才能行动）。卡牌图鉴改成分帧加载，打开瞬间出来，不再卡两三秒。",
+          },
+        ],
+      },
       {
         version: "0.6.8",
         date: "2026-06-20",
