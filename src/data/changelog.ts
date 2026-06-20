@@ -31,6 +31,17 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-20",
     patches: [
       {
+        version: "0.7.2",
+        date: "2026-06-20",
+        title: { en: "Deck/relics on the modify screen", zh: "改造界面信息 + 措辞" },
+        items: [
+          {
+            en: "The card-modify screens now show your deck, relics and resources like the relic and event screens do (a relic icon row, a resource line, and a \"view deck\" button) — you couldn't see them before while modifying. Also, the Reinforce upgrade on a block card now reads \"护盾 +3\" to match the card-face term.",
+            zh: "卡牌改造界面现在和选圣物 / 事件界面一样能看到你的牌组、圣物和资源（圣物图标行、资源行、「查看牌组」按钮）——之前改造时看不到。另外格挡牌的「强化」改造说明改成「护盾 +3」，和卡面用词统一。",
+          },
+        ],
+      },
+      {
         version: "0.7.1",
         date: "2026-06-20",
         title: { en: "New-card art + visible company buff", zh: "新卡美术 + 阵营增伤可见" },
