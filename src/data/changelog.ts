@@ -31,6 +31,29 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-17 → 06-19",
     patches: [
       {
+        version: "0.4.28",
+        date: "2026-06-19",
+        title: { en: "Native-Chinese text + lots of readability", zh: "文案母语化 + 大量可读性" },
+        items: [
+          {
+            en: "All card / relic / trait / item / glossary text rewritten in natural native Chinese (de-machine-translated), with a consistent 'verb + amount + resource' phrasing. Shields renamed to Temporary / Regenerating / Persistent shield, each with a one-line explanation on hover.",
+            zh: "卡牌/圣物/词条/道具/术语全文用地道中文重写（去机翻味），统一「动词+数值+资源」句式。护盾改名为临时/再生/持久护盾，各带一句悬停解释。",
+          },
+          {
+            en: "Poison damage now pops a number and the kill animates (no more enemies silently dying). Enemy heat bar removed; instead a fire 'about to overheat' warning shows under the name with a tooltip. Relic tooltips pop instantly.",
+            zh: "中毒掉血会跳数字、毒死有动画（敌人不再凭空消失）。删掉敌人热力条，改成姓名下方的「即将过热」火焰预警 + 悬停说明。圣物悬停即时弹出。",
+          },
+          {
+            en: "Deck / card-modify / card-removal screens now show full card art like the codex. Sweet (bonus) zone now gives +20% damage and block instead of flat values. Three new low-cost 'execute' cards reward kills (heal / draw / restore memory).",
+            zh: "查看牌组/卡牌改造/删牌界面都改成图鉴式油画卡面。增益区改为伤害 +20%、护盾 +20%（不再固定数值）。新增 3 张低费斩杀牌，击杀目标给回报（回血/抽牌/回内存）。",
+          },
+          {
+            en: "Many smaller tweaks: rules screen scrolls, first-time upgrade-room guide, skipping a card draft now gives gold, heal-to-full costs more, and assorted wording fixes.",
+            zh: "若干小改：规则速览可滚动、升级区首次引导、跳过选卡给金币、回满血涨价、以及一堆文案修正。",
+          },
+        ],
+      },
+      {
         version: "0.4.27",
         date: "2026-06-19",
         title: { en: "Crisp text + unified card faces", zh: "清晰文字 + 卡面统一" },

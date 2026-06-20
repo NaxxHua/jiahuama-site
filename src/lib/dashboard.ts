@@ -27,6 +27,22 @@ export interface FunnelStep {
   step: string;
   n: number;
 }
+export interface CompanyCount {
+  company: string;
+  cards: number;
+}
+export interface RelicCount {
+  relic: string;
+  n: number;
+}
+export interface HeatBucket {
+  bucket: string;
+  n: number;
+}
+export interface SkipCount {
+  kind: string;
+  n: number;
+}
 
 async function rpc<T>(fn: string): Promise<T> {
   if (!supabase) throw new Error("Supabase 未配置（本地缺 env）");
@@ -40,3 +56,7 @@ export const getBattles = () => rpc<Battle[]>("biav_battles");
 export const getDeaths = () => rpc<NameCount[]>("biav_deaths");
 export const getCards = () => rpc<NameCount[]>("biav_cards");
 export const getFunnel = () => rpc<FunnelStep[]>("biav_funnel");
+export const getCompanies = () => rpc<CompanyCount[]>("biav_companies");
+export const getRelics = () => rpc<RelicCount[]>("biav_relics");
+export const getHeat = () => rpc<HeatBucket[]>("biav_heat");
+export const getSkips = () => rpc<SkipCount[]>("biav_skips");

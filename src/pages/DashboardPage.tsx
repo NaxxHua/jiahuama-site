@@ -5,11 +5,27 @@ import {
   getDeaths,
   getCards,
   getFunnel,
+  getCompanies,
+  getRelics,
+  getHeat,
+  getSkips,
   type Overview,
   type Battle,
   type NameCount,
   type FunnelStep,
+  type CompanyCount,
+  type RelicCount,
+  type HeatBucket,
+  type SkipCount,
 } from "@/lib/dashboard";
+
+const COMPANY_LABEL: Record<string, string> = {
+  pioneer: "先锋",
+  pflege: "辉格",
+  morishita: "森下",
+  street: "街头",
+  neutral: "中立",
+};
 
 // 管理员暗号（你自己用，改成你想要的）。仅做遮挡——看板只展示聚合数字，不含原始反馈。
 const ADMIN_CODE = "vat-admin-2026";
@@ -54,6 +70,10 @@ interface Data {
   deaths: NameCount[];
   cards: NameCount[];
   funnel: FunnelStep[];
+  companies: CompanyCount[];
+  relics: RelicCount[];
+  heat: HeatBucket[];
+  skips: SkipCount[];
 }
 
 export default function DashboardPage() {
@@ -80,7 +100,14 @@ export default function DashboardPage() {
         getCards(),
         getFunnel(),
       ]);
-      setData({ overview, battles, deaths, cards, funnel });
+      // 新维度的 RPC 可能还没在 Supabase 跑过 → 各自兜底空数组，不拖垮整页
+      const [companies, relics, heat, skips] = await Promise.all([
+        getCompanies().catch(() => [] as CompanyCount[]),
+        getRelics().catch(() => [] as RelicCount[]),
+        getHeat().catch(() => [] as HeatBucket[]),
+        getSkips().catch(() => [] as SkipCount[]),
+      ]);
+      setData({ overview, battles, deaths, cards, funnel, companies, relics, heat, skips });
     } catch (e) {
       setError(e instanceof Error ? e.message : "加载失败");
     } finally {
@@ -129,6 +156,10 @@ export default function DashboardPage() {
   const maxFunnel = data ? Math.max(1, ...data.funnel.map((s) => s.n)) : 1;
   const maxDeath = data ? Math.max(1, ...data.deaths.map((d) => d.n)) : 1;
   const maxCard = data ? Math.max(1, ...data.cards.map((c) => c.n)) : 1;
+  const maxCompany = data ? Math.max(1, ...data.companies.map((c) => c.cards)) : 1;
+  const maxRelic = data ? Math.max(1, ...data.relics.map((r) => r.n)) : 1;
+  const maxHeat = data ? Math.max(1, ...data.heat.map((h) => h.n)) : 1;
+  const maxSkip = data ? Math.max(1, ...data.skips.map((s) => s.n)) : 1;
 
   // 按章聚合胜负
   const byChapter = new Map<number, { win: number; lose: number }>();
@@ -204,6 +235,34 @@ export default function DashboardPage() {
               <Bar key={c.card} label={c.card ?? "?"} value={c.n} max={maxCard} />
             ))}
             {data.cards.length === 0 && <p className="text-[13px] text-fg-3">暂无选牌数据。</p>}
+          </Section>
+
+          <Section title="玩家凑的流派（各公司牌数累计）">
+            {data.companies.map((c) => (
+              <Bar key={c.company} label={COMPANY_LABEL[c.company] ?? c.company} value={c.cards} max={maxCompany} />
+            ))}
+            {data.companies.length === 0 && <p className="text-[13px] text-fg-3">暂无（需在 Supabase 跑新版 supabase-dashboard.sql）。</p>}
+          </Section>
+
+          <Section title="热力峰值分布（有没有用增益区 / 过热）">
+            {data.heat.map((h) => (
+              <Bar key={h.bucket} label={h.bucket} value={h.n} max={maxHeat} />
+            ))}
+            {data.heat.length === 0 && <p className="text-[13px] text-fg-3">暂无（需跑新版 SQL）。</p>}
+          </Section>
+
+          <Section title="热门圣物（前 20）">
+            {data.relics.map((r) => (
+              <Bar key={r.relic} label={r.relic ?? "?"} value={r.n} max={maxRelic} />
+            ))}
+            {data.relics.length === 0 && <p className="text-[13px] text-fg-3">暂无（需跑新版 SQL）。</p>}
+          </Section>
+
+          <Section title="跳过奖励次数（做减法给钱用得多吗）">
+            {data.skips.map((s) => (
+              <Bar key={s.kind} label={s.kind} value={s.n} max={maxSkip} />
+            ))}
+            {data.skips.length === 0 && <p className="text-[13px] text-fg-3">暂无（需跑新版 SQL）。</p>}
           </Section>
         </>
       )}
