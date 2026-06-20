@@ -26,6 +26,40 @@ export interface MinorVersion {
 
 export const changelog: MinorVersion[] = [
   {
+    minor: "0.6",
+    title: { en: "Charge, Echo & battle polish", zh: "蓄力、回响与战斗打磨" },
+    span: "2026-06-19",
+    patches: [
+      {
+        version: "0.6.0",
+        date: "2026-06-19",
+        title: { en: "Charge becomes a card; Echo arrives", zh: "蓄力改成牌，回响登场" },
+        items: [
+          {
+            en: "Charge is now a card instead of a button. You can only play it as the first card of your turn — it ends the turn, vents 30% of your current heat, and gives +30% attack next turn. Building up momentum now costs a card slot and a real decision.",
+            zh: "蓄力从按钮改成了一张牌。它只能作为本回合的第一张打出——立即结束回合、散掉当前 30% 的热力、并让下回合攻击 +30%。攒势头现在要占一张手牌、要做取舍。",
+          },
+          {
+            en: "New card-modify keyword: Echo. An Echoed card returns to your hand after you play it, so you can play it again this turn (you still pay its cost). It replaces the old Multistrike modify, which felt invisible next to Reinforce and doubling effects.",
+            zh: "卡牌改造新增「回响」关键词：被改造的牌打出后会返回手牌，本回合内可以再打一次（仍要付出消耗）。它替换了原来的「多段改装」改造——后者在「强化 / 翻倍」面前几乎没存在感。",
+          },
+          {
+            en: "The Reinforce modify now reads to the card: an attack shows only “Damage +3”, a block card “Block +3”, a draw card “Draw +1”. No more dumping all three possibilities on you.",
+            zh: "「强化」改造的说明会随卡自适应：攻击牌只显示「伤害 +3」、格挡牌「格挡 +3」、抽牌牌「抽牌 +1」，不再把三种可能性一起堆给你。",
+          },
+          {
+            en: "Battle screen polish: cards are 20% larger, and the characters / enemies / background divider were raised so the lower scene shows more. Shield icons now have hover tooltips (blue shield clears at end of turn, gold shield persists) and the shield on your HP bar is drawn blue to match.",
+            zh: "战斗界面打磨：卡牌整体放大 20%，角色 / 敌人 / 背景分界线上移，下方场景露出更多。护盾图标现在可以悬停看说明（蓝色护盾回合结束消失，金色持久护盾保留），血条上的护盾也改成蓝色以保持一致。",
+          },
+          {
+            en: "The modify screen was redesigned: the card you picked now sits at the top (so you remember what you're modifying), the option cards are smaller, and the skip button no longer overlaps them — skipping a modify also gives you some consolation gold now. The enemy “about to overheat” warning was moved so it stops overlapping the intent icon.",
+            zh: "改造界面重做：选中的牌现在显示在最上方（终于知道自己在改哪张），选项卡缩小、跳过按钮不再压牌——跳过改造现在也给一点安慰金币。敌人「即将过热」的提示也挪开了，不再和意图图标叠在一起。",
+          },
+        ],
+      },
+    ],
+  },
+  {
     minor: "0.5",
     title: { en: "Shields & systems", zh: "护盾与系统" },
     span: "2026-06-19",
