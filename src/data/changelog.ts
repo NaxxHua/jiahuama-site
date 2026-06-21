@@ -31,6 +31,17 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-20",
     patches: [
       {
+        version: "0.7.4",
+        date: "2026-06-20",
+        title: { en: "Unified shield naming", zh: "护盾术语统一" },
+        items: [
+          {
+            en: "Renamed every leftover \"white shield\" to \"temporary shield\" and \"yellow shield\" to \"persistent shield\" — the consume-shield cards, the rules screen (which still listed three shields including the retired regen-blue one), and the glossary. The whole game now uses just the two shield names.",
+            zh: "把所有残留的「白盾」改成「临时护盾」、「黄盾」改成「持久护盾」——消耗护盾的卡、规则速览（之前还写着三种盾、含已废弃的再生蓝盾）、术语表都统一了。现在全游戏只有「临时护盾 / 持久护盾」两种叫法。",
+          },
+        ],
+      },
+      {
         version: "0.7.3",
         date: "2026-06-20",
         title: { en: "Global resource/relic top bar", zh: "全局资源/圣物顶栏" },
