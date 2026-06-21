@@ -19,17 +19,17 @@ const en = {
   },
   game: {
     eyebrow: "Playtest",
-    title: "Brain in a Vat — Demo",
+    title: "Brain in a Vat · Demo",
     intro: "An early demo of my cyberpunk card roguelite. Enter the access code to play.",
     codeLabel: "Access code",
     placeholder: "Enter code",
     enter: "Play",
-    wrong: "Wrong code — ask Jiahua for it.",
+    wrong: "Wrong code. Ask Jiahua for one.",
     hint: "Best on desktop Chrome/Edge. First load is large (~130MB), please wait.",
     relaunch: "Reload game",
     feedback: {
       title: "Have feedback?",
-      intro: "Hop into the Discord and tell me what you think — bugs, ideas, what felt great or terrible.",
+      intro: "Come join the studio Discord. Your feedback really matters!",
       cta: "Join the Discord",
     },
     changelog: {
@@ -53,7 +53,7 @@ const en = {
     title: "Page not found",
     lines: [
       "Looks like this page doesn't exist.",
-      "Or it's just really good at hiding.",
+      "You can't catch a wandering ghost.",
     ],
     home: "Back home",
   },
@@ -61,7 +61,7 @@ const en = {
     eyebrow: "Hi, I'm",
     roles: ["Full-Stack Software Engineer", "Game Developer", "Table Tennis Player"],
     tagline:
-      "I'm a full-stack software engineer at Visa, where I build polished, accessible interfaces. Off the clock I design games and chase the perfect topspin.",
+      "I'm a full-stack software engineer at Visa, working on everything from Flutter to a CLI tool. Off the clock I cook, make games, and drill my forehand at the table.",
     ctaWork: "View my work",
     ctaContact: "Get in touch",
     scroll: "Scroll",
@@ -70,14 +70,14 @@ const en = {
     highlightsSub: "Spanning design engineering, games, research, and sport.",
     highlights: {
       visa: {
-        tag: "2022 — Now",
+        tag: "2022–Now",
         title: "Full-Stack Software Engineer at Visa",
-        desc: "Building a cross-platform Flutter design system used across Visa's products — accessible tokens, components, and VGAR-compliant UI.",
+        desc: "A cross-platform Flutter design system trusted by product teams across Visa, from design tokens to components to VGAR-compliant UI.",
       },
       game: {
         tag: "In progress",
         title: "An auto-chess game",
-        desc: "Designing and building an auto-battler from scratch, headed for a Steam release.",
+        desc: "Front-end on a Shan Hai Jing-themed card auto-battler at Paofan Studio, headed for a Steam release.",
       },
       psyspace: {
         tag: "Co-founder",
@@ -91,8 +91,8 @@ const en = {
       },
       tabletennis: {
         tag: "USATT",
-        title: "Competitive table tennis",
-        desc: "A rated USATT player — focus, footwork, and a relentless amount of topspin.",
+        title: "Competitive sport",
+        desc: "A rated USATT player, drilling fundamentals, footwork, and topspin.",
       },
     },
     exploreTitle: "Explore the rest",
@@ -107,7 +107,7 @@ const en = {
       },
       about: {
         title: "About",
-        desc: "The longer story — where I come from and what I care about.",
+        desc: "The longer story: where I come from and what I care about.",
       },
     },
     stats: {
@@ -117,7 +117,7 @@ const en = {
     },
     ctaTitle: "Let's build something",
     ctaBody:
-      "Always up for a conversation about design engineering, games, or a friendly hit of table tennis.",
+      "Always up to talk design, games, an app idea, or a friendly hit of table tennis.",
   },
   about: {
     eyebrow: "About",
@@ -126,20 +126,20 @@ const en = {
       "I'm Jiahua Ma, a design engineer at Visa. Most of what I do sits somewhere between design and engineering.",
     journeyTitle: "The story so far",
     journey: [
-      "I grew up in Ürümqi, Xinjiang, and moved to the US in 2014. Learning a new language and starting over somewhere unfamiliar shaped how I deal with hard problems.",
+      "I grew up in Ürümqi, Xinjiang, and moved to the US in 2014. I came to enjoy adapting to new places and starting over somewhere unfamiliar, and that shaped how I deal with hard problems.",
       "I went to Penn State for a bachelor's in Applied Data Sciences and then a master's in Informatics focused on Human-Computer Interaction. While I was there I did research at the User Agency Lab and co-founded PsySpace, a mental-health app for students.",
-      "In 2022 I joined Visa in Austin, Texas as a design engineer. I work on the design system that other teams build their products with. Austin has been home since then, and there's no shortage of good food here.",
+      "In 2022 I joined Visa in Austin, Texas as a design engineer, working on the design system other teams build their products with, and I moved into full-stack in 2025. Austin (Leander, technically) has been home ever since, going on four-plus years now.",
     ],
     offTitle: "Off the clock",
     offSub: "A few things I do when I'm not working.",
     facets: {
       game: {
         title: "Game development",
-        desc: "I'm building an auto-battler on my own, doing the design, code, and art. The plan is to release it on Steam.",
+        desc: "I do front-end on an auto-battler at Paofan Studio, and on the side I'm building my own card roguelite, doing the design, code, and art myself. The plan is to put it on Steam.",
       },
       tabletennis: {
         title: "Table tennis",
-        desc: "I play competitively and have a USATT rating. It keeps me sharp in a way work doesn't.",
+        desc: "I'm a rated USATT player. Competition gets my adrenaline going, on the table or in a game.",
       },
       bar: {
         title: "Behind the bar",
@@ -152,7 +152,7 @@ const en = {
       title: "In the game",
       sub: "Two games I've put real competitive hours into.",
       wowTop: "Top 2%",
-      wowParse: "Best DPS parse — 98th percentile worldwide",
+      wowParse: "Best DPS parse · 98th percentile worldwide",
       peakDps: "Peak DPS",
       itemLevel: "Item level",
       rank: "Peak rank",
@@ -173,7 +173,7 @@ const en = {
         credit: "Actor",
         blurb:
           "A ventriloquism master dies mid-show; his apprentices vie for the legacy, and a killer surfaces.",
-        note: "Played Tao Youming, the master — my first time on this stage.",
+        note: "Played Tao Youming, the master. My first time on a stage like this.",
       },
       rhinoceros: {
         zh: "恋爱的犀牛",
@@ -261,16 +261,16 @@ const en = {
     projects: {
       designSystem: {
         org: "Visa",
-        role: "Lead Front-End Engineer",
-        period: "2022 — Present",
-        title: "Nova Flutter — Visa Design System",
+        role: "Full-Stack Software Engineer",
+        period: "2022–Present",
+        title: "Nova Flutter · Visa Design System",
         summary:
-          "Led development of Nova Flutter, the Flutter library of Visa's open-source Nova Design System.",
+          "Primary contributor to Visa's open-source Design System Flutter library.",
         bullets: [
-          "Built 20+ components — 70%+ of the mobile library — adopted by 200+ developers across Visa's global mobile ecosystem.",
-          "Established CI/CD with 95%+ unit-test coverage and a 100% pass rate, guaranteeing accessibility compliance and zero regressions.",
-          "Shipped live demo apps to iOS and Android to accelerate contributor onboarding.",
-          "Partnered with Visa UX leadership to drive adoption and governance across 5+ global teams.",
+          "Authored 1,500+ of ~2,900 commits (52%) over four years; sole or primary author of 10 production components including Dialog, App Bar, Bottom Nav Bar, Banner, Tab, and Wizard.",
+          "Maintained 94.5% test coverage across 767 widget tests (710/710 passing).",
+          "Set up CI/CD with live iOS and Android demo apps, removing regression risk and speeding up contributor onboarding.",
+          "Partnered with Visa UX to drive adoption across global product teams, setting governance and engineering standards.",
         ],
         tags: ["Flutter", "Dart", "Design Systems", "CI/CD", "Accessibility"],
         link: "https://design.visa.com",
@@ -278,17 +278,17 @@ const en = {
       },
       plasma: {
         org: "Visa",
-        role: "Software Engineer",
-        period: "2025 — Present",
+        role: "Full-Stack Software Engineer",
+        period: "2025–Present",
         title: "Project Plasma",
         summary:
-          "Built core subsystems of Project Plasma, an internal enterprise design-system tooling platform — the component preview pipeline, build infrastructure, and accessibility governance.",
+          "Project Plasma is Visa's internal enterprise design-system platform. I own several core pieces, from the full-stack backend to the AI tooling.",
         bullets: [
-          "Engineered an end-to-end Angular component preview pipeline — SWC AST parsing to extract @Component decorators, companion-file detection, Vite + JIT build, and tsconfig path-alias resolution.",
-          "Replaced a Redis/Celery job queue with a PostgreSQL polling worker, removing a runtime infrastructure dependency.",
-          "Authored the WCAG → Visa VGAR accessibility mapping and integrated violation highlighting into build-time screenshots.",
-          "Designed path-alias resolution across the stack — the CLI rewrites aliases to relative paths pre-upload; the build worker converts tsconfig wildcards to esbuild format.",
-          "Built a pattern build suite — a batch CI harness that runs the full pipeline against fixtures to catch regressions before deploy.",
+          "Helped build the backend (FastAPI, PostgreSQL, S3/MinIO) with 170 REST endpoints across 21 route files, so React, Angular, Flutter, and HTML/CSS can share components.",
+          "Wrote a Model Context Protocol (MCP) server solo that opens the platform's core workflows to AI agents (browsing teams, searching, uploading and installing patterns, checking build status), so designers and non-coders can use the design system without writing code.",
+          "Built automated accessibility governance: every upload runs browser-based WCAG checks with Playwright and axe-core, maps violations to Visa's VGAR, and produces severity-ranked reports that replaced a manual review process.",
+          "Added AI features to the developer CLI (oclif): automatic framework detection, SWC AST dependency analysis, and LLM-generated component descriptions with a review workflow, automating contributor docs.",
+          "Replaced the Redis/Celery task queue with a PostgreSQL polling worker, dropping a runtime infrastructure dependency.",
         ],
         tags: ["Angular", "TypeScript", "SWC AST", "PostgreSQL", "Accessibility"],
         link: "",
@@ -298,7 +298,7 @@ const en = {
         org: "PsySpace",
         role: "Co-founder & Front-End Lead",
         period: "2020–2022",
-        title: "PsySpace — Mental-Health App",
+        title: "PsySpace · Mental-Health App",
         summary:
           "Co-founded and led front-end for a mobile mental-health app supporting emerging adults.",
         bullets: [
@@ -313,8 +313,8 @@ const en = {
       research: {
         org: "Penn State · User Agency Lab",
         role: "Research Assistant",
-        period: "2019 — 2021",
-        title: "HCI Research — CSCW 2020",
+        period: "2019–2021",
+        title: "HCI Research · CSCW 2020",
         summary:
           "Research assistant at Penn State's User Agency Lab, College of IST.",
         bullets: [
@@ -329,7 +329,7 @@ const en = {
     eduTitle: "Education",
     education: {
       masters: {
-        degree: "M.S. in Informatics — Human-Computer Interaction",
+        degree: "M.S. in Informatics · Human-Computer Interaction",
         school: "The Pennsylvania State University",
         period: "Dec 2021 · GPA 3.75",
         detail: "College of Information Science and Technology.",
@@ -346,7 +346,7 @@ const en = {
     eyebrow: "Contact",
     title: "Get in touch",
     intro:
-      "Whether it's design engineering, a game idea, or a friendly table-tennis match — my inbox is always open.",
+      "Work, an app idea, a game idea, or a friendly table-tennis match. My inbox is always open.",
     methods: {
       email: { label: "Email", value: "naxxhua@gmail.com" },
       linkedin: { label: "LinkedIn", value: "in/jiahua-ma" },
@@ -361,10 +361,10 @@ const en = {
     eyebrow: "Recipes",
     title: "The bar is open",
     intro:
-      "A cyberpunk-themed collection of cocktails and dishes — a tribute to the bartending visual novel VA-11 HALL-A.",
+      "A cyberpunk-flavored set of cocktails and dishes I love, a tribute to the bartending game VA-11 HALL-A.",
     tributeTitle: "Time to mix drinks and change lives",
     tributeBody:
-      "VA-11 HALL-A is a cyberpunk bartending game where the drinks you pour shape the night. Every cocktail below is a real, mixable tribute to it — plus a couple of dishes from my own kitchen.",
+      "VA-11 HALL-A is a cyberpunk bartending game where the drinks you pour shape the night. Every cocktail below is a real, mixable tribute to it, plus a couple of dishes from my own kitchen.",
     cocktailsLabel: "Cocktails",
     dishesLabel: "Dishes",
     viewRecipe: "View recipe",
@@ -389,11 +389,11 @@ const en = {
     submit: "Sign the guestbook",
     submitting: "Signing…",
     entriesTitle: "Messages",
-    empty: "No messages yet — be the first to sign.",
+    empty: "No messages yet. Be the first to sign.",
     loading: "Loading messages…",
     error: "Couldn't load messages. Please try again later.",
     demoNote:
-      "Demo mode — messages are saved locally in your browser only.",
+      "Demo mode. Messages are saved locally in your browser only.",
     nameRequired: "Please enter your name and a message.",
     viewOriginal: "View original",
     viewTranslation: "View translation",
@@ -402,7 +402,7 @@ const en = {
     title: "Notes",
     intro:
       "Occasional writing on design engineering, games, cooking, and making things for no reason.",
-    empty: "No posts yet — check back soon.",
+    empty: "No posts yet. Check back soon.",
     backToBlog: "All posts",
     machineTag: "machine-translated",
     machineNote:

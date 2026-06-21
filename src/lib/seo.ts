@@ -139,7 +139,7 @@ const STATIC_ROUTES: RouteSeo[] = [
     path: "/about",
     title: "About — Jiahua Ma",
     description:
-      "Full-Stack Software Engineer at Visa, game developer and competitive table tennis player — and the theatre, games and lines I love away from work.",
+      "Full-Stack Software Engineer at Visa, game developer and competitive table tennis player, plus the theatre, games and lines I love away from work.",
     ogImage: SITE.defaultOgImage,
     jsonLd: [],
   },
@@ -155,7 +155,7 @@ const STATIC_ROUTES: RouteSeo[] = [
     path: "/recipes",
     title: "Recipes — Jiahua Ma",
     description:
-      "A cyberpunk-themed collection of cocktail and dish recipes — each a real, mixable tribute, with cinematic detail pages.",
+      "A cyberpunk-themed collection of cocktail and dish recipes, each a real, mixable tribute, with cinematic detail pages.",
     ogImage: SITE.defaultOgImage,
     jsonLd: [],
   },
@@ -163,7 +163,7 @@ const STATIC_ROUTES: RouteSeo[] = [
     path: "/contact",
     title: "Contact — Jiahua Ma",
     description:
-      "Get in touch with Jiahua Ma — LinkedIn, GitHub and email.",
+      "Get in touch with Jiahua Ma on LinkedIn, GitHub, or email.",
     ogImage: SITE.defaultOgImage,
     jsonLd: [],
   },
@@ -171,7 +171,7 @@ const STATIC_ROUTES: RouteSeo[] = [
     path: "/guestbook",
     title: "Guestbook — Jiahua Ma",
     description:
-      "Sign the guestbook — leave a note in English or Chinese and it's shown in the reader's language.",
+      "Sign the guestbook. Leave a note in English or Chinese and it's shown in the reader's language.",
     ogImage: SITE.defaultOgImage,
     jsonLd: [],
   },
