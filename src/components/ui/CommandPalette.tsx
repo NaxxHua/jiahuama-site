@@ -207,7 +207,12 @@ export default function CommandPalette() {
           />
         </div>
 
-        <ul ref={listRef} className="max-h-[52vh] overflow-y-auto p-2" role="listbox">
+        <ul
+          ref={listRef}
+          data-lenis-prevent
+          className="max-h-[52vh] overflow-y-auto overscroll-contain p-2"
+          role="listbox"
+        >
           {filtered.length === 0 && (
             <li className="px-3 py-6 text-center text-[14px] text-fg-3">
               {t.palette.empty}
