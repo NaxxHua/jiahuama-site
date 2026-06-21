@@ -31,6 +31,17 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-21",
     patches: [
       {
+        version: "0.8.1",
+        date: "2026-06-21",
+        title: { en: "No duplicate trace bar on the choose screen", zh: "选择屏去重追踪条" },
+        items: [
+          {
+            en: "The choose-your-next-stop screen no longer shows two trace bars. The slim always-on bar at the very top is now hidden there (the screen already has its own detailed bar with the sweet-zone band and \"can fight boss\" marker); the slim top bar still appears on screens without a detailed one (battle, reward, event).",
+            zh: "「选择下一步」界面不再叠两条追踪条。屏幕最顶那条常驻细条在这个界面收起了（这屏自带详细条，有甜区金框和「可进 Boss」标线）；细条仍会在没有详细条的界面出现（战斗、奖励、事件）。",
+          },
+        ],
+      },
+      {
         version: "0.8.0",
         date: "2026-06-21",
         title: { en: "Trace-gated map + revived dynamic difficulty", zh: "追踪定位地图 + 动态难度重做" },
