@@ -29,3 +29,6 @@ src/assets/__MACOSX
 CLAUDE.local.md
 # Supabase CLI local cache
 supabase/.temp/
+
+# Local working doc for hand-editing Chinese copy
+zh-copy.md
