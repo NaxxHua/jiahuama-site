@@ -29,7 +29,7 @@ const en = {
     relaunch: "Reload game",
     feedback: {
       title: "Have feedback?",
-      intro: "Come join the studio Discord. Your feedback really matters!",
+      intro: "Come join the MuColumbae Discord. Your feedback really matters!",
       cta: "Join the Discord",
     },
     changelog: {
@@ -77,7 +77,7 @@ const en = {
       game: {
         tag: "In progress",
         title: "An auto-chess game",
-        desc: "Front-end on a Shan Hai Jing-themed card auto-battler at Paofan Studio, headed for a Steam release.",
+        desc: "Front-end on a Shan Hai Jing-themed card auto-battler at Pawfun, headed for a Steam release.",
       },
       psyspace: {
         tag: "Co-founder",
@@ -135,7 +135,7 @@ const en = {
     facets: {
       game: {
         title: "Game development",
-        desc: "I do front-end on an auto-battler at Paofan Studio, and on the side I'm building my own card roguelite, doing the design, code, and art myself. The plan is to put it on Steam.",
+        desc: "I do front-end on an auto-battler at Pawfun, and on the side I'm building my own card roguelite, doing the design, code, and art myself. The plan is to put it on Steam.",
       },
       tabletennis: {
         title: "Table tennis",
