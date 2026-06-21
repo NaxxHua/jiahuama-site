@@ -22,7 +22,7 @@ const svg = `
   <rect width="1200" height="630" fill="url(#glow)"/>
   <rect x="0" y="0" width="1200" height="6" fill="#4aa3a3"/>
   <text x="80" y="300" font-family="Helvetica, Arial, sans-serif" font-size="104" font-weight="700" fill="#f4f7fa">Jiahua Ma</text>
-  <text x="84" y="370" font-family="Helvetica, Arial, sans-serif" font-size="38" font-weight="500" fill="#9fb2c2">Design Engineer · Game Developer · Table Tennis</text>
+  <text x="84" y="372" font-family="Helvetica, Arial, sans-serif" font-size="32" font-weight="500" fill="#9fb2c2">Full-Stack Software Engineer · Game Developer · Table Tennis</text>
   <text x="84" y="548" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="500" fill="#4aa3a3">jiahuama.com</text>
 </svg>`;
 

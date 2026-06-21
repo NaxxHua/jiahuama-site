@@ -27,9 +27,9 @@ export const SITE = {
   origin: "https://jiahuama.com",
   name: "Jiahua Ma",
   author: "Jiahua Ma",
-  defaultTitle: "Jiahua Ma — Design Engineer",
+  defaultTitle: "Jiahua Ma — Full-Stack Software Engineer",
   defaultDescription:
-    "Jiahua Ma — Design Engineer at Visa, game developer and competitive table tennis player. Portfolio, projects, and a cyberpunk-themed recipe collection.",
+    "Jiahua Ma — Full-Stack Software Engineer at Visa, game developer and competitive table tennis player. Portfolio, projects, and a cyberpunk-themed recipe collection.",
   defaultOgImage: "/og-default.jpg",
   twitterCard: "summary_large_image",
 } as const;
@@ -49,7 +49,7 @@ const PERSON: Record<string, unknown> = {
   "@type": "Person",
   name: "Jiahua Ma",
   url: `${SITE.origin}/`,
-  jobTitle: "Design Engineer",
+  jobTitle: "Full-Stack Software Engineer",
   worksFor: { "@type": "Organization", name: "Visa" },
   alumniOf: {
     "@type": "CollegeOrUniversity",
@@ -139,7 +139,7 @@ const STATIC_ROUTES: RouteSeo[] = [
     path: "/about",
     title: "About — Jiahua Ma",
     description:
-      "Design Engineer at Visa, game developer and competitive table tennis player — and the theatre, games and lines I love away from work.",
+      "Full-Stack Software Engineer at Visa, game developer and competitive table tennis player — and the theatre, games and lines I love away from work.",
     ogImage: SITE.defaultOgImage,
     jsonLd: [],
   },

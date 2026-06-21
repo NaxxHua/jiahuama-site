@@ -38,7 +38,7 @@ const en = {
     },
   },
   footer: {
-    tagline: "Design Engineer, game developer, and table tennis player.",
+    tagline: "Full-Stack Software Engineer, game developer, and table tennis player.",
     sections: "Pages",
     elsewhere: "Elsewhere",
     builtWith: "Built with React, Vite & a lot of coffee.",
@@ -59,9 +59,9 @@ const en = {
   },
   home: {
     eyebrow: "Hi, I'm",
-    roles: ["Design Engineer", "Game Developer", "Table Tennis Player"],
+    roles: ["Full-Stack Software Engineer", "Game Developer", "Table Tennis Player"],
     tagline:
-      "I'm a design engineer at Visa, where I build polished, accessible interfaces. Off the clock I design games and chase the perfect topspin.",
+      "I'm a full-stack software engineer at Visa, where I build polished, accessible interfaces. Off the clock I design games and chase the perfect topspin.",
     ctaWork: "View my work",
     ctaContact: "Get in touch",
     scroll: "Scroll",
@@ -71,7 +71,7 @@ const en = {
     highlights: {
       visa: {
         tag: "2022 — Now",
-        title: "Design Engineer at Visa",
+        title: "Full-Stack Software Engineer at Visa",
         desc: "Building a cross-platform Flutter design system used across Visa's products — accessible tokens, components, and VGAR-compliant UI.",
       },
       game: {
@@ -297,7 +297,7 @@ const en = {
       psyspace: {
         org: "PsySpace",
         role: "Co-founder & Front-End Lead",
-        period: "2020 — 2023",
+        period: "2020–2022",
         title: "PsySpace — Mental-Health App",
         summary:
           "Co-founded and led front-end for a mobile mental-health app supporting emerging adults.",
@@ -441,16 +441,16 @@ const zh: Dict = {
   game: {
     eyebrow: "试玩",
     title: "缸中之脑 · 试玩",
-    intro: "我的赛博朋克卡牌 roguelite 早期 demo。输入暗号即可游玩。",
+    intro: "我的赛博朋克卡牌 roguelite 早期 demo。输入暗号就能玩。",
     codeLabel: "暗号",
     placeholder: "输入暗号",
     enter: "开始游玩",
     wrong: "暗号不对哦，找马家骅要一个。",
-    hint: "建议用电脑 Chrome/Edge。首次加载较大（约 130MB），请耐心等。",
+    hint: "建议用电脑 Chrome/Edge。首次加载较大（约 130MB），请耐心等待。",
     relaunch: "重新加载游戏",
     feedback: {
       title: "有任何反馈？",
-      intro: "到 Discord 频道找我聊就行，bug、点子、哪里好玩哪里别扭，都欢迎。",
+      intro: "点击加入速逃天鸽工作室 Discord 频道！你的反馈很重要！",
       cta: "加入 Discord",
     },
     changelog: {
@@ -459,9 +459,9 @@ const zh: Dict = {
     },
   },
   footer: {
-    tagline: "设计工程师、游戏开发者，也是乒乓球爱好者。",
+    tagline: "全栈软件工程师、游戏开发者、乒乓球选手",
     sections: "页面",
-    elsewhere: "在别处",
+    elsewhere: "外部链接",
     builtWith: "用 React、Vite 和大量咖啡构建。",
     rights: "保留所有权利。",
   },
@@ -472,45 +472,45 @@ const zh: Dict = {
   },
   notFound: {
     title: "页面不存在",
-    lines: ["这个页面好像不存在。", "也可能它只是特别擅长躲。"],
+    lines: ["这个页面好像不存在。", "你无法捕捉游荡的幽灵。"],
     home: "返回首页",
   },
   home: {
     eyebrow: "你好，我是",
-    roles: ["设计工程师", "游戏开发者", "乒乓球选手"],
+    roles: ["全栈软件工程师", "游戏开发者", "乒乓球选手"],
     tagline:
-      "我在 Visa 做设计工程师，平时就是把界面做得顺手又好看，也尽量让每个人都用得上。工作之外我自己做游戏，还在乒乓球台上练那记一直没练利索的上旋。",
+      "我在 Visa 做全栈设计工程师，从 Flutter 到 CLI Tool。工作之余我喜欢做饭、做游戏，还在球馆里磨练我的正手爆冲。",
     ctaWork: "查看我的作品",
     ctaContact: "联系我",
     scroll: "向下滚动",
     techLabel: "我常用的工具与技术",
     highlightsTitle: "几件我引以为豪的事",
-    highlightsSub: "横跨设计工程、游戏、研究与运动。",
+    highlightsSub: "横跨设计工程、游戏、科研与运动。",
     highlights: {
       visa: {
         tag: "2022 至今",
-        title: "Visa 设计工程师",
-        desc: "给 Visa 做跨平台的 Flutter 设计系统，好几个产品都在用，从设计令牌到组件，再到符合 VGAR 的界面。",
+        title: "Visa 全栈软件工程师",
+        desc: "给 Visa 做跨平台的 Flutter 设计系统，受全球多个产品团队青睐，从 Design Token 到组件，再到符合 VGAR 的界面。",
       },
       game: {
         tag: "进行中",
         title: "一款自走棋游戏",
-        desc: "从零设计并开发一款自走棋游戏，目标是登陆 Steam。",
+        desc: "在泡饭工作室参与前端开发的一款山海经相关的卡牌养成自走棋游戏，目标是登陆 Steam。",
       },
       psyspace: {
         tag: "联合创始人",
         title: "PsySpace",
-        desc: "联合创办一个连接学生与心理支持的平台，主导 Flutter 应用与前端。",
+        desc: "联合创办一个连接学生与心理健康的平台，主导 Flutter 应用与前端。",
       },
       research: {
         tag: "CSCW 2020",
         title: "已发表的 HCI 研究",
-        desc: "在 CSCW 2020 合著一篇关于用户能动性的论文，来自宾州州立 User Agency Lab。",
+        desc: "在 CSCW 2020 合著一篇关于用户能动性的论文，来自宾州州立大学 User Agency Lab。",
       },
       tabletennis: {
         tag: "USATT",
-        title: "竞技乒乓球",
-        desc: "USATT 注册球员，一直在练步法，也一直在练那记上旋。",
+        title: "竞技体育",
+        desc: "USATT 注册球员，专注基本功、衔接、上旋！",
       },
     },
     exploreTitle: "继续探索",
@@ -534,29 +534,29 @@ const zh: Dict = {
       game: "正在做的游戏",
     },
     ctaTitle: "一起做点东西吧",
-    ctaBody: "想聊设计、聊游戏，或者约一场球，随时都行。",
+    ctaBody: "想聊设计、聊游戏、App 点子，或者约一场球，什么都行。",
   },
   about: {
     eyebrow: "关于",
     title: "设计、游戏和乒乓球",
     intro:
-      "我是马家骅，在 Visa 做设计工程师，干的活儿基本都卡在设计和工程中间。",
+      "我是马家骅，在 Visa 做设计工程师，干的活儿基本都在设计和工程中间。",
     journeyTitle: "到目前为止的故事",
     journey: [
-      "我在新疆乌鲁木齐长大，2014 年来到美国。学一门新语言、在陌生的地方重新开始，很大程度上塑造了我面对难题的方式。",
+      "我在新疆乌鲁木齐长大，2014 年来到美国。我很享受适应新环境和在陌生的地方重新开始人生，这在很大程度上塑造了我面对难题的方式。",
       "我在宾州州立大学读了应用数据科学学士，之后又读了信息学硕士，方向是人机交互。读书期间我在 User Agency Lab 做研究，还和朋友一起创办了面向学生的心理健康应用 PsySpace。",
-      "2022 年我加入了德州奥斯汀的 Visa，做设计工程师，负责其他团队用来开发产品的设计系统。奥斯汀从此成了我的家，这边好吃的也不少。",
+      "2022 年我加入了德州奥斯汀的 Visa，做设计工程师，负责其他团队用来开发产品的设计系统，2025年开始做全栈。Austin（严格来说是Leander）从此成了我的家，转眼已经过去了四年有余。",
     ],
     offTitle: "工作之余",
     offSub: "不工作的时候我会做的一些事。",
     facets: {
       game: {
         title: "游戏开发",
-        desc: "我在自己做一款自走棋游戏，设计、代码和美术都自己来，打算之后上架 Steam。",
+        desc: "我在泡饭工作室参与制作做一款自走棋游戏，我自己也在开发一款卡牌rouge，设计、代码和美术都自己来，打算未来上架 Steam。",
       },
       tabletennis: {
         title: "乒乓球",
-        desc: "我是一名 USATT 注册的竞技选手。打球时要专注、要看懂对手，那种状态和工作很不一样。",
+        desc: "我是一名 USATT 注册的竞技选手。竞技体育（不论现实中的还是电子竞技）都会让我感到肾上腺素飙升。",
       },
       bar: {
         title: "在吧台后",
@@ -676,15 +676,15 @@ const zh: Dict = {
     projects: {
       designSystem: {
         org: "Visa",
-        role: "前端主管工程师",
+        role: "全栈软件工程师",
         period: "2022 至今",
         title: "Nova Flutter · Visa 设计系统",
-        summary: "主导开发 Nova Flutter，也就是 Visa 开源 Nova 设计系统的 Flutter 组件库。",
+        summary: "Visa 开源设计系统的 Flutter 组件库，我是主要贡献者。",
         bullets: [
-          "做了 20 多个组件，占移动端组件库的七成多，Visa 全球移动生态里 200 多名开发者在用。",
-          "建立 CI/CD，单元测试覆盖率 95%+、通过率 100%，保证无障碍合规与零回归。",
-          "向 iOS 与 Android 发布实时演示应用，加速贡献者上手。",
-          "与 Visa UX 团队协作，推动 5+ 个全球团队的采用与治理。",
+          "四年里写了大约 2900 次提交里的 1500 多次（52%）；其中 10 个生产组件是我独立或主要完成的（占 90% 以上提交），包括 Dialog、App Bar、底部导航栏、Banner、Tab、Wizard 等。",
+          "维持 94.5% 的测试覆盖率，767 个 widget 测试全部通过（710/710）。",
+          "搭了 CI/CD，配上 iOS、Android 的实时演示应用，消除回归风险，也让新贡献者更快上手。",
+          "和 Visa UX 团队一起在全球产品团队里推这套设计系统，定下治理流程和工程规范。",
         ],
         tags: ["Flutter", "Dart", "设计系统", "CI/CD", "无障碍"],
         link: "https://design.visa.com",
@@ -692,17 +692,17 @@ const zh: Dict = {
       },
       plasma: {
         org: "Visa",
-        role: "软件工程师",
+        role: "全栈软件工程师",
         period: "2025 至今",
         title: "Project Plasma",
         summary:
-          "做 Project Plasma 的几个核心子系统，包括组件预览流水线、构建基础设施和无障碍治理。它是一个内部的企业级设计系统工具平台。",
+          "Project Plasma 是 Visa 内部的企业级设计系统平台，我负责从全栈后端到 AI 工具的几个核心部分。",
         bullets: [
-          "做了一条端到端的 Angular 组件预览流水线，用 SWC AST 解析提取 @Component 装饰器，再加上伴随文件检测、Vite + JIT 构建和 tsconfig 路径别名解析。",
-          "用 PostgreSQL 轮询 worker 替换 Redis/Celery 任务队列，消除了一项运行时基础设施依赖。",
-          "编写 WCAG → Visa VGAR 无障碍映射，并将违规高亮集成进构建期截图。",
-          "做了一套贯穿全栈的路径别名解析，CLI 在上传前把别名改成相对路径，构建 worker 再把 tsconfig 的通配符转成 esbuild 的格式。",
-          "做了 pattern build suite，一个批量 CI 工具，拿测试夹具跑完整构建流水线，赶在部署前抓回归。",
+          "参与搭建后端（FastAPI、PostgreSQL、S3/MinIO），170 个 REST 接口分布在 21 个路由文件里，让 React、Angular、Flutter、HTML/CSS 之间能共享组件。",
+          "独立写了一个 MCP（Model Context Protocol）服务器，把平台的核心流程开放给 AI agent，比如浏览团队、搜索上传安装模板、查看构建状态，让设计师和不写代码的人也能用上这套设计系统。",
+          "做了一套自动化的无障碍治理：每次上传都用 Playwright + axe-core 跑浏览器端的 WCAG 检查，把违规自动映射到 Visa 的 VGAR，再生成按严重程度排序的报告，取代了原来人工评审的流程。",
+          "给平台的开发者 CLI（oclif）加了几项 AI 功能：自动识别框架、基于 SWC AST 的依赖分析，以及用大模型生成组件说明并配上审核流程，把贡献者文档自动化。",
+          "用 PostgreSQL 轮询 worker 替换掉 Redis/Celery 任务队列，少了一项运行时基础设施依赖。",
         ],
         tags: ["Angular", "TypeScript", "SWC AST", "PostgreSQL", "无障碍"],
         link: "",
@@ -711,7 +711,7 @@ const zh: Dict = {
       psyspace: {
         org: "PsySpace",
         role: "联合创始人 & 前端主管",
-        period: "2020 — 2023",
+        period: "2020–2022",
         title: "PsySpace · 心理健康应用",
         summary: "联合创办并主导前端，做一款面向青年的移动端心理健康应用。",
         bullets: [
@@ -758,7 +758,7 @@ const zh: Dict = {
     eyebrow: "联系",
     title: "联系我",
     intro:
-      "设计工程、游戏点子，或者约一场球，都欢迎。邮箱常开。",
+      "聊聊工作、App 想法、游戏点子，或者约一场球，都欢迎。邮箱常开。",
     methods: {
       email: { label: "邮箱", value: "naxxhua@gmail.com" },
       linkedin: { label: "领英", value: "in/jiahua-ma" },
@@ -773,7 +773,7 @@ const zh: Dict = {
     eyebrow: "食谱",
     title: "酒吧已开张",
     intro:
-      "一堆赛博朋克味儿的鸡尾酒和菜，致敬调酒游戏 VA-11 HALL-A。",
+      "一堆赛博朋克风格的鸡尾酒和我喜欢的菜谱，致敬调酒游戏 VA-11 HALL-A。",
     tributeTitle: "调制饮品，改变人生",
     tributeBody:
       "VA-11 HALL-A 是个赛博朋克调酒游戏，你每倒一杯酒，那个夜晚就会跟着变。下面这些鸡尾酒都是照着它真能调出来的，另外还塞了几道我自己在家做的菜。",

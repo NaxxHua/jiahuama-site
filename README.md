@@ -1,7 +1,7 @@
 # Jiahua Ma — Personal Website
 
 Source for [jiahuama.com](https://jiahuama.com) — the personal site of Jiahua Ma,
-a design engineer at Visa, game developer, and table tennis player.
+a full-stack software engineer at Visa, game developer, and table tennis player.
 
 A bilingual (English / Chinese) portfolio with a cyberpunk-themed recipe
 collection and a guestbook.
