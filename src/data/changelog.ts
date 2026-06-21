@@ -26,6 +26,36 @@ export interface MinorVersion {
 
 export const changelog: MinorVersion[] = [
   {
+    minor: "0.8",
+    title: { en: "Map rebuild & dynamic difficulty", zh: "地图重构与动态难度" },
+    span: "2026-06-21",
+    patches: [
+      {
+        version: "0.8.0",
+        date: "2026-06-21",
+        title: { en: "Trace-gated map + revived dynamic difficulty", zh: "追踪定位地图 + 动态难度重做" },
+        items: [
+          {
+            en: "The full Slay-the-Spire branch map is gone (we heard you — \"too much like StS\"). Instead, after each node you pick 1 of 3 next stops: a normal fight (almost always offered) plus 2 of {elite, event, shop, rest}. Where you go is your call, every node.",
+            zh: "整张杀戮尖塔式分支地图没了（听到了——「太像 StS」）。改成每打完一个节点就三选一决定下一步：小怪（基本必出）+ 精英 / 事件 / 商店 / 休整「四选二」。每一步去哪都你说了算。",
+          },
+          {
+            en: "When you fight the boss is now driven by a Trace bar (just like the heat sweet-zone): scavenging raises it faster, lying low slower. Once Trace hits the sweet zone you can choose to dive the boss; keep scavenging for loot and danger keeps climbing, until Trace maxes out and the boss tracks you down and forces the fight. Greed for power vs. play it safe.",
+            zh: "什么时候打 Boss 现在由「追踪值」进度条决定（和热力甜区一个套路）：搜刮涨得快、低调通过涨得慢。追踪到甜区就能主动「定位 Boss」决战；继续搜刮变强、危险也持续上升，直到追踪爆表，Boss 顺着信号找上门、强制开打。贪强 vs 求稳。",
+          },
+          {
+            en: "A slim Trace bar now sits pinned to the very top of every screen (blue -> amber -> red, with a gold mark at the sweet-zone start) so you always know how close the boss is.",
+            zh: "屏幕最顶现在常驻一条细追踪条（蓝→橙→红，金标=甜区起点），任何界面都能一眼看到「离 Boss 还有多远」。",
+          },
+          {
+            en: "Enemy scaling reworked. The old \"enemies scale to your deck power\" system was effectively dead (its baseline grew far faster than real decks ever do, so it never kicked in, and damage never scaled at all). Now both enemy HP and damage scale to your per-turn output, so a runaway build no longer steamrolls the later chapters. And weak/early decks get genuine relief based on how built-up you are (not on raw damage, so poison/sustain builds aren't punished) — easing the brutal first-chapter wall.",
+            zh: "敌人缩放重做。旧的「敌人随你牌组强度变强」其实形同虚设（基准涨得远比真实牌组快，永远触发不了，伤害更是从不缩放）。现在敌人血量和伤害都跟你的每回合输出走，后期失控强 build 不再一路碾压；同时弱 / 早期牌组按你的「构筑成熟度」获得真正减压（看构筑而非纯伤害，所以中毒 / 续航流不被误伤）——缓解第一章那道硬墙。",
+          },
+        ],
+      },
+    ],
+  },
+  {
     minor: "0.7",
     title: { en: "New cards & variety", zh: "新卡与流派多样化" },
     span: "2026-06-20",
