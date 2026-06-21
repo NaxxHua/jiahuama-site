@@ -45,7 +45,7 @@ function Bar({ label, value, max, hint }: { label: string; value: number; max: n
     <div className="flex items-center gap-3 py-1">
       <div className="w-28 shrink-0 truncate text-[13px] text-fg-2" title={label}>{label}</div>
       <div className="relative h-6 flex-1 overflow-hidden rounded bg-bg-2">
-        <div className="h-full rounded bg-accent/60" style={{ width: `${pct}%` }} />
+        <div className="h-full rounded bg-accent" style={{ width: `${pct}%` }} />
       </div>
       <div className="w-20 shrink-0 text-right text-[13px] tabular-nums text-fg">
         {value}
