@@ -26,6 +26,44 @@ export interface MinorVersion {
 
 export const changelog: MinorVersion[] = [
   {
+    minor: "0.10",
+    title: { en: "Condition glow, card upgrades & economy cleanup", zh: "条件高亮 · 卡牌升级 · 经济清理" },
+    span: "2026-06-22",
+    patches: [
+      {
+        version: "0.10.0",
+        date: "2026-06-22",
+        title: { en: "Edge-glow conditions, card upgrades, economy cleanup", zh: "条件边缘发光 + 卡牌升级 + 经济清理" },
+        items: [
+          {
+            en: "Condition-triggered cards now glow on their edge (gold border) the moment you meet the trigger — e.g. Rhythm Chain after you've played a card, Precog Dash when it'd be your first attack, the 5-hit combo card once you've played 5+ cards, Vengeance after you've taken a hit, overheat cards while over the heat cap. It updates live as you play.",
+            zh: "条件触发牌现在「边缘发金光」——满足条件的瞬间卡框亮起：节奏链（出过牌后）、预判突进（本回合首张攻击）、闪电五连鞭（已打 ≥5 张）、复仇（受过击）、过热牌（热力越上限）。打牌后实时更新。",
+          },
+          {
+            en: "Rhythm Chain's damage number now ticks up live on the card face as you play more cards this turn.",
+            zh: "节奏链的伤害数字现在随本回合出牌数在卡面上实时增长。",
+          },
+          {
+            en: "New \"Upgrade Card\" button in Shell Loadout (bottom-left): pick a card from your deck and raise its rarity one tier, paying shards by target tier (Rare 500 / Epic 2000 / Legendary 5000). A new Legendary rarity was added.",
+            zh: "「躯壳改装」屏左下角新增「升级卡片」：选牌组里一张牌升一档稀有度，花碎片（稀有 500 / 史诗 2000 / 传说 5000）。新增「传说」稀有度。",
+          },
+          {
+            en: "Effects that cost current HP now spell out the actual amount, e.g. \"lose 25% of current HP (10)\".",
+            zh: "需要扣当前生命的效果现在写明具体数值，例如「失去当前生命的 25%（10）」。",
+          },
+          {
+            en: "Core cards are now all Common (the build baseline you upgrade from). Tuning: Left Jab 6→4, Precog Dash 4→2, Rhythm Chain 5→3, Overcharge memory 1→2. The 5-hit combo card was reworked to \"5 random hits of 5; if you've played 5+ cards this turn, +5 more hits\".",
+            zh: "核心牌全部改为普通品质（升级的基线）。数值：左刺拳 6→4、预判突进 4→2、节奏链 5→3、超频充能内存 1→2。闪电五连鞭重做为「对随机敌人造成 5 次 5 点伤害；若本回合已打 ≥5 张牌，再造成 5 次」。",
+          },
+          {
+            en: "In-run shards are now uncapped (accumulate freely); death still keeps up to 50, a clear keeps all. The old forge station was removed — card upgrades all live in Shell Loadout now.",
+            zh: "局内躯壳碎片不再有上限（随便攒）；死亡仍最多带 50、通关全带。旧的改装台已删除——卡牌升级统一在「躯壳改装」里。",
+          },
+        ],
+      },
+    ],
+  },
+  {
     minor: "0.9",
     title: { en: "Shell loadout system & card redesign", zh: "躯壳改装系统与卡面重做" },
     span: "2026-06-22",
