@@ -31,6 +31,21 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-22",
     patches: [
       {
+        version: "0.11.10",
+        date: "2026-06-22",
+        title: { en: "No empty rest at chapter start + finer heat-cap upgrades", zh: "休整开章不空转 + 热力上限拆成小步" },
+        items: [
+          {
+            en: "Rest (休整) costs 1 trace, but trace starts at 0 each chapter, so resting on the first node was a free heal. Rest is no longer offered while trace is 0.",
+            zh: "休整的代价是追踪 -1，但每章开局追踪本就是 0，开章第一格休整等于白送回血。现在追踪为 0 时不再出现休整。",
+          },
+          {
+            en: "Heat-cap upgrade was +30 per level (100+ fragments) — too big a jump. Now it's 15 small +10 steps (still 50→200) at a flat 50 fragments each: smoother, and not too cheap.",
+            zh: "热力上限升级原来每级 +30、100 碎片起，跳得太大。现在改成 15 小级、每级 +10（仍 50→200），每级固定 50 碎片，升级更平滑。",
+          },
+        ],
+      },
+      {
         version: "0.11.9",
         date: "2026-06-22",
         title: { en: "Full backpack + new module: keep which one?", zh: "背包满了再得模块：二选一保留" },
