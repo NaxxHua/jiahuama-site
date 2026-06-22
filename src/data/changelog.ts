@@ -31,6 +31,17 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-22",
     patches: [
       {
+        version: "0.11.2",
+        date: "2026-06-22",
+        title: { en: "Fix: core cards now in the card gallery", zh: "修复：核心牌组进图鉴" },
+        items: [
+          {
+            en: "The two cores' 5-card decks (Sprint / Berserk) never showed up in the card gallery — it only listed starter + draft-pool cards. They're in the codex now (total 64→74).",
+            zh: "疾走 / 狂暴两个核心各 5 张牌之前一直不在卡牌图鉴里（图鉴只收起手牌 + 抽卡池）。现在补进去了（总数 64→74）。",
+          },
+        ],
+      },
+      {
         version: "0.11.1",
         date: "2026-06-22",
         title: { en: "Fix: web card-text clipping + drop popup centering", zh: "修复：网页版卡面截字 + 掉落弹窗居中" },
