@@ -31,6 +31,17 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-22",
     patches: [
       {
+        version: "0.13.3",
+        date: "2026-06-22",
+        title: { en: "The House: doubles back to shield x2 + draw", zh: "坐庄改回护盾翻倍" },
+        items: [
+          {
+            en: "The House (坐庄): on doubles, the shield doubles AND you draw 1 again (reverting the 0.13.2 draw-only change).",
+            zh: "坐庄：对子改回「护盾翻倍并额外抽 1 张牌」（撤销 0.13.2 的只额外抽 1）。",
+          },
+        ],
+      },
+      {
         version: "0.13.2",
         date: "2026-06-22",
         title: { en: "Anti-misclick buffer + core-passive hover + dice tweaks", zh: "防误点 + 核心牌 hover + 骰子牌微调" },
