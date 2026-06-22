@@ -31,6 +31,21 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-22",
     patches: [
       {
+        version: "0.13.1",
+        date: "2026-06-22",
+        title: { en: "Gambler core polish: dice roll animation + live numbers", zh: "赌怪核心打磨：掷骰动画 + live 数字" },
+        items: [
+          {
+            en: "Core renamed to 赌怪核心 (Gambler Core). Dice now tumble in the center of the screen on each roll (turn start + Slot Machine reroll), land on the result (red on doubles), then fade into the smaller HUD dice above the heat bar. \"Jackpot!\" shows center-screen on doubles.",
+            zh: "核心改名「赌怪核心」。每次掷骰（回合开局 + 老虎机重掷）骰子在屏幕中央滚动、落定（对子变红），再淡入热力条上方缩小的 HUD 骰子；对子时中央弹「中奖！」。",
+          },
+          {
+            en: "Card text now shows the live dice numbers (actual damage / shield / discard count), the doubles-conditional cards glow on doubles, and Bet Big / Slot Machine now let you pick the target enemy.",
+            zh: "卡面接上骰子点数的 live 数字（实际伤害 / 护盾 / 弃牌数），对子时相关牌高亮，押大 / 老虎机现在可以指定目标敌人。",
+          },
+        ],
+      },
+      {
         version: "0.13.0",
         date: "2026-06-22",
         title: { en: "Slot-Machine core + 5 dice cards", zh: "老虎机核心 + 5 张骰子牌" },
