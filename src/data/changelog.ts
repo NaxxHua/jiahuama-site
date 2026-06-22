@@ -31,6 +31,21 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-22",
     patches: [
       {
+        version: "0.11.1",
+        date: "2026-06-22",
+        title: { en: "Fix: web card-text clipping + drop popup centering", zh: "修复：网页版卡面截字 + 掉落弹窗居中" },
+        items: [
+          {
+            en: "Card rules text was clipping only in the web build (its font metrics differ from local, so the auto font-size came out too big). Cards now re-fit one frame after appearing using the actual rendered height, so the full text always shows — renderer-independent.",
+            zh: "卡面文字只在网页版被截断（网页字体度量和本地不同，自适应字号偏大）。现在卡牌出现一帧后按真实渲染高度再收一档字号，完整显示、渲染器无关。",
+          },
+          {
+            en: "The elite temp-module drop popup is now properly centered (was off-center, overlapping the hand).",
+            zh: "精英掉落临时模块的弹窗现在正中显示（之前没居中、压在手牌上）。",
+          },
+        ],
+      },
+      {
         version: "0.11.0",
         date: "2026-06-22",
         title: { en: "Temp modules: elite drop → backpack → research", zh: "临时模块：精英掉落 → 背包 → 研究解锁" },
