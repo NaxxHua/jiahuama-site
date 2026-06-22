@@ -31,6 +31,17 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-22",
     patches: [
       {
+        version: "0.13.6",
+        date: "2026-06-22",
+        title: { en: "Fix: cancelled card drag snaps back to hand", zh: "修复：取消拖牌没弹回手牌" },
+        items: [
+          {
+            en: "Dragging a card and letting go somewhere that isn't a target now returns it to your hand. (The 0.13.5 'skip rebuild when the hand is unchanged' guard accidentally skipped the cancel case, leaving the card floating where you dropped it.)",
+            zh: "拖牌后松手在非目标处，现在会弹回手牌。（0.13.5 的「手牌没变就跳过重建」误把取消拖牌也跳过了，导致牌停在松手位置。）",
+          },
+        ],
+      },
+      {
         version: "0.13.5",
         date: "2026-06-22",
         title: { en: "Fix: draw / discard animations were invisible", zh: "修复：抽牌/弃牌动画看不到" },
