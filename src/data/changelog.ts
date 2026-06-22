@@ -31,6 +31,17 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-22",
     patches: [
       {
+        version: "0.13.9",
+        date: "2026-06-22",
+        title: { en: "Drop the redundant \"X-shell: +N\" card line", zh: "去掉卡面「X躯壳：+N」那句" },
+        items: [
+          {
+            en: "Cards no longer print a separate shell-synergy line like \"Street shell: +5\" — that bonus is already included in the damage/cool number shown above, so the line was redundant. The synergy itself is unchanged.",
+            zh: "卡面不再单独写「街头躯壳：+5」这类联动句——加成早已算进上面显示的伤害/散热数字里，这句冗余又违和。联动机制本身不变。",
+          },
+        ],
+      },
+      {
         version: "0.13.8",
         date: "2026-06-22",
         title: { en: "Loaded Die costs more", zh: "作弊骰涨价" },
