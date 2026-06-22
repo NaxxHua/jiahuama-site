@@ -31,6 +31,17 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-22",
     patches: [
       {
+        version: "0.13.8",
+        date: "2026-06-22",
+        title: { en: "Loaded Die costs more", zh: "作弊骰涨价" },
+        items: [
+          {
+            en: "Loaded Die now costs 3 memory (was 1) — a guaranteed pair is strong.",
+            zh: "作弊骰费用从内存 1 改为内存 3——必出对子太强。",
+          },
+        ],
+      },
+      {
         version: "0.13.7",
         date: "2026-06-22",
         title: { en: "Dice roll waits for enemy actions to finish", zh: "掷骰等敌人行动演完再播" },
