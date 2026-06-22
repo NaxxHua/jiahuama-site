@@ -31,6 +31,17 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-22",
     patches: [
       {
+        version: "0.13.7",
+        date: "2026-06-22",
+        title: { en: "Dice roll waits for enemy actions to finish", zh: "掷骰等敌人行动演完再播" },
+        items: [
+          {
+            en: "The Gambler core's turn-start dice roll used to start while the enemy attack animation was still playing. It now rolls after the enemy's actions finish (turn 1 still rolls at the start, since nothing precedes it).",
+            zh: "赌怪核心的回合掷骰之前会在敌人攻击动画还没演完时就开始（重叠）。现在等敌人行动演完再掷骰（第 1 回合照常开局播）。",
+          },
+        ],
+      },
+      {
         version: "0.13.6",
         date: "2026-06-22",
         title: { en: "Fix: cancelled card drag snaps back to hand", zh: "修复：取消拖牌没弹回手牌" },
