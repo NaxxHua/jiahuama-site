@@ -31,6 +31,21 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-22",
     patches: [
       {
+        version: "0.11.4",
+        date: "2026-06-22",
+        title: { en: "Multi-hit enemy intents read clearly", zh: "敌人连击预告写清楚" },
+        items: [
+          {
+            en: "Enemy multi-hit attacks now telegraph as \"per-hit × count (total)\" — e.g. \"Burst 3-5×2 (6-10 total)\" — instead of a single number that looked like one hit.",
+            zh: "敌人多段攻击的意图现在显示「每段 ×段数（共合计）」，例如「连射 3-5×2（共6-10）」，不再只给一个数字让人以为是单发。",
+          },
+          {
+            en: "\"Burst\" (连射) was secretly a single hit despite the name — it's now a real 2-hit (each ~half, similar total).",
+            zh: "「连射」之前其实是单发，现在改成真正的 2 段连击（每段约半伤，合计与原来相近）。",
+          },
+        ],
+      },
+      {
         version: "0.11.3",
         date: "2026-06-22",
         title: { en: "Card text auto-fills the description box", zh: "卡面文字自适应填满" },
