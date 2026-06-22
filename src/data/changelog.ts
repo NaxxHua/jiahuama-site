@@ -31,6 +31,17 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-22",
     patches: [
       {
+        version: "0.13.5",
+        date: "2026-06-22",
+        title: { en: "Fix: draw / discard animations were invisible", zh: "修复：抽牌/弃牌动画看不到" },
+        items: [
+          {
+            en: "Draw fade-in and discard fade-out now actually show. Multiple hand rebuilds in quick succession (tutorial, turn transitions) were rebuilding the animating cards into their finished state and eating the animation. The hand now skips rebuilding when it hasn't changed.",
+            zh: "抽牌淡入 / 弃牌淡出现在看得见了。之前一回合里多次重建手牌（教程、回合切换）会把正在播动画的卡牌直接重建成完成态、吞掉动画。现在手牌没变化时跳过重建。",
+          },
+        ],
+      },
+      {
         version: "0.13.4",
         date: "2026-06-22",
         title: { en: "All-In fix + nerf; dice card numbers add up", zh: "梭哈修复+削弱；骰子牌数字对得上" },
