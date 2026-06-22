@@ -31,6 +31,17 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-22",
     patches: [
       {
+        version: "0.11.5",
+        date: "2026-06-22",
+        title: { en: "Card text pushed to the largest non-clipping size", zh: "卡面文字顶到最大不裁" },
+        items: [
+          {
+            en: "Card rules text is now sized to the largest font that still fits — long cards no longer sit small with empty space below; it grows to fill the box and only shrinks when it would clip (measured from the actual rendered height, so the web build matches).",
+            zh: "卡面规则文现在顶到「刚好不裁」的最大字号——长牌不再又小又空，能放大就填满、会裁才缩（按真实渲染高度算，网页版一致）。",
+          },
+        ],
+      },
+      {
         version: "0.11.4",
         date: "2026-06-22",
         title: { en: "Multi-hit enemy intents read clearly", zh: "敌人连击预告写清楚" },
