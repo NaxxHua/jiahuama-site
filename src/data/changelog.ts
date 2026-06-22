@@ -31,6 +31,21 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-22",
     patches: [
       {
+        version: "0.11.6",
+        date: "2026-06-22",
+        title: { en: "Card font fixed: stable type line, no ballooning", zh: "卡面字号回归：类型行固定 + 描述不膨胀" },
+        items: [
+          {
+            en: "The \"type · company\" subtitle (e.g. Skill · Neutral) is back to a fixed small size — the previous version let it scale up with the description.",
+            zh: "「类型·公司」那一行（如 技能·中立）恢复固定小字号——上一版它会跟着描述字号一起放大。",
+          },
+          {
+            en: "Description font is now capped (~16) so short cards stay a consistent, readable size instead of blowing up huge; long cards still shrink to fit.",
+            zh: "描述字号设了上限（约 16），短牌保持一致、可读的大小，不再被放大成超大字；长牌仍自动缩到放得下。",
+          },
+        ],
+      },
+      {
         version: "0.11.5",
         date: "2026-06-22",
         title: { en: "Card text pushed to the largest non-clipping size", zh: "卡面文字顶到最大不裁" },
