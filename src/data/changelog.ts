@@ -31,6 +31,25 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-22",
     patches: [
       {
+        version: "0.13.4",
+        date: "2026-06-22",
+        title: { en: "All-In fix + nerf; dice card numbers add up", zh: "梭哈修复+削弱；骰子牌数字对得上" },
+        items: [
+          {
+            en: "Fixed All-In (梭哈) not emptying the hand: with the Pioneer discard-to-draw trait the hand was instantly refilled. All-In's discard no longer triggers draw-on-discard.",
+            zh: "修复梭哈不弃手牌：带先锋「弃牌抽牌」词条时手牌会被立刻补回来。梭哈的弃光手牌不再触发弃牌抽牌。",
+          },
+          {
+            en: "All-In shield nerfed to half the damage dealt (was equal to it).",
+            zh: "梭哈护盾削弱为「伤害的一半」（原来等量）。",
+          },
+          {
+            en: "Dice card text now adds up: Bet Big shows dice + build bonus e.g. \"9 (2+4 +3)\"; The House / All-In show \"x2\" on doubles e.g. \"24 (6+6 x2)\".",
+            zh: "骰子牌数字现在对得上：押大显示骰子+build加成，如「9（2+4 +3）」；坐庄/梭哈对子时显示「×2」，如「24（6+6 ×2）」。",
+          },
+        ],
+      },
+      {
         version: "0.13.3",
         date: "2026-06-22",
         title: { en: "The House: doubles back to shield x2 + draw", zh: "坐庄改回护盾翻倍" },
