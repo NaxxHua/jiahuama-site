@@ -26,6 +26,44 @@ export interface MinorVersion {
 
 export const changelog: MinorVersion[] = [
   {
+    minor: "0.9",
+    title: { en: "Shell loadout system & card redesign", zh: "躯壳改装系统与卡面重做" },
+    span: "2026-06-22",
+    patches: [
+      {
+        version: "0.9.0",
+        date: "2026-06-22",
+        title: { en: "Shell loadout goes live + Hearthstone card frames", zh: "躯壳改装系统上线 + 炉石式卡面" },
+        items: [
+          {
+            en: "New shell loadout system. Every run now opens a \"Shell Loadout\" screen first — pick a core OS, slot in cyberware modules, spend fragments on permanent upgrades, then hit \"Enter Map ▶\" to play. You can also re-open it from the hub between chapters.",
+            zh: "全新「躯壳改装」系统。每局开始先进改装屏——选核心操作系统、装义体模块、花碎片做永久升级，点「进入地图 ▶」才开打。章节之间在 hub 也能再进来改。",
+          },
+          {
+            en: "Two street cores, each with its own 5-card deck: Sprint Chip (the first attack card each turn deals +25% and draws a card) and Berserk Core (all damage +30% while over the heat cap; each hit you take vents 5 heat). Switching cores swaps those 5 cards in your deck. Starter deck trimmed to 2 Strike + 2 Defend + 1 Insight + 1 Recall, plus the core's 5.",
+            zh: "两个街头核心，各带 5 张专属牌组：疾走芯片（每回合首张攻击牌 +25% 伤害并抽 1 张）/ 狂暴核心（热力越上限时全伤 +30%、每次受击散 5 热）。换核心就换牌组里那 5 张。起手牌精简为 2 击 + 2 挡 + 1 洞察 + 1 数据回流 + 核心 5 张。",
+          },
+          {
+            en: "Cyberware modules (a slimmed-down take on Cyberpunk 2077): neural / circulatory / skeleton / hands slots, each with a neutral and an exclusive option — heat venting, lifesteal, +attack damage, splash, damage reduction, end-of-turn heal, +max HP, and more — all active in battle.",
+            zh: "义体模块（精简自《赛博朋克 2077》）：神经 / 循环 / 骨架 / 手部四个部位，每部位 1 中立 + 1 独有——散热、吸血、攻击 +伤、溅射、减伤、回合末回血、生命上限 + 等——战斗里全部生效。",
+          },
+          {
+            en: "Fragment economy: fragments are a persistent stash. Spend them on permanent shell upgrades — Capacity (6→11) and Heat Cap (50→200) — which carry across runs. You keep up to 50 fragments on death, all of them on a clear.",
+            zh: "碎片经济：碎片是持久库存。花在躯壳永久升级——容量（6→11）和热力上限（50→200）——跨局保留。中途死最多带 50，通关全带。",
+          },
+          {
+            en: "Upgrade split: the Brain upgrade screen now only raises memory (paid with uploads); all shell upgrades (capacity / heat) live in the Shell Loadout screen (paid with fragments).",
+            zh: "升级拆分：「升大脑」屏现在只升内存（花上传体）；躯壳的容量 / 热力升级全在「躯壳改装」屏（花碎片）。",
+          },
+          {
+            en: "Every card in the game was re-laid-out to a Hearthstone-style frame: art fills the top half, a gold name banner overlaps its lower edge, and the rules text sits big and readable below — the old frame crammed the text too small to read.",
+            zh: "全游戏卡面换成炉石式排版：立绘占上半、金色名牌压在立绘下沿、规则文在下半又大又清楚——旧卡面把字挤得太小看不清。",
+          },
+        ],
+      },
+    ],
+  },
+  {
     minor: "0.8",
     title: { en: "Map rebuild & dynamic difficulty", zh: "地图重构与动态难度" },
     span: "2026-06-21",
