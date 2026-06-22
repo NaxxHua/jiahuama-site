@@ -31,6 +31,21 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-22",
     patches: [
       {
+        version: "0.10.1",
+        date: "2026-06-22",
+        title: { en: "Card upgrades add damage; Chapter 1 eased", zh: "升级卡片加伤 + 第一章降难" },
+        items: [
+          {
+            en: "Upgrading a card now also raises its base damage (and block): +1/+2/+3/+4 at Common/Rare/Epic/Legendary, so a common core card taken all the way to Legendary gains +10 base.",
+            zh: "升级卡片现在还加基础伤害（和格挡）：普通 / 稀有 / 史诗 / 传说 各 +1/+2/+3/+4——普通核心牌升满到传说累计 +10。",
+          },
+          {
+            en: "Chapter 1 difficulty eased: the new (leaner, combo-centric) starter cards struggle in Chapter 1 before you've built anything, so Chapter 1 enemies now have 0.65× HP and 0.72× damage. Chapters 2 and 3 are unchanged.",
+            zh: "第一章降难度：新的（更精简、连段向）起手核心牌在还没成型的第一章太吃力，所以第一章敌人血量 ×0.65、伤害 ×0.72。第二、三章不变。",
+          },
+        ],
+      },
+      {
         version: "0.10.0",
         date: "2026-06-22",
         title: { en: "Edge-glow conditions, card upgrades, economy cleanup", zh: "条件边缘发光 + 卡牌升级 + 经济清理" },
