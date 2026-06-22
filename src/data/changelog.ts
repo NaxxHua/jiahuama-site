@@ -26,6 +26,28 @@ export interface MinorVersion {
 
 export const changelog: MinorVersion[] = [
   {
+    minor: "0.13",
+    title: { en: "New core: Slot-Machine Chip (gambler / two dice)", zh: "新核心：老虎机芯片（赌徒 · 两颗骰子）" },
+    span: "2026-06-22",
+    patches: [
+      {
+        version: "0.13.0",
+        date: "2026-06-22",
+        title: { en: "Slot-Machine core + 5 dice cards", zh: "老虎机核心 + 5 张骰子牌" },
+        items: [
+          {
+            en: "New street/gambler core: roll two dice at the start of each turn (shown above the heat bar — white normally, red on doubles). Doubles = jackpot: draw a card + this turn's damage +20%, with an on-screen prompt.",
+            zh: "新的街头/赌徒核心：每回合开局掷两颗骰子（热力条上方，平时白色、对子变红）。对子=中奖：抽 1 张 + 本回合伤害 +20%，并有屏幕提示。",
+          },
+          {
+            en: "Five dice cards: Bet Big (deal dice-sum), Slot Machine (reroll then dice-sum, doubles x2), Loaded Die (set lowest die to 6), All-In (discard hand, hits = cards discarded x dice-sum + equal shield, doubles x2), The House (cool heat + dice-sum shield, doubles x2 + draw).",
+            zh: "五张骰子牌：押大（造成两骰之和）、老虎机（重掷再造成之和，对子翻倍）、作弊骰（把最低骰设为 6）、梭哈（弃光手牌，按弃牌数×两骰之和打伤害+护盾，对子翻倍）、坐庄（散热+两骰之和护盾，对子翻倍并抽牌）。",
+          },
+        ],
+      },
+    ],
+  },
+  {
     minor: "0.12",
     title: { en: "Meta-progression rework (fragments vs uploads)", zh: "局外成长重构（碎片 / 上传体 分轴）" },
     span: "2026-06-22",
