@@ -31,6 +31,17 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-22",
     patches: [
       {
+        version: "0.11.9",
+        date: "2026-06-22",
+        title: { en: "Full backpack + new module: keep which one?", zh: "背包满了再得模块：二选一保留" },
+        items: [
+          {
+            en: "The backpack holds 1 module; a new drop/reward used to silently overwrite it. Now when it's full, a side-by-side \"keep which one?\" popup shows the one in your pack vs the new one — pick one, discard the other. A temp module already equipped (with its battle timer running) isn't touched.",
+            zh: "背包只有 1 格，之前再得一枚模块会直接顶掉原来的（白丢）。现在会弹「背包已满 · 保留哪一个？」，并排给出「背包里的」和「新得到的」，选一个留、另一个丢。临时槽里正在使用（有场数计时）的模块不参与、不受影响。",
+          },
+        ],
+      },
+      {
         version: "0.11.8",
         date: "2026-06-22",
         title: { en: "Module gamble event + display tweaks", zh: "模块赌博事件 + 显示微调" },
