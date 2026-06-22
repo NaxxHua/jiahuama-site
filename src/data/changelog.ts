@@ -26,6 +26,36 @@ export interface MinorVersion {
 
 export const changelog: MinorVersion[] = [
   {
+    minor: "0.14",
+    title: { en: "Temp-module rework + core lock", zh: "临时模块重做 + 核心锁定" },
+    span: "2026-06-22",
+    patches: [
+      {
+        version: "0.14.0",
+        date: "2026-06-22",
+        title: { en: "Temp modules redone, core locked per run, fixes", zh: "临时模块重做 + 核心锁定 + 修复" },
+        items: [
+          {
+            en: "Temp modules: backpack removed. A picked-up module goes straight to the single temp slot (with a 'replace?' choice if one's already there), has no battle limit (lasts the whole run), and if you survive the run it's permanently unlocked — with a popup naming the part slot and module.",
+            zh: "临时模块：删掉背包。捡到的模块直接进临时槽（已有则弹「换不换」），无回合限制、用到本局结束；活着通关本局即永久解锁，弹窗写明解锁到哪个部位、哪个模块。",
+          },
+          {
+            en: "Core lock: once a run begins (you enter the chapter map), your core is locked until you die — you can't swap it in the next chapter's loadout. Your whole build is built around the core.",
+            zh: "核心锁定：本局开打（进章节地图）后核心锁死到死亡——打完一关在下一关备战不能再换核心，构筑围绕核心。",
+          },
+          {
+            en: "\"Cognition Unlock\" renamed to \"Module Unlock\" (clearer), and recolored to read as a clickable hub entry.",
+            zh: "「认知解锁」改名「模块解锁」（更好懂），按钮配色改成可点击的入口样式。",
+          },
+          {
+            en: "Fixes: Revenge now counts self-damage / overheat as 'took damage' (was enemy-only), so it lights up and works. Undying Frenzy / Frenzied Vent light up when the card would push heat over the cap (its own heat counted), not only when already over.",
+            zh: "修复：复仇现在把「自伤 / 过热」也算受伤（之前只算敌人伤害），会正确高亮并生效。不死狂暴 / 狂热宣泄在「打出后会越热力上限」时就高亮（含本牌自己的积热）。",
+          },
+        ],
+      },
+    ],
+  },
+  {
     minor: "0.13",
     title: { en: "New core: Slot-Machine Chip (gambler / two dice)", zh: "新核心：老虎机芯片（赌徒 · 两颗骰子）" },
     span: "2026-06-22",
