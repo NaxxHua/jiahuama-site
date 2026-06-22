@@ -31,6 +31,17 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-22",
     patches: [
       {
+        version: "0.14.1",
+        date: "2026-06-22",
+        title: { en: "Fix: dice lingered after leaving battle", zh: "修复：出战斗后骰子还停在上局" },
+        items: [
+          {
+            en: "The gambler dice stayed showing the last battle's roll in the shop / map / event screens. They now hide when you leave a battle and re-roll only when a new one starts.",
+            zh: "赌怪核心的骰子之前在商店 / 地图 / 事件里还停在上局最后的点数。现在离开战斗就收起，进新战斗才重新掷。",
+          },
+        ],
+      },
+      {
         version: "0.14.0",
         date: "2026-06-22",
         title: { en: "Temp modules redone, core locked per run, fixes", zh: "临时模块重做 + 核心锁定 + 修复" },
