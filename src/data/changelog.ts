@@ -31,6 +31,29 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-22",
     patches: [
       {
+        version: "0.10.2",
+        date: "2026-06-22",
+        title: { en: "Berserk core reworks + feel details", zh: "狂暴核心重做 + 手感细节" },
+        items: [
+          {
+            en: "Berserk core reworks — Vengeance: deal 6, and if you took damage last turn, your NEXT instance of damage gains 100% lifesteal (not Vengeance's own 6). Frenzy Vent: 3 random hits of 4; if over the heat cap, +3 more hits. Undying Rage: deal 10, and for each point over the heat cap, +1 damage AND +2 healing.",
+            zh: "狂暴核心重做——复仇：造成 6 点伤害，若上回合受过伤，你的下一次伤害获得 100% 吸血（不含复仇自身那 6 点）。狂热宣泄：对随机敌人造成 3 次 4 点伤害，热力越上限再 +3 次。不死狂暴：造成 10 点伤害，每点超出上限的热力额外 +1 伤害、+2 回血。",
+          },
+          {
+            en: "Declining an event reward no longer punishes you — event nodes now cost +1 Trace (slip past) instead of +2.",
+            zh: "事件放弃奖励不再被罚：事件节点改为追踪 +1（低调通过），不再 +2。",
+          },
+          {
+            en: "Strengthening a card at a rest stop now pops a Hearthstone-style before/after comparison with the changed number highlighted, so you can see which card was upgraded.",
+            zh: "休整强化随机一张牌后，弹出炉石式「强化前 → 强化后」对比，绿字标出变化的数值，看得清升了哪张。",
+          },
+          {
+            en: "Picking up a card to play now flashes a preview on the heat bar (shell cards) / memory bar (brain cards) showing the change to come.",
+            zh: "把牌拿起来准备打时，热力条（躯壳卡）/ 内存条（大脑卡）闪烁高亮预览即将变化的量。",
+          },
+        ],
+      },
+      {
         version: "0.10.1",
         date: "2026-06-22",
         title: { en: "Card upgrades add damage; Chapter 1 eased", zh: "升级卡片加伤 + 第一章降难" },
