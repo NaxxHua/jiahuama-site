@@ -31,6 +31,17 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-22",
     patches: [
       {
+        version: "0.11.3",
+        date: "2026-06-22",
+        title: { en: "Card text auto-fills the description box", zh: "卡面文字自适应填满" },
+        items: [
+          {
+            en: "Card description text now scales to fill the box: short cards (Strike, Block, etc.) use a big font instead of sitting tiny with empty space, while long cards still shrink to fit (with the actual-rendered-height pass keeping the web build consistent).",
+            zh: "卡面描述文字现在自适应填满：短牌（打击、格挡等）用大字、不再又小又空，长牌仍自动缩到放得下（配合按真实渲染高度的二次收字，网页版一致）。",
+          },
+        ],
+      },
+      {
         version: "0.11.2",
         date: "2026-06-22",
         title: { en: "Fix: core cards now in the card gallery", zh: "修复：核心牌组进图鉴" },
