@@ -31,6 +31,21 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-21",
     patches: [
       {
+        version: "0.8.3",
+        date: "2026-06-21",
+        title: { en: "Company buff → next card + shop delete animation", zh: "阵营增伤改「下一张」+ 删牌动画" },
+        items: [
+          {
+            en: "Company damage buffs (协议同步 / 血清激发 / 火力协调 / 江湖号令) no longer expire at end of turn. You often never drew a matching card that turn, so it now grants \"+30% to the NEXT card of that company\" and persists (across turns, stackable) until you play one — there's an icon under your health bar showing the pending buff.",
+            zh: "阵营增伤（协议同步 / 血清激发 / 火力协调 / 江湖号令）不再回合结束就消失。以前常常那回合抽不到对应的牌就浪费了，现在改成「下一张该公司卡伤害 +30%」，持续到你打出为止（跨回合保留、可叠）——血条下方有 icon 提示当前挂着的加成。",
+          },
+          {
+            en: "Deleting a card in the shop now plays a shrink / fade / float-up animation before returning to the shop, instead of snapping.",
+            zh: "商店删牌时，被删的卡会缩小淡出、上飘，然后再回到买卖界面，不再瞬间跳变。",
+          },
+        ],
+      },
+      {
         version: "0.8.2",
         date: "2026-06-21",
         title: { en: "Web performance + trace tuning + rest rework", zh: "Web 性能 + 追踪调参 + 休整重做" },
