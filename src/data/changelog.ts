@@ -31,6 +31,29 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-21",
     patches: [
       {
+        version: "0.8.2",
+        date: "2026-06-21",
+        title: { en: "Web performance + trace tuning + rest rework", zh: "Web 性能 + 追踪调参 + 休整重做" },
+        items: [
+          {
+            en: "Web performance fix: the game now uses the Compatibility (WebGL2) renderer. It was defaulting to Forward+, which on the web runs the experimental WebGPU path and was laggy on every machine regardless of GPU. This 2D game uses no Forward+ features, so the switch is visually identical but much lighter in the browser.",
+            zh: "Web 性能修复：游戏现在用 Compatibility（WebGL2）渲染器。之前默认 Forward+，在网页上走的是实验性 WebGPU 路径，不管显卡多强都卡。本游戏没用任何 Forward+ 专属特性，所以切过去画面完全一样、但网页端轻很多。",
+          },
+          {
+            en: "Trace thresholds now grow per chapter (boss-available / forced): I.1 18/24, I.2 24/32, I.3 32/40 — later chapters run longer and tenser. Danger level is now measured by how far you are through the chapter, so the pressure curve feels consistent regardless of the thresholds.",
+            zh: "追踪阈值逐章变长（可进 Boss / 强制 Boss）：I.1 18/24、I.2 24/32、I.3 32/40——后面的章更长更紧。危险等级改成按「本章进度」来算，所以不管阈值多少，压力曲线手感一致。",
+          },
+          {
+            en: "Rest reworked: resting now lowers Trace by 1 (lie low and heal), and rest can't appear in back-to-back choices (at least one round apart) so you can't farm heal-plus-trace-suppression.",
+            zh: "休整重做：休整现在让追踪 -1（蛰伏疗伤），而且不会连续出现（至少隔一回合），堵掉「回血 + 压追踪」的刷子。",
+          },
+          {
+            en: "Choice weighting: the two non-normal options are now weighted — elite 40, shop / event / rest 20 each — so elites show up a bit more often.",
+            zh: "三选一加权：两个非小怪选项按权重出现——精英 40，商店 / 事件 / 休整 各 20——精英会更常见一点。",
+          },
+        ],
+      },
+      {
         version: "0.8.1",
         date: "2026-06-21",
         title: { en: "No duplicate trace bar on the choose screen", zh: "选择屏去重追踪条" },
