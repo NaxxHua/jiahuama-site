@@ -31,6 +31,17 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-22",
     patches: [
       {
+        version: "0.9.1",
+        date: "2026-06-22",
+        title: { en: "Fix: run start skipped the tavern", zh: "修复：开局跳过了酒馆" },
+        items: [
+          {
+            en: "0.9.0 dropped you straight into the Shell Loadout screen at run start, skipping the tavern — so NPC dialogue, the card codex and the brain-upgrade screen were unreachable. Run start now returns to the tavern; the loadout (gear up) runs when you hit \"Depart\", and its \"Enter Map ▶\" button takes you into the chapter.",
+            zh: "0.9.0 把开局直接丢进「躯壳改装」备战屏，跳过了酒馆——对话 / 卡牌图鉴 / 升大脑 这些页面进不去了。现在开局回酒馆，点「出发」才进备战（配置躯壳）→「进入地图 ▶」才正式进本章。",
+          },
+        ],
+      },
+      {
         version: "0.9.0",
         date: "2026-06-22",
         title: { en: "Shell loadout goes live + Hearthstone card frames", zh: "躯壳改装系统上线 + 炉石式卡面" },
