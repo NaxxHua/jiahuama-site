@@ -31,6 +31,21 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-22",
     patches: [
       {
+        version: "0.10.4",
+        date: "2026-06-22",
+        title: { en: "Lightning combo nerf + card text no longer covered", zh: "闪电五连鞭削弱 + 卡面文字不再被牌型条挡" },
+        items: [
+          {
+            en: "Lightning 5-Combo base damage 5→2 (5 random hits = 10; combo to 10 hits = 20). Base 5 was too strong — up to 50.",
+            zh: "闪电五连鞭基础伤害 5→2（5 次随机 = 10，凑满 10 次 = 20）。原来 base 5 太强，最高能打 50。",
+          },
+          {
+            en: "The 躯壳/大脑 type tag at the bottom of a card no longer covers the last line of long rules text — moved it down and tucked the text box above it.",
+            zh: "卡牌底部的「躯壳 / 大脑」牌型条不再压住长文字的最后一行——把它下移、描述框收在它上方。",
+          },
+        ],
+      },
+      {
         version: "0.10.3",
         date: "2026-06-22",
         title: { en: "Long-card text fix + Chapter 1 re-tune", zh: "长牌文字修复 + 第一章回调" },
