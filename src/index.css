@@ -10,29 +10,31 @@
 @layer base {
   :root,
   [data-theme="light"] {
-    --bg: #ffffff;
-    --bg-1: #f7f9fc;
-    --bg-2: #eef2f7;
-    --bg-3: #e3e9f1;
-    --panel: #ffffff;
-    --border: #e8edf3;
-    --border-2: #d8e0ea;
-    --border-strong: #c0cad7;
+    /* Theme colors are space-separated RGB channels so Tailwind can inject an
+     * alpha channel (e.g. bg-panel/70). Consume directly via rgb(var(--x)). */
+    --bg: 255 255 255;
+    --bg-1: 247 249 252;
+    --bg-2: 238 242 247;
+    --bg-3: 227 233 241;
+    --panel: 255 255 255;
+    --border: 232 237 243;
+    --border-2: 216 224 234;
+    --border-strong: 192 202 215;
 
-    --fg: #0f1720;
-    --fg-1: #3a4754;
-    --fg-2: #6b7886;
-    --fg-3: #9aa6b3;
+    --fg: 15 23 32;
+    --fg-1: 58 71 84;
+    --fg-2: 107 120 134;
+    --fg-3: 154 166 179;
 
-    --accent: #2f88e0;
-    --accent-2: #1f6fc4;
+    --accent: 47 136 224;
+    --accent-2: 31 111 196;
     --accent-bg: rgba(47, 136, 224, 0.08);
     --accent-border: rgba(47, 136, 224, 0.22);
 
-    --success: #3fa560;
-    --warn: #c98b16;
-    --danger: #d13438;
-    --info: #2c7ad6;
+    --success: 63 165 96;
+    --warn: 201 139 22;
+    --danger: 209 52 56;
+    --info: 44 122 214;
 
     --dots-color: #e3e9f1;
     --hero-glow-1: rgba(47, 136, 224, 0.14);
@@ -43,29 +45,29 @@
   }
 
   [data-theme="dark"] {
-    --bg: #0b0f14;
-    --bg-1: #11161d;
-    --bg-2: #161d26;
-    --bg-3: #1e2730;
-    --panel: #0e131a;
-    --border: #1e2730;
-    --border-2: #2a3540;
-    --border-strong: #3a4756;
+    --bg: 11 15 20;
+    --bg-1: 17 22 29;
+    --bg-2: 22 29 38;
+    --bg-3: 30 39 48;
+    --panel: 14 19 26;
+    --border: 30 39 48;
+    --border-2: 42 53 64;
+    --border-strong: 58 71 86;
 
-    --fg: #e7edf3;
-    --fg-1: #aeb9c5;
-    --fg-2: #7e8a98;
-    --fg-3: #55606e;
+    --fg: 231 237 243;
+    --fg-1: 174 185 197;
+    --fg-2: 126 138 152;
+    --fg-3: 85 96 110;
 
-    --accent: #4aa3ff;
-    --accent-2: #7fc1ff;
+    --accent: 74 163 255;
+    --accent-2: 127 193 255;
     --accent-bg: rgba(74, 163, 255, 0.1);
     --accent-border: rgba(74, 163, 255, 0.26);
 
-    --success: #5ec27a;
-    --warn: #e8b339;
-    --danger: #e5484d;
-    --info: #7bb4ff;
+    --success: 94 194 122;
+    --warn: 232 179 57;
+    --danger: 229 72 77;
+    --info: 123 180 255;
 
     --dots-color: #1e2730;
     --hero-glow-1: rgba(74, 163, 255, 0.2);
@@ -76,12 +78,12 @@
 
 @layer base {
   * {
-    border-color: var(--border);
+    border-color: rgb(var(--border));
   }
   body {
     margin: 0;
-    background: var(--bg);
-    color: var(--fg);
+    background: rgb(var(--bg));
+    color: rgb(var(--fg));
     font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
       "Helvetica Neue", Arial, sans-serif;
     font-size: 15px;
@@ -107,7 +109,7 @@
     left: 12px;
     top: 12px;
     padding: 8px 14px;
-    background: var(--accent);
+    background: rgb(var(--accent));
     color: #fff;
     border-radius: 8px;
   }
@@ -162,17 +164,17 @@
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--border-2);
+  background: rgb(var(--border-2));
   border-radius: 6px;
-  border: 2px solid var(--bg);
+  border: 2px solid rgb(var(--bg));
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--border-strong);
+  background: rgb(var(--border-strong));
 }
 
 ::selection {
   background: var(--accent-bg);
-  color: var(--fg);
+  color: rgb(var(--fg));
 }
 
 /* Entrance animations */
@@ -279,8 +281,8 @@
 .gradient-text-host .split-char {
   background-image: linear-gradient(
     135deg,
-    var(--accent) 0%,
-    var(--accent-2) 55%,
+    rgb(var(--accent)) 0%,
+    rgb(var(--accent-2)) 55%,
     #bfe3ff 100%
   );
   -webkit-background-clip: text;

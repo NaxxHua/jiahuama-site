@@ -13,7 +13,7 @@ interface GradientTextProps {
  */
 export default function GradientText({
   children,
-  gradient = "linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 55%, #bfe3ff 100%)",
+  gradient = "linear-gradient(135deg, rgb(var(--accent)) 0%, rgb(var(--accent-2)) 55%, #bfe3ff 100%)",
   className = "",
 }: GradientTextProps) {
   return (

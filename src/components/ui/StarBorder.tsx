@@ -21,7 +21,7 @@ const StarBorder = <T extends React.ElementType = "button">({
   as,
   className = "",
   innerClassName = "",
-  color = "var(--accent)",
+  color = "rgb(var(--accent))",
   speed = "6s",
   thickness = 1,
   children,

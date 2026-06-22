@@ -36,7 +36,7 @@ export default function StarButton({
       <StarBorder
         as={Link}
         to={to}
-        color="var(--accent)"
+        color="rgb(var(--accent))"
         speed="5s"
         className={className}
         innerClassName={FACE}
@@ -52,7 +52,7 @@ export default function StarButton({
         href={href}
         target="_blank"
         rel="noreferrer noopener"
-        color="var(--accent)"
+        color="rgb(var(--accent))"
         speed="5s"
         className={className}
         innerClassName={FACE}
@@ -67,7 +67,7 @@ export default function StarButton({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      color="var(--accent)"
+      color="rgb(var(--accent))"
       speed="5s"
       className={`${className} ${disabled ? "pointer-events-none opacity-60" : ""}`}
       innerClassName={FACE}
