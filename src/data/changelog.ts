@@ -31,6 +31,25 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-22",
     patches: [
       {
+        version: "0.13.2",
+        date: "2026-06-22",
+        title: { en: "Anti-misclick buffer + core-passive hover + dice tweaks", zh: "防误点 + 核心牌 hover + 骰子牌微调" },
+        items: [
+          {
+            en: "Reward / event / relic screens now ignore clicks for ~0.35s after they pop up, so a rapid click carried over from the previous screen can't mis-select.",
+            zh: "奖励 / 事件 / 圣物等选择屏弹出后约 0.35 秒内吞掉点击——连点上一屏不会顺势误选下一屏。",
+          },
+          {
+            en: "Core cards now hover-show their own core passive (Gambler / Sprint / Berserk) instead of the unrelated street single-die trait.",
+            zh: "核心牌 hover 现在显示所属核心被动（赌怪 / 疾走 / 狂暴），不再错显「街头骰子流」词条。",
+          },
+          {
+            en: "The House (坐庄): on doubles now draws an extra card (shield no longer doubles). Loaded Die (作弊骰): now sets the lower die equal to the higher one — a guaranteed pair, for setting up combos.",
+            zh: "坐庄：对子改为额外抽 1 张牌（护盾不再翻倍）。作弊骰：改为把较低的骰子设成与较高那颗相同——必出对子，专门凑对触发连招。",
+          },
+        ],
+      },
+      {
         version: "0.13.1",
         date: "2026-06-22",
         title: { en: "Gambler core polish: dice roll animation + live numbers", zh: "赌怪核心打磨：掷骰动画 + live 数字" },
