@@ -26,6 +26,36 @@ export interface MinorVersion {
 
 export const changelog: MinorVersion[] = [
   {
+    minor: "0.11",
+    title: { en: "Prismatic temp-module loop", zh: "临时模块（棱彩）系统" },
+    span: "2026-06-22",
+    patches: [
+      {
+        version: "0.11.0",
+        date: "2026-06-22",
+        title: { en: "Temp modules: elite drop → backpack → research", zh: "临时模块：精英掉落 → 背包 → 研究解锁" },
+        items: [
+          {
+            en: "Beating an elite has a 25% chance to drop a temporary (prismatic) module, with a popup; it goes into your 1-slot backpack.",
+            zh: "打败精英有 25% 概率掉一枚临时（棱彩）模块，弹窗提示，收进背包（1 格）。",
+          },
+          {
+            en: "New 'Shell' button on the map (next to 'Deck'): view your current shell / core / modules / temp module / backpack.",
+            zh: "地图底部「查看牌组」旁新增「查看躯壳」：看当前躯壳 / 核心 / 模块 / 临时模块 / 背包。",
+          },
+          {
+            en: "Temp modules can be equipped from the backpack to use in battle — they last 3 battles then self-destruct, and cost no capacity. Or leave one in the backpack and clear the chapter to carry it back and permanently research/unlock it (equippable in future runs). Hover the ? on each slot for details.",
+            zh: "临时模块可从背包装上使用——本局内 3 场战斗后自动摧毁、不占容量；或留在背包、完整通关本章带回研究所永久解锁（之后可正常装备）。每个槽的问号 hover 有说明。",
+          },
+          {
+            en: "Fixed a bug where two damage-reduction modules only worked against weakened enemies.",
+            zh: "修复：两个减伤模块之前只在打「虚弱」敌人时才生效，现在始终生效。",
+          },
+        ],
+      },
+    ],
+  },
+  {
     minor: "0.10",
     title: { en: "Condition glow, card upgrades & economy cleanup", zh: "条件高亮 · 卡牌升级 · 经济清理" },
     span: "2026-06-22",
