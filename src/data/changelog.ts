@@ -31,6 +31,25 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-22",
     patches: [
       {
+        version: "0.11.8",
+        date: "2026-06-22",
+        title: { en: "Module gamble event + display tweaks", zh: "模块赌博事件 + 显示微调" },
+        items: [
+          {
+            en: "New event \"Smuggler's Cyberware Locker\" — the module counterpart to the relic gamble events: pick the lock (a module, or guards wake → elite fight) or force it (guaranteed module, but always an elite fight). The module goes to your pack and follows the same use-this-run / carry-to-research loop as elite drops.",
+            zh: "新事件「走私义体柜」——对应圣物赌博事件的模块版：撬锁（得模块，或惊动守卫进精英战），或强行破拆（必得模块但必进精英战）。模块进背包，走和精英掉落一样的「本局临时用 / 完整本章带回研究所解锁」流程。",
+          },
+          {
+            en: "Enemy multi-hit intent no longer prints the total — just \"5-7×2\"; do the math yourself.",
+            zh: "敌人连击意图不再写「共多少」，只显示「5-7×2」，合计自己算。",
+          },
+          {
+            en: "Lightning Whip (and other random-hit cards) now show per-hit damage as \"total (base+bonus)\" like normal attacks, so you can see how much your build added.",
+            zh: "闪电五连鞭这类随机多段牌的每段伤害也拆「基础+加成」，和普通攻击牌一致显示「4（2+2）」。",
+          },
+        ],
+      },
+      {
         version: "0.11.7",
         date: "2026-06-22",
         title: { en: "Rewards wait for the hit chain to finish", zh: "连击打完、血条见底再弹奖励" },
