@@ -31,6 +31,25 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-22",
     patches: [
       {
+        version: "0.10.3",
+        date: "2026-06-22",
+        title: { en: "Long-card text fix + Chapter 1 re-tune", zh: "长牌文字修复 + 第一章回调" },
+        items: [
+          {
+            en: "Text-heavy cards (Precog Dash, Blackwall Overload, Hard Reset, paralyze cards, etc.) no longer clip their rules text — the auto font-sizing is more conservative now and shows the full text (still zoomable on hover).",
+            zh: "字多的卡牌（预判突进 / 黑墙过载 / 强制重启 / 瘫痪牌 等）不再截断规则文：自适应字号更保守，完整显示（仍可 hover 放大）。",
+          },
+          {
+            en: "Chapter 1 difficulty nudged back up (enemy HP 0.65→0.9, damage 0.72→0.95). The earlier big ease came from an AI simulation that can't pilot the combo deck; real feedback said it was too easy.",
+            zh: "第一章难度回调（敌人血量 0.65→0.9、伤害 0.72→0.95）。之前那次大幅降难是基于「不会玩连段的 AI 模拟」，真人反馈太简单。",
+          },
+          {
+            en: "Removed the now-defunct \"Charge\" step from the tutorial.",
+            zh: "去掉教程里已不存在的「蓄力」一步。",
+          },
+        ],
+      },
+      {
         version: "0.10.2",
         date: "2026-06-22",
         title: { en: "Berserk core reworks + feel details", zh: "狂暴核心重做 + 手感细节" },
