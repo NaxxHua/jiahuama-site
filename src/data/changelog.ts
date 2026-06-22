@@ -31,6 +31,21 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-22",
     patches: [
       {
+        version: "0.11.7",
+        date: "2026-06-22",
+        title: { en: "Rewards wait for the hit chain to finish", zh: "连击打完、血条见底再弹奖励" },
+        items: [
+          {
+            en: "Multi-hit kills (e.g. Lightning Whip's ~10 hits) used to pop the reward screen the instant the enemy's HP hit zero in logic — before the hits finished animating or the enemy visibly died. Now the victory transition waits for the full chain to play out and the HP bars to empty.",
+            zh: "像闪电五连鞭这种多段连击，之前敌人血量一归零就立刻弹奖励——动画还没演完、还没看到敌人死。现在会等连击逐下演完、血条见底、播完击毁特写，再弹奖励。",
+          },
+          {
+            en: "Random multi-target chains now drain each hit enemy's HP bar per hit (previously only same-target chains animated the bar).",
+            zh: "随机打多个敌人的连击，现在每个被打到的敌人血条都跟着每一下掉（之前只有同一目标的连击才逐下扣）。",
+          },
+        ],
+      },
+      {
         version: "0.11.6",
         date: "2026-06-22",
         title: { en: "Card font fixed: stable type line, no ballooning", zh: "卡面字号回归：类型行固定 + 描述不膨胀" },
