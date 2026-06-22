@@ -26,6 +26,36 @@ export interface MinorVersion {
 
 export const changelog: MinorVersion[] = [
   {
+    minor: "0.12",
+    title: { en: "Meta-progression rework (fragments vs uploads)", zh: "局外成长重构（碎片 / 上传体 分轴）" },
+    span: "2026-06-22",
+    patches: [
+      {
+        version: "0.12.0",
+        date: "2026-06-22",
+        title: { en: "Two meta currencies, split by role", zh: "两条局外货币分轴" },
+        items: [
+          {
+            en: "\"Prismatic modules\" are now just called \"temp modules\" everywhere.",
+            zh: "「棱彩模块」统一改叫「临时模块」。",
+          },
+          {
+            en: "Memory cap moved from uploads to fragments: it's now a third upgrade row in the shell-loadout screen (5->10, +1/level, 80 fragments each), beside capacity and heat-cap.",
+            zh: "内存上限从上传体改成花躯壳碎片升——在躯壳改装屏新增「内存上限」升级行（5→10，每级 +1，每级 80 碎片），和容量 / 热力上限并排。",
+          },
+          {
+            en: "The brain screen is now \"Cognition Unlock\": spend brain uploads to permanently unlock cybernetic modules into your pool (6 uploads each). Modules are no longer free at start — unlock them first, then equip in the loadout. (New saves start with 6 uploads = enough for one.)",
+            zh: "「升级大脑」改成「认知解锁」：花大脑上传体永久解锁义体模块进池（6 上传体 / 个）。模块不再开局白给，需先解锁再装。（首存档给 6 上传体 = 够先解 1 个。）",
+          },
+          {
+            en: "Heads-up: this is a meta reset — old memory-cap upgrades convert to fragment levels, and modules now need unlocking.",
+            zh: "提醒：这是一次 meta 调整——旧的内存上限折算成碎片升级等级，模块改为需解锁。",
+          },
+        ],
+      },
+    ],
+  },
+  {
     minor: "0.11",
     title: { en: "Prismatic temp-module loop", zh: "临时模块（棱彩）系统" },
     span: "2026-06-22",
