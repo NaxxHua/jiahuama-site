@@ -26,6 +26,32 @@ export interface MinorVersion {
 
 export const changelog: MinorVersion[] = [
   {
+    minor: "0.17",
+    title: { en: "Guaranteed shops + duplicate-card cleanup", zh: "商店保底 + 删重复卡" },
+    span: "2026-06-23",
+    patches: [
+      {
+        version: "0.17.0",
+        date: "2026-06-23",
+        title: { en: "Shop pity, removed a duplicate card, hand-redraw fixes", zh: "商店保底 + 删重复卡 + 手牌刷新修复" },
+        items: [
+          {
+            en: "Shops are now guaranteed: if no shop has shown up in your room choices for 3 picks, the next one forces a shop in (Hades-style). No more going a whole run without a shop.",
+            zh: "商店保底：连续 3 次房间三选一没出商店，下一次强制塞一个进选项（参考 Hades）。不会再整局碰不到商店了。",
+          },
+          {
+            en: "Removed the 处决程序 card — it was the same company and same two-hit shape as 制式齐射, too repetitive.",
+            zh: "删掉「处决程序」卡——和「制式齐射」同公司、同为两段攻击，太重复。",
+          },
+          {
+            en: "Fixed: cards with the Echo modify no longer get stuck on the enemy after being played, and the red overheat warning border now clears when a potion lowers your heat.",
+            zh: "修复：带「回响」改造的牌打出后不再粘在敌人身上；用道具把热力降到过热线以下后，卡牌上的红色过热框也会及时消失。",
+          },
+        ],
+      },
+    ],
+  },
+  {
     minor: "0.16",
     title: { en: "Big balance pass: anti-stacking + Pflege nerf", zh: "平衡大改：词条乘法叠加 + 辉格削弱" },
     span: "2026-06-23",
