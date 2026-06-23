@@ -31,6 +31,17 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-22",
     patches: [
       {
+        version: "0.14.2",
+        date: "2026-06-22",
+        title: { en: "Fix: unlocked temp modules no longer drop again", zh: "修复：已解锁的临时模块不再重复掉落" },
+        items: [
+          {
+            en: "Once a module is permanently unlocked (e.g. the capacitor equipped in your hands), it kept showing up in temp-module drops. Drops now only give modules you haven't unlocked and aren't already holding; if everything's unlocked, none drop.",
+            zh: "已经永久解锁的模块（比如「电容超充」装在手部）之前还会在临时模块掉落里重复出现。现在掉落只给你还没解锁、且当前没拿着的模块；全解锁完则不再掉。",
+          },
+        ],
+      },
+      {
         version: "0.14.1",
         date: "2026-06-22",
         title: { en: "Fix: dice lingered after leaving battle", zh: "修复：出战斗后骰子还停在上局" },

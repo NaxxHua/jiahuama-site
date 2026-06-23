@@ -7,11 +7,12 @@ import { trackEvent } from "@/lib/analytics";
 // ── 配置（你来改）──────────────────────────────────────────────
 // 暗号：发给测试的朋友。注意这是“软门”——挡住路人即可，会看源码的人能绕过。
 const ACCESS_CODE = "vat2026"; // ← 改成你想要的暗号
-// 游戏托管地址（Cloudflare R2 公开 URL）。换桶/重传后若 URL 变了，改这里。
-const GAME_URL_BASE = "https://pub-42f10204df9f47f59f17c37688c361f8.r2.dev/index.html";
+// 游戏托管地址（Cloudflare R2 自定义域名 game.jiahuama.com）。
+// 用自定义域名而非 pub-*.r2.dev：后者是 R2 共享测试域名，被钓鱼活动滥用后遭杀软整段拉黑（URL/FakeCaptcha 误报）。
+const GAME_URL_BASE = "https://game.jiahuama.com/index.html";
 // 缓存破坏：每次发新版游戏后把这个版本号同步成游戏 project.godot 的版本（发版 checklist 一步）。
 // iframe src 带上 ?v=… → 改版后浏览器一定重新拉 index.html，配合 R2 的 no-cache，pck/wasm 也跟着刷，朋友普通刷新即玩最新版。
-const GAME_VERSION = "0.14.1";
+const GAME_VERSION = "0.14.2";
 const GAME_URL = `${GAME_URL_BASE}?v=${GAME_VERSION}`;
 const STORAGE_KEY = "biav-demo-unlocked";
 // ──────────────────────────────────────────────────────────────
