@@ -31,6 +31,21 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-23",
     patches: [
       {
+        version: "0.15.1",
+        date: "2026-06-23",
+        title: { en: "Fix: card modify was repeatable; clean old high relics", zh: "修复：改造可重复 + 清理老存档高级圣物" },
+        items: [
+          {
+            en: "A card could be modified twice across a save/load: the 'already modified' marker wasn't being saved, so it reset on reload. Fixed. (Rest upgrades and modify keywords can still both apply to one card — one each — by design; only double-modify is blocked.)",
+            zh: "同一张牌过去能在读档后被改造第二次：「已改造」标记没存进存档、读档后丢失。已修。（休整强化和改造关键词仍可共存于同一张牌、各一次，这是设计；只是不能重复改造。）",
+          },
+          {
+            en: "Old saves that piled up epic/legendary relics under the previous system are cleaned up once on load (common+rare kept), so high relics now consistently come only from beating bosses.",
+            zh: "旧系统在老存档里攒下的史诗/传说圣物，读档时一次性清理（普通/稀有保留），高级圣物统一只从打 Boss 获得。",
+          },
+        ],
+      },
+      {
         version: "0.15.0",
         date: "2026-06-23",
         title: { en: "Epic/legendary relics unlock by beating bosses; draw cut", zh: "史诗/传说圣物靠打 Boss 解锁；减少抽牌" },
