@@ -31,6 +31,17 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-22",
     patches: [
       {
+        version: "0.14.3",
+        date: "2026-06-22",
+        title: { en: "Fix: difficulty now sees the gambler's dice damage", zh: "修复：动态难度现在认得赌怪的骰子伤害" },
+        items: [
+          {
+            en: "Enemy scaling estimates your deck's per-turn damage, but it ignored the gambler core's dice cards (their damage comes from the dice roll, not a fixed number), so gambler runs faced under-scaled, too-easy enemies. Dice damage is now counted, so enemies scale fairly for the gambler.",
+            zh: "敌人强度会按你牌组每回合输出来缩放，但之前漏算了赌怪核心的骰子牌（伤害来自掷骰、不是固定数），导致赌怪整局打的敌人偏弱、白送难度。现在骰子伤害计入估算，赌怪的敌人正常缩放。",
+          },
+        ],
+      },
+      {
         version: "0.14.2",
         date: "2026-06-22",
         title: { en: "Fix: unlocked temp modules no longer drop again", zh: "修复：已解锁的临时模块不再重复掉落" },
