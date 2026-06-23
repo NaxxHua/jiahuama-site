@@ -26,6 +26,32 @@ export interface MinorVersion {
 
 export const changelog: MinorVersion[] = [
   {
+    minor: "0.15",
+    title: { en: "Boss-gated high relics + less draw", zh: "高级圣物打 Boss 解锁 + 减少抽牌" },
+    span: "2026-06-23",
+    patches: [
+      {
+        version: "0.15.0",
+        date: "2026-06-23",
+        title: { en: "Epic/legendary relics unlock by beating bosses; draw cut", zh: "史诗/传说圣物靠打 Boss 解锁；减少抽牌" },
+        items: [
+          {
+            en: "High-tier relics are no longer handed out freely. The pool starts with all common + rare relics; each chapter boss you beat permanently unlocks one random epic/legendary relic into the pool (with a popup naming it). So your relic collection grows run over run by clearing bosses.",
+            zh: "高级圣物不再随便给。圣物池起始只含全部普通+稀有；你每击败一个章节 Boss，就永久解锁 1 件随机的史诗/传说圣物进池（有弹窗写明）。圣物收藏随通关 Boss 一局局变多。",
+          },
+          {
+            en: "Relic drop odds are now split by rarity tier, so a single unlocked legendary actually shows up instead of being drowned out by the big common+rare pool — and the displayed drop percentages now match reality.",
+            zh: "圣物掉率改为按稀有度整层均分，单件已解锁的传说能真正出现、不被一堆普通/稀有淹没；显示的掉率百分比也和实际一致了。",
+          },
+          {
+            en: "Less card draw to stop hands overflowing in a single turn: the basic 'Insight' card draws 1 instead of 2.",
+            zh: "减少抽牌、治单回合爆牌：基础牌「洞察」抽 2 改抽 1。",
+          },
+        ],
+      },
+    ],
+  },
+  {
     minor: "0.14",
     title: { en: "Temp-module rework + core lock", zh: "临时模块重做 + 核心锁定" },
     span: "2026-06-22",
