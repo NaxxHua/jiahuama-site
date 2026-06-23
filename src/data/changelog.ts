@@ -31,6 +31,17 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-23",
     patches: [
       {
+        version: "0.16.1",
+        date: "2026-06-23",
+        title: { en: "Removed the dead memory-upgrade track", zh: "删掉没用的内存升级轴" },
+        items: [
+          {
+            en: "The fragment-bought memory-cap upgrade barely did anything (maxing it added ~1% clear rate), so it's gone. Memory cap will instead come from your build (e.g. a future hacker core). Fragments you'd spent on it are fully refunded.",
+            zh: "花碎片升内存上限那条几乎没用（升满才 +1% 通关率），删了。内存上限以后改由构筑提供（比如以后的黑客流核心）。之前投进去的碎片全额退还。",
+          },
+        ],
+      },
+      {
         version: "0.16.0",
         date: "2026-06-23",
         title: { en: "Multiplicative trait stacking, Pflege nerf, sprint buff", zh: "词条乘法叠加 + 辉格削弱 + 疾走补强" },
