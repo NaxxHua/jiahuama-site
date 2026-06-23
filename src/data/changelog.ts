@@ -31,6 +31,17 @@ export const changelog: MinorVersion[] = [
     span: "2026-06-22",
     patches: [
       {
+        version: "0.14.4",
+        date: "2026-06-22",
+        title: { en: "Fix: chapter-3 hub depart button was off-screen", zh: "修复：第3章酒馆「出发」按钮被挤出屏外" },
+        items: [
+          {
+            en: "By chapter 3 the hub has 9 buttons (3 NPCs + 6 fixed); the old fixed layout overflowed the viewport and pushed the bottom 出发 (depart) button off-screen, so you couldn't enter the next chapter — the run got stuck. The button list now shrinks and re-centers to keep every button, including depart, on screen.",
+            zh: "第 3 章酒馆有 9 个按钮（3 个 NPC + 6 个固定），旧排版超出屏幕、把最底下的「出发」挤到屏外，导致进不了下一章、卡死。现在按钮列表会自动压缩并重新居中，保证包括「出发」在内的所有按钮都在屏内。",
+          },
+        ],
+      },
+      {
         version: "0.14.3",
         date: "2026-06-22",
         title: { en: "Fix: difficulty now sees the gambler's dice damage", zh: "修复：动态难度现在认得赌怪的骰子伤害" },
