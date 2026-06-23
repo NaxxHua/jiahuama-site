@@ -26,6 +26,32 @@ export interface MinorVersion {
 
 export const changelog: MinorVersion[] = [
   {
+    minor: "0.16",
+    title: { en: "Big balance pass: anti-stacking + Pflege nerf", zh: "平衡大改：词条乘法叠加 + 辉格削弱" },
+    span: "2026-06-23",
+    patches: [
+      {
+        version: "0.16.0",
+        date: "2026-06-23",
+        title: { en: "Multiplicative trait stacking, Pflege nerf, sprint buff", zh: "词条乘法叠加 + 辉格削弱 + 疾走补强" },
+        items: [
+          {
+            en: "Same-stat percentage traits (lifesteal, crit, multistrike, heal-to-damage) now stack with diminishing returns instead of adding up, so they can never pass 100%. Three lifesteal traits used to reach 118% — healing more than you dealt, basically unkillable. Fixed.",
+            zh: "同类百分比词条（吸血、暴击、连击、回血转伤）改为边际递减叠加、不再线性相加，永不超过 100%。之前三条吸血能叠到 118%（回血比伤害还多 = 无敌），已根治。",
+          },
+          {
+            en: "Pflege (辉格) healing traits cut about 35% — its sustain was so strong it made you invincible and out-classed every other company. Enemies also scale up harder against strong decks.",
+            zh: "辉格制药的续航词条整体砍约 35%——它的吸血/回血太强，基本无敌、碾过其它公司。同时强构筑面对的敌人会更硬。",
+          },
+          {
+            en: "Sprint core was the weakest by far (heat-starved). Its core cards now cost less heat and 超频充能 vents heat, so it can actually chain its combos.",
+            zh: "疾走芯片之前最弱（热力卡死）。核心牌降热费、超频充能新增散热，现在能真正打出连段。",
+          },
+        ],
+      },
+    ],
+  },
+  {
     minor: "0.15",
     title: { en: "Boss-gated high relics + less draw", zh: "高级圣物打 Boss 解锁 + 减少抽牌" },
     span: "2026-06-23",
