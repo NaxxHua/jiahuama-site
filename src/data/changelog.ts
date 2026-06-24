@@ -26,6 +26,36 @@ export interface MinorVersion {
 
 export const changelog: MinorVersion[] = [
   {
+    minor: "0.18",
+    title: { en: "Full English / Chinese localization", zh: "全游戏中英双语" },
+    span: "2026-06-23",
+    patches: [
+      {
+        version: "0.18.0",
+        date: "2026-06-23",
+        title: { en: "The whole game is now bilingual", zh: "全游戏中英双语 i18n" },
+        items: [
+          {
+            en: "Language toggle (中 / EN) at the top-right of the title screen; your choice is saved between sessions.",
+            zh: "标题屏右上「中 / EN」一键切换语言，选择跨会话保留。",
+          },
+          {
+            en: "Everything is translated: card names and rules text (Hearthstone-style), relics, traits, consumables, the keyword glossary, and every menu — title, bar, map, shop, insurance, upgrade, loadout, codex, quick rules and the battle HUD.",
+            zh: "全部文案英文化：卡牌名 + 规则文（炉石式）、圣物、词条、消耗品、关键词 glossary，以及所有界面——标题 / 酒馆 / 地图 / 商店 / 大保险 / 升级 / 躯壳改装 / 图鉴 / 规则速览 / 战斗 HUD。",
+          },
+          {
+            en: "Enemy, boss and move names, chapter titles, all in-run events and the full story (prologue, boss scenes, archive logs, chapter endings) are localized too.",
+            zh: "敌人 / Boss / 招式名、章节名、全部局内事件，以及完整剧情（序章 / Boss 战 / 黑箱日志 / 章节收束）都已本地化。",
+          },
+          {
+            en: "Fixed English card-text spacing (\"Deal 6 damage.\" instead of \"Deal6damage\") and the dev-menu layout.",
+            zh: "修复英文卡面排版（「Deal 6 damage.」不再是「Deal6damage」）与测试台布局。",
+          },
+        ],
+      },
+    ],
+  },
+  {
     minor: "0.17",
     title: { en: "Guaranteed shops + duplicate-card cleanup", zh: "商店保底 + 删重复卡" },
     span: "2026-06-23",
