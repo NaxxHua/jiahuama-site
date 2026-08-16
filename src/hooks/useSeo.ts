@@ -38,6 +38,12 @@ export function useSeo() {
 
     document.title = seo.title;
     setMeta('meta[name="description"]', "name", "description", seo.description);
+    setMeta(
+      'meta[name="robots"]',
+      "name",
+      "robots",
+      seo.indexable === false ? "noindex, nofollow, noarchive" : "index, follow"
+    );
     setLink("canonical", url);
 
     setMeta('meta[property="og:title"]', "property", "og:title", seo.title);

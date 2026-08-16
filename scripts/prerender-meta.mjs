@@ -66,6 +66,11 @@ function buildHtml(base, route) {
   let html = base;
   html = setTitle(html, route.title);
   html = setMetaName(html, "description", route.description);
+  html = setMetaName(
+    html,
+    "robots",
+    route.indexable === false ? "noindex, nofollow, noarchive" : "index, follow"
+  );
   html = setCanonical(html, url);
   html = setMetaProp(html, "og:title", route.title);
   html = setMetaProp(html, "og:description", route.description);
@@ -93,7 +98,7 @@ async function run() {
     await writeFile(file, html, "utf8");
   }
 
-  const urls = ROUTES.map(
+  const urls = ROUTES.filter((r) => r.indexable !== false).map(
     (r) =>
       `  <url><loc>${SITE.origin}${r.path === "/" ? "/" : r.path}</loc></url>`
   ).join("\n");

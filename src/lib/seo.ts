@@ -42,6 +42,8 @@ export interface RouteSeo {
   ogImage: string;
   /** JSON-LD objects to embed in <head> (prerender only). */
   jsonLd: Record<string, unknown>[];
+  /** Exclude private or utility routes from indexing and the sitemap. */
+  indexable?: boolean;
 }
 
 const PERSON: Record<string, unknown> = {
@@ -174,6 +176,14 @@ const STATIC_ROUTES: RouteSeo[] = [
       "Sign the guestbook. Leave a note in English or Chinese and it's shown in the reader's language.",
     ogImage: SITE.defaultOgImage,
     jsonLd: [],
+  },
+  {
+    path: "/yuyuan-jobs",
+    title: "Calgary ECE Jobs — Private Board",
+    description: "Private Calgary early childhood education job board.",
+    ogImage: SITE.defaultOgImage,
+    jsonLd: [],
+    indexable: false,
   },
   {
     path: "/blog",

@@ -16,6 +16,7 @@ const GamePage = lazy(() => import("@/pages/GamePage"));
 const DashboardPage = lazy(() => import("@/pages/DashboardPage"));
 const BlogPage = lazy(() => import("@/pages/BlogPage"));
 const BlogPostPage = lazy(() => import("@/pages/BlogPostPage"));
+const CalgaryEceJobsPage = lazy(() => import("@/pages/CalgaryEceJobsPage"));
 const NotFoundPage = lazy(() => import("@/pages/NotFoundPage"));
 
 interface ViewTransitionLike {
@@ -70,6 +71,7 @@ function AnimatedRoutes() {
         <Route path="blog/:slug" element={<BlogPostPage />} />
         <Route path="game" element={<GamePage />} />
         <Route path="dashboard" element={<DashboardPage />} />
+        <Route path="yuyuan-jobs" element={<CalgaryEceJobsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
