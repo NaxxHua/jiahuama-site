@@ -234,6 +234,10 @@ export const recipes: Recipe[] = [
         amount: "2 pcs each",
       },
       {
+        name: { en: "Onion, cut into chunks", zh: "洋葱，切块" },
+        amount: "1 pc",
+      },
+      {
         name: { en: "Ginger and garlic", zh: "生姜、大蒜" },
         amount: "",
       },
@@ -300,8 +304,8 @@ export const recipes: Recipe[] = [
       {
         title: { en: "Fry Until the Oil Runs Clear", zh: "炒至油清澈透亮" },
         desc: {
-          en: "Keep stir-frying until the oil turns clear and glossy, then add 1.5 tablespoons of ground Sichuan pepper.",
-          zh: "继续炒干，直到油变得清澈透亮，加入一勺半花椒粉。",
+          en: "Add the onion chunks and stir-fry, then keep frying until the oil turns clear and glossy. Add 1.5 tablespoons of ground Sichuan pepper.",
+          zh: "加入洋葱块翻炒，继续炒干，直到油变得清澈透亮，加入一勺半花椒粉。",
         },
       },
       {
