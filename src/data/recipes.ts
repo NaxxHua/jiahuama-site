@@ -194,6 +194,183 @@ export const recipes: Recipe[] = [
     ],
   },
   {
+    id: "dapanji-traditional",
+    category: "dish",
+    title: {
+      en: "Dapanji (Traditional)",
+      zh: "大盘鸡（传统）",
+    },
+    subtitle: {
+      en: "The traditional Xinjiang method",
+      zh: "新疆传统做法",
+    },
+    description: {
+      en: "The traditional method: caramelized sugar, dry-fried chicken, and a classic spice blend simmered in water.",
+      zh: "传统做法：炒糖色、干煸鸡肉，经典香料配方，清水慢炖。",
+    },
+    image: "/big_plate_chicken.webp",
+    accent: "#b5411a",
+    ingredients: [
+      {
+        name: {
+          en: "Three-yellow chicken, cut into pieces",
+          zh: "三黄鸡，切块",
+        },
+        amount: "1/2 pc",
+      },
+      {
+        name: { en: "Potatoes, peeled and cut into chunks", zh: "土豆，削皮切块" },
+        amount: "2 pcs",
+      },
+      {
+        name: { en: "Large scallions (Chinese leeks)", zh: "大葱" },
+        amount: "4 stalks",
+      },
+      {
+        name: {
+          en: "Green and red peppers, cut into chunks",
+          zh: "青椒、红椒，切块",
+        },
+        amount: "2 pcs each",
+      },
+      {
+        name: { en: "Ginger and garlic", zh: "生姜、大蒜" },
+        amount: "",
+      },
+      {
+        name: { en: "Dried chili peppers", zh: "干辣椒" },
+        amount: "",
+      },
+      {
+        name: { en: "Ground Sichuan pepper", zh: "花椒粉" },
+        amount: "1.5 tbsp",
+      },
+      {
+        name: { en: "Bay leaves", zh: "香叶" },
+        amount: "2 pcs",
+      },
+      {
+        name: { en: "Star anise", zh: "八角" },
+        amount: "1 pc",
+      },
+      {
+        name: { en: "Bai zhi (Angelica dahurica root)", zh: "白芷" },
+        amount: "1 slice",
+      },
+      {
+        name: { en: "Cassia bark (cinnamon)", zh: "桂皮" },
+        amount: "5 cm",
+      },
+      {
+        name: { en: "Cao guo (black cardamom), seeds removed", zh: "草果（去籽）" },
+        amount: "1 pc",
+      },
+      {
+        name: { en: "Dried red Sichuan peppercorns", zh: "干红花椒" },
+        amount: "30 pcs",
+      },
+      {
+        name: { en: "Salt", zh: "盐" },
+        amount: "15 g",
+      },
+      {
+        name: { en: "Chicken bouillon powder", zh: "鸡精" },
+        amount: "1/2 tbsp",
+      },
+      {
+        name: { en: "MSG", zh: "味精" },
+        amount: "1/2 tbsp",
+      },
+    ],
+    steps: [
+      {
+        title: { en: "Caramelize the Sugar", zh: "炒糖色" },
+        desc: {
+          en: "Caramelize sugar in a generous amount of oil — use a bit more oil than usual.",
+          zh: "炒糖色，油要多放一点。",
+        },
+      },
+      {
+        title: { en: "Dry-Fry the Chicken", zh: "炒干鸡肉" },
+        desc: {
+          en: "Add the chicken pieces and stir-fry to drive off the moisture, then add scallion, ginger, garlic, and dried chili peppers.",
+          zh: "加入鸡肉翻炒，炒干水分，然后加入葱姜蒜和干辣椒。",
+        },
+      },
+      {
+        title: { en: "Fry Until the Oil Runs Clear", zh: "炒至油清澈透亮" },
+        desc: {
+          en: "Keep stir-frying until the oil turns clear and glossy, then add 1.5 tablespoons of ground Sichuan pepper.",
+          zh: "继续炒干，直到油变得清澈透亮，加入一勺半花椒粉。",
+        },
+      },
+      {
+        title: { en: "Add the Spices", zh: "加入香料" },
+        desc: {
+          en: "Add the bay leaves, star anise, bai zhi, cassia bark, cao guo, and Sichuan peppercorns. Stir-fry for just 10 seconds.",
+          zh: "加入香叶、八角、白芷、桂皮、草果和花椒，炒10秒。",
+        },
+      },
+      {
+        title: { en: "Braise the Chicken", zh: "炖鸡肉" },
+        desc: {
+          en: "Pour in boiling water, cover the pot, and simmer for 15 minutes until the chicken is cooked through.",
+          zh: "加入开水，盖上锅盖，炖15分钟，把鸡肉炖熟。",
+        },
+      },
+      {
+        title: { en: "Add the Potatoes", zh: "加入土豆" },
+        desc: {
+          en: "Add the potatoes (kept soaking in water until now), cover, and simmer for another 15 minutes.",
+          zh: "加入泡在水里的土豆，盖上锅盖，再炖15分钟。",
+        },
+      },
+      {
+        title: { en: "Remove the Spices", zh: "挑出香料" },
+        desc: {
+          en: "Pick out the whole spices and discard them.",
+          zh: "把香料挑出来丢弃。",
+        },
+      },
+      {
+        title: { en: "Season", zh: "调味" },
+        desc: {
+          en: "Add 15g of salt, half a tablespoon of chicken bouillon powder, and half a tablespoon of MSG.",
+          zh: "加入15克盐、半勺鸡精和半勺味精。",
+        },
+      },
+      {
+        title: { en: "Finish and Serve", zh: "完成出锅" },
+        desc: {
+          en: "Add the green and red peppers, 3 scallions, and 2 heads of smashed garlic. Give everything a quick stir and serve.",
+          zh: "加入青红椒、3根大葱和2头拍碎的大蒜，搅拌一下即可出锅。",
+        },
+      },
+    ],
+    story: {
+      en: "This is the traditional way of making Dapanji: no beer, no sauce mix — just caramelized sugar, chicken dry-fried until the oil runs clear, a classic spice blend, and a slow simmer in water. The flavor is cleaner and more direct, letting the chicken and the spices speak for themselves.",
+      zh: "这是大盘鸡的传统做法：不用啤酒，不调酱汁——只靠炒糖色、把鸡肉炒干到油清澈透亮、经典的香料配方和清水慢炖。味道更干净直接，让鸡肉和香料的本味说话。",
+    },
+    tips: [
+      {
+        en: "Soak the cut potatoes in water so they don't oxidize and stay firm during braising.",
+        zh: "切好的土豆泡在水里，防止氧化，炖的时候也不容易散。",
+      },
+      {
+        en: "Remove the seeds from the cao guo, or it will taste bitter and medicinal.",
+        zh: "草果一定要去籽，否则会有苦味和药味。",
+      },
+      {
+        en: "Dry-frying until the oil runs clear is the key step — it concentrates the chicken's flavor.",
+        zh: "炒到油清澈透亮是关键一步，这样鸡肉的香味才足。",
+      },
+      {
+        en: "The whole spices only need 10 seconds in the oil; any longer and they turn bitter.",
+        zh: "香料下锅只炒10秒就够了，炒久了会发苦。",
+      },
+    ],
+  },
+  {
     id: "mooncake",
     category: "dish",
     title: {
