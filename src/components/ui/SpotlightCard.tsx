@@ -1,41 +1,37 @@
-/**
- * SpotlightCard — radial-gradient highlight that tracks the cursor inside
- * the card. Ported from React Bits (MIT). The host card owns its own
- * background/border/padding; compose this via `className`.
- */
-import React, { useRef } from "react";
+import type { CSSProperties, PointerEvent, PropsWithChildren } from "react";
 import "./SpotlightCard.css";
 
-interface SpotlightCardProps extends React.PropsWithChildren {
+interface SpotlightCardProps extends PropsWithChildren {
   className?: string;
   spotlightColor?: `rgba(${number}, ${number}, ${number}, ${number})`;
 }
 
-const SpotlightCard: React.FC<SpotlightCardProps> = ({
+const trackingMedia = typeof window === "undefined" ? null : window.matchMedia(
+  "(any-hover: hover) and (any-pointer: fine) and (prefers-reduced-motion: no-preference)",
+);
+
+function updateSpotlight(event: PointerEvent<HTMLDivElement>) {
+  const card = event.currentTarget;
+  // Inside BorderGlow, the surface inherits coordinates from its steady outer box.
+  if (event.pointerType === "touch" || !trackingMedia?.matches) return;
+  if (card.closest(".border-glow-surface")) return;
+  const rect = card.getBoundingClientRect();
+  card.style.setProperty("--mouse-x", `${event.clientX - rect.left}px`);
+  card.style.setProperty("--mouse-y", `${event.clientY - rect.top}px`);
+}
+
+export default function SpotlightCard({
   children,
   className = "",
   spotlightColor = "rgba(74, 163, 255, 0.15)",
-}) => {
-  const divRef = useRef<HTMLDivElement>(null);
-
-  const handleMouseMove: React.MouseEventHandler<HTMLDivElement> = (e) => {
-    const el = divRef.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    el.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
-    el.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
-    el.style.setProperty("--spotlight-color", spotlightColor);
-  };
-
+}: SpotlightCardProps) {
   return (
     <div
-      ref={divRef}
-      onMouseMove={handleMouseMove}
+      onPointerMove={updateSpotlight}
       className={`card-spotlight ${className}`}
+      style={{ "--spotlight-color": spotlightColor } as CSSProperties}
     >
       {children}
     </div>
   );
-};
-
-export default SpotlightCard;
+}

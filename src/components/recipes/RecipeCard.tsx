@@ -4,6 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import TiltedCard from "@/components/ui/TiltedCard";
 import { useLang, useTx } from "@/i18n/LanguageContext";
 import type { Recipe } from "@/data/recipes";
+import "./recipePhotoTransition.css";
 
 /**
  * Glassmorphism + neon recipe card. The recipe's `accent` colour drives a
@@ -24,7 +25,7 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
         style={{ "--rc": recipe.accent } as CSSProperties}
         className="group block overflow-hidden rounded-xl border border-border bg-panel/70 backdrop-blur-md transition-[box-shadow,border-color] duration-300 hover:border-[color:var(--rc)] hover:shadow-[0_10px_50px_-10px_var(--rc)]"
       >
-        <div className="relative aspect-[4/3] overflow-hidden">
+        <div id={`recipe-photo-${recipe.id}`} className="relative aspect-[4/3] overflow-hidden">
           <img
             src={recipe.image}
             alt={tx(recipe.title)}

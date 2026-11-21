@@ -1,29 +1,32 @@
-/* BorderGlow — cursor-angle-aware halo around a card. A conic-gradient
- * anchored to `--cursor-angle` lights up the slice of the perimeter facing
- * the cursor. Ported/adapted from React Bits (MIT). */
-
-.border-glow {
-  --cursor-angle: 90deg;
+.border-glow,
+.border-glow-surface {
   position: relative;
-  isolation: isolate;
   display: grid;
+  min-width: 0;
 }
 
-.border-glow::before,
-.border-glow::after {
+.border-glow-surface {
+  isolation: isolate;
+  transform-origin: center;
+  transition: transform 480ms cubic-bezier(.18, 1.48, .4, 1);
+}
+
+/* Keep the halo and the spotlight on the same moving plane. */
+.border-glow-surface::before,
+.border-glow-surface::after {
   content: "";
   position: absolute;
+  z-index: -1;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.35s ease;
-  z-index: -1;
+  transition: opacity 350ms ease;
 }
 
-.border-glow::before {
+.border-glow-surface::before {
   inset: -2px;
   border-radius: calc(var(--radius) + 2px);
   background: conic-gradient(
-    from var(--cursor-angle),
+    from var(--cursor-angle, 90deg),
     rgba(74, 163, 255, 0.95) 0%,
     rgba(74, 163, 255, 0.35) 12%,
     transparent 26%,
@@ -33,11 +36,11 @@
   );
 }
 
-.border-glow::after {
+.border-glow-surface::after {
   inset: -20px;
   border-radius: 30px;
   background: conic-gradient(
-    from var(--cursor-angle),
+    from var(--cursor-angle, 90deg),
     rgba(74, 163, 255, 0.5) 0%,
     rgba(74, 163, 255, 0.2) 12%,
     transparent 28%,
@@ -46,17 +49,36 @@
     rgba(74, 163, 255, 0.5) 100%
   );
   filter: blur(18px);
-  transition: opacity 0.45s ease;
+  transition-duration: 450ms;
 }
 
-.border-glow:hover::before,
-.border-glow:hover::after {
+.border-glow:has(:focus-visible) .border-glow-surface {
+  outline: 2px solid rgb(var(--accent));
+  outline-offset: 3px;
+  border-radius: var(--radius);
+}
+
+.border-glow:has(:focus-visible) .border-glow-surface::before,
+.border-glow:has(:focus-visible) .border-glow-surface::after {
   opacity: 1;
 }
 
+@media (any-hover: hover) and (any-pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .border-glow[data-tracking] .border-glow-surface {
+    transform: perspective(1100px) translateY(-1px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+    transition: transform 120ms ease-out;
+  }
+
+  .border-glow[data-tracking] .border-glow-surface::before,
+  .border-glow[data-tracking] .border-glow-surface::after {
+    opacity: 1;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .border-glow::before,
-  .border-glow::after {
+  .border-glow-surface,
+  .border-glow-surface::before,
+  .border-glow-surface::after {
     transition: none;
   }
 }

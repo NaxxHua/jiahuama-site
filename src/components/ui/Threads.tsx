@@ -3,7 +3,8 @@
  * Ported from React Bits (MIT) — https://reactbits.dev/backgrounds/threads
  */
 import React, { useEffect, useRef } from "react";
-import { Renderer, Program, Mesh, Triangle, Color } from "ogl";
+import { Renderer, Program, Mesh, Triangle } from "ogl";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 import "./Threads.css";
 
@@ -11,7 +12,7 @@ interface ThreadsProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "color
   color?: [number, number, number];
   amplitude?: number;
   distance?: number;
-  enableMouseInteraction?: boolean;
+  interactionTarget?: React.RefObject<HTMLElement>;
 }
 
 const vertexShader = `
@@ -33,8 +34,8 @@ uniform vec3 uColor;
 uniform float uAmplitude;
 uniform float uDistance;
 uniform vec2 uMouse;
+uniform float uPointerInfluence;
 
-#define PI 3.1415926538
 
 const int u_line_count = 40;
 const float u_line_width = 7.0;
@@ -65,7 +66,7 @@ float pixel(float count, vec2 resolution) {
     return (1.0 / max(resolution.x, resolution.y)) * count;
 }
 
-float lineFn(vec2 st, float width, float perc, float offset, vec2 mouse, float time, float amplitude, float distance) {
+float lineFn(vec2 st, float width, float perc, vec2 mouse, float time, float amplitude, float distance) {
     float split_offset = (perc * 0.4);
     float split_point = 0.1 + split_offset;
 
@@ -85,17 +86,15 @@ float lineFn(vec2 st, float width, float perc, float offset, vec2 mouse, float t
 
     float y = 0.5 + (perc - 0.5) * distance + xnoise / 2.0 * finalAmplitude;
 
-    float line_start = smoothstep(
-        y + (width / 2.0) + (u_line_blur * pixel(1.0, iResolution.xy) * blur),
-        y,
-        st.y
-    );
+    float dx = st.x - mouse.x;
+    float reach = exp(-dx * dx * 22.0);
+    float lift = clamp((mouse.y - y) * 0.72, -0.26, 0.26);
+    float ripple = 0.028 * cos(dx * 24.0 - time * 2.7 + perc * 2.2);
+    y += uPointerInfluence * reach * (lift + ripple);
 
-    float line_end = smoothstep(
-        y,
-        y - (width / 2.0) - (u_line_blur * pixel(1.0, iResolution.xy) * blur),
-        st.y
-    );
+    float feather = width / 2.0 + u_line_blur * pixel(1.0, iResolution.xy) * blur;
+    float line_start = 1.0 - smoothstep(y, y + feather, st.y);
+    float line_end = 1.0 - smoothstep(y - feather, y, st.y);
 
     return clamp(
         (line_start - line_end) * (1.0 - smoothstep(0.0, 1.0, pow(perc, 0.3))),
@@ -114,7 +113,6 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
             uv,
             u_line_width * pixel(1.0, iResolution.xy) * (1.0 - p),
             p,
-            (PI * 1.0) * p,
             uMouse,
             iTime,
             uAmplitude,
@@ -123,7 +121,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     }
 
     float colorVal = 1.0 - line_strength;
-    fragColor = vec4(uColor * colorVal, colorVal);
+    fragColor = vec4(uColor, colorVal);
 }
 
 void main() {
@@ -131,105 +129,269 @@ void main() {
 }
 `;
 
+type RGB = [number, number, number];
+
+interface Appearance {
+  color: RGB;
+  amplitude: number;
+  distance: number;
+}
+
+interface PointerState {
+  x: number;
+  y: number;
+  influence: number;
+}
+
+interface WaveRenderer {
+  canvas: HTMLCanvasElement;
+  resize: (width: number, height: number) => void;
+  draw: (time: number, pointer: PointerState, style: Appearance) => void;
+  dispose: () => void;
+}
+
+function createWebGLWave(): WaveRenderer | null {
+  if (typeof WebGLRenderingContext === "undefined") return null;
+  const canvas = document.createElement("canvas");
+  let renderer: Renderer;
+  try {
+    const options: WebGLContextAttributes = { alpha: true, depth: false, premultipliedAlpha: false, powerPreference: "low-power" };
+    const modern = canvas.getContext("webgl2", options);
+    const context = (modern ?? canvas.getContext("webgl", options)) as WebGLRenderingContext | WebGL2RenderingContext | null;
+    if (!context) return null;
+    if (!modern && !context.getExtension("OES_vertex_array_object")) {
+      context.getExtension("WEBGL_lose_context")?.loseContext();
+      return null;
+    }
+    renderer = new Renderer({ ...options, canvas, webgl: modern ? 2 : 1 });
+  } catch {
+    // Some browsers expose WebGL but disable context creation for this device.
+    return null;
+  }
+  const gl = renderer.gl;
+  const context = gl.getExtension("WEBGL_lose_context");
+  const resolution = new Float32Array([1, 1, 1]);
+  const mouse = new Float32Array([0.5, 0.5]);
+  const program = new Program(gl, {
+    vertex: vertexShader,
+    fragment: fragmentShader,
+    depthTest: false,
+    depthWrite: false,
+    uniforms: {
+      iTime: { value: 0 }, iResolution: { value: resolution },
+      uColor: { value: [1, 1, 1] }, uAmplitude: { value: 1 }, uDistance: { value: 0 },
+      uMouse: { value: mouse }, uPointerInfluence: { value: 0 },
+    },
+  });
+  if (!gl.getProgramParameter(program.program, gl.LINK_STATUS)) {
+    program.remove();
+    context?.loseContext();
+    return null;
+  }
+  const geometry = new Triangle(gl);
+  const mesh = new Mesh(gl, { geometry, program });
+  gl.clearColor(0, 0, 0, 0);
+
+  return {
+    canvas,
+    resize(width, height) {
+      // Keep fragment work bounded on ultrawide and high-resolution screens.
+      renderer.dpr = Math.min(1, Math.sqrt(800000 / (width * height)));
+      renderer.setSize(width, height);
+      resolution.set([canvas.width, canvas.height, width / height]);
+    },
+    draw(time, pointer, style) {
+      mouse[0] = pointer.x;
+      mouse[1] = pointer.y;
+      program.uniforms.iTime.value = time;
+      program.uniforms.uColor.value = style.color;
+      program.uniforms.uAmplitude.value = style.amplitude;
+      program.uniforms.uDistance.value = style.distance;
+      program.uniforms.uPointerInfluence.value = pointer.influence;
+      renderer.render({ scene: mesh });
+    },
+    dispose() {
+      geometry.remove();
+      program.remove();
+      if (!gl.isContextLost()) context?.loseContext();
+    },
+  };
+}
+
+// Preserve the blue strands on devices with no WebGL and in reduced-motion mode.
+function createCanvasWave(): WaveRenderer | null {
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return null;
+  return {
+    canvas,
+    resize(width, height) {
+      canvas.width = width;
+      canvas.height = height;
+    },
+    draw(time, pointer, { color, amplitude, distance }) {
+      const { width, height } = canvas;
+      ctx.clearRect(0, 0, width, height);
+      ctx.strokeStyle = `rgb(${color.map((channel) => Math.round(channel * 255)).join(",")})`;
+      ctx.lineWidth = Math.max(1, width / 1050);
+      for (let line = 0; line < 28; line++) {
+        const p = line / 28;
+        ctx.globalAlpha = 0.12 + 0.25 * (1 - p);
+        ctx.beginPath();
+        for (let x = 0; x < width + 8; x += 8) {
+          const u = x / width;
+          const spread = Math.min(1, u * 1.8);
+          const drift = Math.sin(u * 5.8 + p * 2.5 - time * 0.24);
+          const fold = Math.sin(u * 9 - p * 3 + time * 0.16);
+          let y = 0.5 + (p - 0.5) * distance + (drift + 0.35 * fold) * spread * amplitude * 0.085;
+          const dx = u - pointer.x;
+          const lift = Math.min(0.26, Math.max(-0.26, (pointer.y - y) * 0.72));
+          const ripple = 0.028 * Math.cos(dx * 24 - time * 2.7 + p * 2.2);
+          y += pointer.influence * Math.exp(-dx * dx * 22) * (lift + ripple);
+          if (x === 0) ctx.moveTo(0, (1 - y) * height);
+          else ctx.lineTo(x, (1 - y) * height);
+        }
+        ctx.stroke();
+      }
+    },
+    dispose() { canvas.width = canvas.height = 0; },
+  };
+}
+
 const Threads: React.FC<ThreadsProps> = ({
   color = [1, 1, 1],
   amplitude = 1,
   distance = 0,
-  enableMouseInteraction = false,
+  interactionTarget,
   ...rest
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const animationFrameId = useRef<number>(0);
+  const reducedMotion = useReducedMotion();
+  const style = useRef<Appearance>({ color, amplitude, distance });
+  const invalidate = useRef<() => void>();
+  const [red, green, blue] = color;
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    style.current = { color: [red, green, blue], amplitude, distance };
+    invalidate.current?.();
+  }, [red, green, blue, amplitude, distance]);
+
+  useEffect(() => {
     const container = containerRef.current;
+    if (!container) return;
+    const target = interactionTarget?.current;
+    const primaryRenderer = reducedMotion ? null : createWebGLWave();
+    let wave = primaryRenderer ?? createCanvasWave();
+    if (!wave) return;
+    container.append(wave.canvas);
 
-    const renderer = new Renderer({ alpha: true });
-    const gl = renderer.gl;
-    gl.clearColor(0, 0, 0, 0);
-    gl.enable(gl.BLEND);
-    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
-    container.appendChild(gl.canvas);
+    const pointer: PointerState = { x: 0.5, y: 0.5, influence: 0 };
+    const goal: PointerState = { ...pointer };
+    const finePointer = window.matchMedia("(any-hover: hover) and (any-pointer: fine)");
+    let inView = !("IntersectionObserver" in window);
+    let frame = 0;
+    let previousTime = 0;
+    let time = 2;
 
-    const geometry = new Triangle(gl);
-    const program = new Program(gl, {
-      vertex: vertexShader,
-      fragment: fragmentShader,
-      uniforms: {
-        iTime: { value: 0 },
-        iResolution: {
-          value: new Color(
-            gl.canvas.width,
-            gl.canvas.height,
-            gl.canvas.width / gl.canvas.height
-          ),
-        },
-        uColor: { value: new Color(...color) },
-        uAmplitude: { value: amplitude },
-        uDistance: { value: distance },
-        uMouse: { value: new Float32Array([0.5, 0.5]) },
-      },
-    });
+    function schedule() {
+      if (inView && !document.hidden && !frame && wave) frame = requestAnimationFrame(draw);
+    }
 
-    const mesh = new Mesh(gl, { geometry, program });
+    function draw(now: number) {
+      frame = 0;
+      if (!wave || !inView || document.hidden) return;
+      const dt = previousTime && !reducedMotion ? Math.min((now - previousTime) / 1000, 0.05) : 0;
+      previousTime = now;
+      const ease = 1 - Math.exp(-dt * 10);
+      pointer.x += (goal.x - pointer.x) * ease;
+      pointer.y += (goal.y - pointer.y) * ease;
+      pointer.influence += (goal.influence - pointer.influence) * ease;
+      time += dt;
+      wave.draw(time, pointer, style.current);
+      if (!reducedMotion) schedule();
+    }
+
+    function release() {
+      goal.x = goal.y = 0.5;
+      goal.influence = 0;
+    }
+
+    function move(event: PointerEvent) {
+      if (!target || !finePointer.matches || event.pointerType === "touch") return;
+      const rect = target.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+      goal.x = Math.max(0, Math.min(1, (event.clientX - rect.left) / rect.width));
+      goal.y = Math.max(0, Math.min(1, 1 - (event.clientY - rect.top) / rect.height));
+      goal.influence = 1;
+    }
+
+    function syncVisibility() {
+      if (inView && !document.hidden) {
+        schedule();
+      } else {
+        cancelAnimationFrame(frame);
+        frame = previousTime = 0;
+        release();
+      }
+    }
 
     function resize() {
-      const { clientWidth, clientHeight } = container;
-      renderer.setSize(clientWidth, clientHeight);
-      program.uniforms.iResolution.value.r = clientWidth;
-      program.uniforms.iResolution.value.g = clientHeight;
-      program.uniforms.iResolution.value.b = clientWidth / clientHeight;
+      const width = container!.clientWidth;
+      const height = container!.clientHeight;
+      if (width && height) wave?.resize(width, height);
+      schedule();
     }
-    window.addEventListener("resize", resize);
+
+    function onContextLost() {
+      // A second canvas can draw in 2D even while the original GPU context is lost.
+      wave?.canvas.remove();
+      wave?.dispose();
+      wave = createCanvasWave();
+      if (wave) {
+        container!.append(wave.canvas);
+        resize();
+      }
+    }
+
+    primaryRenderer?.canvas.addEventListener("webglcontextlost", onContextLost);
+    if (target && !reducedMotion) {
+      target.addEventListener("pointermove", move, { passive: true });
+      target.addEventListener("pointerleave", release);
+      target.addEventListener("pointercancel", release);
+      finePointer.addEventListener("change", release);
+    }
+    document.addEventListener("visibilitychange", syncVisibility);
+
+    const viewport = "IntersectionObserver" in window
+      ? new IntersectionObserver(([entry]) => {
+          inView = entry.isIntersecting;
+          syncVisibility();
+        })
+      : null;
+    viewport?.observe(container);
+    const sizes = typeof ResizeObserver !== "undefined" ? new ResizeObserver(resize) : null;
+    if (sizes) sizes.observe(container);
+    else window.addEventListener("resize", resize);
+
+    invalidate.current = schedule;
     resize();
 
-    const currentMouse = [0.5, 0.5];
-    let targetMouse = [0.5, 0.5];
-
-    function handleMouseMove(e: MouseEvent) {
-      const rect = container.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width;
-      const y = 1.0 - (e.clientY - rect.top) / rect.height;
-      targetMouse = [x, y];
-    }
-    function handleMouseLeave() {
-      targetMouse = [0.5, 0.5];
-    }
-    if (enableMouseInteraction) {
-      container.addEventListener("mousemove", handleMouseMove);
-      container.addEventListener("mouseleave", handleMouseLeave);
-    }
-
-    function update(t: number) {
-      if (enableMouseInteraction) {
-        const smoothing = 0.05;
-        currentMouse[0] += smoothing * (targetMouse[0] - currentMouse[0]);
-        currentMouse[1] += smoothing * (targetMouse[1] - currentMouse[1]);
-        program.uniforms.uMouse.value[0] = currentMouse[0];
-        program.uniforms.uMouse.value[1] = currentMouse[1];
-      } else {
-        program.uniforms.uMouse.value[0] = 0.5;
-        program.uniforms.uMouse.value[1] = 0.5;
-      }
-      program.uniforms.iTime.value = t * 0.001;
-
-      renderer.render({ scene: mesh });
-      animationFrameId.current = requestAnimationFrame(update);
-    }
-    animationFrameId.current = requestAnimationFrame(update);
-
     return () => {
-      if (animationFrameId.current) cancelAnimationFrame(animationFrameId.current);
+      invalidate.current = undefined;
+      cancelAnimationFrame(frame);
+      viewport?.disconnect();
+      sizes?.disconnect();
       window.removeEventListener("resize", resize);
-      if (enableMouseInteraction) {
-        container.removeEventListener("mousemove", handleMouseMove);
-        container.removeEventListener("mouseleave", handleMouseLeave);
-      }
-      if (container.contains(gl.canvas)) container.removeChild(gl.canvas);
-      gl.getExtension("WEBGL_lose_context")?.loseContext();
+      document.removeEventListener("visibilitychange", syncVisibility);
+      target?.removeEventListener("pointermove", move);
+      target?.removeEventListener("pointerleave", release);
+      target?.removeEventListener("pointercancel", release);
+      if (!reducedMotion && target) finePointer.removeEventListener("change", release);
+      primaryRenderer?.canvas.removeEventListener("webglcontextlost", onContextLost);
+      wave?.canvas.remove();
+      wave?.dispose();
     };
-  }, [color, amplitude, distance, enableMouseInteraction]);
+  }, [interactionTarget, reducedMotion]);
 
   return <div ref={containerRef} className="threads-container" {...rest} />;
 };

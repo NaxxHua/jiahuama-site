@@ -3,14 +3,14 @@ import { flushSync } from "react-dom";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import RootLayout from "@/components/layout/RootLayout";
+import { recipePhotoTransition } from "@/components/recipes/recipePhotoTransition";
 
 // Route-level code splitting — each page ships as its own chunk.
 const HomePage = lazy(() => import("@/pages/HomePage"));
 const AboutPage = lazy(() => import("@/pages/AboutPage"));
 const PortfolioPage = lazy(() => import("@/pages/PortfolioPage"));
 const ContactPage = lazy(() => import("@/pages/ContactPage"));
-const RecipesPage = lazy(() => import("@/pages/RecipesPage"));
-const RecipeDetailPage = lazy(() => import("@/pages/RecipeDetailPage"));
+const RecipePages = lazy(() => import("@/pages/RecipePages"));
 const GuestbookPage = lazy(() => import("@/pages/GuestbookPage"));
 const GamePage = lazy(() => import("@/pages/GamePage"));
 const DashboardPage = lazy(() => import("@/pages/DashboardPage"));
@@ -42,15 +42,21 @@ function AnimatedRoutes() {
     if (location.key === display.key) return;
     const startViewTransition = (document as DocumentWithVT).startViewTransition;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (!reduce && typeof startViewTransition === "function") {
+    const animated = !reduce && typeof startViewTransition === "function";
+    const photo = recipePhotoTransition(
+      display.pathname + display.hash, location.pathname + location.hash, animated,
+    );
+    if (animated) {
       const transition = startViewTransition.call(document, () => {
         flushSync(() => setDisplay(location));
+        photo?.afterNavigation();
       });
       // A rapid follow-up navigation aborts the in-flight transition; swallow
       // its rejection so it doesn't surface as an unhandled error.
       const ignore = () => {};
       transition?.ready?.catch?.(ignore);
       transition?.finished?.catch?.(ignore);
+      if (photo) transition.finished?.then(photo.finish, photo.finish);
       transition?.updateCallbackDone?.catch?.(ignore);
     } else {
       setDisplay(location);
@@ -64,8 +70,7 @@ function AnimatedRoutes() {
         <Route path="about" element={<AboutPage />} />
         <Route path="portfolio" element={<PortfolioPage />} />
         <Route path="contact" element={<ContactPage />} />
-        <Route path="recipes" element={<RecipesPage />} />
-        <Route path="recipes/:id" element={<RecipeDetailPage />} />
+        <Route path="recipes/:id?" element={<RecipePages />} />
         <Route path="guestbook" element={<GuestbookPage />} />
         <Route path="blog" element={<BlogPage />} />
         <Route path="blog/:slug" element={<BlogPostPage />} />

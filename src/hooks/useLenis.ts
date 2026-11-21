@@ -8,12 +8,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 let lenisInstance: Lenis | null = null;
 
-/** Jump to the top of the page (used on route change). */
-export function scrollToTop() {
+/** Set the native scroll position and keep Lenis in sync on navigation. */
+export function scrollImmediatelyTo(top: number) {
   if (lenisInstance) {
-    lenisInstance.scrollTo(0, { immediate: true });
+    // A route swap can grow the document before its ResizeObserver fires.
+    if (top > lenisInstance.limit) lenisInstance.resize();
+    lenisInstance.scrollTo(top, { immediate: true });
   } else {
-    window.scrollTo(0, 0);
+    window.scrollTo(0, top);
+  }
+}
+
+/** Focus the destination once, so Tab can continue there even during the glide. */
+export function scrollToSection(target: HTMLElement, reducedMotion: boolean) {
+  target.focus({ preventScroll: true });
+  if (lenisInstance && !reducedMotion) {
+    lenisInstance.scrollTo(target, { duration: 0.85 });
+  } else {
+    target.scrollIntoView({ block: "start", behavior: reducedMotion ? "instant" : "smooth" });
   }
 }
 

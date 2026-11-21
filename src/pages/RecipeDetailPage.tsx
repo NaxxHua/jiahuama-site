@@ -56,7 +56,7 @@ export default function RecipeDetailPage() {
   return (
     <div style={accentStyle}>
       {/* Parallax hero */}
-      <div ref={heroRef} className="relative h-[62vh] min-h-[420px] overflow-hidden">
+      <div id={`recipe-photo-${recipe.id}`} ref={heroRef} className="relative h-[62vh] min-h-[420px] overflow-hidden">
         <motion.img
           src={recipe.image}
           alt={tx(recipe.title)}

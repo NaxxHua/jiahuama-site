@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { useRef, type MouseEvent } from "react";
+import { Link, useHref } from "react-router-dom";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import { motion, type Variants } from "motion/react";
 import Threads from "@/components/ui/Threads";
@@ -8,6 +9,12 @@ import StarButton from "@/components/ui/StarButton";
 import { useLang } from "@/i18n/LanguageContext";
 import { useTheme } from "@/hooks/useTheme";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { scrollToSection } from "@/hooks/useLenis";
+
+const THREAD_COLORS: Record<"light" | "dark", [number, number, number]> = {
+  light: [0.18, 0.53, 0.88],
+  dark: [0.29, 0.64, 1],
+};
 
 const EASE_OUT: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
@@ -25,13 +32,26 @@ export default function Hero() {
   const theme = useTheme();
   const reducedMotion = useReducedMotion();
 
-  const threadColor: [number, number, number] =
-    theme === "dark" ? [0.29, 0.64, 1] : [0.18, 0.53, 0.88];
+  const heroRef = useRef<HTMLElement>(null);
+  const routedHighlights = useHref("#highlights");
+  const highlightsHref = routedHighlights.includes("#/") ? routedHighlights : "#highlights";
+
+  function goToHighlights(event: MouseEvent<HTMLAnchorElement>) {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const section = document.getElementById("highlights");
+    if (!section) return;
+    event.preventDefault();
+    // File previews can use the fragment for routing. Leave that route intact.
+    if (highlightsHref === "#highlights" && window.location.protocol !== "file:" && window.location.hash !== highlightsHref) {
+      window.history.replaceState(window.history.state, "", highlightsHref);
+    }
+    scrollToSection(section, reducedMotion);
+  }
 
   return (
-    <section className="relative flex min-h-[86vh] items-center justify-center overflow-hidden">
+    <section ref={heroRef} className="relative flex min-h-[86vh] items-center justify-center overflow-hidden">
       {/* Animated thread background */}
-      <div className="pointer-events-none absolute inset-0 z-0">
+      <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
         <div
           className="absolute inset-0"
           style={{
@@ -39,26 +59,22 @@ export default function Hero() {
               "radial-gradient(680px 320px at 50% 18%, var(--hero-glow-1), transparent 70%)",
           }}
         />
-        {!reducedMotion && (
-          <div
-            className="absolute inset-0 opacity-70"
-            style={{
-              maskImage:
-                "linear-gradient(to bottom, #000 55%, transparent 95%)",
-              WebkitMaskImage:
-                "linear-gradient(to bottom, #000 55%, transparent 95%)",
-            }}
-          >
-            <Threads color={threadColor} amplitude={1.4} distance={0.1} />
-          </div>
-        )}
+        <div
+          className="absolute inset-0 opacity-70"
+          style={{
+            maskImage: "linear-gradient(to bottom, #000 55%, transparent 95%)",
+            WebkitMaskImage: "linear-gradient(to bottom, #000 55%, transparent 95%)",
+          }}
+        >
+          <Threads color={THREAD_COLORS[theme]} amplitude={1.4} distance={0.1} interactionTarget={heroRef} />
+        </div>
       </div>
 
       <div className="relative z-10 mx-auto max-w-3xl px-5 py-24 text-center">
         <motion.p
           custom={0}
           variants={fadeUp}
-          initial="hidden"
+          initial={reducedMotion ? false : "hidden"}
           animate="show"
           className="font-mono text-[13px] uppercase tracking-[0.18em] text-fg-2"
         >
@@ -76,7 +92,7 @@ export default function Hero() {
         <motion.p
           custom={1}
           variants={fadeUp}
-          initial="hidden"
+          initial={reducedMotion ? false : "hidden"}
           animate="show"
           className="mt-5 text-[clamp(15px,2.2vw,19px)] font-medium"
         >
@@ -90,7 +106,7 @@ export default function Hero() {
         <motion.p
           custom={2}
           variants={fadeUp}
-          initial="hidden"
+          initial={reducedMotion ? false : "hidden"}
           animate="show"
           className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-fg-2"
         >
@@ -100,7 +116,7 @@ export default function Hero() {
         <motion.div
           custom={3}
           variants={fadeUp}
-          initial="hidden"
+          initial={reducedMotion ? false : "hidden"}
           animate="show"
           className="mt-8 flex flex-wrap items-center justify-center gap-3"
         >
@@ -119,10 +135,10 @@ export default function Hero() {
       </div>
 
       <div className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2">
-        <span className="flex flex-col items-center gap-1.5 font-mono text-[10.5px] uppercase tracking-[0.16em] text-fg-3">
+        <a href={highlightsHref} onClick={goToHighlights} className="flex min-h-11 min-w-11 flex-col items-center justify-center gap-1.5 rounded-sm outline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent font-mono text-[10.5px] uppercase tracking-[0.16em] text-fg-3">
           {t.home.scroll}
-          <ArrowDown size={13} className="animate-bounce" />
-        </span>
+          <ArrowDown size={13} aria-hidden="true" className="motion-safe:animate-bounce" />
+        </a>
       </div>
     </section>
   );

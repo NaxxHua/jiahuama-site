@@ -1,8 +1,4 @@
-/**
- * BorderGlow — soft halo + thin ring around a card, brightest on the side
- * facing the cursor. Inspired by React Bits BorderGlow (MIT).
- */
-import { useCallback, useRef, type ReactNode, type PointerEvent } from "react";
+import { useEffect, useRef, type PointerEvent, type ReactNode } from "react";
 import "./BorderGlow.css";
 
 interface BorderGlowProps {
@@ -10,26 +6,58 @@ interface BorderGlowProps {
   className?: string;
 }
 
-export default function BorderGlow({ children, className = "" }: BorderGlowProps) {
-  const ref = useRef<HTMLDivElement>(null);
+const canTrackPointer = "(any-hover: hover) and (any-pointer: fine) and (prefers-reduced-motion: no-preference)";
 
-  const handlePointerMove = useCallback((e: PointerEvent<HTMLDivElement>) => {
-    const el = ref.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const dx = e.clientX - rect.left - rect.width / 2;
-    const dy = e.clientY - rect.top - rect.height / 2;
-    const angle = (Math.atan2(dy, dx) * 180) / Math.PI + 90;
-    el.style.setProperty("--cursor-angle", `${angle.toFixed(1)}deg`);
-  }, []);
+export default function BorderGlow({ children, className = "" }: BorderGlowProps) {
+  const frame = useRef(0);
+  const pointer = useRef({ x: 0, y: 0 });
+
+  useEffect(() => () => cancelAnimationFrame(frame.current), []);
+
+  function track(event: PointerEvent<HTMLDivElement>) {
+    const host = event.currentTarget;
+    if (host.dataset.tracking === undefined || event.pointerType === "touch") return;
+    pointer.current.x = event.clientX;
+    pointer.current.y = event.clientY;
+    if (frame.current) return;
+
+    frame.current = requestAnimationFrame(() => {
+      frame.current = 0;
+      // Measure the fixed host while its inner surface tilts.
+      const { left, top, width, height } = host.getBoundingClientRect();
+      if (!width || !height) return;
+      const x = Math.max(0, Math.min(1, (pointer.current.x - left) / width));
+      const y = Math.max(0, Math.min(1, (pointer.current.y - top) / height));
+      const angle = Math.atan2((y - 0.5) * height, (x - 0.5) * width) * 180 / Math.PI;
+      host.style.setProperty("--cursor-angle", `${angle + 90}deg`);
+      host.style.setProperty("--mouse-x", `${x * 100}%`);
+      host.style.setProperty("--mouse-y", `${y * 100}%`);
+      host.style.setProperty("--tilt-x", `${(0.5 - y) * 4}deg`);
+      host.style.setProperty("--tilt-y", `${(x - 0.5) * 5}deg`);
+    });
+  }
+
+  function enter(event: PointerEvent<HTMLDivElement>) {
+    if (event.pointerType === "touch" || !window.matchMedia(canTrackPointer).matches) return;
+    event.currentTarget.dataset.tracking = "";
+    track(event);
+  }
+
+  function release(event: PointerEvent<HTMLDivElement>) {
+    cancelAnimationFrame(frame.current);
+    frame.current = 0;
+    delete event.currentTarget.dataset.tracking;
+  }
 
   return (
     <div
-      ref={ref}
-      onPointerMove={handlePointerMove}
       className={`border-glow ${className}`}
+      onPointerEnter={enter}
+      onPointerMove={track}
+      onPointerLeave={release}
+      onPointerCancel={release}
     >
-      {children}
+      <div className="border-glow-surface">{children}</div>
     </div>
   );
 }

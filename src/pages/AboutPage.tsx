@@ -69,7 +69,10 @@ export default function AboutPage() {
                         type="button"
                         aria-haspopup="dialog"
                         className="mt-3 inline-flex min-h-11 items-center rounded-sm text-[14px] font-medium text-accent underline underline-offset-4 hover:text-accent-2 focus-visible:outline focus-visible:outline-2"
-                        onClick={() => setMatchOpen(true)}
+                        onClick={(event) => {
+                          event.currentTarget.focus({ preventScroll: true });
+                          setMatchOpen(true);
+                        }}
                       >
                         {a.facets.tabletennis.matchCard}
                       </button>

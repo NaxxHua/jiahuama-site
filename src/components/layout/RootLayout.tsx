@@ -5,14 +5,15 @@ import Nav from "./Nav";
 import Footer from "./Footer";
 import Analytics from "./Analytics";
 import CommandPalette from "@/components/ui/CommandPalette";
-import { useLenis, scrollToTop } from "@/hooks/useLenis";
+import { useLenis, scrollImmediatelyTo } from "@/hooks/useLenis";
+import { recipeScrollPosition } from "@/components/recipes/recipePhotoTransition";
 import { useSeo } from "@/hooks/useSeo";
 import { useLang } from "@/i18n/LanguageContext";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
-    scrollToTop();
+    scrollImmediatelyTo(recipeScrollPosition(pathname));
   }, [pathname]);
   return null;
 }

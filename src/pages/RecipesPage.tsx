@@ -54,7 +54,7 @@ export default function RecipesPage() {
           </Reveal>
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {cocktails.map((recipe, i) => (
-              <Reveal key={recipe.id} delay={0.04 * (i % 3)}>
+              <Reveal className="recipe-reveal" key={recipe.id} delay={0.04 * (i % 3)}>
                 <RecipeCard recipe={recipe} />
               </Reveal>
             ))}
@@ -71,7 +71,7 @@ export default function RecipesPage() {
           </Reveal>
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {dishes.map((recipe, i) => (
-              <Reveal key={recipe.id} delay={0.04 * i}>
+              <Reveal className="recipe-reveal" key={recipe.id} delay={0.04 * i}>
                 <RecipeCard recipe={recipe} />
               </Reveal>
             ))}
