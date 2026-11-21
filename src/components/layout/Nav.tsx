@@ -1,52 +1,19 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Menu, Moon, Search, Sun, X } from "lucide-react";
+import { Languages, Menu, Moon, Search, Sun, X } from "lucide-react";
+import clsx from "clsx";
 import { useLang } from "@/i18n/LanguageContext";
 import { useTheme, toggleTheme } from "@/hooks/useTheme";
 import { OPEN_EVENT } from "@/components/ui/CommandPalette";
-import "./SiteShell.css";
 
 export default function Nav() {
   const { t, lang, toggleLang } = useLang();
   const theme = useTheme();
-  const { pathname } = useLocation();
+  const location = useLocation();
   const [open, setOpen] = useState(false);
-  const headerRef = useRef<HTMLElement>(null);
-  const menuButton = useRef<HTMLButtonElement>(null);
-  const homeLabel = lang === "zh" ? "马家骅 · 首页" : "Jiahua Ma · Home";
-  const navLabel = lang === "zh" ? "主导航" : "Main navigation";
-  const themeLabel = theme === "dark" ? t.palette.lightMode : t.palette.darkMode;
 
-  useEffect(() => setOpen(false), [pathname]);
-
-  useEffect(() => {
-    if (!open) return;
-    const onEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setOpen(false);
-        menuButton.current?.focus();
-      }
-    };
-    const closeOutside = (event: Event) => {
-      if (event.target instanceof Node && !headerRef.current?.contains(event.target)) {
-        setOpen(false);
-      }
-    };
-    const desktop = window.matchMedia("(min-width: 64rem)");
-    const closeOnDesktop = () => {
-      if (desktop.matches) setOpen(false);
-    };
-    document.addEventListener("keydown", onEscape);
-    document.addEventListener("pointerdown", closeOutside);
-    document.addEventListener("focusin", closeOutside);
-    desktop.addEventListener("change", closeOnDesktop);
-    return () => {
-      document.removeEventListener("keydown", onEscape);
-      document.removeEventListener("pointerdown", closeOutside);
-      document.removeEventListener("focusin", closeOutside);
-      desktop.removeEventListener("change", closeOnDesktop);
-    };
-  }, [open]);
+  // Close the mobile drawer whenever the route changes.
+  useEffect(() => setOpen(false), [location.pathname]);
 
   const links = [
     { to: "/about", label: t.nav.about },
@@ -57,70 +24,87 @@ export default function Nav() {
     { to: "/contact", label: t.nav.contact },
     { to: "/guestbook", label: t.nav.guestbook },
   ];
-  const pageLinks = links.map(({ to, label }) => (
-    <NavLink key={to} to={to} className="site-nav-link" onClick={() => setOpen(false)}>
-      {label}
-    </NavLink>
-  ));
+
+  const linkClass = ({ isActive }: { isActive: boolean }) =>
+    clsx(
+      "rounded-md px-3 py-2 text-[14px] font-medium transition-colors",
+      isActive
+        ? "text-fg bg-bg-2"
+        : "text-fg-2 hover:text-fg hover:bg-bg-2"
+    );
 
   return (
-    <header className="site-masthead" ref={headerRef}>
-      <div className="site-shell-frame site-nav-bar">
-        <Link to="/" className="site-signature" aria-label={homeLabel} onClick={() => setOpen(false)}>
-          <span className="site-monogram" aria-hidden="true">jm</span>
-          <span className="site-signature-name">Jiahua Ma</span>
+    <header className="sticky top-0 z-50 border-b border-border bg-bg/80 backdrop-blur-md">
+      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
+        <Link
+          to="/"
+          className="flex items-center gap-2.5"
+          aria-label="Jiahua Ma — home"
+        >
+          <img src="/favicon.png" alt="" className="h-9 w-9 rounded-md" />
+          <span className="hidden font-display text-[15px] font-semibold tracking-tight text-fg sm:block">
+            Jiahua Ma
+          </span>
         </Link>
-        <nav className="site-nav-desktop" aria-label={navLabel}>
-          {pageLinks}
-        </nav>
-        <div className="site-nav-tools">
+
+        <div className="hidden items-center gap-1 md:flex">
+          {links.map((l) => (
+            <NavLink key={l.to} to={l.to} className={linkClass}>
+              {l.label}
+            </NavLink>
+          ))}
+        </div>
+
+        <div className="flex items-center gap-1">
           <button
             type="button"
-            className="site-tool"
-            onClick={() => {
-              setOpen(false);
-              window.dispatchEvent(new Event(OPEN_EVENT));
-            }}
+            onClick={() => window.dispatchEvent(new Event(OPEN_EVENT))}
+            className="hidden h-9 items-center gap-2 rounded-md border border-border px-2.5 text-[12px] text-fg-3 transition-colors hover:border-border-strong hover:text-fg-2 sm:flex"
             aria-label={t.palette.open}
-            aria-keyshortcuts="Meta+K Control+K"
-            title={t.palette.open}
           >
-            <Search size={17} aria-hidden="true" />
+            <Search size={14} />
+            <kbd className="font-mono text-[10px] tracking-wider">⌘K</kbd>
           </button>
           <button
             type="button"
-            className="site-tool site-language"
             onClick={toggleLang}
+            className="flex h-9 items-center gap-1.5 rounded-md px-2.5 text-[13px] font-medium text-fg-2 transition-colors hover:bg-bg-2 hover:text-fg"
             aria-label={t.nav.toggleLang}
-            title={t.nav.toggleLang}
           >
-            <span lang={lang === "en" ? "zh" : "en"}>{lang === "en" ? "中文" : "EN"}</span>
+            <Languages size={16} />
+            {lang === "en" ? "中文" : "EN"}
           </button>
           <button
             type="button"
-            className="site-tool"
             onClick={toggleTheme}
-            aria-label={themeLabel}
-            title={themeLabel}
+            className="grid h-9 w-9 place-items-center rounded-md text-fg-2 transition-colors hover:bg-bg-2 hover:text-fg"
+            aria-label={t.nav.toggleTheme}
           >
-            {theme === "dark" ? <Sun size={17} aria-hidden="true" /> : <Moon size={17} aria-hidden="true" />}
+            {theme === "dark" ? <Sun size={17} /> : <Moon size={17} />}
           </button>
           <button
             type="button"
-            className="site-tool site-menu-toggle"
-            ref={menuButton}
-            onClick={() => setOpen((value) => !value)}
+            onClick={() => setOpen((o) => !o)}
+            className="grid h-9 w-9 place-items-center rounded-md text-fg-2 transition-colors hover:bg-bg-2 hover:text-fg md:hidden"
             aria-label={t.nav.menu}
-            aria-controls="mobile-site-nav"
             aria-expanded={open}
           >
-            {open ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
+            {open ? <X size={19} /> : <Menu size={19} />}
           </button>
         </div>
-      </div>
-      <nav id="mobile-site-nav" aria-label={navLabel} className="site-nav-mobile" hidden={!open}>
-        <div className="site-shell-frame">{pageLinks}</div>
       </nav>
+
+      {open && (
+        <div className="border-t border-border bg-bg px-5 py-3 md:hidden">
+          <div className="flex flex-col gap-1">
+            {links.map((l) => (
+              <NavLink key={l.to} to={l.to} className={linkClass}>
+                {l.label}
+              </NavLink>
+            ))}
+          </div>
+        </div>
+      )}
     </header>
   );
 }

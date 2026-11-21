@@ -92,7 +92,7 @@ const en = {
       tabletennis: {
         tag: "USATT",
         title: "Competitive sport",
-        desc: "A rated USATT player, drilling fundamentals, footwork, and topspin.",
+        desc: "I broke 1800 for the first time in November, reaching a USATT rating of 1831.",
       },
     },
     exploreTitle: "Explore the rest",
@@ -139,6 +139,7 @@ const en = {
       },
       tabletennis: {
         title: "Table tennis",
+        matchCard: "View my 1831 match card",
         desc: "I'm a rated USATT player. Competition gets my adrenaline going, on the table or in a game.",
       },
       bar: {
@@ -510,7 +511,7 @@ const zh: Dict = {
       tabletennis: {
         tag: "USATT",
         title: "竞技体育",
-        desc: "USATT 注册球员，专注基本功、衔接、上旋！",
+        desc: "11 月第一次打过 1800，USATT 积分到了 1831。",
       },
     },
     exploreTitle: "继续探索",
@@ -556,6 +557,7 @@ const zh: Dict = {
       },
       tabletennis: {
         title: "乒乓球",
+        matchCard: "查看 1831 分比赛纪念卡",
         desc: "我是一名 USATT 注册的竞技选手。竞技体育（不论现实中的还是电子竞技）都会让我感到肾上腺素飙升。",
       },
       bar: {

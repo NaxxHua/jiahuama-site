@@ -5,7 +5,6 @@ export const personalBestMatch = {
   wins: 5,
   losses: 2,
   credit: 'Winnie',
-  photo: '/matches/attc-2026-serve.webp',
   card: '/matches/attc-2026-card.webp',
   download: '/matches/usatt-1831-photo-card-winnie.png',
 } as const;

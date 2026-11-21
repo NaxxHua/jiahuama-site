@@ -6,15 +6,16 @@
   max-height: calc(100dvh - 1.5rem);
   margin: auto;
   padding: 0;
-  border: 0;
-  color: #fbfbfa;
-  background: transparent;
+  border: 1px solid rgb(var(--border));
+  border-radius: var(--radius);
+  color: rgb(var(--fg));
+  background: rgb(var(--panel));
   overflow: auto;
   overscroll-behavior: contain;
 }
 
 .match-print-dialog::backdrop {
-  background: rgb(9 13 20 / 94%);
+  background: rgb(11 15 20 / 75%);
 }
 
 .match-print-viewer {
@@ -32,7 +33,7 @@
 
 .match-print-toolbar {
   justify-content: space-between;
-  margin-bottom: .4rem;
+  padding: .35rem .65rem;
 }
 
 .match-print-toolbar h2 {
@@ -50,7 +51,7 @@
   width: 2.75rem;
   height: 2.75rem;
   margin-right: .15rem;
-  border: 1px solid #68717a;
+  border: 1px solid rgb(var(--border-2));
   border-radius: 50%;
   color: inherit;
   background: transparent;
@@ -66,7 +67,7 @@
 .match-print-download {
   gap: .65rem;
   width: fit-content;
-  margin: .45rem 0 .2rem auto;
+  margin: .2rem .65rem .2rem auto;
   padding-inline: .35rem;
   font-size: .875rem;
   color: inherit;
@@ -74,10 +75,10 @@
 }
 
 .match-print-download span {
-  color: #b6bfc7;
+  color: rgb(var(--fg-2));
   font-size: .75rem;
 }
 
-.match-print-toolbar button:hover { background: #343a43; }
+.match-print-toolbar button:hover { background: rgb(var(--bg-2)); }
 .match-print-download:hover { text-decoration: underline; }
-.match-print-viewer :focus-visible { outline: 2px solid #b5d0ff; outline-offset: -2px; }
+.match-print-viewer :focus-visible { outline: 2px solid rgb(var(--accent)); outline-offset: -2px; }

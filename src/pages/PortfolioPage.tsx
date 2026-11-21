@@ -84,9 +84,7 @@ export default function PortfolioPage() {
           <div className="mt-8 grid gap-5 lg:grid-cols-2">
             {PROJECT_ORDER.map(({ key, Icon }, i) => (
               <Reveal key={key} delay={0.05 * i}>
-                <div id={key === "designSystem" ? "design-system" : key} className="portfolio-project-anchor">
-                  <ProjectCard project={p.projects[key]} Icon={Icon} />
-                </div>
+                <ProjectCard project={p.projects[key]} Icon={Icon} />
               </Reveal>
             ))}
           </div>

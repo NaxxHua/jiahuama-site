@@ -1,20 +1,23 @@
-import { Link } from "react-router-dom";
-import { Gamepad2, Martini } from "lucide-react";
+import { useState } from "react";
+import { MatchCardDialog } from "@/components/matches/MatchCardDialog";
+import { Gamepad2, Martini, Target, type LucideIcon } from "lucide-react";
 import PageHeader from "@/components/layout/PageHeader";
 import LovesSection from "@/components/about/LovesSection";
-import TableTennisRecord from "@/components/about/TableTennisRecord";
+import SpotlightCard from "@/components/ui/SpotlightCard";
 import StarButton from "@/components/ui/StarButton";
 import Reveal from "@/components/ui/Reveal";
 import { useLang } from "@/i18n/LanguageContext";
 
-const FACETS = [
-  { key: "game", Icon: Gamepad2, to: "/game" },
-  { key: "bar", Icon: Martini, to: "/recipes" },
-] as const;
+const FACETS: { key: "game" | "tabletennis" | "bar"; Icon: LucideIcon }[] = [
+  { key: "game", Icon: Gamepad2 },
+  { key: "tabletennis", Icon: Target },
+  { key: "bar", Icon: Martini },
+];
 
 export default function AboutPage() {
   const { t } = useLang();
   const a = t.about;
+  const [matchOpen, setMatchOpen] = useState(false);
 
   return (
     <>
@@ -35,34 +38,51 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="border-t border-border" aria-labelledby="off-the-clock">
-        <div className="mx-auto max-w-6xl px-5 py-16 md:py-20">
+      <section className="border-t border-border bg-bg-1">
+        <div className="mx-auto max-w-6xl px-5 py-20">
           <Reveal>
-            <h2 id="off-the-clock" className="font-display text-[clamp(24px,3vw,34px)] font-bold tracking-tight text-fg">
+            <h2 className="font-display text-[clamp(22px,3vw,30px)] font-bold tracking-tight text-fg">
               {a.offTitle}
             </h2>
+            <p className="mt-2 text-[15px] text-fg-2">{a.offSub}</p>
           </Reveal>
-          <TableTennisRecord />
-          <Reveal>
-            <div className="mt-8 grid gap-8 sm:grid-cols-2 sm:gap-14">
-              {FACETS.map(({ key, Icon, to }) => {
+          <Reveal delay={0.1}>
+            <div className="mt-10 grid gap-4 sm:grid-cols-3">
+              {FACETS.map(({ key, Icon }) => {
                 const facet = a.facets[key];
                 return (
-                  <article key={key}>
-                    <h3 className="flex items-center gap-3 font-display text-[19px] font-semibold text-fg">
-                      <Icon size={18} strokeWidth={1.5} aria-hidden="true" />
-                      <Link to={to} className="underline decoration-border-strong underline-offset-[5px] hover:decoration-current">{facet.title}</Link>
+                  <SpotlightCard
+                    key={key}
+                    className="rounded-lg border border-border bg-panel p-6 transition-colors hover:border-border-strong"
+                  >
+                    <span className="grid h-10 w-10 place-items-center rounded-lg border border-accent-border bg-accent-bg text-accent">
+                      <Icon size={19} />
+                    </span>
+                    <h3 className="mt-4 font-display text-[17px] font-semibold text-fg">
+                      {facet.title}
                     </h3>
-                    <p className="mt-2 max-w-prose text-base leading-relaxed text-fg-1">
+                    <p className="mt-2 text-[14px] leading-relaxed text-fg-2">
                       {facet.desc}
                     </p>
-                  </article>
+                    {key === "tabletennis" && (
+                      <button
+                        type="button"
+                        aria-haspopup="dialog"
+                        className="mt-3 inline-flex min-h-11 items-center rounded-sm text-[14px] font-medium text-accent underline underline-offset-4 hover:text-accent-2 focus-visible:outline focus-visible:outline-2"
+                        onClick={() => setMatchOpen(true)}
+                      >
+                        {a.facets.tabletennis.matchCard}
+                      </button>
+                    )}
+                  </SpotlightCard>
                 );
               })}
             </div>
           </Reveal>
         </div>
       </section>
+
+      <MatchCardDialog open={matchOpen} onClose={() => setMatchOpen(false)} />
 
       <LovesSection />
 
