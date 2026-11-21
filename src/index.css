@@ -2,77 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-/* =========================================================================
- * jiahuama.com — light-blue theme tokens.
- * Drive via <html data-theme="dark|light">. Light theme is the default.
- * ========================================================================= */
-
+/* Shared paper, ink and vermilion palette for both site themes. */
 @layer base {
-  :root,
-  [data-theme="light"] {
-    /* Theme colors are space-separated RGB channels so Tailwind can inject an
-     * alpha channel (e.g. bg-panel/70). Consume directly via rgb(var(--x)). */
-    --bg: 255 255 255;
-    --bg-1: 247 249 252;
-    --bg-2: 238 242 247;
-    --bg-3: 227 233 241;
-    --panel: 255 255 255;
-    --border: 232 237 243;
-    --border-2: 216 224 234;
-    --border-strong: 192 202 215;
-
-    --fg: 15 23 32;
-    --fg-1: 58 71 84;
-    --fg-2: 107 120 134;
-    --fg-3: 154 166 179;
-
-    --accent: 47 136 224;
-    --accent-2: 31 111 196;
-    --accent-bg: rgba(47, 136, 224, 0.08);
-    --accent-border: rgba(47, 136, 224, 0.22);
-
-    --success: 63 165 96;
-    --warn: 201 139 22;
-    --danger: 209 52 56;
-    --info: 44 122 214;
-
-    --dots-color: #e3e9f1;
-    --hero-glow-1: rgba(47, 136, 224, 0.14);
-    --hero-glow-2: rgba(120, 180, 235, 0.08);
-    --hero-dots-color: rgba(15, 23, 32, 0.04);
-
-    --radius: 0.625rem;
+  :root {
+    --page-width: min(80rem, calc(100% - 2 * clamp(1.25rem, 4vw, 4rem)));
+    --editorial-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+    --radius: .5rem;
   }
-
+  :root, [data-theme="light"] {
+    color-scheme: light;
+    --bg: 248 247 243;
+    --bg-1: 241 240 235;
+    --bg-2: 234 233 227;
+    --bg-3: 222 220 212;
+    --panel: 253 252 249;
+    --border: 213 212 205;
+    --border-2: 197 196 187;
+    --border-strong: 155 153 143;
+    --fg: 30 31 28;
+    --fg-1: 70 71 64;
+    --fg-2: 91 92 85;
+    --fg-3: 101 101 94;
+    --accent: 176 57 34;
+    --accent-2: 140 42 24;
+    --accent-bg: rgba(176, 57, 34, .08);
+    --accent-border: rgba(176, 57, 34, .25);
+    --success: 51 134 82;
+    --warn: 156 108 18;
+    --danger: 192 49 51;
+    --info: 44 113 175;
+    --dots-color: #dedbd3;
+    --hero-glow-1: rgba(176, 57, 34, .09);
+    --hero-glow-2: rgba(157, 137, 102, .08);
+    --hero-dots-color: rgba(30, 31, 28, .05);
+  }
   [data-theme="dark"] {
-    --bg: 11 15 20;
-    --bg-1: 17 22 29;
-    --bg-2: 22 29 38;
-    --bg-3: 30 39 48;
-    --panel: 14 19 26;
-    --border: 30 39 48;
-    --border-2: 42 53 64;
-    --border-strong: 58 71 86;
-
-    --fg: 231 237 243;
-    --fg-1: 174 185 197;
-    --fg-2: 126 138 152;
-    --fg-3: 85 96 110;
-
-    --accent: 74 163 255;
-    --accent-2: 127 193 255;
-    --accent-bg: rgba(74, 163, 255, 0.1);
-    --accent-border: rgba(74, 163, 255, 0.26);
-
-    --success: 94 194 122;
+    color-scheme: dark;
+    --bg: 25 26 23;
+    --bg-1: 31 32 29;
+    --bg-2: 41 42 39;
+    --bg-3: 53 53 48;
+    --panel: 33 34 31;
+    --border: 64 65 58;
+    --border-2: 81 82 74;
+    --border-strong: 114 115 103;
+    --fg: 245 243 235;
+    --fg-1: 203 202 192;
+    --fg-2: 169 169 158;
+    --fg-3: 154 154 143;
+    --accent: 255 143 117;
+    --accent-2: 255 180 154;
+    --accent-bg: rgba(255, 143, 117, .1);
+    --accent-border: rgba(255, 143, 117, .28);
+    --success: 107 197 134;
     --warn: 232 179 57;
-    --danger: 229 72 77;
+    --danger: 255 127 125;
     --info: 123 180 255;
-
-    --dots-color: #1e2730;
-    --hero-glow-1: rgba(74, 163, 255, 0.2);
-    --hero-glow-2: rgba(120, 200, 255, 0.12);
-    --hero-dots-color: rgba(255, 255, 255, 0.03);
+    --dots-color: #373831;
+    --hero-glow-1: rgba(255, 143, 117, .1);
+    --hero-glow-2: rgba(178, 160, 115, .08);
+    --hero-dots-color: rgba(255, 255, 255, .04);
   }
 }
 
@@ -86,7 +75,7 @@
     color: rgb(var(--fg));
     font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
       "Helvetica Neue", Arial, sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: -0.005em;
@@ -299,4 +288,40 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+:focus-visible { outline: 2px solid rgb(var(--accent)); outline-offset: 4px; }
+[data-theme="dark"] .bg-accent.text-white { color: rgb(var(--bg)); }
+.page-masthead { border-bottom: 1px solid rgb(var(--border)); }
+.page-masthead-inner {
+  width: var(--page-width);
+  margin-inline: auto;
+  padding-block: clamp(3.25rem, 6.7vw, 6.5rem) clamp(2.5rem, 5vw, 4.7rem);
+}
+.page-kicker {
+  color: rgb(var(--accent));
+  font: 500 .8rem/1.5 var(--editorial-mono);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-bottom: 1rem;
+}
+.page-masthead-copy {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  align-items: end;
+  gap: clamp(2rem, 7vw, 8rem);
+}
+.page-masthead-copy h1 {
+  max-width: 15ch;
+  font-weight: 550;
+  font-size: clamp(2.65rem, 6.5vw, 6.3rem);
+  line-height: .99;
+  letter-spacing: -.065em;
+  text-wrap: balance;
+}
+.page-masthead-copy > p { max-width: 43ch; color: rgb(var(--fg-1)); font-size: 1.05rem; line-height: 1.6; }
+:lang(zh) .page-masthead-copy h1 { letter-spacing: -.04em; line-height: 1.15; }
+.portfolio-project-anchor { height: 100%; scroll-margin-top: 6rem; }
+@media (max-width: 46rem) {
+  .page-masthead-copy { grid-template-columns: 1fr; gap: 1.25rem; }
 }

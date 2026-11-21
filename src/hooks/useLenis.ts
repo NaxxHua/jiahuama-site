@@ -8,10 +8,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 let lenisInstance: Lenis | null = null;
 
-/** Jump to the top of the page (used on route change). */
-export function scrollToTop() {
+/** Position a newly rendered route at its requested section or its start. */
+export function scrollToTop(anchor: HTMLElement | null = null) {
   if (lenisInstance) {
-    lenisInstance.scrollTo(0, { immediate: true });
+    lenisInstance.resize();
+    lenisInstance.scrollTo(anchor ?? 0, { immediate: true });
+  } else if (anchor) {
+    anchor.scrollIntoView();
   } else {
     window.scrollTo(0, 0);
   }

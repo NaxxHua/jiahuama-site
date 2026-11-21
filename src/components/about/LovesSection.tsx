@@ -46,8 +46,10 @@ export default function LovesSection() {
           <p className="mt-2 text-[15px] text-fg-2">{l.sub}</p>
         </Reveal>
 
-        <GroupLabel first>{l.stage}</GroupLabel>
-        <TheaterSection asSubsection />
+        <div id="theatre" className="scroll-mt-24">
+          <GroupLabel first>{l.stage}</GroupLabel>
+          <TheaterSection asSubsection />
+        </div>
 
         <GroupLabel>{l.games}</GroupLabel>
         <GamingSection asSubsection />

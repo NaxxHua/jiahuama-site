@@ -1,141 +1,99 @@
+import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
-import {
-  ArrowUpRight,
-  Brain,
-  CreditCard,
-  Gamepad2,
-  GraduationCap,
-  Target,
-  type LucideIcon,
-} from "lucide-react";
-import BorderGlow from "@/components/ui/BorderGlow";
-import SpotlightCard from "@/components/ui/SpotlightCard";
-import Reveal from "@/components/ui/Reveal";
+import { recipes } from "@/data/recipes";
 import { useLang } from "@/i18n/LanguageContext";
+import "./Highlights.css";
 
-type HighlightKey =
-  | "visa"
-  | "game"
-  | "psyspace"
-  | "research"
-  | "tabletennis";
+const housePour = recipes.find((recipe) => recipe.id === "pile-driver");
 
-interface HighlightDef {
-  key: HighlightKey;
-  Icon: LucideIcon;
+function ProjectRow({
+  href,
+  title,
+  children,
+}: {
   href: string;
-  external: boolean;
-  span: string;
-}
-
-const HIGHLIGHTS: HighlightDef[] = [
-  {
-    key: "visa",
-    Icon: CreditCard,
-    href: "https://design.visa.com",
-    external: true,
-    span: "md:col-span-2",
-  },
-  {
-    key: "game",
-    Icon: Gamepad2,
-    href: "/portfolio",
-    external: false,
-    span: "md:col-span-1",
-  },
-  {
-    key: "psyspace",
-    Icon: Brain,
-    href: "/portfolio",
-    external: false,
-    span: "md:col-span-1",
-  },
-  {
-    key: "research",
-    Icon: GraduationCap,
-    href: "/portfolio",
-    external: false,
-    span: "md:col-span-1",
-  },
-  {
-    key: "tabletennis",
-    Icon: Target,
-    href: "/about",
-    external: false,
-    span: "md:col-span-1",
-  },
-];
-
-function HighlightCard({ def }: { def: HighlightDef }) {
-  const { t } = useLang();
-  const item = t.home.highlights[def.key];
-  const { Icon } = def;
+  title: string;
+  children: ReactNode;
+}) {
+  const content = (
+    <>
+      <span className="work-index-name">{title}</span>
+      <span className="work-index-field">{children}</span>
+    </>
+  );
 
   return (
-    <BorderGlow className={def.span}>
-      <SpotlightCard className="group h-full rounded-lg border border-border bg-panel p-6 transition-colors hover:border-border-strong">
-        <div className="flex h-full flex-col">
-          <div className="flex items-start justify-between">
-            <span className="grid h-10 w-10 place-items-center rounded-lg border border-accent-border bg-accent-bg text-accent">
-              <Icon size={19} />
-            </span>
-            <ArrowUpRight
-              size={17}
-              className="text-fg-3 transition-colors group-hover:text-accent"
-            />
-          </div>
-          <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.14em] text-fg-3">
-            {item.tag}
-          </p>
-          <h3 className="mt-1.5 font-display text-[18px] font-semibold tracking-tight text-fg">
-            {item.title}
-          </h3>
-          <p className="mt-2 text-[14px] leading-relaxed text-fg-2">
-            {item.desc}
-          </p>
-        </div>
+    <li>
+      {href.startsWith("/") ? (
+        <Link to={href}>{content}</Link>
+      ) : (
+        <a href={href} target="_blank" rel="noopener noreferrer">{content}</a>
+      )}
+    </li>
+  );
+}
 
-        {def.external ? (
-          <a
-            href={def.href}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="absolute inset-0"
-            aria-label={item.title}
-          />
-        ) : (
-          <Link
-            to={def.href}
-            className="absolute inset-0"
-            aria-label={item.title}
-          />
-        )}
-      </SpotlightCard>
-    </BorderGlow>
+function BarFeature() {
+  const { lang, t } = useLang();
+  if (!housePour) return null;
+  const recipe = housePour;
+
+  return (
+    <section aria-labelledby="bar-feature-heading" className="bar-feature">
+      <div className="work-index-header">
+        <h2 id="bar-feature-heading">{lang === "zh" ? "家里的吧台" : "From the bar"}</h2>
+        <Link to="/recipes" className="work-index-inline-link">{t.nav.recipes}</Link>
+      </div>
+      <Link to={`/recipes/${recipe.id}`} className="bar-spread" aria-labelledby="bar-recipe-name">
+        <div className="bar-spread-page">
+          <p className="bar-spread-source">VA-11 HALL-A</p>
+          <h3 id="bar-recipe-name">{recipe.title[lang]}</h3>
+          <ul className="bar-spread-ingredients">
+            {recipe.ingredients.map(({ amount, name }) => (
+              <li key={name.en}>
+                <span className="bar-spread-amount">{lang === "zh" && amount === "3 dashes" ? "3 滴" : amount}</span>
+                <span>{name[lang]}</span>
+              </li>
+            ))}
+          </ul>
+          <span className="bar-spread-open">{lang === "zh" ? "查看调法" : "View recipe"}</span>
+        </div>
+        <div className="bar-spread-image">
+          <img src={recipe.image} alt="" width="900" height="1600" loading="lazy" decoding="async" />
+        </div>
+      </Link>
+    </section>
   );
 }
 
 export default function Highlights() {
-  const { t } = useLang();
+  const { lang, t } = useLang();
+  const projects = t.portfolio.projects;
+  const zh = lang === "zh";
 
   return (
-    <section className="mx-auto max-w-6xl px-5 py-24">
-      <Reveal>
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-[clamp(26px,3.5vw,38px)] font-bold tracking-tight text-fg">
-            {t.home.highlightsTitle}
-          </h2>
-          <p className="mt-3 text-[15px] text-fg-2">{t.home.highlightsSub}</p>
+    <div className="work-index-spread" id="selected-work">
+      <section aria-labelledby="work-index-heading">
+        <div className="work-index-header">
+          <h2 id="work-index-heading">{zh ? "精选作品" : "Selected work"}</h2>
+          <Link to="/portfolio" className="work-index-inline-link">{t.nav.portfolio}</Link>
         </div>
-      </Reveal>
-
-      <Reveal delay={0.1}>
-        <div className="mt-12 grid gap-4 md:grid-cols-3">
-          {HIGHLIGHTS.map((def) => (
-            <HighlightCard key={def.key} def={def} />
-          ))}
-        </div>
-      </Reveal>
-    </section>
+        <ul className="work-index-list">
+          <ProjectRow href="/portfolio#design-system" title="Visa Nova">
+            {zh ? "Flutter 设计系统" : "Flutter design system"}
+          </ProjectRow>
+          <ProjectRow href="/game" title={zh ? "缸中之脑：重启" : "Brain in a Vat: Reboot"}>
+            {zh ? "独立卡牌游戏" : "Card roguelite"}
+          </ProjectRow>
+          <ProjectRow href="/portfolio#psyspace" title="PsySpace">
+            {zh ? "移动应用 · 联合创始人" : "Mobile app · Co-founder"}
+          </ProjectRow>
+          <ProjectRow href={projects.research.link} title={zh ? "用户能动性研究" : "User agency research"}>
+            CSCW 2020
+          </ProjectRow>
+        </ul>
+      </section>
+      <BarFeature />
+    </div>
   );
 }

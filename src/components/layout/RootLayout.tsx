@@ -10,10 +10,10 @@ import { useSeo } from "@/hooks/useSeo";
 import { useLang } from "@/i18n/LanguageContext";
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
-    scrollToTop();
-  }, [pathname]);
+    scrollToTop(hash ? document.getElementById(hash.slice(1)) : null);
+  }, [pathname, hash]);
   return null;
 }
 
@@ -35,12 +35,12 @@ export default function RootLayout() {
       <a href="#main" className="skip-link">
         {t.common.skipToContent}
       </a>
-      <ScrollToTop />
       <Analytics />
       <Nav />
       <main id="main" className="flex-1">
         <Suspense fallback={<PageFallback />}>
           <Outlet />
+          <ScrollToTop />
         </Suspense>
       </main>
       <Footer />
